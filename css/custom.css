@@ -25,8 +25,8 @@
     --graph-filter: none;
 }
 
-/* Logo size */
-nav a.logo {
+/* Resize logo image */
+nav a.logo > img {
     height: 2.5rem !important;
 }
 
@@ -35,17 +35,17 @@ nav a.logo > div {
     display: none !important;
 }
 
-/* Bold navigation links */
+/* Bold navbar links */
 nav ul > li a {
-    font-weight: bold !important;
+    font-weight: 500 !important;
 }
 
-/* Center align header */
+/* Center header text */
 main > header {
     text-align: center !important;
 }
 
-/* Style header article */
+/* Style intro article */
 main > header + article {
     font-size: 1.2rem !important;
     font-weight: bold !important;
