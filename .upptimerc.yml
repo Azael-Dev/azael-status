@@ -51,19 +51,9 @@ status-website:
   links:
     - rel: stylesheet
       href: https://status-test.azael.dev/css/custom.css
-  customHeadHtml: |
-    <style>
-      main header h1 {
-        text-align: center !important;
-      }
-      main header + article {
-        font-size: 1.5rem !important;
-        font-weight: bold !important;
-      }
-    </style>
 
 i18n:
-  footer: Made with ❤️ by [Azael Dev](https://www.azael.dev), powered by [Upptime](https://upptime.js.org)
+  footer: Powered by [Azael Dev](https://www.azael.dev) & [Upptime](https://upptime.js.org)
 
 # Upptime also supports notifications, assigning issues, and more
 # See https://upptime.js.org/docs/configuration

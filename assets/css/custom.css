@@ -24,3 +24,16 @@
     --graph-opacity: 1;
     --graph-filter: none;
 }
+
+nav a.logo > dev {
+    display: none !important;
+}
+
+main > header {
+    text-align: center !important;
+}
+
+main > header + article {
+    font-size: 1.2rem !important;
+    font-weight: bold !important;
+}
