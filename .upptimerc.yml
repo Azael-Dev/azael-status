@@ -5,7 +5,6 @@ repo: azael-status # The name of this repository
 sites:
   - name: Portal
     url: https://portal.azael.dev
-    method: HEAD
     maxResponseTime: 5000
     expectedStatusCodes:
       - 200
@@ -14,7 +13,6 @@ sites:
       
   - name: Documentation
     url: https://docs.azael.dev
-    method: HEAD
     maxResponseTime: 5000
     expectedStatusCodes:
       - 200
@@ -23,7 +21,6 @@ sites:
       
   - name: Documentation (Legacy)
     url: https://docs-old.azael.dev
-    method: HEAD
     maxResponseTime: 5000
     expectedStatusCodes:
       - 200
