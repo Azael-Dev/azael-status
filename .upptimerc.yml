@@ -1,6 +1,7 @@
 # Change these first
 owner: Azael-Dev # Your GitHub organization or username, where this repository lives
 repo: azael-status # The name of this repository
+user-agent: Azael-Dev # The user-agent header sent with each request
 
 sites:
   - name: Portal
@@ -44,6 +45,9 @@ status-website:
       href: https://github.com/$OWNER/$REPO
   # Theme for status page: light, dark, night, ocean
   theme: dark
+
+i18n:
+  footer: Service status by [Azael Dev](https://www.azael.dev), powered by [Upptime](https://upptime.js.org)
 
 # Upptime also supports notifications, assigning issues, and more
 # See https://upptime.js.org/docs/configuration
