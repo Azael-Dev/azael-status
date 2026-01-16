@@ -5,6 +5,26 @@
     "icon": "https://icons.duckduckgo.com/ip3/portal.azael.dev.ico",
     "slug": "portal",
     "status": "down",
+    "uptime": "0.02%",
+    "uptimeDay": "0.02%",
+    "uptimeWeek": "0.02%",
+    "uptimeMonth": "0.02%",
+    "uptimeYear": "0.02%",
+    "time": 0,
+    "timeDay": 0,
+    "timeWeek": 0,
+    "timeMonth": 0,
+    "timeYear": 0,
+    "dailyMinutesDown": {
+      "2026-01-16": 33
+    }
+  },
+  {
+    "name": "Documentation",
+    "url": "https://docs.azael.dev",
+    "icon": "https://icons.duckduckgo.com/ip3/docs.azael.dev.ico",
+    "slug": "documentation",
+    "status": "down",
     "uptime": "0.00%",
     "uptimeDay": "0.00%",
     "uptimeWeek": "0.00%",
@@ -16,27 +36,7 @@
     "timeMonth": 0,
     "timeYear": 0,
     "dailyMinutesDown": {
-      "2026-01-16": 0
-    }
-  },
-  {
-    "name": "Documentation",
-    "url": "https://docs.azael.dev",
-    "icon": "https://icons.duckduckgo.com/ip3/docs.azael.dev.ico",
-    "slug": "documentation",
-    "status": "down",
-    "uptime": "1.83%",
-    "uptimeDay": "1.83%",
-    "uptimeWeek": "1.83%",
-    "uptimeMonth": "1.83%",
-    "uptimeYear": "1.83%",
-    "time": 0,
-    "timeDay": 0,
-    "timeWeek": 0,
-    "timeMonth": 0,
-    "timeYear": 0,
-    "dailyMinutesDown": {
-      "2026-01-16": 0
+      "2026-01-16": 33
     }
   },
   {
@@ -56,7 +56,7 @@
     "timeMonth": 0,
     "timeYear": 0,
     "dailyMinutesDown": {
-      "2026-01-16": 0
+      "2026-01-16": 33
     }
   }
 ]
