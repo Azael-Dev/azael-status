@@ -25,14 +25,27 @@
     --graph-filter: none;
 }
 
-nav a.logo > dev {
+/* Logo size */
+nav a.logo {
+    height: 2.5rem !important;
+}
+
+/* Hide logo text */
+nav a.logo > div {
     display: none !important;
 }
 
+/* Bold navigation links */
+nav ul > li a {
+    font-weight: bold !important;
+}
+
+/* Center align header */
 main > header {
     text-align: center !important;
 }
 
+/* Style header article */
 main > header + article {
     font-size: 1.2rem !important;
     font-weight: bold !important;
