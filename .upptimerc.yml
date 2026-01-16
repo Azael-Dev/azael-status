@@ -6,15 +6,29 @@ sites:
   - name: Portal
     url: https://portal.azael.dev
     method: HEAD
-    maxResponseTime: 3000
+    maxResponseTime: 5000
+    expectedStatusCodes:
+      - 200
+      - 301
+      - 302
+      
   - name: Documentation
     url: https://docs.azael.dev
     method: HEAD
-    maxResponseTime: 3000
+    maxResponseTime: 5000
+    expectedStatusCodes:
+      - 200
+      - 301
+      - 302
+      
   - name: Documentation (Legacy)
     url: https://docs-old.azael.dev
     method: HEAD
-    maxResponseTime: 3000
+    maxResponseTime: 5000
+    expectedStatusCodes:
+      - 200
+      - 301
+      - 302
 
 status-website:
   # Add your custom domain name, or remove the `cname` line if you don't have a domain
