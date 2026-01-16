@@ -11,7 +11,7 @@ sites:
       - 200
       - 301
       - 302
-      
+
   - name: Documentation
     url: https://docs.azael.dev
     maxResponseTime: 5000
@@ -19,7 +19,7 @@ sites:
       - 200
       - 301
       - 302
-      
+
   - name: Documentation (Legacy)
     url: https://docs-old.azael.dev
     maxResponseTime: 5000
@@ -51,6 +51,29 @@ status-website:
   links:
     - rel: stylesheet
       href: https://status-test.azael.dev/css/custom.css
+  customHeadHtml: |
+    <style>
+      nav .logo div {
+        font-size: 1.8rem !important;
+        font-weight: 600 !important;
+      }
+      .container.header {
+        text-align: center !important;
+      }
+      .container.header h1 {
+        text-align: center !important;
+      }
+      .container.header p.lead {
+        text-align: center !important;
+      }
+      .container.header + article {
+        font-size: 2rem !important;
+        font-weight: bold !important;
+        padding: 20px !important;
+        margin: 30px 0 !important;
+        text-align: center !important;
+      }
+    </style>
 
 i18n:
   footer: Service status by [Azael Dev](https://www.azael.dev), powered by [Upptime](https://upptime.js.org)
