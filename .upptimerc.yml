@@ -44,7 +44,7 @@ status-website:
     - title: GitHub
       href: https://github.com/$OWNER/$REPO
   # Theme for status page: light, dark, night, ocean
-  theme: dark
+  theme: night
 
 i18n:
   footer: Service status by [Azael Dev](https://www.azael.dev), powered by [Upptime](https://upptime.js.org)
