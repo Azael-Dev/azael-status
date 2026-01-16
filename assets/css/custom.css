@@ -25,7 +25,7 @@
     --graph-filter: none;
 }
 
-nav a.logo > dev {
+nav a.logo > div {
     display: none !important;
 }
 
