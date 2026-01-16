@@ -1,20 +1,62 @@
 [
   {
-    "name": "Portal (azael.dev)",
-    "url": "https://azael.dev",
-    "icon": "https://icons.duckduckgo.com/ip3/azael.dev.ico",
-    "slug": "portal-azael-dev",
-    "status": "up",
-    "uptime": "100.00%",
-    "uptimeDay": "100.00%",
-    "uptimeWeek": "100.00%",
-    "uptimeMonth": "100.00%",
-    "uptimeYear": "100.00%",
-    "time": 306,
-    "timeDay": 306,
-    "timeWeek": 306,
-    "timeMonth": 306,
-    "timeYear": 306,
-    "dailyMinutesDown": {}
+    "name": "Portal",
+    "url": "https://portal.azael.dev",
+    "icon": "https://icons.duckduckgo.com/ip3/portal.azael.dev.ico",
+    "slug": "portal",
+    "status": "down",
+    "uptime": "0.00%",
+    "uptimeDay": "0.00%",
+    "uptimeWeek": "0.00%",
+    "uptimeMonth": "0.00%",
+    "uptimeYear": "0.00%",
+    "time": 0,
+    "timeDay": 0,
+    "timeWeek": 0,
+    "timeMonth": 0,
+    "timeYear": 0,
+    "dailyMinutesDown": {
+      "2026-01-16": 0
+    }
+  },
+  {
+    "name": "Documentation",
+    "url": "https://docs.azael.dev",
+    "icon": "https://icons.duckduckgo.com/ip3/docs.azael.dev.ico",
+    "slug": "documentation",
+    "status": "down",
+    "uptime": "12.82%",
+    "uptimeDay": "12.82%",
+    "uptimeWeek": "12.82%",
+    "uptimeMonth": "12.82%",
+    "uptimeYear": "12.82%",
+    "time": 0,
+    "timeDay": 0,
+    "timeWeek": 0,
+    "timeMonth": 0,
+    "timeYear": 0,
+    "dailyMinutesDown": {
+      "2026-01-16": 0
+    }
+  },
+  {
+    "name": "Documentation (Legacy)",
+    "url": "https://docs-old.azael.dev",
+    "icon": "https://icons.duckduckgo.com/ip3/docs-old.azael.dev.ico",
+    "slug": "documentation-legacy",
+    "status": "down",
+    "uptime": "0.00%",
+    "uptimeDay": "0.00%",
+    "uptimeWeek": "0.00%",
+    "uptimeMonth": "0.00%",
+    "uptimeYear": "0.00%",
+    "time": 0,
+    "timeDay": 0,
+    "timeWeek": 0,
+    "timeMonth": 0,
+    "timeYear": 0,
+    "dailyMinutesDown": {
+      "2026-01-16": 0
+    }
   }
 ]
