@@ -41,8 +41,8 @@ status-website:
   navbar:
     - title: Status
       href: /
-    - title: GitHub
-      href: https://github.com/$OWNER/$REPO
+    # - title: GitHub
+    #   href: https://github.com/$OWNER/$REPO
     - title: Contact Us
       href: https://azael.dev/links/discord
   # Theme for status page: light, dark, night, ocean
