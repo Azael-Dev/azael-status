@@ -34,7 +34,7 @@
     const checkAndApply = () => {
         setFooterYear();
         setDefault30Days();
-        
+
         if (yearSet && rangeSet && observer) {
             observer.disconnect();
             observer = null;
