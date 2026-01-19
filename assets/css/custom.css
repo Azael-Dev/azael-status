@@ -23,3 +23,14 @@ main > header + article {
     font-size: 1.2rem !important;
     font-weight: bold !important;
 }
+
+/* Style form labels */
+main > div > form > div > label {
+    font-weight: bold !important;
+    cursor: pointer !important;
+}
+
+/* Hide last div in live status section */
+main > section.live-status > article > div:last-of-type {
+    display: none !important;
+}
