@@ -75,6 +75,7 @@ main > div > form > div:nth-child(3) {
 
 /* Style form labels */
 main > div > form > div > input:checked + label {
+    font-size: 0.875rem !important;
     font-weight: normal !important;
 }
 
@@ -106,17 +107,17 @@ main > section.live-status > article > h4 + div > span {
     font-size: 0.8125rem !important;
 }
 
-/* Color status text based on article status */
+/* Apply color to uptime text when article status is UP */
 main > section.live-status > article.up > h4 + div > span {
     color: var(--up-border-left-color) !important;
 }
 
-/* Color status text based on article status */
+/* Apply color to uptime text when article status is DEGRADED */
 main > section.live-status > article.degraded > h4 + div > span {
     color: var(--degraded-border-left-color) !important;
 }
 
-/* Color status text based on article status */
+/* Apply color to uptime text when article status is DOWN */
 main > section.live-status > article.down > h4 + div > span {
     color: var(--down-border-left-color) !important;
 }
