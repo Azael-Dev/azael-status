@@ -46,7 +46,7 @@ status-website:
     - title: Contact Us
       href: https://azael.dev/links/discord
   # Theme for status page: light, dark, night, ocean
-  theme: night
+  theme: dark
   # Custom CSS
   links:
     - rel: stylesheet
