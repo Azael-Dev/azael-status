@@ -75,6 +75,7 @@ main > div > form > div:nth-child(3) {
 
 /* Style form labels */
 main > div > form > div > input:checked + label {
+    font-size: 0.875rem !important;
     font-weight: normal !important;
 }
 
