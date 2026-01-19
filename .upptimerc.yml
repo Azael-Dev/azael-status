@@ -20,6 +20,21 @@ sites:
 
   - name: Portal
     url: https://portal.azael.dev
+    icon: https://status-test.azael.dev/images/icons/portal.png
+    maxResponseTime: 5000
+    expectedStatusCodes:
+      - 200
+
+  - name: CFX Store
+    url: https://cfx.azael.dev
+    icon: https://status-test.azael.dev/images/icons/store.png
+    maxResponseTime: 5000
+    expectedStatusCodes:
+      - 200
+
+  - name: CFX BanDB
+    url: https://bandb.azael.dev
+    icon: https://status-test.azael.dev/images/icons/ban.png
     maxResponseTime: 5000
     expectedStatusCodes:
       - 200
