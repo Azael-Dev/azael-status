@@ -102,6 +102,16 @@ main > section.live-status > article > h4 {
     margin: 0 auto 0 0 !important;
 }
 
+/* Keep uptime on the top row */
+main > section.live-status > article > h4 + div {
+    white-space: nowrap;
+}
+
+/* Push other info to the next row */
+main > section.live-status > article > div:not(:first-of-type) {
+    flex-basis: 100%;
+}
+
 /* Style status text in live status articles */
 main > section.live-status > article > h4 + div > span {
     font-size: 0.8125rem !important;
