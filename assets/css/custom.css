@@ -131,3 +131,65 @@ main > section.live-status > article.degraded > h4 + div > span {
 main > section.live-status > article.down > h4 + div > span {
     color: var(--down-border-left-color) !important;
 }
+
+/* Uptime History Bar Container */
+main > section.live-status > article > .uptime-history {
+    flex-basis: 100%;
+    display: flex;
+    gap: 2px;
+    height: 40px;
+    margin-top: 0.75rem;
+    order: 999;
+}
+
+/* Individual day bar */
+main > section.live-status > article > .uptime-history > .day {
+    flex: 1;
+    background-color: var(--up-border-left-color);
+    border-radius: 2px;
+    opacity: 0.8;
+    transition: opacity 0.2s, transform 0.2s;
+    cursor: pointer;
+    position: relative;
+}
+
+/* Hover effect */
+main > section.live-status > article > .uptime-history > .day:hover {
+    opacity: 1;
+    transform: scaleY(1.1);
+}
+
+/* Down status day */
+main > section.live-status > article > .uptime-history > .day.down {
+    background-color: var(--down-border-left-color);
+}
+
+/* Degraded status day */
+main > section.live-status > article > .uptime-history > .day.degraded {
+    background-color: var(--degraded-border-left-color);
+}
+
+/* Tooltip */
+main > section.live-status > article > .uptime-history > .day::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.9);
+    color: #ffffff;
+    padding: 0.375rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s;
+    margin-bottom: 0.25rem;
+    z-index: 1000;
+}
+
+/* Show tooltip on hover */
+main > section.live-status > article > .uptime-history > .day:hover::before {
+    opacity: 1;
+}
