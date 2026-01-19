@@ -1,13 +1,23 @@
-// Set the current year in the footer
+// Set the current year in the footer (Upptime-safe)
 (() => {
-    const initFooterYear = () => {
-        const footerYearElement = document.getElementById('footer-year');
+    const setYear = () => {
+        const el = document.getElementById('footer-year');
+        if (!el) return false;
 
-        if (footerYearElement) {
-            footerYearElement.textContent = new Date().getFullYear();
-        }
+        el.textContent = new Date().getFullYear();
+        return true;
     };
 
-    // Initialize when the DOM is fully loaded
-    document.addEventListener('DOMContentLoaded', initFooterYear);
+    if (setYear()) return;
+
+    const observer = new MutationObserver(() => {
+        if (setYear()) {
+            observer.disconnect();
+        }
+    });
+
+    observer.observe(document.body, {
+        childList: true,
+        subtree: true
+    });
 })();
