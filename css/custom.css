@@ -53,22 +53,6 @@ main > header + article {
     font-weight: bold !important;
 }
 
-/* Pointer cursor for form labels */
-main > div > form > div > label {
-    cursor: pointer !important;
-    transition: color 0.2s ease, font-weight 0.2s ease !important;
-}
-
-/* Hover effect for form labels */
-main > div > form > div > label:hover {
-    font-weight: bold !important;
-}
-
-/* Hide last two divs in form (1 Year & All) */
-main > div > form > div:nth-last-child(-n+2) {
-    display: none !important;
-}
-
 /* Hide graph in live status section */
 main > section.live-status > article.graph {
     --background: none !important;
