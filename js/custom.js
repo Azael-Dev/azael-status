@@ -5,6 +5,10 @@
     let rangeSet = false;
     let historySet = false;
     let observer = null;
+    
+    // Cache configuration
+    const CACHE_KEY = 'serverTimeCache';
+    const CACHE_DURATION = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
 
     const setFooterYear = () => {
         if (yearSet) return false;
@@ -33,20 +37,69 @@
         return false;
     };
 
+    const fetchWithRetry = async (url, maxRetries = 3, delay = 1000) => {
+        for (let i = 0; i < maxRetries; i++) {
+            try {
+                const response = await fetch(url);
+                if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                return response;
+            } catch (error) {
+                if (i === maxRetries - 1) throw error;
+                await new Promise(resolve => setTimeout(resolve, delay * (i + 1)));
+            }
+        }
+    };
+
     const getServerTime = async () => {
         try {
             // Get client timezone
             const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
             
-            // Fetch time from World Time API
-            const response = await fetch(`https://worldtimeapi.org/api/timezone/${timezone}`);
-            if (!response.ok) throw new Error('API request failed');
+            // Try to get cached data from localStorage
+            const cached = localStorage.getItem(CACHE_KEY);
+            if (cached) {
+                try {
+                    const { time, tz, timestamp } = JSON.parse(cached);
+                    const now = Date.now();
+                    
+                    // Return cached time if timezone hasn't changed and cache is still valid
+                    if (tz === timezone && (now - timestamp) < CACHE_DURATION) {
+                        return new Date(time);
+                    }
+                } catch (e) {
+                    // Invalid cache data, remove it
+                    localStorage.removeItem(CACHE_KEY);
+                }
+            }
             
+            // Fetch time from World Time API with retry
+            const response = await fetchWithRetry(`https://worldtimeapi.org/api/timezone/${timezone}`);
             const timeData = await response.json();
-            return new Date(timeData.datetime);
+            const serverTime = new Date(timeData.datetime);
+            
+            // Cache the result in localStorage
+            localStorage.setItem(CACHE_KEY, JSON.stringify({
+                time: serverTime.toISOString(),
+                tz: timezone,
+                timestamp: Date.now()
+            }));
+            
+            return serverTime;
         } catch (error) {
             console.warn('Failed to fetch server time, using client time:', error);
-            return new Date();
+            const clientTime = new Date();
+            
+            // Cache client time as fallback if no cache exists
+            const cached = localStorage.getItem(CACHE_KEY);
+            if (!cached) {
+                localStorage.setItem(CACHE_KEY, JSON.stringify({
+                    time: clientTime.toISOString(),
+                    tz: Intl.DateTimeFormat().resolvedOptions().timeZone,
+                    timestamp: Date.now()
+                }));
+            }
+            
+            return clientTime;
         }
     };
 
@@ -56,25 +109,61 @@
         const articles = document.querySelectorAll('main > section.live-status > article');
         if (!articles.length) return false;
 
+        // Add loading state
+        articles.forEach(article => {
+            if (!article.querySelector('.uptime-loading')) {
+                const loadingEl = document.createElement('div');
+                loadingEl.className = 'uptime-loading';
+                loadingEl.textContent = 'Loading history...';
+                article.appendChild(loadingEl);
+            }
+        });
+
         try {
-            const response = await fetch('https://raw.githubusercontent.com/Azael-Dev/azael-status/master/history/summary.json');
+            const response = await fetchWithRetry('https://raw.githubusercontent.com/Azael-Dev/azael-status/master/history/summary.json');
             const data = await response.json();
 
             // Get reliable current date
             const today = await getServerTime();
 
-            articles.forEach((article) => {
+            // Remove loading state
+            articles.forEach(article => {
+                const loadingEl = article.querySelector('.uptime-loading');
+                if (loadingEl) loadingEl.remove();
+            });
+
+            // Process articles using requestAnimationFrame
+            let articleIndex = 0;
+            const processNextArticle = () => {
+                if (articleIndex >= articles.length) {
+                    historySet = true;
+                    return;
+                }
+
+                const article = articles[articleIndex];
                 // Check if history already exists
-                if (article.querySelector('.uptime-history')) return;
+                if (article.querySelector('.uptime-history')) {
+                    articleIndex++;
+                    requestAnimationFrame(processNextArticle);
+                    return;
+                }
 
                 // Get service name from article
                 const serviceLink = article.querySelector('h4 a');
-                if (!serviceLink) return;
+                if (!serviceLink) {
+                    articleIndex++;
+                    requestAnimationFrame(processNextArticle);
+                    return;
+                }
 
                 const serviceName = serviceLink.textContent.trim();
                 const serviceData = data.find(s => s.name === serviceName);
 
-                if (!serviceData || !serviceData.dailyMinutesDown) return;
+                if (!serviceData || !serviceData.dailyMinutesDown) {
+                    articleIndex++;
+                    requestAnimationFrame(processNextArticle);
+                    return;
+                }
 
                 // Create history container
                 const historyContainer = document.createElement('div');
@@ -96,7 +185,8 @@
                     days.push(dateStr);
                 }
 
-                // Create day bars
+                // Create day bars using document fragment for better performance
+                const fragment = document.createDocumentFragment();
                 days.forEach(dateStr => {
                     const dayBar = document.createElement('div');
                     dayBar.className = 'day';
@@ -116,8 +206,9 @@
                     const formattedDate = date.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
                     dayBar.setAttribute('data-tooltip', `Date: ${formattedDate}\nUptime: ${uptimePercent}%`);
 
-                    historyContainer.appendChild(dayBar);
+                    fragment.appendChild(dayBar);
                 });
+                historyContainer.appendChild(fragment);
 
                 // Create date range labels container
                 const labelsContainer = document.createElement('div');
@@ -136,12 +227,26 @@
 
                 article.appendChild(historyContainer);
                 article.appendChild(labelsContainer);
-            });
 
-            historySet = true;
+                articleIndex++;
+                requestAnimationFrame(processNextArticle);
+            };
+
+            requestAnimationFrame(processNextArticle);
             return true;
         } catch (error) {
             console.error('Failed to load uptime history:', error);
+            
+            // Remove loading state on error
+            articles.forEach(article => {
+                const loadingEl = article.querySelector('.uptime-loading');
+                if (loadingEl) {
+                    loadingEl.textContent = 'Failed to load history';
+                    loadingEl.classList.add('error');
+                    setTimeout(() => loadingEl.remove(), 3000);
+                }
+            });
+            
             return false;
         }
     };
