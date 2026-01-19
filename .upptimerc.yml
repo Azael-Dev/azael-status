@@ -26,12 +26,14 @@ sites:
 
   - name: Documentation
     url: https://docs.azael.dev
+    icon: https://status-test.azael.dev/images/icons/doc.png
     maxResponseTime: 5000
     expectedStatusCodes:
       - 200
 
   - name: Documentation (Legacy)
     url: https://docs-old.azael.dev
+    icon: https://status-test.azael.dev/images/icons/doc.png
     maxResponseTime: 5000
     expectedStatusCodes:
       - 200
