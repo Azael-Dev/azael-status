@@ -8,8 +8,8 @@ nav a.logo > div {
     display: none !important;
 }
 
-/* Bold navbar links */
-nav ul > li a {
+/* Bold current navbar link */
+nav ul > li > a[aria-current] {
     font-weight: 500 !important;
 }
 
@@ -35,10 +35,9 @@ main > div > form > div > label:hover {
     font-weight: bold !important;
 }
 
-/* Remove background image from live status graph */
+/* Hide graph in live status section */
 main > section.live-status > article.graph {
-    --background: none !important;
-    background-image: none !important;
+    display: none !important;
 }
 
 /* Hide last div in live status section */
