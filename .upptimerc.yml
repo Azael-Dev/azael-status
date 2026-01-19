@@ -12,6 +12,7 @@ sites:
       - 200
 
   - name: Bot Server
+    method: HEAD
     url: $SITE_BOT_SERVER
     icon: https://status-test.azael.dev/images/icons/server.png
     maxResponseTime: 5000
