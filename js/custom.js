@@ -1,12 +1,13 @@
 // Set the current year in the footer
-const initFooterYear = () => {
-    const footerYearElement = document.getElementById('footer-year');
+(() => {
+    const initFooterYear = () => {
+        const footerYearElement = document.getElementById('footer-year');
 
-    if (footerYearElement) {
-        const currentYear = new Date().getFullYear();
-        footerYearElement.textContent = currentYear;
-    }
-};
+        if (footerYearElement) {
+            footerYearElement.textContent = new Date().getFullYear();
+        }
+    };
 
-// Initialize the footer year on page load
-document.addEventListener('DOMContentLoaded', initFooterYear);
+    // Initialize when the DOM is fully loaded
+    document.addEventListener('DOMContentLoaded', initFooterYear);
+})();
