@@ -31,6 +31,7 @@ sites:
     maxResponseTime: 5000
     expectedStatusCodes:
       - 200
+      - 403
 
   - name: CFX BanDB
     url: https://bandb.azael.dev
@@ -38,6 +39,7 @@ sites:
     maxResponseTime: 5000
     expectedStatusCodes:
       - 200
+      - 403
 
   - name: Documentation
     url: https://docs.azael.dev
