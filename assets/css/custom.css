@@ -64,8 +64,8 @@ main > div > form > div > label:hover {
     font-weight: bold !important;
 }
 
-main > div > form > div > input[id="data_year"],
-main > div > form > div > input[id="data_all"] {
+/* Hide last two divs in form (1 Year & All) */
+main > div > form > div:nth-last-child(-n+2) {
     display: none !important;
 }
 
