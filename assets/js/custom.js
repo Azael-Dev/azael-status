@@ -1,4 +1,6 @@
 (() => {
+    let rangeInitialized = false;
+
     // Set current year in footer
     const setFooterYear = () => {
         const el = document.getElementById('footer-year');
@@ -8,18 +10,23 @@
         return true;
     };
 
-    // Set default time range to 30 days
+    // Set default time range to 30 days (run once)
     const setDefault30Days = () => {
+        if (rangeInitialized) return true;
+
         const btn30 = document.getElementById('data_30');
         if (!btn30) return false;
 
         if (!btn30.checked) {
+            rangeInitialized = true;
             btn30.click();
+        } else {
+            rangeInitialized = true;
         }
+
         return true;
     };
 
-    // Try to initialize both features
     const tryInit = () => {
         const yearOk = setFooterYear();
         const rangeOk = setDefault30Days();
@@ -27,7 +34,6 @@
         return yearOk && rangeOk;
     };
 
-    // Start observing DOM changes
     const startObserver = () => {
         if (tryInit()) return;
 
@@ -43,7 +49,6 @@
         });
     };
 
-    // Initialize when DOM is ready
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', startObserver);
     } else {
