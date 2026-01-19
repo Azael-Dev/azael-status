@@ -55,6 +55,36 @@ sites:
     expectedStatusCodes:
       - 200
 
+  - name: Database
+    method: POST
+    headers:
+      - "Authorization: Bearer $UPPTIME_API_TOKEN"
+      - "Content-Type: application/json"
+    url: https://api-test.azael.dev/$UPPTIME_DATABASE_HEALTH_ENDPOINT
+    icon: https://status-test.azael.dev/images/icons/database.png
+    maxResponseTime: 2000
+    expectedStatusCodes:
+      - 200
+
+  - name: Mailer
+    method: POST
+    headers:
+      - "Authorization: Bearer $UPPTIME_API_TOKEN"
+      - "Content-Type: application/json"
+    url: https://api-test.azael.dev/$UPPTIME_MAILER_HEALTH_ENDPOINT
+    icon: https://status-test.azael.dev/images/icons/email.png
+    maxResponseTime: 5000
+    expectedStatusCodes:
+      - 200
+
+  - name: Base API
+    method: POST
+    url: https://api-test.azael.dev/$UPPTIME_API_PING_ENDPOINT
+    icon: https://status-test.azael.dev/images/icons/api.png
+    maxResponseTime: 1000
+    expectedStatusCodes:
+      - 200
+
 status-website:
   # Add your custom domain name, or remove the `cname` line if you don't have a domain
   # Uncomment the `baseUrl` line if you don't have a custom domain and add your repo name there
