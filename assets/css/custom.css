@@ -64,6 +64,11 @@ main > div > form > div > label:hover {
     font-weight: bold !important;
 }
 
+main > div > form > div > input[id="data_year"],
+main > div > form > div > input[id="data_all"] {
+    display: none !important;
+}
+
 /* Hide graph in live status section */
 main > section.live-status > article.graph {
     --background: none !important;
