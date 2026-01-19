@@ -96,12 +96,27 @@ main > section.live-status > article {
     align-items: center !important;
 }
 
-/* Center h4 in live status articles */
+/* Align h4 to the left and push uptime text to the right */
 main > section.live-status > article > h4 {
-    margin-right: auto !important;
+    margin: 0 auto 0 0 !important;
 }
 
+/* Style status text in live status articles */
 main > section.live-status > article > h4 + div > span {
-    font-size: small !important;
-    color: var(--submit-button-background-color) !important;
+    font-size: 0.8125rem !important;
+}
+
+/* Color status text based on article status */
+main > section.live-status > article.up > h4 + div > span {
+    color: var(--up-border-left-color) !important;
+}
+
+/* Color status text based on article status */
+main > section.live-status > article.degraded > h4 + div > span {
+    color: var(--degraded-border-left-color) !important;
+}
+
+/* Color status text based on article status */
+main > section.live-status > article.down > h4 + div > span {
+    color: var(--down-border-left-color) !important;
 }
