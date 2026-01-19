@@ -39,7 +39,7 @@ nav a.logo > div {
 nav ul > li > a {
     font-weight: 500 !important;
     text-transform: uppercase !important;
-    letter-spacing: 0.05rem !important;
+    letter-spacing: 0.025rem !important;
 }
 
 /* Center header text */
