@@ -50,7 +50,7 @@ main > header {
 }
 
 /* Style operational articles */
-main > section > article.up {
+main > header + article.up {
     background: var(--up-background-color) !important;
     border-color: var(--up-border-left-color) !important;
     font-size: 1.2rem !important;
