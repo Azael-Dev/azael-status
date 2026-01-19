@@ -101,6 +101,7 @@ main > section.live-status > article > h4 {
     margin-right: auto !important;
 }
 
-main > section.live-status > article > h4 + div {
-    color: var(--tag-color);
+main > section.live-status > article > h4 + div > span {
+    font-size: small !important;
+    color: var(--submit-button-background-color) !important;
 }
