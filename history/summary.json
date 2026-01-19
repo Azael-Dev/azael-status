@@ -11,7 +11,7 @@
     "uptimeMonth": "99.10%",
     "uptimeYear": "99.10%",
     "time": 179,
-    "timeDay": 188,
+    "timeDay": 186,
     "timeWeek": 179,
     "timeMonth": 179,
     "timeYear": 179,
@@ -30,11 +30,11 @@
     "uptimeWeek": "99.10%",
     "uptimeMonth": "99.10%",
     "uptimeYear": "99.10%",
-    "time": 174,
-    "timeDay": 168,
-    "timeWeek": 174,
-    "timeMonth": 174,
-    "timeYear": 174,
+    "time": 173,
+    "timeDay": 167,
+    "timeWeek": 173,
+    "timeMonth": 173,
+    "timeYear": 173,
     "dailyMinutesDown": {
       "2026-01-16": 37
     }
@@ -44,18 +44,19 @@
     "url": "https://docs-old.azael.dev",
     "icon": "https://icons.duckduckgo.com/ip3/docs-old.azael.dev.ico",
     "slug": "documentation-legacy",
-    "status": "up",
+    "status": "degraded",
     "uptime": "99.10%",
-    "uptimeDay": "100.00%",
+    "uptimeDay": "99.99%",
     "uptimeWeek": "99.10%",
     "uptimeMonth": "99.10%",
     "uptimeYear": "99.10%",
-    "time": 160,
-    "timeDay": 145,
-    "timeWeek": 160,
-    "timeMonth": 160,
-    "timeYear": 160,
+    "time": 157,
+    "timeDay": 142,
+    "timeWeek": 157,
+    "timeMonth": 157,
+    "timeYear": 157,
     "dailyMinutesDown": {
+      "2026-01-19": 0,
       "2026-01-16": 37
     }
   }
