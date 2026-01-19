@@ -8,9 +8,11 @@ nav a.logo > div {
     display: none !important;
 }
 
-/* Bold current navbar link */
-nav ul > li > a[aria-current] {
+/* Bold navbar links */
+nav ul > li > a {
     font-weight: 500 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05rem !important;
 }
 
 /* Center header text */
@@ -37,7 +39,8 @@ main > div > form > div > label:hover {
 
 /* Hide graph in live status section */
 main > section.live-status > article.graph {
-    display: none !important;
+    --background: none !important;
+    background-image: none !important;
 }
 
 /* Hide last div in live status section */

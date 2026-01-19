@@ -56,7 +56,7 @@ status-website:
     - src: https://status-test.azael.dev/js/custom.js
 
 i18n:
-  footer: ©<span id="footer-year"></span> [Azael Dev](https://www.azael.dev), Powered by [Upptime](https://upptime.js.org) on [GitHub](https://github.com)
+  footer: ©<span id="footer-year"></span> [Azael Dev](https://www.azael.dev), powered by [Upptime](https://upptime.js.org) on [GitHub](https://github.com)
 
 # Upptime also supports notifications, assigning issues, and more
 # See https://upptime.js.org/docs/configuration
