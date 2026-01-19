@@ -33,6 +33,23 @@
         return false;
     };
 
+    const getServerTime = async () => {
+        try {
+            // Get client timezone
+            const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+            
+            // Fetch time from World Time API
+            const response = await fetch(`https://worldtimeapi.org/api/timezone/${timezone}`);
+            if (!response.ok) throw new Error('API request failed');
+            
+            const timeData = await response.json();
+            return new Date(timeData.datetime);
+        } catch (error) {
+            console.warn('Failed to fetch server time, using client time:', error);
+            return new Date();
+        }
+    };
+
     const createUptimeHistory = async () => {
         if (historySet) return false;
 
@@ -42,6 +59,9 @@
         try {
             const response = await fetch('https://raw.githubusercontent.com/Azael-Dev/azael-status/master/history/summary.json');
             const data = await response.json();
+
+            // Get reliable current date
+            const today = await getServerTime();
 
             articles.forEach((article) => {
                 // Check if history already exists
@@ -61,13 +81,18 @@
                 historyContainer.className = 'uptime-history';
 
                 // Get last 30 days
-                const today = new Date();
                 const days = [];
 
                 for (let i = 29; i >= 0; i--) {
                     const date = new Date(today);
                     date.setDate(date.getDate() - i);
-                    const dateStr = date.toISOString().split('T')[0];
+                    
+                    // Use local date instead of UTC
+                    const year = date.getFullYear();
+                    const month = String(date.getMonth() + 1).padStart(2, '0');
+                    const day = String(date.getDate()).padStart(2, '0');
+                    const dateStr = `${year}-${month}-${day}`;
+                    
                     days.push(dateStr);
                 }
 
