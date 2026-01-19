@@ -35,6 +35,12 @@ main > div > form > div > label:hover {
     font-weight: bold !important;
 }
 
+/* Remove background image from live status graph */
+main > section.live-status > article.graph {
+    --background: none !important;
+    background-image: none !important;
+}
+
 /* Hide last div in live status section */
 main > section.live-status > article > div:last-of-type {
     display: none !important;
