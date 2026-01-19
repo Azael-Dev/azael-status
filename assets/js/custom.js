@@ -88,13 +88,29 @@
                     }
 
                     const date = new Date(dateStr);
-                    const formattedDate = date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
-                    dayBar.setAttribute('data-tooltip', `${formattedDate} — ${uptimePercent}% uptime`);
+                    const formattedDate = date.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+                    dayBar.setAttribute('data-tooltip', `Date: ${formattedDate}\nUptime: ${uptimePercent}%`);
 
                     historyContainer.appendChild(dayBar);
                 });
 
+                // Create date range labels container
+                const labelsContainer = document.createElement('div');
+                labelsContainer.className = 'uptime-history-labels';
+
+                const leftLabel = document.createElement('span');
+                leftLabel.textContent = '30 days ago';
+                leftLabel.className = 'label-left';
+
+                const rightLabel = document.createElement('span');
+                rightLabel.textContent = 'Today';
+                rightLabel.className = 'label-right';
+
+                labelsContainer.appendChild(leftLabel);
+                labelsContainer.appendChild(rightLabel);
+
                 article.appendChild(historyContainer);
+                article.appendChild(labelsContainer);
             });
 
             historySet = true;

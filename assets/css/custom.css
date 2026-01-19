@@ -178,18 +178,42 @@ main > section.live-status > article > .uptime-history > .day::before {
     transform: translateX(-50%);
     background-color: rgba(0, 0, 0, 0.9);
     color: #ffffff;
-    padding: 0.375rem 0.5rem;
+    padding: 0.5rem 0.625rem;
     border-radius: 4px;
     font-size: 0.75rem;
-    white-space: nowrap;
+    white-space: pre-line;
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.2s;
     margin-bottom: 0.25rem;
     z-index: 1000;
+    text-align: left;
+    line-height: 1.4;
 }
 
 /* Show tooltip on hover */
 main > section.live-status > article > .uptime-history > .day:hover::before {
     opacity: 1;
+}
+
+/* Uptime History Labels Container */
+main > section.live-status > article > .uptime-history-labels {
+    flex-basis: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.375rem;
+    font-size: 0.75rem;
+    color: var(--body-text-color);
+    opacity: 0.6;
+    order: 1000;
+}
+
+/* Left label (30 days ago) */
+main > section.live-status > article > .uptime-history-labels > .label-left {
+    text-align: left;
+}
+
+/* Right label (Today) */
+main > section.live-status > article > .uptime-history-labels > .label-right {
+    text-align: right;
 }
