@@ -9,6 +9,7 @@
     --down-border-left-color: #f85149;
     --down-background-color: #490202;
     --degraded-border-left-color: #d29922;
+    --degraded-background-color: #4d2d00;
     --up-border-left-color: #3fb950;
     --tag-color: #e6edf3;
     --tag-up-background-color: #238636;
@@ -51,6 +52,12 @@ main > header {
 main > header + article {
     font-size: 1.2rem !important;
     font-weight: bold !important;
+}
+
+/* Style degraded articles */
+main > section > article.down.degraded {
+    background: var(--change-background-color) !important;
+    border-color: var(--degraded-border-left-color) !important;
 }
 
 /* Hide all form divs except the third one */
