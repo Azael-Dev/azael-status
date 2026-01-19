@@ -21,7 +21,7 @@
     const setDefault30Days = () => {
         if (rangeSet) return false;
 
-        const btn = document.getElementById('data_30');
+        const btn = document.getElementById('data_month');
         if (btn && !btn.checked) {
             btn.click();
             rangeSet = true;
