@@ -53,6 +53,16 @@ main > header + article {
     font-weight: bold !important;
 }
 
+/* Hide all form divs except the third one */
+main > div > form > div {
+    display: none !important;
+}
+
+/* Show only the third form div (30 Days) */
+main > div > form > div:nth-child(3) {
+    display: block !important;
+}
+
 /* Style form labels */
 main > div > form > div > input:checked + label {
     font-weight: normal !important;

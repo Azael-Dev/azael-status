@@ -18,18 +18,6 @@
         return false;
     };
 
-    const hideOtherRangeOptions = () => {
-        const optionsToHide = ['data_day', 'data_week', 'data_year', 'data_all'];
-
-        optionsToHide.forEach(id => {
-            const el = document.getElementById(id);
-
-            if (el && el.parentElement) {
-                el.parentElement.style.display = 'none';
-            }
-        });
-    };
-
     const setDefault30Days = () => {
         if (rangeSet) return false;
 
@@ -47,7 +35,6 @@
     const checkAndApply = () => {
         setFooterYear();
         setDefault30Days();
-        hideOtherRangeOptions();
 
         if (yearSet && rangeSet && observer) {
             observer.disconnect();
