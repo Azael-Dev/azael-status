@@ -24,10 +24,21 @@ main > header + article {
     font-weight: bold !important;
 }
 
-/* Style form labels */
+/* Pointer cursor for form labels */
 main > div > form > div > label {
-    font-weight: bold !important;
     cursor: pointer !important;
+    transition: color 0.2s ease, font-weight 0.2s ease !important;
+}
+
+/* Hover effect for form labels */
+main > div > form > div > label:hover {
+    font-weight: bold !important;
+}
+
+/* Remove background image from live status graph */
+main > section.live-status > article.graph {
+    --background: none !important;
+    background-image: none !important;
 }
 
 /* Hide last div in live status section */
