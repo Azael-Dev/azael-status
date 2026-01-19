@@ -88,3 +88,19 @@ main > section.live-status > article.graph {
 main > section.live-status > article > div:last-of-type {
     display: none !important;
 }
+
+/* Flex layout for live status articles */
+main > section.live-status > article {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+}
+
+/* Center h4 in live status articles */
+main > section.live-status > article > h4 {
+    margin-right: auto !important;
+}
+
+main > section.live-status > article > h4 + div {
+    color: var(--tag-color);
+}
