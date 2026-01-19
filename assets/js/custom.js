@@ -8,16 +8,24 @@
         return true;
     };
 
-    if (setYear()) return;
+    const startObserver = () => {
+        if (setYear()) return;
 
-    const observer = new MutationObserver(() => {
-        if (setYear()) {
-            observer.disconnect();
-        }
-    });
+        const observer = new MutationObserver(() => {
+            if (setYear()) {
+                observer.disconnect();
+            }
+        });
 
-    observer.observe(document.body, {
-        childList: true,
-        subtree: true
-    });
+        observer.observe(document.body, {
+            childList: true,
+            subtree: true
+        });
+    };
+
+    if (!document.body) {
+        document.addEventListener('DOMContentLoaded', startObserver);
+    } else {
+        startObserver();
+    }
 })();
