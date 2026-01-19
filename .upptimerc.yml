@@ -22,7 +22,7 @@ sites:
 
   - name: Documentation (Legacy)
     url: https://docs-old.azael.dev
-    maxResponseTime: 100
+    maxResponseTime: 1
     expectedStatusCodes:
       - 200
       - 301
