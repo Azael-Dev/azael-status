@@ -53,6 +53,11 @@ main > header + article {
     font-weight: bold !important;
 }
 
+/* Style form labels */
+main > div > form > div > input:checked + label {
+    font-weight: normal !important;
+}
+
 /* Hide graph in live status section */
 main > section.live-status > article.graph {
     --background: none !important;
