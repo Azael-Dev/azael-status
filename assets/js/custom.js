@@ -1,57 +1,71 @@
 (() => {
-    let rangeInitialized = false;
+    'use strict';
 
-    // Set current year in footer
+    let yearSet = false;
+    let rangeSet = false;
+    let observer = null;
+
     const setFooterYear = () => {
+        if (yearSet) return false;
+
         const el = document.getElementById('footer-year');
-        if (!el) return false;
-
-        el.textContent = new Date().getFullYear();
-        return true;
-    };
-
-    // Set default time range to 30 days (run once)
-    const setDefault30Days = () => {
-        if (rangeInitialized) return true;
-
-        const btn30 = document.getElementById('data_30');
-        if (!btn30) return false;
-
-        if (!btn30.checked) {
-            rangeInitialized = true;
-            btn30.click();
-        } else {
-            rangeInitialized = true;
+        if (el && !el.textContent) {
+            el.textContent = new Date().getFullYear();
+            yearSet = true;
+            return true;
         }
 
-        return true;
+        return false;
     };
 
-    const tryInit = () => {
-        const yearOk = setFooterYear();
-        const rangeOk = setDefault30Days();
+    const setDefault30Days = () => {
+        if (rangeSet) return false;
 
-        return yearOk && rangeOk;
+        const btn = document.getElementById('data_30');
+        if (btn && !btn.checked) {
+            btn.click();
+            rangeSet = true;
+            return true;
+        }
+
+        return false;
     };
 
-    const startObserver = () => {
-        if (tryInit()) return;
+    const checkAndApply = () => {
+        setFooterYear();
+        setDefault30Days();
+        
+        if (yearSet && rangeSet && observer) {
+            observer.disconnect();
+            observer = null;
+        }
+    };
 
-        const observer = new MutationObserver(() => {
-            if (tryInit()) {
-                observer.disconnect();
-            }
-        });
+    const init = () => {
+        checkAndApply();
 
-        observer.observe(document.body, {
-            childList: true,
-            subtree: true
-        });
+        if (!yearSet || !rangeSet) {
+            observer = new MutationObserver(() => {
+                checkAndApply();
+            });
+
+            observer.observe(document.body, {
+                childList: true,
+                subtree: true
+            });
+
+            setTimeout(() => {
+                if (observer) {
+                    observer.disconnect();
+                    observer = null;
+                }
+            }, 10000);
+        }
     };
 
     if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', startObserver);
+        document.addEventListener('DOMContentLoaded', init);
     } else {
-        startObserver();
+        init();
     }
 })();
