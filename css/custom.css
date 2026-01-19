@@ -11,6 +11,7 @@
     --degraded-border-left-color: #d29922;
     --degraded-background-color: #4d2d00;
     --up-border-left-color: #3fb950;
+    --up-background-color: #04260f;
     --tag-color: #e6edf3;
     --tag-up-background-color: #238636;
     --tag-down-background-color: #da3633;
@@ -48,14 +49,16 @@ main > header {
     text-align: center !important;
 }
 
-/* Style intro article */
-main > header + article {
+/* Style operational articles */
+main > section > article.up {
+    background: var(--up-background-color) !important;
+    border-color: var(--up-border-left-color) !important;
     font-size: 1.2rem !important;
     font-weight: bold !important;
 }
 
 /* Style degraded articles */
-main > section > article.down.degraded {
+main > section > article.down-active.degraded {
     background: var(--change-background-color) !important;
     border-color: var(--degraded-border-left-color) !important;
 }
