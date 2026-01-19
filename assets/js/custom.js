@@ -89,7 +89,7 @@
 
                     const date = new Date(dateStr);
                     const formattedDate = date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
-                    dayBar.setAttribute('data-tooltip', `${formattedDate}: ${uptimePercent}% uptime`);
+                    dayBar.setAttribute('data-tooltip', `${formattedDate} — ${uptimePercent}% uptime`);
 
                     historyContainer.appendChild(dayBar);
                 });
