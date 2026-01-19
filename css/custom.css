@@ -1,3 +1,30 @@
+:root {
+    --body-background-color: #0d1117;
+    --body-text-color: #e6edf3;
+    --card-background-color: #161b22;
+    --nav-background-color: #161b22;
+    --nav-border-bottom-color: #30363d;
+    --nav-current-border-bottom-color: #f78166;
+    --card-border-color: #30363d;
+    --down-border-left-color: #f85149;
+    --down-background-color: #490202;
+    --degraded-border-left-color: #d29922;
+    --up-border-left-color: #3fb950;
+    --tag-color: #e6edf3;
+    --tag-up-background-color: #238636;
+    --tag-down-background-color: #da3633;
+    --tag-degraded-background-color: #9e6a03;
+    --change-background-color: #9e6a03;
+    --error-button-border-color: #f85149;
+    --error-button-background-color: #da3633;
+    --error-button-color: #ffffff;
+    --submit-button-border-color: #238636;
+    --submit-button-background-color: #2ea043;
+    --submit-button-color: #ffffff;
+    --graph-opacity: 1;
+    --graph-filter: none;
+}
+
 /* Resize logo image */
 nav a.logo > img {
     height: 2.5rem !important;
