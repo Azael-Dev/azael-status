@@ -4,6 +4,18 @@ repo: azael-status # The name of this repository
 user-agent: Azael-Dev # The user-agent header sent with each request
 
 sites:
+  - name: Web Server
+    url: $SITE_WEB_SERVER
+    maxResponseTime: 5000
+    expectedStatusCodes:
+      - 200
+
+  - name: Bot Server
+    url: $SITE_BOT_SERVER
+    maxResponseTime: 5000
+    expectedStatusCodes:
+      - 200
+
   - name: Portal
     url: https://portal.azael.dev
     maxResponseTime: 5000
