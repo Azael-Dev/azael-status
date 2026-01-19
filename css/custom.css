@@ -178,7 +178,7 @@ main > section.live-status > article > .uptime-history > .day::before {
     transform: translateX(-50%);
     background-color: rgba(0, 0, 0, 0.9);
     color: #ffffff;
-    padding: 0.5rem 0.625rem;
+    padding: 0.5rem 0.75rem;
     border-radius: 4px;
     font-size: 0.75rem;
     white-space: pre-line;
@@ -188,7 +188,8 @@ main > section.live-status > article > .uptime-history > .day::before {
     margin-bottom: 0.25rem;
     z-index: 1000;
     text-align: left;
-    line-height: 1.4;
+    line-height: 1.5;
+    min-width: 120px;
 }
 
 /* Show tooltip on hover */
