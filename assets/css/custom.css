@@ -85,8 +85,8 @@ main > section.live-status > article.graph {
     background-image: none !important;
 }
 
-/* Hide the second-to-last div in live status section */
-main > section.live-status > article > div:nth-last-of-type(2) {
+/* Hide the second div in live status articles */
+main > section.live-status > article > div:nth-of-type(2) {
     display: none !important;
 }
 
