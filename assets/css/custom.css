@@ -55,7 +55,7 @@ main > header + article {
 }
 
 /* Style degraded articles */
-main > section > article.down.degraded {
+main > section > article.down-active.degraded {
     background: var(--change-background-color) !important;
     border-color: var(--degraded-border-left-color) !important;
 }
