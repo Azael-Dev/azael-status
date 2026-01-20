@@ -259,33 +259,39 @@
         setFooterYear();
         setDefault30Days();
         createUptimeHistory();
-
-        if (yearSet && rangeSet && historySet && observer) {
-            observer.disconnect();
-            observer = null;
-        }
     };
 
     const init = () => {
         checkAndApply();
 
-        if (!yearSet || !rangeSet || !historySet) {
-            observer = new MutationObserver(() => {
+        // Keep observer running continuously to handle dynamic page changes
+        observer = new MutationObserver(() => {
+            checkAndApply();
+        });
+
+        observer.observe(document.body, {
+            childList: true,
+            subtree: true
+        });
+
+        // Handle back/forward navigation and route changes
+        window.addEventListener('popstate', () => {
+            historySet = false;
+            rangeSet = false;
+            checkAndApply();
+        });
+
+        // Monitor URL changes for SPA routing
+        let lastUrl = location.href;
+        new MutationObserver(() => {
+            const currentUrl = location.href;
+            if (currentUrl !== lastUrl) {
+                lastUrl = currentUrl;
+                historySet = false;
+                rangeSet = false;
                 checkAndApply();
-            });
-
-            observer.observe(document.body, {
-                childList: true,
-                subtree: true
-            });
-
-            setTimeout(() => {
-                if (observer) {
-                    observer.disconnect();
-                    observer = null;
-                }
-            }, 10000);
-        }
+            }
+        }).observe(document, { subtree: true, childList: true });
     };
 
     if (document.readyState === 'loading') {
