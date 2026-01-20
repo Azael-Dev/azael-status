@@ -107,12 +107,15 @@
         const articles = document.querySelectorAll('main > section.live-status > article');
         if (!articles.length) return;
 
-        // Wait a bit to let the original content load
-        setTimeout(() => {
-            articles.forEach(article => {
-                const statusSpan = article.querySelector('h4 + div > span');
-                if (!statusSpan) return;
+        articles.forEach(article => {
+            // Skip if already processed
+            if (article.hasAttribute('data-status-replaced')) return;
 
+            const statusSpan = article.querySelector('h4 + div > span');
+            if (!statusSpan) return;
+
+            // Wait briefly to ensure original content is loaded
+            setTimeout(() => {
                 let statusText = '';
                 if (article.classList.contains('up')) {
                     statusText = 'Operational';
@@ -124,21 +127,26 @@
 
                 if (statusText) {
                     statusSpan.textContent = statusText;
+                    article.setAttribute('data-status-replaced', 'true');
                 }
-            });
-        }, 3000);
+            }, 3000);
+        });
     };
 
     const createUptimeHistory = async () => {
         const articles = document.querySelectorAll('main > section.live-status > article');
         if (!articles.length) return false;
 
-        const hasAnyHistory = Array.from(articles).some(article => article.querySelector('.uptime-history'));
-        if (!hasAnyHistory && historySet) {
-            historySet = false;
+        // Check if there are any unprocessed articles
+        const hasUnprocessedArticles = Array.from(articles).some(article => !article.querySelector('.uptime-history'));
+        
+        if (!hasUnprocessedArticles) {
+            historySet = true;
+            return false;
         }
 
-        if (historySet) return false;
+        // Reset historySet if previously set but articles changed
+        if (historySet) historySet = false;
 
         try {
             const response = await fetchWithRetry('https://raw.githubusercontent.com/Azael-Dev/azael-status/master/history/summary.json');
@@ -313,8 +321,15 @@
 
         // Handle back/forward navigation and route changes
         window.addEventListener('popstate', () => {
+            // Reset all flags and clear processed markers
             historySet = false;
             rangeSet = false;
+            
+            // Clear status replacement markers
+            document.querySelectorAll('[data-status-replaced]').forEach(el => {
+                el.removeAttribute('data-status-replaced');
+            });
+            
             checkAndApply();
         });
 
@@ -326,6 +341,12 @@
                 lastUrl = currentUrl;
                 historySet = false;
                 rangeSet = false;
+                
+                // Clear status replacement markers
+                document.querySelectorAll('[data-status-replaced]').forEach(el => {
+                    el.removeAttribute('data-status-replaced');
+                });
+                
                 checkAndApply();
             }
         }).observe(document, { subtree: true, childList: true });

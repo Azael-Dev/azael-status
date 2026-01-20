@@ -114,8 +114,8 @@ main > section.live-status > article > div:not(:first-of-type) {
 
 /* Style status text in live status articles */
 main > section.live-status > article > h4 + div > span {
-    font-size: 0.75rem !important;
-    font-weight: 500 !important;
+    font-size: 0.875rem !important;
+    font-weight: 600 !important;
 }
 
 /* Apply color to uptime text when article status is UP */
