@@ -104,10 +104,15 @@
     };
 
     const createUptimeHistory = async () => {
-        if (historySet) return false;
-
         const articles = document.querySelectorAll('main > section.live-status > article');
         if (!articles.length) return false;
+
+        const hasAnyHistory = Array.from(articles).some(article => article.querySelector('.uptime-history'));
+        if (!hasAnyHistory && historySet) {
+            historySet = false;
+        }
+
+        if (historySet) return false;
 
         // Add loading state
         articles.forEach(article => {
@@ -283,14 +288,6 @@
             }, 10000);
         }
     };
-
-    // Handle page restoration from back/forward cache
-    window.addEventListener('pageshow', (event) => {
-        if (event.persisted) {
-            historySet = false;
-            checkAndApply();
-        }
-    });
 
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', init);
