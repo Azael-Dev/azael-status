@@ -103,6 +103,32 @@
         }
     };
 
+    const replaceStatusText = () => {
+        const articles = document.querySelectorAll('main > section.live-status > article');
+        if (!articles.length) return;
+
+        // Wait a bit to let the original content load
+        setTimeout(() => {
+            articles.forEach(article => {
+                const statusSpan = article.querySelector('h4 + div > span');
+                if (!statusSpan) return;
+
+                let statusText = '';
+                if (article.classList.contains('up')) {
+                    statusText = 'Operational';
+                } else if (article.classList.contains('degraded')) {
+                    statusText = 'Degraded';
+                } else if (article.classList.contains('down')) {
+                    statusText = 'Down';
+                }
+
+                if (statusText) {
+                    statusSpan.textContent = statusText;
+                }
+            });
+        }, 3000);
+    };
+
     const createUptimeHistory = async () => {
         const articles = document.querySelectorAll('main > section.live-status > article');
         if (!articles.length) return false;
@@ -268,6 +294,7 @@
     const checkAndApply = () => {
         setFooterYear();
         setDefault30Days();
+        replaceStatusText();
         createUptimeHistory();
     };
 
