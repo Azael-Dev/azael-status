@@ -188,38 +188,48 @@
                     const downMinutes = serviceData.dailyMinutesDown[dateStr] || 0;
                     const uptimePercent = ((1440 - downMinutes) / 1440 * 100).toFixed(2);
 
+                    // Determine severity level
+                    let severityClass = '';
+                    let severityLabel = '';
+
                     if (downMinutes === 0) {
-                        dayBar.classList.add('up');
+                        severityClass = 'up';
+                    } else if (downMinutes < 30) {
+                        severityClass = 'minor';
+                        severityLabel = 'Minor Outage';
                     } else if (downMinutes < 60) {
-                        dayBar.classList.add('degraded');
+                        severityClass = 'partial';
+                        severityLabel = 'Partial Outage';
                     } else {
-                        dayBar.classList.add('down');
+                        severityClass = 'major';
+                        severityLabel = 'Major Outage';
                     }
+
+                    dayBar.classList.add(severityClass);
 
                     // Parse date correctly to avoid timezone issues
                     // Split the date string and create date with local timezone
                     const [year, month, day] = dateStr.split('-').map(Number);
                     const date = new Date(year, month - 1, day);
                     const formattedDate = date.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
-                    
+
                     // Format outage duration
-                    let outageText = '';
-                    if (downMinutes === 0) {
-                        outageText = 'No outage';
-                    } else {
+                    let durationText = '';
+
+                    if (downMinutes !== 0) {
                         const hours = Math.floor(downMinutes / 60);
                         const minutes = downMinutes % 60;
-                        
+
                         if (hours > 0 && minutes > 0) {
-                            outageText = `${hours} hour${hours > 1 ? 's' : ''} ${minutes} minute${minutes > 1 ? 's' : ''}`;
+                            durationText = `${severityLabel}: ${hours} hour${hours > 1 ? 's' : ''} ${minutes} minute${minutes > 1 ? 's' : ''}`;
                         } else if (hours > 0) {
-                            outageText = `${hours} hour${hours > 1 ? 's' : ''}`;
+                            durationText = `${severityLabel}: ${hours} hour${hours > 1 ? 's' : ''}`;
                         } else {
-                            outageText = `${minutes} minute${minutes > 1 ? 's' : ''}`;
+                            durationText = `${severityLabel}: ${minutes} minute${minutes > 1 ? 's' : ''}`;
                         }
                     }
-                    
-                    dayBar.setAttribute('data-tooltip', `Date: ${formattedDate}\nUptime: ${uptimePercent}%\nOutage: ${outageText}`);
+
+                    dayBar.setAttribute('data-tooltip', `Date: ${formattedDate}\nUptime: ${uptimePercent}%\n${durationText}`);
 
                     fragment.appendChild(dayBar);
                 });

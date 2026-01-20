@@ -160,14 +160,19 @@ main > section.live-status > article > .uptime-history > .day:hover {
     transform: scaleY(1.1);
 }
 
-/* Down status day */
-main > section.live-status > article > .uptime-history > .day.down {
-    background-color: var(--down-border-left-color);
+/* Minor Outage (< 30 minutes) */
+main > section.live-status > article > .uptime-history > .day.minor {
+    background-color: var(--tag-degraded-background-color);
 }
 
-/* Degraded status day */
-main > section.live-status > article > .uptime-history > .day.degraded {
+/* Partial Outage (30-59 minutes) */
+main > section.live-status > article > .uptime-history > .day.partial {
     background-color: var(--degraded-border-left-color);
+}
+
+/* Major Outage (≥ 60 minutes) */
+main > section.live-status > article > .uptime-history > .day.major {
+    background-color: var(--down-border-left-color);
 }
 
 /* Tooltip */
