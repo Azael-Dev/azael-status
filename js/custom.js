@@ -5,7 +5,7 @@
     let rangeSet = false;
     let historySet = false;
     let observer = null;
-    
+
     // Cache configuration
     const CACHE_KEY = 'serverTimeCache';
     const CACHE_DURATION = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
@@ -54,14 +54,14 @@
         try {
             // Get client timezone
             const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-            
+
             // Try to get cached data from localStorage
             const cached = localStorage.getItem(CACHE_KEY);
             if (cached) {
                 try {
                     const { time, tz, timestamp } = JSON.parse(cached);
                     const now = Date.now();
-                    
+
                     // Return cached time if timezone hasn't changed and cache is still valid
                     if (tz === timezone && (now - timestamp) < CACHE_DURATION) {
                         return new Date(time);
@@ -71,24 +71,24 @@
                     localStorage.removeItem(CACHE_KEY);
                 }
             }
-            
+
             // Fetch time from World Time API with retry
             const response = await fetchWithRetry(`https://worldtimeapi.org/api/timezone/${timezone}`);
             const timeData = await response.json();
             const serverTime = new Date(timeData.datetime);
-            
+
             // Cache the result in localStorage
             localStorage.setItem(CACHE_KEY, JSON.stringify({
                 time: serverTime.toISOString(),
                 tz: timezone,
                 timestamp: Date.now()
             }));
-            
+
             return serverTime;
         } catch (error) {
             console.warn('Failed to fetch server time, using client time:', error);
             const clientTime = new Date();
-            
+
             // Cache client time as fallback if no cache exists
             const cached = localStorage.getItem(CACHE_KEY);
             if (!cached) {
@@ -98,7 +98,7 @@
                     timestamp: Date.now()
                 }));
             }
-            
+
             return clientTime;
         }
     };
@@ -175,13 +175,13 @@
                 for (let i = 29; i >= 0; i--) {
                     const date = new Date(today);
                     date.setDate(date.getDate() - i);
-                    
+
                     // Use local date instead of UTC
                     const year = date.getFullYear();
                     const month = String(date.getMonth() + 1).padStart(2, '0');
                     const day = String(date.getDate()).padStart(2, '0');
                     const dateStr = `${year}-${month}-${day}`;
-                    
+
                     days.push(dateStr);
                 }
 
@@ -236,7 +236,7 @@
             return true;
         } catch (error) {
             console.error('Failed to load uptime history:', error);
-            
+
             // Remove loading state on error
             articles.forEach(article => {
                 const loadingEl = article.querySelector('.uptime-loading');
@@ -246,7 +246,7 @@
                     setTimeout(() => loadingEl.remove(), 3000);
                 }
             });
-            
+
             return false;
         }
     };
@@ -283,6 +283,14 @@
             }, 10000);
         }
     };
+
+    // Handle page restoration from back/forward cache
+    window.addEventListener('pageshow', (event) => {
+        if (event.persisted) {
+            historySet = false;
+            checkAndApply();
+        }
+    });
 
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', init);
