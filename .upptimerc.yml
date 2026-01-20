@@ -92,6 +92,27 @@ sites:
       - 200
     __dangerous__body_down: '"status":"unhealthy"'
 
+  - name: BanDB Report API
+    method: POST
+    headers:
+      - "Authorization: Bearer $UPPTIME_API_TOKEN"
+    url: https://api-test.azael.dev/$UPPTIME_BANDB_REPORT_API_ENDPOINT
+    icon: https://status-test.azael.dev/images/icons/ban-report.png
+    maxResponseTime: 2000
+    expectedStatusCodes:
+      - 200
+    __dangerous__body_down: '"status":"unhealthy"'
+
+  - name: BanDB Lookup API
+    headers:
+      - "Authorization: Bearer $UPPTIME_BANDB_API_TOKEN"
+    url: https://bandb.azael.dev/api/v1/identifier/$UPPTIME_BANDB_LOOKUP_IDENTIFIER
+    icon: https://status-test.azael.dev/images/icons/ban-lookup.png
+    maxResponseTime: 2000
+    expectedStatusCodes:
+      - 200
+      - 403
+
   - name: Bot Server
     url: $UPPTIME_BOT_SERVER_URL
     icon: https://status-test.azael.dev/images/icons/server.png
