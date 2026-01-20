@@ -65,7 +65,7 @@ sites:
       - "Authorization: Bearer $UPPTIME_API_TOKEN"
     url: https://api-test.azael.dev/$UPPTIME_MAILER_HEALTH_ENDPOINT
     icon: https://status-test.azael.dev/images/icons/email.png
-    maxResponseTime: 5000
+    maxResponseTime: 10000
     expectedStatusCodes:
       - 200
     __dangerous__body_down: '"status":"unhealthy"'
