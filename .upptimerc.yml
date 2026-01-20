@@ -52,7 +52,7 @@ sites:
     method: POST
     headers:
       - "Authorization: Bearer $UPPTIME_API_TOKEN"
-    url: https://api-test.azael.dev/$UPPTIME_DATABASE_HEALTH_ENDPOINT
+    url: https://api.azael.dev/$UPPTIME_DATABASE_HEALTH_ENDPOINT
     icon: https://status.azael.dev/images/icons/database.png
     maxResponseTime: 2000
     expectedStatusCodes:
@@ -63,7 +63,7 @@ sites:
     method: POST
     headers:
       - "Authorization: Bearer $UPPTIME_API_TOKEN"
-    url: https://api-test.azael.dev/$UPPTIME_MAILER_HEALTH_ENDPOINT
+    url: https://api.azael.dev/$UPPTIME_MAILER_HEALTH_ENDPOINT
     icon: https://status.azael.dev/images/icons/email.png
     maxResponseTime: 10000
     expectedStatusCodes:
@@ -72,7 +72,7 @@ sites:
 
   - name: Base API
     method: POST
-    url: https://api-test.azael.dev/$UPPTIME_API_PING_ENDPOINT
+    url: https://api.azael.dev/$UPPTIME_API_PING_ENDPOINT
     icon: https://status.azael.dev/images/icons/api.png
     maxResponseTime: 1000
     expectedStatusCodes:
@@ -85,7 +85,7 @@ sites:
       - "Authorization: Bearer $UPPTIME_API_TOKEN"
       - "Content-Type: application/json"
     body: '{"licenseKey":"$UPPTIME_SCRIPT_LICENSE_BY_EMAIL"}'
-    url: https://api-test.azael.dev/$UPPTIME_SCRIPT_LICENSE_API_ENDPOINT
+    url: https://api.azael.dev/$UPPTIME_SCRIPT_LICENSE_API_ENDPOINT
     icon: https://status.azael.dev/images/icons/license.png
     maxResponseTime: 2000
     expectedStatusCodes:
@@ -96,7 +96,7 @@ sites:
     method: POST
     headers:
       - "Authorization: Bearer $UPPTIME_API_TOKEN"
-    url: https://api-test.azael.dev/$UPPTIME_BANDB_REPORT_API_ENDPOINT
+    url: https://api.azael.dev/$UPPTIME_BANDB_REPORT_API_ENDPOINT
     icon: https://status.azael.dev/images/icons/ban-report.png
     maxResponseTime: 2000
     expectedStatusCodes:
