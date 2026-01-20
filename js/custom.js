@@ -244,7 +244,7 @@
                     // Parse date correctly to avoid timezone issues
                     // Split the date string and create date with local timezone
                     const [year, month, day] = dateStr.split('-').map(Number);
-                    const date = new Date(year, month - 1, day);
+                    const date = new Date(year, month, day);
                     const formattedDate = date.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
 
                     // Format outage duration
