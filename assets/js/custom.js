@@ -201,7 +201,25 @@
                     const [year, month, day] = dateStr.split('-').map(Number);
                     const date = new Date(year, month - 1, day);
                     const formattedDate = date.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
-                    dayBar.setAttribute('data-tooltip', `Date: ${formattedDate}\nUptime: ${uptimePercent}%`);
+                    
+                    // Format outage duration
+                    let outageText = '';
+                    if (downMinutes === 0) {
+                        outageText = 'No outage';
+                    } else {
+                        const hours = Math.floor(downMinutes / 60);
+                        const minutes = downMinutes % 60;
+                        
+                        if (hours > 0 && minutes > 0) {
+                            outageText = `${hours} hour${hours > 1 ? 's' : ''} ${minutes} minute${minutes > 1 ? 's' : ''}`;
+                        } else if (hours > 0) {
+                            outageText = `${hours} hour${hours > 1 ? 's' : ''}`;
+                        } else {
+                            outageText = `${minutes} minute${minutes > 1 ? 's' : ''}`;
+                        }
+                    }
+                    
+                    dayBar.setAttribute('data-tooltip', `Date: ${formattedDate}\nUptime: ${uptimePercent}%\nOutage: ${outageText}`);
 
                     fragment.appendChild(dayBar);
                 });
