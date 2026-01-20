@@ -164,9 +164,6 @@ status-website:
     - src: https://status-test.azael.dev/js/custom.js
 
 i18n:
-  up: Operational
-  down: Outage
-  degraded: Degraded
   duration30D: "Uptime over the past 30 days."
   overallUptime: "$UPTIME uptime"
   footer: ©<span id="footer-year"></span> [Azael Dev](https://www.azael.dev), Powered by [Upptime](https://upptime.js.org) on [GitHub](https://github.com/Azael-Dev/azael-status)
