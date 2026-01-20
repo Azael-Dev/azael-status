@@ -107,7 +107,7 @@ sites:
     expectedStatusCodes:
       - 200
 
-  - name: Cloudflare Status
+  - name: Cloudflare
     url: https://www.cloudflarestatus.com/api/v2/status.json
     icon: https://status-test.azael.dev/images/icons/cloudflare.png
     expectedStatusCodes:
