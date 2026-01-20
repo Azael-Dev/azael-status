@@ -165,7 +165,7 @@ status-website:
 
 i18n:
   duration30D: "Uptime over the past 30 days."
-  overallUptime: "$UPTIME uptime"
+  overallUptime: "$UPTIME"
   footer: ©<span id="footer-year"></span> [Azael Dev](https://www.azael.dev), Powered by [Upptime](https://upptime.js.org) on [GitHub](https://github.com/Azael-Dev/azael-status)
 
 # Upptime also supports notifications, assigning issues, and more
