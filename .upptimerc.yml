@@ -6,21 +6,21 @@ user-agent: Azael-Dev # The user-agent header sent with each request
 sites:
   - name: Web Server
     url: $UPTIME_WEB_SERVER_URL
-    icon: https://status-test.azael.dev/images/icons/server.png
+    icon: https://status.azael.dev/images/icons/server.png
     maxResponseTime: 5000
     expectedStatusCodes:
       - 200
 
   - name: Portal
     url: https://portal.azael.dev
-    icon: https://status-test.azael.dev/images/icons/portal.png
+    icon: https://status.azael.dev/images/icons/portal.png
     maxResponseTime: 5000
     expectedStatusCodes:
       - 200
 
   - name: CFX Store
     url: https://cfx.azael.dev
-    icon: https://status-test.azael.dev/images/icons/store.png
+    icon: https://status.azael.dev/images/icons/store.png
     maxResponseTime: 5000
     expectedStatusCodes:
       - 200
@@ -28,7 +28,7 @@ sites:
 
   - name: CFX BanDB
     url: https://bandb.azael.dev
-    icon: https://status-test.azael.dev/images/icons/ban.png
+    icon: https://status.azael.dev/images/icons/ban.png
     maxResponseTime: 5000
     expectedStatusCodes:
       - 200
@@ -36,14 +36,14 @@ sites:
 
   - name: Documentation
     url: https://docs.azael.dev
-    icon: https://status-test.azael.dev/images/icons/doc.png
+    icon: https://status.azael.dev/images/icons/doc.png
     maxResponseTime: 5000
     expectedStatusCodes:
       - 200
 
   - name: Documentation (Legacy)
     url: https://docs-old.azael.dev
-    icon: https://status-test.azael.dev/images/icons/doc.png
+    icon: https://status.azael.dev/images/icons/doc.png
     maxResponseTime: 5000
     expectedStatusCodes:
       - 200
@@ -53,7 +53,7 @@ sites:
     headers:
       - "Authorization: Bearer $UPPTIME_API_TOKEN"
     url: https://api-test.azael.dev/$UPPTIME_DATABASE_HEALTH_ENDPOINT
-    icon: https://status-test.azael.dev/images/icons/database.png
+    icon: https://status.azael.dev/images/icons/database.png
     maxResponseTime: 2000
     expectedStatusCodes:
       - 200
@@ -64,7 +64,7 @@ sites:
     headers:
       - "Authorization: Bearer $UPPTIME_API_TOKEN"
     url: https://api-test.azael.dev/$UPPTIME_MAILER_HEALTH_ENDPOINT
-    icon: https://status-test.azael.dev/images/icons/email.png
+    icon: https://status.azael.dev/images/icons/email.png
     maxResponseTime: 10000
     expectedStatusCodes:
       - 200
@@ -73,7 +73,7 @@ sites:
   - name: Base API
     method: POST
     url: https://api-test.azael.dev/$UPPTIME_API_PING_ENDPOINT
-    icon: https://status-test.azael.dev/images/icons/api.png
+    icon: https://status.azael.dev/images/icons/api.png
     maxResponseTime: 1000
     expectedStatusCodes:
       - 200
@@ -86,7 +86,7 @@ sites:
       - "Content-Type: application/json"
     body: '{"licenseKey":"$UPPTIME_SCRIPT_LICENSE_BY_EMAIL"}'
     url: https://api-test.azael.dev/$UPPTIME_SCRIPT_LICENSE_API_ENDPOINT
-    icon: https://status-test.azael.dev/images/icons/license.png
+    icon: https://status.azael.dev/images/icons/license.png
     maxResponseTime: 2000
     expectedStatusCodes:
       - 200
@@ -97,7 +97,7 @@ sites:
     headers:
       - "Authorization: Bearer $UPPTIME_API_TOKEN"
     url: https://api-test.azael.dev/$UPPTIME_BANDB_REPORT_API_ENDPOINT
-    icon: https://status-test.azael.dev/images/icons/ban-report.png
+    icon: https://status.azael.dev/images/icons/ban-report.png
     maxResponseTime: 2000
     expectedStatusCodes:
       - 200
@@ -107,7 +107,7 @@ sites:
     headers:
       - "Authorization: Bearer $UPPTIME_BANDB_API_TOKEN"
     url: https://bandb.azael.dev/api/v1/identifier/$UPPTIME_BANDB_LOOKUP_IDENTIFIER
-    icon: https://status-test.azael.dev/images/icons/ban-lookup.png
+    icon: https://status.azael.dev/images/icons/ban-lookup.png
     maxResponseTime: 2000
     expectedStatusCodes:
       - 200
@@ -115,7 +115,7 @@ sites:
 
   - name: Bot Server
     url: $UPPTIME_BOT_SERVER_URL
-    icon: https://status-test.azael.dev/images/icons/server.png
+    icon: https://status.azael.dev/images/icons/server.png
     maxResponseTime: 2000
     expectedStatusCodes:
       - 200
@@ -123,14 +123,14 @@ sites:
   - name: Discord Bot
     method: POST
     url: $UPPTIME_DISCORD_BOT_URL
-    icon: https://status-test.azael.dev/images/icons/discord.png
+    icon: https://status.azael.dev/images/icons/discord.png
     maxResponseTime: 2000
     expectedStatusCodes:
       - 200
 
   - name: Cloudflare
     url: https://www.cloudflarestatus.com/api/v2/status.json
-    icon: https://status-test.azael.dev/images/icons/cloudflare.png
+    icon: https://status.azael.dev/images/icons/cloudflare.png
     expectedStatusCodes:
       - 200
     __dangerous__body_down: '"indicator":"critical"'
@@ -141,8 +141,8 @@ status-website:
   # Uncomment the `baseUrl` line if you don't have a custom domain and add your repo name there
   cname: status-test.azael.dev
   # baseUrl: /azael-status
-  favicon: https://status-test.azael.dev/images/logo.png
-  logoUrl: https://status-test.azael.dev/images/logo.png
+  favicon: https://status.azael.dev/images/logo.png
+  logoUrl: https://status.azael.dev/images/logo.png
   name: Azael Status
   introTitle: "**Azael Service Status**"
   introMessage: This is the **real-time** status page. Stay updated on service health and availability.
@@ -158,10 +158,10 @@ status-website:
   # Custom CSS
   links:
     - rel: stylesheet
-      href: https://status-test.azael.dev/css/custom.css
+      href: https://status.azael.dev/css/custom.css
   # Custom JS
   scripts:
-    - src: https://status-test.azael.dev/js/custom.js
+    - src: https://status.azael.dev/js/custom.js
 
 i18n:
   duration30D: "Uptime over the past 30 days."
