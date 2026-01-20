@@ -11,13 +11,6 @@ sites:
     expectedStatusCodes:
       - 200
 
-  - name: Bot Server
-    url: $SITE_BOT_SERVER
-    icon: https://status-test.azael.dev/images/icons/server.png
-    maxResponseTime: 5000
-    expectedStatusCodes:
-      - 200
-
   - name: Portal
     url: https://portal.azael.dev
     icon: https://status-test.azael.dev/images/icons/portal.png
@@ -80,6 +73,21 @@ sites:
     url: https://api-test.azael.dev/$UPPTIME_API_PING_ENDPOINT
     icon: https://status-test.azael.dev/images/icons/api.png
     maxResponseTime: 1000
+    expectedStatusCodes:
+      - 200
+
+  - name: Bot Server
+    url: $UPPTIME_BOT_SERVER_URL
+    icon: https://status-test.azael.dev/images/icons/server.png
+    maxResponseTime: 2000
+    expectedStatusCodes:
+      - 200
+
+  - name: Discord Bot
+    method: POST
+    url: $UPPTIME_DISCORD_BOT_URL
+    icon: https://status-test.azael.dev/images/icons/discord.png
+    maxResponseTime: 2000
     expectedStatusCodes:
       - 200
 
