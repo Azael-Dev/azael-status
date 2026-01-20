@@ -5,7 +5,7 @@ user-agent: Azael-Dev # The user-agent header sent with each request
 
 sites:
   - name: Web Server
-    url: $SITE_WEB_SERVER
+    url: $UPTIME_WEB_SERVER_URL
     icon: https://status-test.azael.dev/images/icons/server.png
     maxResponseTime: 5000
     expectedStatusCodes:
