@@ -59,7 +59,6 @@ sites:
     method: POST
     headers:
       - "Authorization: Bearer $UPPTIME_API_TOKEN"
-      - "Content-Type: application/json"
     url: https://api-test.azael.dev/$UPPTIME_DATABASE_HEALTH_ENDPOINT
     icon: https://status-test.azael.dev/images/icons/database.png
     maxResponseTime: 2000
@@ -70,7 +69,6 @@ sites:
     method: POST
     headers:
       - "Authorization: Bearer $UPPTIME_API_TOKEN"
-      - "Content-Type: application/json"
     url: https://api-test.azael.dev/$UPPTIME_MAILER_HEALTH_ENDPOINT
     icon: https://status-test.azael.dev/images/icons/email.png
     maxResponseTime: 5000
