@@ -91,6 +91,14 @@ sites:
     expectedStatusCodes:
       - 200
 
+  - name: Cloudflare Status
+    url: https://www.cloudflarestatus.com/api/v2/status.json
+    icon: https://status-test.azael.dev/images/icons/cloudflare.png
+    expectedStatusCodes:
+      - 200
+    __dangerous__body_down: '"indicator":"critical"'
+    __dangerous__body_degraded: '"indicator":"major"'
+
 status-website:
   # Add your custom domain name, or remove the `cname` line if you don't have a domain
   # Uncomment the `baseUrl` line if you don't have a custom domain and add your repo name there
@@ -121,7 +129,7 @@ status-website:
 i18n:
   duration30D: "Uptime over the past 30 days."
   overallUptime: "$UPTIME uptime"
-  footer: ©<span id="footer-year"></span> [Azael Dev](https://www.azael.dev), powered by [Upptime](https://upptime.js.org) on [GitHub](https://github.com)
+  footer: ©<span id="footer-year"></span> [Azael Dev](https://www.azael.dev), Powered by [Upptime](https://upptime.js.org) on [GitHub](https://github.com)
 
 # Upptime also supports notifications, assigning issues, and more
 # See https://upptime.js.org/docs/configuration
