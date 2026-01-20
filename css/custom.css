@@ -196,7 +196,9 @@ main > section.live-status > article > .uptime-history > .day::before {
     z-index: 1000;
     text-align: left;
     line-height: 1.5;
-    min-width: 120px;
+    min-width: 220px;
+    max-width: 300px;
+    width: max-content;
 }
 
 /* Show tooltip on hover */
