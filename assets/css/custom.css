@@ -218,18 +218,3 @@ main > section.live-status > article > .uptime-history-labels > .label-left {
 main > section.live-status > article > .uptime-history-labels > .label-right {
     text-align: right;
 }
-
-/* Loading state */
-main > section.live-status > article > .uptime-loading {
-    flex-basis: 100%;
-    padding: 0.625rem;
-    text-align: center;
-    color: var(--body-text-color);
-    font-size: 0.875rem;
-    order: 998;
-}
-
-/* Error state */
-main > section.live-status > article > .uptime-loading.error {
-    color: var(--error-button-border-color);
-}

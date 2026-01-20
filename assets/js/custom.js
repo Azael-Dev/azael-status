@@ -114,16 +114,6 @@
 
         if (historySet) return false;
 
-        // Add loading state
-        articles.forEach(article => {
-            if (!article.querySelector('.uptime-loading')) {
-                const loadingEl = document.createElement('div');
-                loadingEl.className = 'uptime-loading';
-                loadingEl.textContent = 'Loading history...';
-                article.appendChild(loadingEl);
-            }
-        });
-
         try {
             const response = await fetchWithRetry('https://raw.githubusercontent.com/Azael-Dev/azael-status/master/history/summary.json');
             const data = await response.json();
@@ -135,12 +125,6 @@
 
             // Get reliable current date
             const today = await getServerTime();
-
-            // Remove loading state
-            articles.forEach(article => {
-                const loadingEl = article.querySelector('.uptime-loading');
-                if (loadingEl) loadingEl.remove();
-            });
 
             // Process articles using requestAnimationFrame
             let articleIndex = 0;
@@ -249,17 +233,6 @@
             return true;
         } catch (error) {
             console.error('Failed to load uptime history:', error);
-
-            // Remove loading state on error
-            articles.forEach(article => {
-                const loadingEl = article.querySelector('.uptime-loading');
-                if (loadingEl) {
-                    loadingEl.textContent = 'Failed to load history';
-                    loadingEl.classList.add('error');
-                    setTimeout(() => loadingEl.remove(), 3000);
-                }
-            });
-
             return false;
         }
     };
