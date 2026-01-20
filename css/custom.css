@@ -196,8 +196,8 @@ main > section.live-status > article > .uptime-history > .day::before {
     z-index: 1000;
     text-align: left;
     line-height: 1.5;
-    min-width: 220px;
-    max-width: 300px;
+    min-width: 120px;
+    max-width: 220px;
     width: max-content;
 }
 
