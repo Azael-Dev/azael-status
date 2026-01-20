@@ -114,28 +114,17 @@
 
         if (historySet) return false;
 
-        // Add loading state
-        articles.forEach(article => {
-            if (!article.querySelector('.uptime-loading')) {
-                const loadingEl = document.createElement('div');
-                loadingEl.className = 'uptime-loading';
-                loadingEl.textContent = 'Loading history...';
-                article.appendChild(loadingEl);
-            }
-        });
-
         try {
             const response = await fetchWithRetry('https://raw.githubusercontent.com/Azael-Dev/azael-status/master/history/summary.json');
             const data = await response.json();
 
+            // Validate data structure
+            if (!Array.isArray(data)) {
+                throw new Error('Invalid data format: expected array');
+            }
+
             // Get reliable current date
             const today = await getServerTime();
-
-            // Remove loading state
-            articles.forEach(article => {
-                const loadingEl = article.querySelector('.uptime-loading');
-                if (loadingEl) loadingEl.remove();
-            });
 
             // Process articles using requestAnimationFrame
             let articleIndex = 0;
@@ -207,9 +196,30 @@
                         dayBar.classList.add('down');
                     }
 
-                    const date = new Date(dateStr);
+                    // Parse date correctly to avoid timezone issues
+                    // Split the date string and create date with local timezone
+                    const [year, month, day] = dateStr.split('-').map(Number);
+                    const date = new Date(year, month - 1, day);
                     const formattedDate = date.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
-                    dayBar.setAttribute('data-tooltip', `Date: ${formattedDate}\nUptime: ${uptimePercent}%`);
+                    
+                    // Format outage duration
+                    let outageText = '';
+                    if (downMinutes === 0) {
+                        outageText = 'No outage';
+                    } else {
+                        const hours = Math.floor(downMinutes / 60);
+                        const minutes = downMinutes % 60;
+                        
+                        if (hours > 0 && minutes > 0) {
+                            outageText = `${hours} hour${hours > 1 ? 's' : ''} ${minutes} minute${minutes > 1 ? 's' : ''}`;
+                        } else if (hours > 0) {
+                            outageText = `${hours} hour${hours > 1 ? 's' : ''}`;
+                        } else {
+                            outageText = `${minutes} minute${minutes > 1 ? 's' : ''}`;
+                        }
+                    }
+                    
+                    dayBar.setAttribute('data-tooltip', `Date: ${formattedDate}\nUptime: ${uptimePercent}%\nOutage: ${outageText}`);
 
                     fragment.appendChild(dayBar);
                 });
@@ -241,17 +251,6 @@
             return true;
         } catch (error) {
             console.error('Failed to load uptime history:', error);
-
-            // Remove loading state on error
-            articles.forEach(article => {
-                const loadingEl = article.querySelector('.uptime-loading');
-                if (loadingEl) {
-                    loadingEl.textContent = 'Failed to load history';
-                    loadingEl.classList.add('error');
-                    setTimeout(() => loadingEl.remove(), 3000);
-                }
-            });
-
             return false;
         }
     };

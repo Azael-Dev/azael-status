@@ -114,7 +114,8 @@ main > section.live-status > article > div:not(:first-of-type) {
 
 /* Style status text in live status articles */
 main > section.live-status > article > h4 + div > span {
-    font-size: 0.8125rem !important;
+    font-size: 0.75rem !important;
+    font-weight: 500 !important;
 }
 
 /* Apply color to uptime text when article status is UP */
@@ -217,19 +218,4 @@ main > section.live-status > article > .uptime-history-labels > .label-left {
 /* Right label (Today) */
 main > section.live-status > article > .uptime-history-labels > .label-right {
     text-align: right;
-}
-
-/* Loading state */
-main > section.live-status > article > .uptime-loading {
-    flex-basis: 100%;
-    padding: 0.625rem;
-    text-align: center;
-    color: var(--body-text-color);
-    font-size: 0.875rem;
-    order: 998;
-}
-
-/* Error state */
-main > section.live-status > article > .uptime-loading.error {
-    color: var(--error-button-border-color);
 }
