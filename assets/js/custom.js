@@ -128,6 +128,11 @@
             const response = await fetchWithRetry('https://raw.githubusercontent.com/Azael-Dev/azael-status/master/history/summary.json');
             const data = await response.json();
 
+            // Validate data structure
+            if (!Array.isArray(data)) {
+                throw new Error('Invalid data format: expected array');
+            }
+
             // Get reliable current date
             const today = await getServerTime();
 
@@ -207,7 +212,10 @@
                         dayBar.classList.add('down');
                     }
 
-                    const date = new Date(dateStr);
+                    // Parse date correctly to avoid timezone issues
+                    // Split the date string and create date with local timezone
+                    const [year, month, day] = dateStr.split('-').map(Number);
+                    const date = new Date(year, month - 1, day);
                     const formattedDate = date.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
                     dayBar.setAttribute('data-tooltip', `Date: ${formattedDate}\nUptime: ${uptimePercent}%`);
 
