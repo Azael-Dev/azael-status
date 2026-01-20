@@ -79,6 +79,19 @@ sites:
       - 200
     __dangerous__body_down_if_text_missing: '"status":"ok"'
 
+  - name: Script License API
+    method: POST
+    headers:
+      - "Authorization: Bearer $UPPTIME_API_TOKEN"
+      - "Content-Type: application/json"
+    body: '{"licenseKey":"$UPPTIME_SCRIPT_LICENSE_BY_EMAIL"}'
+    url: https://api-test.azael.dev/$UPPTIME_SCRIPT_LICENSE_API_ENDPOINT
+    icon: https://status-test.azael.dev/images/icons/license.png
+    maxResponseTime: 2000
+    expectedStatusCodes:
+      - 200
+    __dangerous__body_down: '"status":"unhealthy"'
+
   - name: Bot Server
     url: $UPPTIME_BOT_SERVER_URL
     icon: https://status-test.azael.dev/images/icons/server.png
