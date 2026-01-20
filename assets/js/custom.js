@@ -6,10 +6,6 @@
     let historySet = false;
     let observer = null;
 
-    // Cache configuration
-    const CACHE_KEY = 'serverTimeCache';
-    const CACHE_DURATION = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
-
     const setFooterYear = () => {
         if (yearSet) return false;
 
@@ -50,57 +46,44 @@
         }
     };
 
-    const getServerTime = async () => {
-        try {
-            // Get client timezone
-            const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    // Convert local date string to corresponding UTC date string
+    // This maps client's local date to the UTC date stored in dailyMinutesDown
+    const getUtcDateForLocalDate = (localDateStr) => {
+        // Create date at midnight local time
+        const localMidnight = new Date(localDateStr + 'T00:00:00');
+        
+        // Get the UTC date components for when local midnight occurs
+        const year = localMidnight.getUTCFullYear();
+        const month = String(localMidnight.getUTCMonth() + 1).padStart(2, '0');
+        const day = String(localMidnight.getUTCDate()).padStart(2, '0');
+        
+        return `${year}-${month}-${day}`;
+    };
 
-            // Try to get cached data from localStorage
-            const cached = localStorage.getItem(CACHE_KEY);
-            if (cached) {
-                try {
-                    const { time, tz, timestamp } = JSON.parse(cached);
-                    const now = Date.now();
-
-                    // Return cached time if timezone hasn't changed and cache is still valid
-                    if (tz === timezone && (now - timestamp) < CACHE_DURATION) {
-                        return new Date(time);
-                    }
-                } catch (e) {
-                    // Invalid cache data, remove it
-                    localStorage.removeItem(CACHE_KEY);
-                }
-            }
-
-            // Fetch time from World Time API with retry
-            const response = await fetchWithRetry(`https://worldtimeapi.org/api/timezone/${timezone}`);
-            const timeData = await response.json();
-            const serverTime = new Date(timeData.datetime);
-
-            // Cache the result in localStorage
-            localStorage.setItem(CACHE_KEY, JSON.stringify({
-                time: serverTime.toISOString(),
-                tz: timezone,
-                timestamp: Date.now()
-            }));
-
-            return serverTime;
-        } catch (error) {
-            console.warn('Failed to fetch server time, using client time:', error);
-            const clientTime = new Date();
-
-            // Cache client time as fallback if no cache exists
-            const cached = localStorage.getItem(CACHE_KEY);
-            if (!cached) {
-                localStorage.setItem(CACHE_KEY, JSON.stringify({
-                    time: clientTime.toISOString(),
-                    tz: Intl.DateTimeFormat().resolvedOptions().timeZone,
-                    timestamp: Date.now()
-                }));
-            }
-
-            return clientTime;
+    // Get downtime minutes for a local date by checking overlapping UTC dates
+    const getDownMinutesForLocalDate = (dailyMinutesDown, localDateStr) => {
+        // Get the UTC date when local midnight starts
+        const utcDateAtLocalMidnight = getUtcDateForLocalDate(localDateStr);
+        
+        // Get the next local date to find where local day ends in UTC
+        const localDate = new Date(localDateStr + 'T00:00:00');
+        localDate.setDate(localDate.getDate() + 1);
+        const nextLocalDateStr = `${localDate.getFullYear()}-${String(localDate.getMonth() + 1).padStart(2, '0')}-${String(localDate.getDate()).padStart(2, '0')}`;
+        const utcDateAtNextLocalMidnight = getUtcDateForLocalDate(nextLocalDateStr);
+        
+        // Sum downtime from both UTC dates that overlap with this local date
+        let totalDownMinutes = 0;
+        
+        // If local day spans two UTC days, we need to consider both
+        if (utcDateAtLocalMidnight !== utcDateAtNextLocalMidnight) {
+            // Add minutes from the UTC date when local day starts
+            totalDownMinutes += dailyMinutesDown[utcDateAtLocalMidnight] || 0;
+        } else {
+            // Local day falls entirely within one UTC day
+            totalDownMinutes = dailyMinutesDown[utcDateAtLocalMidnight] || 0;
         }
+        
+        return totalDownMinutes;
     };
 
     const replaceStatusText = () => {
@@ -157,8 +140,8 @@
                 throw new Error('Invalid data format: expected array');
             }
 
-            // Get reliable current date
-            const today = await getServerTime();
+            // Get current date from client
+            const today = new Date();
 
             // Process articles using requestAnimationFrame
             let articleIndex = 0;
@@ -219,7 +202,8 @@
                     const dayBar = document.createElement('div');
                     dayBar.className = 'day';
 
-                    const downMinutes = serviceData.dailyMinutesDown[dateStr] || 0;
+                    // Get downtime using local-to-UTC conversion
+                    const downMinutes = getDownMinutesForLocalDate(serviceData.dailyMinutesDown, dateStr);
                     const uptimePercent = ((1440 - downMinutes) / 1440 * 100).toFixed(2);
 
                     // Determine severity level
