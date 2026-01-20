@@ -139,7 +139,7 @@ main > section.live-status > article > .uptime-history {
     flex-basis: 100%;
     display: flex;
     gap: clamp(3px, 1vw, 6px);
-    height: 34px;
+    height: 25px;
     margin-top: 0.75rem;
     order: 999;
 }
