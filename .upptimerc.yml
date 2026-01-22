@@ -7,21 +7,21 @@ sites:
   - name: Web Server
     url: $UPTIME_WEB_SERVER_URL
     icon: https://status.azael.dev/images/icons/server.png
-    maxResponseTime: 5000
+    maxResponseTime: 3000
     expectedStatusCodes:
       - 200
 
   - name: Portal
     url: https://portal.azael.dev
     icon: https://status.azael.dev/images/icons/portal.png
-    maxResponseTime: 5000
+    maxResponseTime: 3000
     expectedStatusCodes:
       - 200
 
   - name: CFX Store
     url: https://cfx.azael.dev
     icon: https://status.azael.dev/images/icons/store.png
-    maxResponseTime: 5000
+    maxResponseTime: 3000
     expectedStatusCodes:
       - 200
       - 403
@@ -29,7 +29,7 @@ sites:
   - name: CFX BanDB
     url: https://bandb.azael.dev
     icon: https://status.azael.dev/images/icons/ban.png
-    maxResponseTime: 5000
+    maxResponseTime: 3000
     expectedStatusCodes:
       - 200
       - 403
@@ -37,14 +37,14 @@ sites:
   - name: Documentation
     url: https://docs.azael.dev
     icon: https://status.azael.dev/images/icons/doc.png
-    maxResponseTime: 5000
+    maxResponseTime: 3000
     expectedStatusCodes:
       - 200
 
   - name: Documentation (Legacy)
     url: https://docs-old.azael.dev
     icon: https://status.azael.dev/images/icons/doc.png
-    maxResponseTime: 5000
+    maxResponseTime: 3000
     expectedStatusCodes:
       - 200
 
@@ -54,7 +54,7 @@ sites:
       - "Authorization: Bearer $UPPTIME_API_TOKEN"
     url: https://api.azael.dev/$UPPTIME_DATABASE_HEALTH_ENDPOINT
     icon: https://status.azael.dev/images/icons/database.png
-    maxResponseTime: 2000
+    maxResponseTime: 3000
     expectedStatusCodes:
       - 200
     __dangerous__body_down: '"status":"unhealthy"'
@@ -65,7 +65,7 @@ sites:
       - "Authorization: Bearer $UPPTIME_API_TOKEN"
     url: https://api.azael.dev/$UPPTIME_MAILER_HEALTH_ENDPOINT
     icon: https://status.azael.dev/images/icons/email.png
-    maxResponseTime: 10000
+    maxResponseTime: 5000
     expectedStatusCodes:
       - 200
     __dangerous__body_down: '"status":"unhealthy"'
@@ -74,7 +74,7 @@ sites:
     method: POST
     url: https://api.azael.dev/$UPPTIME_API_PING_ENDPOINT
     icon: https://status.azael.dev/images/icons/api.png
-    maxResponseTime: 1000
+    maxResponseTime: 3000
     expectedStatusCodes:
       - 200
     __dangerous__body_down_if_text_missing: '"status":"ok"'
@@ -87,7 +87,7 @@ sites:
     body: '{"licenseKey":"$UPPTIME_SCRIPT_LICENSE_BY_EMAIL"}'
     url: https://api.azael.dev/$UPPTIME_SCRIPT_LICENSE_API_ENDPOINT
     icon: https://status.azael.dev/images/icons/license.png
-    maxResponseTime: 2000
+    maxResponseTime: 3000
     expectedStatusCodes:
       - 200
     __dangerous__body_down: '"status":"unhealthy"'
@@ -98,7 +98,7 @@ sites:
       - "Authorization: Bearer $UPPTIME_API_TOKEN"
     url: https://api.azael.dev/$UPPTIME_BANDB_REPORT_API_ENDPOINT
     icon: https://status.azael.dev/images/icons/ban-report.png
-    maxResponseTime: 2000
+    maxResponseTime: 3000
     expectedStatusCodes:
       - 200
     __dangerous__body_down: '"status":"unhealthy"'
@@ -108,7 +108,7 @@ sites:
       - "Authorization: Bearer $UPPTIME_BANDB_API_TOKEN"
     url: https://bandb.azael.dev/api/v1/identifier/$UPPTIME_BANDB_LOOKUP_IDENTIFIER
     icon: https://status.azael.dev/images/icons/ban-lookup.png
-    maxResponseTime: 2000
+    maxResponseTime: 3000
     expectedStatusCodes:
       - 200
       - 403
@@ -116,7 +116,7 @@ sites:
   - name: Bot Server
     url: $UPPTIME_BOT_SERVER_URL
     icon: https://status.azael.dev/images/icons/server.png
-    maxResponseTime: 2000
+    maxResponseTime: 3000
     expectedStatusCodes:
       - 200
 
@@ -124,7 +124,7 @@ sites:
     method: POST
     url: $UPPTIME_DISCORD_BOT_URL
     icon: https://status.azael.dev/images/icons/discord.png
-    maxResponseTime: 2000
+    maxResponseTime: 3000
     expectedStatusCodes:
       - 200
 
