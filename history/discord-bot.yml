@@ -1,7 +1,7 @@
-url: $UPPTIME_DISCORD_BOT_URL
+url: $UPPTIME_BOT_SERVER_IP
 status: up
 code: 200
-responseTime: 235
-lastUpdated: 2026-01-24T08:37:44.804Z
+responseTime: 146
+lastUpdated: 2026-01-24T12:11:09.452Z
 startTime: 2026-01-20T00:25:13.222Z
 generator: Upptime <https://github.com/upptime/upptime>
