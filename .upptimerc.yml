@@ -5,130 +5,131 @@ user-agent: Azael-Dev # The user-agent header sent with each request
 
 sites:
   - name: Web Server
-    check: "tcp-ping"
-    url: $UPTIME_WEB_SERVER_IP
-    port: 443
     icon: https://status.azael.dev/images/icons/server.png
+    url: $UPTIME_WEB_SERVER_IP
+    check: tcp-ping
+    port: 443
+    maxResponseTime: 1500
 
   - name: Portal
-    url: https://portal.azael.dev
     icon: https://status.azael.dev/images/icons/portal.png
+    url: https://portal.azael.dev
     maxResponseTime: 3000
     expectedStatusCodes:
       - 200
 
   - name: CFX Store
-    url: https://cfx.azael.dev
     icon: https://status.azael.dev/images/icons/store.png
+    url: https://cfx.azael.dev
     maxResponseTime: 3000
     expectedStatusCodes:
       - 200
       - 403
 
   - name: CFX BanDB
-    url: https://bandb.azael.dev
     icon: https://status.azael.dev/images/icons/ban.png
+    url: https://bandb.azael.dev
     maxResponseTime: 3000
     expectedStatusCodes:
       - 200
       - 403
 
   - name: Documentation
-    url: https://docs.azael.dev
     icon: https://status.azael.dev/images/icons/doc.png
+    url: https://docs.azael.dev
     maxResponseTime: 3000
     expectedStatusCodes:
       - 200
 
   - name: Documentation (Legacy)
-    url: https://docs-old.azael.dev
     icon: https://status.azael.dev/images/icons/doc.png
+    url: https://docs-old.azael.dev
     maxResponseTime: 3000
     expectedStatusCodes:
       - 200
 
   - name: Database
+    icon: https://status.azael.dev/images/icons/database.png
+    url: https://api.azael.dev/$UPPTIME_DATABASE_HEALTH_ENDPOINT
     method: POST
     headers:
       - "Authorization: Bearer $UPPTIME_API_TOKEN"
-    url: https://api.azael.dev/$UPPTIME_DATABASE_HEALTH_ENDPOINT
-    icon: https://status.azael.dev/images/icons/database.png
     maxResponseTime: 3000
     expectedStatusCodes:
       - 200
     __dangerous__body_down: '"status":"unhealthy"'
 
   - name: Mailer
+    icon: https://status.azael.dev/images/icons/email.png
+    url: https://api.azael.dev/$UPPTIME_MAILER_HEALTH_ENDPOINT
     method: POST
     headers:
       - "Authorization: Bearer $UPPTIME_API_TOKEN"
-    url: https://api.azael.dev/$UPPTIME_MAILER_HEALTH_ENDPOINT
-    icon: https://status.azael.dev/images/icons/email.png
     maxResponseTime: 5000
     expectedStatusCodes:
       - 200
     __dangerous__body_down: '"status":"unhealthy"'
 
   - name: Base API
-    method: POST
-    url: https://api.azael.dev/$UPPTIME_API_PING_ENDPOINT
     icon: https://status.azael.dev/images/icons/api.png
+    url: https://api.azael.dev/$UPPTIME_API_PING_ENDPOINT
+    method: POST
     maxResponseTime: 3000
     expectedStatusCodes:
       - 200
     __dangerous__body_down_if_text_missing: '"status":"ok"'
 
   - name: Script License API
+    icon: https://status.azael.dev/images/icons/license.png
+    url: https://api.azael.dev/$UPPTIME_SCRIPT_LICENSE_API_ENDPOINT
     method: POST
     headers:
       - "Authorization: Bearer $UPPTIME_API_TOKEN"
       - "Content-Type: application/json"
     body: '{"licenseKey":"$UPPTIME_SCRIPT_LICENSE_BY_EMAIL"}'
-    url: https://api.azael.dev/$UPPTIME_SCRIPT_LICENSE_API_ENDPOINT
-    icon: https://status.azael.dev/images/icons/license.png
     maxResponseTime: 3000
     expectedStatusCodes:
       - 200
     __dangerous__body_down: '"status":"unhealthy"'
 
   - name: BanDB Report API
+    icon: https://status.azael.dev/images/icons/ban-report.png
+    url: https://api.azael.dev/$UPPTIME_BANDB_REPORT_API_ENDPOINT
     method: POST
     headers:
       - "Authorization: Bearer $UPPTIME_API_TOKEN"
-    url: https://api.azael.dev/$UPPTIME_BANDB_REPORT_API_ENDPOINT
-    icon: https://status.azael.dev/images/icons/ban-report.png
     maxResponseTime: 3000
     expectedStatusCodes:
       - 200
     __dangerous__body_down: '"status":"unhealthy"'
 
   - name: BanDB Lookup API
+    icon: https://status.azael.dev/images/icons/ban-lookup.png
+    url: https://bandb.azael.dev/api/v1/identifier/$UPPTIME_BANDB_LOOKUP_IDENTIFIER
     headers:
       - "Authorization: Bearer $UPPTIME_BANDB_API_TOKEN"
-    url: https://bandb.azael.dev/api/v1/identifier/$UPPTIME_BANDB_LOOKUP_IDENTIFIER
-    icon: https://status.azael.dev/images/icons/ban-lookup.png
     maxResponseTime: 3000
     expectedStatusCodes:
       - 200
       - 403
 
   - name: Bot Server
-    check: "tcp-ping"
-    url: $UPPTIME_BOT_SERVER_IP
-    port: 443
     icon: https://status.azael.dev/images/icons/server.png
+    url: $UPPTIME_BOT_SERVER_IP
+    check: tcp-ping
+    port: 443
+    maxResponseTime: 1500
 
   - name: Discord Bot
-    method: POST
-    url: $UPPTIME_DISCORD_BOT_URL
     icon: https://status.azael.dev/images/icons/discord.png
-    maxResponseTime: 3000
-    expectedStatusCodes:
-      - 200
+    url: $UPPTIME_BOT_SERVER_IP
+    check: tcp-ping
+    port: 8138
+    maxResponseTime: 1500
 
-  - name: Cloudflare
-    url: https://www.cloudflarestatus.com/api/v2/status.json
+  - name: Cloudflare Status
     icon: https://status.azael.dev/images/icons/cloudflare.png
+    url: https://www.cloudflarestatus.com/api/v2/status.json
     expectedStatusCodes:
       - 200
     __dangerous__body_down: '"indicator":"critical"'
