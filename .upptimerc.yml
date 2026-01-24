@@ -5,11 +5,10 @@ user-agent: Azael-Dev # The user-agent header sent with each request
 
 sites:
   - name: Web Server
-    url: $UPTIME_WEB_SERVER_URL
+    check: "tcp-ping"
+    url: $UPTIME_WEB_SERVER_IP
+    port: 443
     icon: https://status.azael.dev/images/icons/server.png
-    maxResponseTime: 3000
-    expectedStatusCodes:
-      - 200
 
   - name: Portal
     url: https://portal.azael.dev
@@ -114,11 +113,10 @@ sites:
       - 403
 
   - name: Bot Server
-    url: $UPPTIME_BOT_SERVER_URL
+    check: "tcp-ping"
+    url: $UPPTIME_BOT_SERVER_IP
+    port: 443
     icon: https://status.azael.dev/images/icons/server.png
-    maxResponseTime: 3000
-    expectedStatusCodes:
-      - 200
 
   - name: Discord Bot
     method: POST
