@@ -5,18 +5,18 @@
     "icon": "https://status.azael.dev/images/icons/server.png",
     "slug": "web-server",
     "status": "down",
-    "uptime": "99.99%",
-    "uptimeDay": "99.97%",
-    "uptimeWeek": "99.99%",
-    "uptimeMonth": "99.99%",
-    "uptimeYear": "99.99%",
+    "uptime": "99.96%",
+    "uptimeDay": "99.77%",
+    "uptimeWeek": "99.96%",
+    "uptimeMonth": "99.96%",
+    "uptimeYear": "99.96%",
     "time": 689,
     "timeDay": 212,
     "timeWeek": 689,
     "timeMonth": 689,
     "timeYear": 689,
     "dailyMinutesDown": {
-      "2026-01-25": 0
+      "2026-01-25": 3
     }
   },
   {
@@ -246,9 +246,9 @@
     "url": "$UPPTIME_BOT_SERVER_IP",
     "icon": "https://status.azael.dev/images/icons/discord.png",
     "slug": "discord-bot",
-    "status": "up",
+    "status": "down",
     "uptime": "100.00%",
-    "uptimeDay": "100.00%",
+    "uptimeDay": "99.99%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
@@ -257,7 +257,9 @@
     "timeWeek": 200,
     "timeMonth": 200,
     "timeYear": 200,
-    "dailyMinutesDown": {}
+    "dailyMinutesDown": {
+      "2026-01-25": 0
+    }
   },
   {
     "name": "Cloudflare Status",
