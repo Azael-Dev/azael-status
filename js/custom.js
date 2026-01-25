@@ -46,44 +46,12 @@
         }
     };
 
-    // Convert local date string to corresponding UTC date string
-    // This maps client's local date to the UTC date stored in dailyMinutesDown
-    const getUtcDateForLocalDate = (localDateStr) => {
-        // Create date at midnight local time
-        const localMidnight = new Date(localDateStr + 'T00:00:00');
-        
-        // Get the UTC date components for when local midnight occurs
-        const year = localMidnight.getUTCFullYear();
-        const month = String(localMidnight.getUTCMonth() + 1).padStart(2, '0');
-        const day = String(localMidnight.getUTCDate()).padStart(2, '0');
-        
-        return `${year}-${month}-${day}`;
-    };
-
-    // Get downtime minutes for a local date by checking overlapping UTC dates
-    const getDownMinutesForLocalDate = (dailyMinutesDown, localDateStr) => {
-        // Get the UTC date when local midnight starts
-        const utcDateAtLocalMidnight = getUtcDateForLocalDate(localDateStr);
-        
-        // Get the next local date to find where local day ends in UTC
-        const localDate = new Date(localDateStr + 'T00:00:00');
-        localDate.setDate(localDate.getDate() + 1);
-        const nextLocalDateStr = `${localDate.getFullYear()}-${String(localDate.getMonth() + 1).padStart(2, '0')}-${String(localDate.getDate()).padStart(2, '0')}`;
-        const utcDateAtNextLocalMidnight = getUtcDateForLocalDate(nextLocalDateStr);
-        
-        // Sum downtime from both UTC dates that overlap with this local date
-        let totalDownMinutes = 0;
-        
-        // If local day spans two UTC days, we need to consider both
-        if (utcDateAtLocalMidnight !== utcDateAtNextLocalMidnight) {
-            // Add minutes from the UTC date when local day starts
-            totalDownMinutes += dailyMinutesDown[utcDateAtLocalMidnight] || 0;
-        } else {
-            // Local day falls entirely within one UTC day
-            totalDownMinutes = dailyMinutesDown[utcDateAtLocalMidnight] || 0;
-        }
-        
-        return totalDownMinutes;
+    // Get downtime minutes for a UTC date string
+    // Since dailyMinutesDown stores total downtime per UTC day without timestamp details,
+    // we cannot accurately map local timezone to UTC. Therefore, we display UTC dates
+    // to all clients for consistency and accuracy.
+    const getDownMinutesForDate = (dailyMinutesDown, dateStr) => {
+        return dailyMinutesDown[dateStr] || 0;
     };
 
     const replaceStatusText = () => {
@@ -187,10 +155,10 @@
                     const date = new Date(today);
                     date.setDate(date.getDate() - i);
 
-                    // Use local date instead of UTC
-                    const year = date.getFullYear();
-                    const month = String(date.getMonth() + 1).padStart(2, '0');
-                    const day = String(date.getDate()).padStart(2, '0');
+                    // Use UTC date to match dailyMinutesDown keys (stored as UTC)
+                    const year = date.getUTCFullYear();
+                    const month = String(date.getUTCMonth() + 1).padStart(2, '0');
+                    const day = String(date.getUTCDate()).padStart(2, '0');
                     const dateStr = `${year}-${month}-${day}`;
 
                     days.push(dateStr);
@@ -202,8 +170,8 @@
                     const dayBar = document.createElement('div');
                     dayBar.className = 'day';
 
-                    // Get downtime using local-to-UTC conversion
-                    const downMinutes = getDownMinutesForLocalDate(serviceData.dailyMinutesDown, dateStr);
+                    // Get downtime from UTC date (dailyMinutesDown stores UTC dates)
+                    const downMinutes = getDownMinutesForDate(serviceData.dailyMinutesDown, dateStr);
                     const uptimePercent = ((1440 - downMinutes) / 1440 * 100).toFixed(2);
 
                     // Determine severity level
@@ -225,8 +193,15 @@
 
                     dayBar.classList.add(severityClass);
 
-                    const date = new Date(dateStr);
-                    const formattedDate = date.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+                    // Parse and format UTC date for display (all clients see the same date)
+                    const [year, month, day] = dateStr.split('-').map(Number);
+                    const dateObj = new Date(Date.UTC(year, month - 1, day));
+                    const formattedDate = dateObj.toLocaleDateString('en-GB', { 
+                        day: 'numeric', 
+                        month: 'short', 
+                        year: 'numeric',
+                        timeZone: 'UTC'
+                    });
 
                     // Format outage duration
                     let durationText = '';
