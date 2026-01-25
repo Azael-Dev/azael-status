@@ -1,7 +1,7 @@
-url: $UPTIME_WEB_SERVER_IP
-status: down
-code: 400
-responseTime: 0
-lastUpdated: 2026-01-25T19:52:05.574Z
+url: $UPTIME_WEB_SERVER_URL
+status: up
+code: 200
+responseTime: 23
+lastUpdated: 2026-01-25T19:57:39.528Z
 startTime: 2026-01-19T20:31:19.110Z
 generator: Upptime <https://github.com/upptime/upptime>
