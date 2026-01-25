@@ -164,6 +164,8 @@ status-website:
     - src: https://status.azael.dev/js/custom.js
 
 i18n:
+  allSystemsOperational: All services are operational
+  liveStatus: Service Status
   duration30D: "Uptime over the past 30 days."
   overallUptime: "$UPTIME"
   footer: ©<span id="footer-year"></span> [Azael Dev](https://www.azael.dev), Powered by [Upptime](https://upptime.js.org) on [GitHub](https://github.com/Azael-Dev/azael-status)
