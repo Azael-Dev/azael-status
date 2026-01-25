@@ -6,7 +6,7 @@ user-agent: Azael-Dev # The user-agent header sent with each request
 sites:
   - name: Web Server
     icon: https://status.azael.dev/images/icons/server.png
-    url: $UPTIME_WEB_SERVER_IP
+    url: $UPTIME_WEB_SERVER_URL
     type: globalping
     check: icmp-ping
     location: thailand
