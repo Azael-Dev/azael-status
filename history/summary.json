@@ -5,19 +5,17 @@
     "icon": "https://status.azael.dev/images/icons/server.png",
     "slug": "web-server",
     "status": "up",
-    "uptime": "99.87%",
-    "uptimeDay": "99.26%",
-    "uptimeWeek": "99.87%",
-    "uptimeMonth": "99.87%",
-    "uptimeYear": "99.87%",
+    "uptime": "100.00%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
+    "uptimeMonth": "100.00%",
+    "uptimeYear": "100.00%",
     "time": 746,
     "timeDay": 210,
     "timeWeek": 746,
     "timeMonth": 746,
     "timeYear": 746,
-    "dailyMinutesDown": {
-      "2026-01-25": 11
-    }
+    "dailyMinutesDown": {}
   },
   {
     "name": "Portal",
