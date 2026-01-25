@@ -5,19 +5,17 @@
     "icon": "https://status.azael.dev/images/icons/server.png",
     "slug": "web-server",
     "status": "up",
-    "uptime": "99.94%",
-    "uptimeDay": "99.61%",
-    "uptimeWeek": "99.94%",
-    "uptimeMonth": "99.94%",
-    "uptimeYear": "99.94%",
+    "uptime": "100.00%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
+    "uptimeMonth": "100.00%",
+    "uptimeYear": "100.00%",
     "time": 677,
     "timeDay": 194,
     "timeWeek": 677,
     "timeMonth": 677,
     "timeYear": 677,
-    "dailyMinutesDown": {
-      "2026-01-25": 6
-    }
+    "dailyMinutesDown": {}
   },
   {
     "name": "Portal",
@@ -248,7 +246,7 @@
     "slug": "discord-bot",
     "status": "down",
     "uptime": "99.97%",
-    "uptimeDay": "99.81%",
+    "uptimeDay": "99.80%",
     "uptimeWeek": "99.97%",
     "uptimeMonth": "99.97%",
     "uptimeYear": "99.97%",
