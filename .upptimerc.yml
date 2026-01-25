@@ -7,8 +7,9 @@ sites:
   - name: Web Server
     icon: https://status.azael.dev/images/icons/server.png
     url: $UPTIME_WEB_SERVER_IP
+    type: globalping
     check: tcp-ping
-    port: 443
+    location: thailand
     maxResponseTime: 1500
 
   - name: Portal
