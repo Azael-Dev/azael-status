@@ -6,22 +6,6 @@
     let historySet = false;
     let observer = null;
 
-    // GitHub API configuration
-    const GITHUB_API = {
-        repo: 'Azael-Dev/azael-status',
-        author: 'Azael-Dev',
-        label: 'status',
-        rateLimit: { requests: 10, perMinutes: 1 },
-        queue: [],
-        processing: false,
-        lastRequest: 0
-    };
-
-    // Cache configuration
-    const CACHE_PREFIX = 'uptime_incidents_';
-    const CACHE_DURATION_CURRENT = 5 * 60 * 1000; // 5 minutes for current date
-    const CACHE_DURATION_PAST = 24 * 60 * 60 * 1000; // 24 hours for past dates
-
     const setFooterYear = () => {
         if (yearSet) return false;
 
@@ -62,166 +46,23 @@
         }
     };
 
-    // Get cache key for incidents
-    const getCacheKey = (slug, dateRange) => {
-        return `${CACHE_PREFIX}${slug}_${dateRange}`;
+    // Get downtime minutes for a UTC date string
+    // dailyMinutesDown stores total downtime per UTC day.
+    // We use UTC dates consistently for both data fetching and display.
+    const getDownMinutesForDate = (dailyMinutesDown, dateStr) => {
+        return dailyMinutesDown[dateStr] || 0;
     };
 
-    // Get cached incidents
-    const getCachedIncidents = (slug, dateRange, isCurrentDate) => {
-        try {
-            const cacheKey = getCacheKey(slug, dateRange);
-            const cached = localStorage.getItem(cacheKey);
-            if (!cached) return null;
-
-            const { data, timestamp } = JSON.parse(cached);
-            const age = Date.now() - timestamp;
-            const maxAge = isCurrentDate ? CACHE_DURATION_CURRENT : CACHE_DURATION_PAST;
-
-            if (age > maxAge) {
-                localStorage.removeItem(cacheKey);
-                return null;
-            }
-
-            return data;
-        } catch (error) {
-            return null;
-        }
-    };
-
-    // Set cached incidents
-    const setCachedIncidents = (slug, dateRange, data) => {
-        try {
-            const cacheKey = getCacheKey(slug, dateRange);
-            localStorage.setItem(cacheKey, JSON.stringify({
-                data,
-                timestamp: Date.now()
-            }));
-        } catch (error) {
-            // Ignore cache errors
-        }
-    };
-
-    // Rate-limited GitHub API fetch
-    const fetchGitHubIssues = async (slug, dateRange, isCurrentDate) => {
-        // Check cache first
-        const cached = getCachedIncidents(slug, dateRange, isCurrentDate);
-        if (cached) return cached;
-
-        return new Promise((resolve, reject) => {
-            GITHUB_API.queue.push({ slug, dateRange, isCurrentDate, resolve, reject });
-            processGitHubQueue();
-        });
-    };
-
-    // Process GitHub API queue with rate limiting
-    const processGitHubQueue = async () => {
-        if (GITHUB_API.processing || GITHUB_API.queue.length === 0) return;
-
-        GITHUB_API.processing = true;
-
-        while (GITHUB_API.queue.length > 0) {
-            const now = Date.now();
-            const timeSinceLastRequest = now - GITHUB_API.lastRequest;
-            const minDelay = (GITHUB_API.rateLimit.perMinutes * 60 * 1000) / GITHUB_API.rateLimit.requests;
-
-            if (timeSinceLastRequest < minDelay) {
-                await new Promise(resolve => setTimeout(resolve, minDelay - timeSinceLastRequest));
-            }
-
-            const { slug, dateRange, isCurrentDate, resolve, reject } = GITHUB_API.queue.shift();
-
-            try {
-                const query = `repo:${GITHUB_API.repo}+author:${GITHUB_API.author}+label:${GITHUB_API.label}+label:${slug}+created:${dateRange}`;
-                const url = `https://api.github.com/search/issues?q=${encodeURIComponent(query)}`;
-                
-                GITHUB_API.lastRequest = Date.now();
-                const response = await fetch(url);
-
-                if (response.status === 403) {
-                    // Rate limit exceeded - requeue and wait longer
-                    GITHUB_API.queue.unshift({ slug, dateRange, isCurrentDate, resolve, reject });
-                    GITHUB_API.processing = false;
-                    await new Promise(resolve => setTimeout(resolve, 60000)); // Wait 1 minute
-                    processGitHubQueue();
-                    return;
-                }
-
-                if (response.status === 422) {
-                    // Validation failed - likely invalid query, return empty
-                    console.warn(`Invalid query for ${slug} ${dateRange}`);
-                    resolve([]);
-                    continue;
-                }
-
-                if (!response.ok) {
-                    throw new Error(`GitHub API error: ${response.status}`);
-                }
-
-                const data = await response.json();
-                const incidents = data.items || [];
-
-                // Cache incidents (current date cached for 5 min, past dates for 24 hours)
-                setCachedIncidents(slug, dateRange, incidents);
-
-                resolve(incidents);
-            } catch (error) {
-                console.error(`GitHub API error for ${slug} ${dateRange}:`, error);
-                resolve([]); // Resolve with empty array instead of rejecting
-            }
-        }
-
-        GITHUB_API.processing = false;
-    };
-
-    // Calculate downtime minutes for a specific local date from incidents
-    const calculateDowntimeForDate = (incidents, localDateStr, timezoneOffset) => {
-        let totalMinutes = 0;
-        const [year, month, day] = localDateStr.split('-').map(Number);
-        const dayStart = new Date(year, month - 1, day, 0, 0, 0);
-        const dayEnd = new Date(year, month - 1, day, 23, 59, 59, 999);
-
-        incidents.forEach(incident => {
-            const createdAt = new Date(incident.created_at);
-            const closedAt = incident.closed_at ? new Date(incident.closed_at) : new Date();
-
-            // Check if incident overlaps with the local date
-            if (closedAt >= dayStart && createdAt <= dayEnd) {
-                const overlapStart = createdAt > dayStart ? createdAt : dayStart;
-                const overlapEnd = closedAt < dayEnd ? closedAt : dayEnd;
-                const minutes = Math.ceil((overlapEnd - overlapStart) / (1000 * 60));
-                totalMinutes += minutes;
-            }
-        });
-
-        return totalMinutes;
-    };
-
-    // Format local date string (YYYY-MM-DD) to readable format
-    const formatLocalDate = (dateStr) => {
-        const [year, month, day] = dateStr.split('-').map(Number);
-        const date = new Date(year, month - 1, day);
+    // Format UTC date string (YYYY-MM-DD) to readable format
+    const formatUTCDate = (dateStr) => {
+        const [year, month, day] = dateStr.split('-');
+        const date = new Date(Date.UTC(year, month - 1, day));
         return date.toLocaleDateString('en-US', {
             day: 'numeric',
             month: 'short',
-            year: 'numeric'
-        });
-    };
-
-    // Get UTC date string from Date object
-    const getUTCDateStr = (date) => {
-        const year = date.getUTCFullYear();
-        const month = String(date.getUTCMonth() + 1).padStart(2, '0');
-        const day = String(date.getUTCDate()).padStart(2, '0');
-        return `${year}-${month}-${day}`;
-    };
-
-    // Get local date string from Date object
-    const getLocalDateStr = (date) => {
-        const year = date.getFullYear();
-        const month = String(date.getMonth() + 1).padStart(2, '0');
-        const day = String(date.getDate()).padStart(2, '0');
-        return `${year}-${month}-${day}`;
+            year: 'numeric',
+            timeZone: 'UTC'
+        }) + ' at UTC';
     };
 
     // Reset flags and clear processed markers
@@ -288,9 +129,8 @@
                 throw new Error('Invalid data format: expected array');
             }
 
-            // Get current date
+            // Get current date from client
             const today = new Date();
-            const currentUTCDate = getUTCDateStr(today);
 
             // Process articles using requestAnimationFrame
             let articleIndex = 0;
@@ -319,7 +159,7 @@
                 const serviceName = serviceLink.textContent.trim();
                 const serviceData = data.find(s => s.name === serviceName);
 
-                if (!serviceData || !serviceData.slug) {
+                if (!serviceData || !serviceData.dailyMinutesDown) {
                     articleIndex++;
                     requestAnimationFrame(processNextArticle);
                     return;
@@ -329,216 +169,96 @@
                 const historyContainer = document.createElement('div');
                 historyContainer.className = 'uptime-history';
 
-                // Get last 30 days (local dates)
+                // Get last 30 days
                 const days = [];
-                const utcDatesWithDowntime = new Set();
-
-                // Collect UTC dates that have downtime
-                if (serviceData.dailyMinutesDown) {
-                    Object.keys(serviceData.dailyMinutesDown).forEach(utcDate => {
-                        if (serviceData.dailyMinutesDown[utcDate] > 0) {
-                            utcDatesWithDowntime.add(utcDate);
-                        }
-                    });
-                }
 
                 for (let i = 29; i >= 0; i--) {
                     const date = new Date(today);
                     date.setDate(date.getDate() - i);
-                    const localDateStr = getLocalDateStr(date);
-                    const utcDateStr = getUTCDateStr(date);
-                    const isCurrentDate = utcDateStr === currentUTCDate;
 
-                    days.push({ 
-                        local: localDateStr, 
-                        utc: utcDateStr,
-                        isCurrentDate
-                    });
+                    // Use UTC date for both data fetching and display
+                    const year = date.getUTCFullYear();
+                    const month = String(date.getUTCMonth() + 1).padStart(2, '0');
+                    const day = String(date.getUTCDate()).padStart(2, '0');
+                    const dateStr = `${year}-${month}-${day}`;
+
+                    days.push(dateStr);
                 }
 
-                // Batch fetch incidents
-                const fetchIncidents = async () => {
-                    try {
-                        // Find dates that need fetching
-                        const datesWithDowntime = days.filter(day => 
-                            utcDatesWithDowntime.has(day.utc) || day.isCurrentDate
-                        );
+                // Create day bars using document fragment for better performance
+                const fragment = document.createDocumentFragment();
+                days.forEach(dateStr => {
+                    const dayBar = document.createElement('div');
+                    dayBar.className = 'day';
 
-                        if (datesWithDowntime.length === 0) {
-                            renderHistory(days, {});
-                            return;
-                        }
+                    // Get downtime using UTC date
+                    const downMinutes = getDownMinutesForDate(serviceData.dailyMinutesDown, dateStr);
+                    const uptimePercent = ((1440 - downMinutes) / 1440 * 100).toFixed(2);
 
-                        // Separate current date from past dates
-                        const currentDates = datesWithDowntime.filter(d => d.isCurrentDate);
-                        const pastDates = datesWithDowntime.filter(d => !d.isCurrentDate);
+                    // Determine severity level
+                    let severityClass = '';
+                    let severityLabel = '';
 
-                        // Group consecutive past dates for efficient API calls
-                        const dateRanges = [];
-
-                        // Add current date queries
-                        currentDates.forEach(day => {
-                            dateRanges.push({
-                                range: day.utc,
-                                isCurrentDate: true,
-                                dates: [day]
-                            });
-                        });
-
-                        // Group consecutive past dates
-                        if (pastDates.length > 0) {
-                            let currentRange = { start: pastDates[0].utc, end: pastDates[0].utc, dates: [pastDates[0]] };
-
-                            for (let i = 1; i < pastDates.length; i++) {
-                                const prevDate = new Date(pastDates[i - 1].utc);
-                                const currDate = new Date(pastDates[i].utc);
-                                const dayDiff = Math.round((currDate - prevDate) / (1000 * 60 * 60 * 24));
-
-                                if (dayDiff === 1) {
-                                    // Consecutive date - extend current range
-                                    currentRange.end = pastDates[i].utc;
-                                    currentRange.dates.push(pastDates[i]);
-                                } else {
-                                    // Gap detected - save current range and start new one
-                                    dateRanges.push({
-                                        range: currentRange.start === currentRange.end 
-                                            ? currentRange.start 
-                                            : `${currentRange.start}..${currentRange.end}`,
-                                        isCurrentDate: false,
-                                        dates: currentRange.dates
-                                    });
-                                    currentRange = { start: pastDates[i].utc, end: pastDates[i].utc, dates: [pastDates[i]] };
-                                }
-                            }
-
-                            // Add the last range
-                            dateRanges.push({
-                                range: currentRange.start === currentRange.end 
-                                    ? currentRange.start 
-                                    : `${currentRange.start}..${currentRange.end}`,
-                                isCurrentDate: false,
-                                dates: currentRange.dates
-                            });
-                        }
-
-                        // Fetch incidents for each range
-                        const allIncidents = [];
-                        for (const { range, isCurrentDate } of dateRanges) {
-                            const incidents = await fetchGitHubIssues(serviceData.slug, range, isCurrentDate);
-                            allIncidents.push(...incidents);
-                        }
-
-                        // If no incidents found, use fallback
-                        if (allIncidents.length === 0 && utcDatesWithDowntime.size > 0) {
-                            // Fallback to UTC-based display
-                            const fallbackDowntime = {};
-                            days.forEach(day => {
-                                fallbackDowntime[day.local] = (serviceData.dailyMinutesDown || {})[day.utc] || 0;
-                            });
-                            renderHistory(days, fallbackDowntime);
-                            return;
-                        }
-
-                        // Calculate downtime per local date from incidents
-                        const downtimeByLocalDate = {};
-
-                        days.forEach(day => {
-                            const downMinutes = calculateDowntimeForDate(allIncidents, day.local, 0);
-                            downtimeByLocalDate[day.local] = downMinutes;
-                        });
-
-                        renderHistory(days, downtimeByLocalDate);
-                    } catch (error) {
-                        console.error('Failed to fetch incidents:', error);
-                        // Fallback to UTC-based display
-                        const fallbackDowntime = {};
-                        days.forEach(day => {
-                            fallbackDowntime[day.local] = (serviceData.dailyMinutesDown || {})[day.utc] || 0;
-                        });
-                        renderHistory(days, fallbackDowntime);
+                    if (downMinutes === 0) {
+                        severityClass = 'up';
+                    } else if (downMinutes < 30) {
+                        severityClass = 'minor';
+                        severityLabel = 'Minor Outage';
+                    } else if (downMinutes < 60) {
+                        severityClass = 'partial';
+                        severityLabel = 'Partial Outage';
+                    } else {
+                        severityClass = 'major';
+                        severityLabel = 'Major Outage';
                     }
-                };
 
-                // Render history bars
-                const renderHistory = (days, downtimeByLocalDate) => {
-                    const fragment = document.createDocumentFragment();
+                    dayBar.classList.add(severityClass);
 
-                    days.forEach(day => {
-                        const dayBar = document.createElement('div');
-                        dayBar.className = 'day';
+                    // Format UTC date for display
+                    const formattedDate = formatUTCDate(dateStr);
 
-                        const downMinutes = downtimeByLocalDate[day.local] || 0;
-                        const uptimePercent = ((1440 - downMinutes) / 1440 * 100).toFixed(2);
+                    // Format outage duration
+                    let durationText = '';
 
-                        // Determine severity level
-                        let severityClass = '';
-                        let severityLabel = '';
+                    if (downMinutes !== 0) {
+                        const hours = Math.floor(downMinutes / 60);
+                        const minutes = downMinutes % 60;
 
-                        if (downMinutes === 0) {
-                            severityClass = 'up';
-                        } else if (downMinutes < 30) {
-                            severityClass = 'minor';
-                            severityLabel = 'Minor Outage';
-                        } else if (downMinutes < 60) {
-                            severityClass = 'partial';
-                            severityLabel = 'Partial Outage';
+                        if (hours > 0 && minutes > 0) {
+                            durationText = `${severityLabel}: ${hours} hour${hours > 1 ? 's' : ''} ${minutes} minute${minutes > 1 ? 's' : ''}`;
+                        } else if (hours > 0) {
+                            durationText = `${severityLabel}: ${hours} hour${hours > 1 ? 's' : ''}`;
                         } else {
-                            severityClass = 'major';
-                            severityLabel = 'Major Outage';
+                            durationText = `${severityLabel}: ${minutes} minute${minutes > 1 ? 's' : ''}`;
                         }
+                    }
 
-                        dayBar.classList.add(severityClass);
+                    dayBar.setAttribute('data-tooltip', `Date: ${formattedDate}\nUptime: ${uptimePercent}%\n${durationText}`);
 
-                        // Format local date for display
-                        const formattedDate = formatLocalDate(day.local);
+                    fragment.appendChild(dayBar);
+                });
+                historyContainer.appendChild(fragment);
 
-                        // Format outage duration
-                        let durationText = '';
+                // Create date range labels container
+                const labelsContainer = document.createElement('div');
+                labelsContainer.className = 'uptime-history-labels';
 
-                        if (downMinutes !== 0) {
-                            const hours = Math.floor(downMinutes / 60);
-                            const minutes = downMinutes % 60;
+                const leftLabel = document.createElement('span');
+                leftLabel.textContent = '30 days ago';
+                leftLabel.className = 'label-left';
 
-                            if (hours > 0 && minutes > 0) {
-                                durationText = `${severityLabel}: ${hours} hour${hours > 1 ? 's' : ''} ${minutes} minute${minutes > 1 ? 's' : ''}`;
-                            } else if (hours > 0) {
-                                durationText = `${severityLabel}: ${hours} hour${hours > 1 ? 's' : ''}`;
-                            } else {
-                                durationText = `${severityLabel}: ${minutes} minute${minutes > 1 ? 's' : ''}`;
-                            }
-                        }
+                const rightLabel = document.createElement('span');
+                rightLabel.textContent = 'Today';
+                rightLabel.className = 'label-right';
 
-                        dayBar.setAttribute('data-tooltip', `Date: ${formattedDate}\nUptime: ${uptimePercent}%\n${durationText}`);
+                labelsContainer.appendChild(leftLabel);
+                labelsContainer.appendChild(rightLabel);
 
-                        fragment.appendChild(dayBar);
-                    });
+                article.appendChild(historyContainer);
+                article.appendChild(labelsContainer);
 
-                    historyContainer.appendChild(fragment);
-
-                    // Create date range labels container
-                    const labelsContainer = document.createElement('div');
-                    labelsContainer.className = 'uptime-history-labels';
-
-                    const leftLabel = document.createElement('span');
-                    leftLabel.textContent = '30 days ago';
-                    leftLabel.className = 'label-left';
-
-                    const rightLabel = document.createElement('span');
-                    rightLabel.textContent = 'Today';
-                    rightLabel.className = 'label-right';
-
-                    labelsContainer.appendChild(leftLabel);
-                    labelsContainer.appendChild(rightLabel);
-
-                    article.appendChild(historyContainer);
-                    article.appendChild(labelsContainer);
-
-                    articleIndex++;
-                    requestAnimationFrame(processNextArticle);
-                };
-
-                // Start fetching and rendering
-                fetchIncidents();
+                articleIndex++;
+                requestAnimationFrame(processNextArticle);
             };
 
             requestAnimationFrame(processNextArticle);
