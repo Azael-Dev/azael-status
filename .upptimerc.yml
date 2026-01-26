@@ -10,7 +10,7 @@ sites:
     type: globalping
     check: tcp-ping
     port: 443
-    location: thailand, singapore
+    location: South-eastern Asia
     maxResponseTime: 1500
 
   - name: Portal
