@@ -46,12 +46,33 @@
         }
     };
 
-    // Get downtime minutes for a date string
+    // Get downtime minutes for a UTC date string
     // dailyMinutesDown stores total downtime per UTC day.
-    // We map client's local date to UTC date to fetch the correct downtime data,
-    // then display the local date to the user for better UX.
+    // We use UTC dates consistently for both data fetching and display.
     const getDownMinutesForDate = (dailyMinutesDown, dateStr) => {
         return dailyMinutesDown[dateStr] || 0;
+    };
+
+    // Format UTC date string (YYYY-MM-DD) to readable format
+    const formatUTCDate = (dateStr) => {
+        const [year, month, day] = dateStr.split('-');
+        const date = new Date(Date.UTC(year, month - 1, day));
+        return date.toLocaleDateString('en-US', {
+            day: 'numeric',
+            month: 'short',
+            year: 'numeric',
+            timeZone: 'UTC'
+        }) + ' at UTC';
+    };
+
+    // Reset flags and clear processed markers
+    const resetAndReapply = () => {
+        historySet = false;
+        rangeSet = false;
+        document.querySelectorAll('[data-status-replaced]').forEach(el => {
+            el.removeAttribute('data-status-replaced');
+        });
+        checkAndApply();
     };
 
     const replaceStatusText = () => {
@@ -155,29 +176,23 @@
                     const date = new Date(today);
                     date.setDate(date.getDate() - i);
 
-                    // Store local date for display
-                    const localYear = date.getFullYear();
-                    const localMonth = String(date.getMonth() + 1).padStart(2, '0');
-                    const localDay = String(date.getDate()).padStart(2, '0');
-                    const localDateStr = `${localYear}-${localMonth}-${localDay}`;
+                    // Use UTC date for both data fetching and display
+                    const year = date.getUTCFullYear();
+                    const month = String(date.getUTCMonth() + 1).padStart(2, '0');
+                    const day = String(date.getUTCDate()).padStart(2, '0');
+                    const dateStr = `${year}-${month}-${day}`;
 
-                    // Convert to UTC for matching dailyMinutesDown keys (stored as UTC)
-                    const utcYear = date.getUTCFullYear();
-                    const utcMonth = String(date.getUTCMonth() + 1).padStart(2, '0');
-                    const utcDay = String(date.getUTCDate()).padStart(2, '0');
-                    const utcDateStr = `${utcYear}-${utcMonth}-${utcDay}`;
-
-                    days.push({ local: localDateStr, utc: utcDateStr });
+                    days.push(dateStr);
                 }
 
                 // Create day bars using document fragment for better performance
                 const fragment = document.createDocumentFragment();
-                days.forEach(dateInfo => {
+                days.forEach(dateStr => {
                     const dayBar = document.createElement('div');
                     dayBar.className = 'day';
 
-                    // Get downtime using UTC date to match dailyMinutesDown keys (stored as UTC)
-                    const downMinutes = getDownMinutesForDate(serviceData.dailyMinutesDown, dateInfo.utc);
+                    // Get downtime using UTC date
+                    const downMinutes = getDownMinutesForDate(serviceData.dailyMinutesDown, dateStr);
                     const uptimePercent = ((1440 - downMinutes) / 1440 * 100).toFixed(2);
 
                     // Determine severity level
@@ -199,14 +214,8 @@
 
                     dayBar.classList.add(severityClass);
 
-                    // Format local date for display (each client sees their own timezone)
-                    const [year, month, day] = dateInfo.local.split('-').map(Number);
-                    const dateObj = new Date(year, month - 1, day);
-                    const formattedDate = dateObj.toLocaleDateString('en-GB', { 
-                        day: 'numeric', 
-                        month: 'short', 
-                        year: 'numeric'
-                    });
+                    // Format UTC date for display
+                    const formattedDate = formatUTCDate(dateStr);
 
                     // Format outage duration
                     let durationText = '';
@@ -280,19 +289,8 @@
             subtree: true
         });
 
-        // Handle back/forward navigation and route changes
-        window.addEventListener('popstate', () => {
-            // Reset all flags and clear processed markers
-            historySet = false;
-            rangeSet = false;
-            
-            // Clear status replacement markers
-            document.querySelectorAll('[data-status-replaced]').forEach(el => {
-                el.removeAttribute('data-status-replaced');
-            });
-            
-            checkAndApply();
-        });
+        // Handle back/forward navigation
+        window.addEventListener('popstate', resetAndReapply);
 
         // Monitor URL changes for SPA routing
         let lastUrl = location.href;
@@ -300,15 +298,7 @@
             const currentUrl = location.href;
             if (currentUrl !== lastUrl) {
                 lastUrl = currentUrl;
-                historySet = false;
-                rangeSet = false;
-                
-                // Clear status replacement markers
-                document.querySelectorAll('[data-status-replaced]').forEach(el => {
-                    el.removeAttribute('data-status-replaced');
-                });
-                
-                checkAndApply();
+                resetAndReapply();
             }
         }).observe(document, { subtree: true, childList: true });
     };
