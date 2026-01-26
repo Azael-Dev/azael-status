@@ -4,11 +4,13 @@
     let yearSet = false;
     let rangeSet = false;
     let historySet = false;
+    let historyFetching = false; // Flag to prevent concurrent API calls
     let observer = null;
 
     // Cache keys for localStorage
-    const CACHE_KEY_HISTORICAL = 'uptimeHistory_historical';
-    const CACHE_KEY_TODAY = 'uptimeHistory_today';
+    const CACHE_KEY_HISTORICAL = 'uptimeHistory_historical_v2';
+    const CACHE_KEY_TODAY = 'uptimeHistory_today_v2';
+    const CACHE_KEY_TODAY_DATE = 'uptimeHistory_today_date';
     const CACHE_KEY_TODAY_TIMESTAMP = 'uptimeHistory_today_timestamp';
     const CACHE_DURATION_TODAY = 5 * 60 * 1000; // 5 minutes
 
@@ -39,10 +41,15 @@
         return false;
     };
 
-    const fetchWithRetry = async (url, maxRetries = 3, delay = 1000) => {
+    const fetchWithRetry = async (url, maxRetries = 3, delay = 2000) => {
         for (let i = 0; i < maxRetries; i++) {
             try {
                 const response = await fetch(url);
+                if (response.status === 403) {
+                    // Rate limited - don't retry, return null to use cache
+                    console.warn('GitHub API rate limited, using cached data');
+                    return null;
+                }
                 if (!response.ok) throw new Error(`HTTP ${response.status}`);
                 return response;
             } catch (error) {
@@ -50,6 +57,11 @@
                 await new Promise(resolve => setTimeout(resolve, delay * (i + 1)));
             }
         }
+    };
+
+    // Get client's timezone offset in minutes
+    const getTimezoneOffsetMinutes = () => {
+        return new Date().getTimezoneOffset();
     };
 
     // Get client's timezone offset name
@@ -101,29 +113,34 @@
         return getUTCDateStr(new Date());
     };
 
-    // Get date range for historical issues (29 days ago to yesterday in UTC)
+    // Get today's date in local time
+    const getTodayLocal = () => {
+        return getLocalDateStr(new Date());
+    };
+
+    // Get date range for historical issues (30 days ago to today in UTC to cover timezone differences)
     const getHistoricalDateRange = () => {
         const today = new Date();
-        const yesterday = new Date(today);
-        yesterday.setUTCDate(yesterday.getUTCDate() - 1);
         
         const startDate = new Date(today);
-        startDate.setUTCDate(startDate.getUTCDate() - 29);
+        startDate.setUTCDate(startDate.getUTCDate() - 30);
         
         return {
             start: getUTCDateStr(startDate),
-            end: getUTCDateStr(yesterday)
+            end: getUTCDateStr(today)
         };
     };
 
-    // Fetch GitHub issues for a specific date (today)
+    // Fetch GitHub issues for today and yesterday (to cover timezone edge cases)
     const fetchTodayIssues = async () => {
         const todayUTC = getTodayUTC();
+        const todayLocal = getTodayLocal();
         const cachedTimestamp = localStorage.getItem(CACHE_KEY_TODAY_TIMESTAMP);
+        const cachedDate = localStorage.getItem(CACHE_KEY_TODAY_DATE);
         const cachedData = localStorage.getItem(CACHE_KEY_TODAY);
         
-        // Check if cached data is still valid (5 minutes)
-        if (cachedTimestamp && cachedData) {
+        // Check if cached data is still valid (5 minutes) and same local date
+        if (cachedTimestamp && cachedData && cachedDate === todayLocal) {
             const cacheAge = Date.now() - parseInt(cachedTimestamp, 10);
             if (cacheAge < CACHE_DURATION_TODAY) {
                 try {
@@ -135,12 +152,27 @@
         }
 
         try {
-            const url = `https://api.github.com/search/issues?q=repo:Azael-Dev/azael-status+author:Azael-Dev+label:status+created:${todayUTC}`;
+            // Fetch today's UTC date issues
+            const url = `https://api.github.com/search/issues?q=repo:Azael-Dev/azael-status+author:Azael-Dev+label:status+created:${todayUTC}&per_page=100`;
             const response = await fetchWithRetry(url);
+            
+            if (!response) {
+                // Rate limited, return cached data
+                if (cachedData) {
+                    try {
+                        return JSON.parse(cachedData);
+                    } catch {
+                        return [];
+                    }
+                }
+                return [];
+            }
+            
             const data = await response.json();
             
             // Cache the result
             localStorage.setItem(CACHE_KEY_TODAY, JSON.stringify(data.items || []));
+            localStorage.setItem(CACHE_KEY_TODAY_DATE, todayLocal);
             localStorage.setItem(CACHE_KEY_TODAY_TIMESTAMP, Date.now().toString());
             
             return data.items || [];
@@ -162,12 +194,14 @@
     const fetchHistoricalIssues = async () => {
         const cachedData = localStorage.getItem(CACHE_KEY_HISTORICAL);
         const { start, end } = getHistoricalDateRange();
+        const todayLocal = getTodayLocal();
         
         // Check if we have cached historical data with the same date range
         if (cachedData) {
             try {
                 const cached = JSON.parse(cachedData);
-                if (cached.start === start && cached.end === end) {
+                // Cache is valid if end date matches (means data is up to date)
+                if (cached.end === end && cached.localDate === todayLocal) {
                     return cached.items || [];
                 }
             } catch {
@@ -178,12 +212,27 @@
         try {
             const url = `https://api.github.com/search/issues?q=repo:Azael-Dev/azael-status+author:Azael-Dev+label:status+created:${start}..${end}&per_page=100`;
             const response = await fetchWithRetry(url);
+            
+            if (!response) {
+                // Rate limited, return cached data
+                if (cachedData) {
+                    try {
+                        const cached = JSON.parse(cachedData);
+                        return cached.items || [];
+                    } catch {
+                        return [];
+                    }
+                }
+                return [];
+            }
+            
             const data = await response.json();
             
             // Cache the result with date range info
             localStorage.setItem(CACHE_KEY_HISTORICAL, JSON.stringify({
                 start,
                 end,
+                localDate: todayLocal,
                 items: data.items || []
             }));
             
@@ -204,6 +253,7 @@
     };
 
     // Process issues and group by service slug and local date
+    // Also track which local dates each issue spans (for cross-day issues)
     const processIssuesByLocalDate = (issues) => {
         const result = {};
         
@@ -218,100 +268,143 @@
             if (!slugLabel) return;
             
             const slug = slugLabel.name;
-            const localDateStr = isoToLocalDateStr(issue.created_at);
+            const createdAt = new Date(issue.created_at);
+            const closedAt = issue.closed_at ? new Date(issue.closed_at) : new Date();
             
-            if (!result[slug]) {
-                result[slug] = {};
+            // Get all local dates this issue spans
+            const startLocalDate = getLocalDateStr(createdAt);
+            const endLocalDate = getLocalDateStr(closedAt);
+            
+            // Add issue to each local date it spans
+            let currentDate = new Date(createdAt);
+            while (getLocalDateStr(currentDate) <= endLocalDate) {
+                const localDateStr = getLocalDateStr(currentDate);
+                
+                if (!result[slug]) {
+                    result[slug] = {};
+                }
+                
+                if (!result[slug][localDateStr]) {
+                    result[slug][localDateStr] = [];
+                }
+                
+                // Check if issue already added for this date
+                const existingIssue = result[slug][localDateStr].find(i => i.created_at === issue.created_at);
+                if (!existingIssue) {
+                    result[slug][localDateStr].push({
+                        created_at: issue.created_at,
+                        title: issue.title,
+                        state: issue.state,
+                        closed_at: issue.closed_at
+                    });
+                }
+                
+                // Move to next day
+                currentDate.setDate(currentDate.getDate() + 1);
+                currentDate.setHours(0, 0, 0, 0);
             }
-            
-            if (!result[slug][localDateStr]) {
-                result[slug][localDateStr] = [];
-            }
-            
-            result[slug][localDateStr].push({
-                created_at: issue.created_at,
-                title: issue.title,
-                state: issue.state,
-                closed_at: issue.closed_at
-            });
         });
         
         return result;
     };
 
     // Calculate downtime for a specific local date based on issues
-    const calculateLocalDowntime = (issuesByLocalDate, slug, localDateStr, dailyMinutesDown, summaryData) => {
-        // Get total UTC downtime from summary
-        const totalUTCDowntime = Object.values(dailyMinutesDown).reduce((sum, val) => sum + val, 0);
+    const calculateLocalDowntime = (issuesByLocalDate, slug, localDateStr, dailyMinutesDown, hasIssuesData) => {
+        // Parse local date boundaries
+        const [year, month, day] = localDateStr.split('-').map(Number);
+        const dayStart = new Date(year, month - 1, day, 0, 0, 0);
+        const dayEnd = new Date(year, month - 1, day, 23, 59, 59, 999);
         
-        // If no issues data, fallback to checking if any UTC date maps to this local date
-        if (!issuesByLocalDate[slug] || !issuesByLocalDate[slug][localDateStr]) {
-            // Check if any UTC dates could map to this local date
-            let estimatedDowntime = 0;
+        // If we have issues data for this slug and date, calculate precisely
+        if (hasIssuesData && issuesByLocalDate[slug] && issuesByLocalDate[slug][localDateStr]) {
+            const issues = issuesByLocalDate[slug][localDateStr];
+            let totalMinutes = 0;
             
-            for (const [utcDateStr, minutes] of Object.entries(dailyMinutesDown)) {
-                // Create date range for UTC date
-                const [year, month, day] = utcDateStr.split('-');
-                const utcStart = new Date(Date.UTC(year, month - 1, day, 0, 0, 0));
-                const utcEnd = new Date(Date.UTC(year, month - 1, day, 23, 59, 59));
+            issues.forEach(issue => {
+                const createdAt = new Date(issue.created_at);
+                let endTime;
                 
-                // Check if any part of UTC date falls on local date
-                const localStartOfUtc = getLocalDateStr(utcStart);
-                const localEndOfUtc = getLocalDateStr(utcEnd);
-                
-                if (localStartOfUtc === localDateStr || localEndOfUtc === localDateStr) {
-                    // Approximate distribution based on overlap
-                    if (localStartOfUtc === localDateStr && localEndOfUtc === localDateStr) {
-                        estimatedDowntime += minutes;
-                    } else {
-                        // Partial overlap - estimate 50% attribution
-                        estimatedDowntime += Math.ceil(minutes / 2);
-                    }
+                if (issue.closed_at) {
+                    endTime = new Date(issue.closed_at);
+                } else {
+                    // If not closed, use current time
+                    endTime = new Date();
                 }
-            }
+                
+                // Clamp to the local date boundaries
+                const effectiveStart = createdAt < dayStart ? dayStart : createdAt;
+                const effectiveEnd = endTime > dayEnd ? dayEnd : endTime;
+                
+                if (effectiveEnd > effectiveStart) {
+                    const minutes = Math.ceil((effectiveEnd - effectiveStart) / (1000 * 60));
+                    totalMinutes += minutes;
+                }
+            });
             
-            return estimatedDowntime;
+            return Math.min(totalMinutes, 1440); // Cap at 24 hours
         }
         
-        // We have issue data for this local date
-        const issues = issuesByLocalDate[slug][localDateStr];
-        let totalMinutes = 0;
+        // Fallback: estimate based on UTC dailyMinutesDown mapping to local dates
+        // This handles cases where we don't have issue data from GitHub API
+        let estimatedDowntime = 0;
         
-        issues.forEach(issue => {
-            const createdAt = new Date(issue.created_at);
-            let endTime;
+        for (const [utcDateStr, minutes] of Object.entries(dailyMinutesDown)) {
+            if (minutes === 0) continue;
             
-            if (issue.closed_at) {
-                endTime = new Date(issue.closed_at);
-            } else {
-                // If not closed, assume it's ongoing or ended at midnight local time
-                const [year, month, day] = localDateStr.split('-');
-                endTime = new Date(year, month - 1, day, 23, 59, 59);
+            // UTC day boundaries
+            const [utcYear, utcMonth, utcDay] = utcDateStr.split('-').map(Number);
+            const utcDayStart = new Date(Date.UTC(utcYear, utcMonth - 1, utcDay, 0, 0, 0));
+            const utcDayEnd = new Date(Date.UTC(utcYear, utcMonth - 1, utcDay, 23, 59, 59, 999));
+            
+            // Convert UTC boundaries to local time
+            const localStartOfUtcDay = getLocalDateStr(utcDayStart);
+            const localEndOfUtcDay = getLocalDateStr(utcDayEnd);
+            
+            // Check overlap with target local date
+            if (localDateStr === localStartOfUtcDay && localDateStr === localEndOfUtcDay) {
+                // Entire UTC day falls within same local day
+                estimatedDowntime += minutes;
+            } else if (localDateStr === localStartOfUtcDay) {
+                // Start of UTC day is in this local day
+                // Calculate proportion based on timezone offset
+                const offsetHours = -getTimezoneOffsetMinutes() / 60;
+                if (offsetHours > 0) {
+                    // Ahead of UTC (e.g., Asia/Bangkok UTC+7)
+                    // UTC 00:00 = Local 07:00, so 17 hours (17/24) of UTC day falls on this local day
+                    const hoursInThisDay = 24 - offsetHours;
+                    const proportion = hoursInThisDay / 24;
+                    estimatedDowntime += Math.ceil(minutes * proportion);
+                } else {
+                    // Behind UTC, full day attribution
+                    estimatedDowntime += minutes;
+                }
+            } else if (localDateStr === localEndOfUtcDay) {
+                // End of UTC day is in this local day
+                const offsetHours = -getTimezoneOffsetMinutes() / 60;
+                if (offsetHours > 0) {
+                    // Ahead of UTC (e.g., Asia/Bangkok UTC+7)
+                    // UTC 23:59 = Local next day 06:59, so 7 hours (7/24) of UTC day falls on next local day
+                    const hoursInThisDay = offsetHours;
+                    const proportion = hoursInThisDay / 24;
+                    estimatedDowntime += Math.ceil(minutes * proportion);
+                }
             }
-            
-            // Clamp to the local date boundaries
-            const [year, month, day] = localDateStr.split('-');
-            const dayStart = new Date(year, month - 1, day, 0, 0, 0);
-            const dayEnd = new Date(year, month - 1, day, 23, 59, 59);
-            
-            const effectiveStart = createdAt < dayStart ? dayStart : createdAt;
-            const effectiveEnd = endTime > dayEnd ? dayEnd : endTime;
-            
-            if (effectiveEnd > effectiveStart) {
-                const minutes = Math.ceil((effectiveEnd - effectiveStart) / (1000 * 60));
-                totalMinutes += minutes;
-            }
-        });
+        }
         
-        return Math.min(totalMinutes, 1440); // Cap at 24 hours
+        return Math.min(estimatedDowntime, 1440);
     };
 
     // Reset flags and clear processed markers
     const resetAndReapply = () => {
         historySet = false;
+        historyFetching = false;
         rangeSet = false;
         document.querySelectorAll('[data-status-replaced]').forEach(el => {
             el.removeAttribute('data-status-replaced');
+        });
+        // Remove existing history bars to rebuild with fresh data
+        document.querySelectorAll('.uptime-history, .uptime-history-labels').forEach(el => {
+            el.remove();
         });
         checkAndApply();
     };
@@ -347,6 +440,9 @@
     };
 
     const createUptimeHistory = async () => {
+        // Prevent concurrent API calls
+        if (historyFetching) return false;
+        
         const articles = document.querySelectorAll('main > section.live-status > article');
         if (!articles.length) return false;
 
@@ -360,10 +456,17 @@
 
         // Reset historySet if previously set but articles changed
         if (historySet) historySet = false;
+        
+        // Set fetching flag
+        historyFetching = true;
 
         try {
             // Fetch summary data
             const response = await fetchWithRetry('https://raw.githubusercontent.com/Azael-Dev/azael-status/master/history/summary.json');
+            if (!response) {
+                historyFetching = false;
+                return false;
+            }
             const data = await response.json();
 
             // Validate data structure
@@ -371,11 +474,20 @@
                 throw new Error('Invalid data format: expected array');
             }
 
-            // Fetch GitHub issues (today and historical)
-            const [todayIssues, historicalIssues] = await Promise.all([
-                fetchTodayIssues(),
-                fetchHistoricalIssues()
-            ]);
+            // Fetch GitHub issues (today and historical) - only once
+            let todayIssues = [];
+            let historicalIssues = [];
+            let hasIssuesData = false;
+            
+            try {
+                [todayIssues, historicalIssues] = await Promise.all([
+                    fetchTodayIssues(),
+                    fetchHistoricalIssues()
+                ]);
+                hasIssuesData = todayIssues.length > 0 || historicalIssues.length > 0;
+            } catch (e) {
+                console.warn('Could not fetch GitHub issues, using fallback calculation:', e);
+            }
 
             // Combine and process all issues
             const allIssues = [...todayIssues, ...historicalIssues];
@@ -383,13 +495,13 @@
 
             // Get current date from client (local time)
             const today = new Date();
-            const todayLocalStr = getLocalDateStr(today);
 
             // Process articles using requestAnimationFrame
             let articleIndex = 0;
             const processNextArticle = () => {
                 if (articleIndex >= articles.length) {
                     historySet = true;
+                    historyFetching = false;
                     return;
                 }
 
@@ -447,7 +559,7 @@
                         slug, 
                         localDateStr, 
                         dailyMinutesDown,
-                        serviceData
+                        hasIssuesData
                     );
                     const uptimePercent = ((1440 - downMinutes) / 1440 * 100).toFixed(2);
 
@@ -521,6 +633,7 @@
             return true;
         } catch (error) {
             console.error('Failed to load uptime history:', error);
+            historyFetching = false;
             return false;
         }
     };
