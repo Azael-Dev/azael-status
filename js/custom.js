@@ -296,34 +296,40 @@
     // Uses created_at date to determine which day the issue belongs to
     // Calculates full downtime duration (created_at to closed_at) for that day
     const calculateLocalDowntime = (issuesByLocalDate, slug, localDateStr, dailyMinutesDown, hasIssuesData) => {
-        // If we have issues data for this slug and date, calculate based on issue duration
-        if (hasIssuesData && issuesByLocalDate[slug] && issuesByLocalDate[slug][localDateStr]) {
-            const issues = issuesByLocalDate[slug][localDateStr];
-            let totalMinutes = 0;
-            
-            issues.forEach(issue => {
-                const createdAt = new Date(issue.created_at);
-                let endTime;
+        // If we have issues data from GitHub API
+        if (hasIssuesData) {
+            // Check if there are issues for this slug and date
+            if (issuesByLocalDate[slug] && issuesByLocalDate[slug][localDateStr]) {
+                const issues = issuesByLocalDate[slug][localDateStr];
+                let totalMinutes = 0;
                 
-                if (issue.closed_at) {
-                    endTime = new Date(issue.closed_at);
-                } else {
-                    // If not closed, use current time
-                    endTime = new Date();
-                }
+                issues.forEach(issue => {
+                    const createdAt = new Date(issue.created_at);
+                    let endTime;
+                    
+                    if (issue.closed_at) {
+                        endTime = new Date(issue.closed_at);
+                    } else {
+                        // If not closed, use current time
+                        endTime = new Date();
+                    }
+                    
+                    // Calculate full duration of the issue
+                    if (endTime > createdAt) {
+                        const minutes = Math.ceil((endTime - createdAt) / (1000 * 60));
+                        totalMinutes += minutes;
+                    }
+                });
                 
-                // Calculate full duration of the issue
-                if (endTime > createdAt) {
-                    const minutes = Math.ceil((endTime - createdAt) / (1000 * 60));
-                    totalMinutes += minutes;
-                }
-            });
+                return Math.min(totalMinutes, 1440); // Cap at 24 hours
+            }
             
-            return Math.min(totalMinutes, 1440); // Cap at 24 hours
+            // We have issues data but no issues for this date = no downtime
+            return 0;
         }
         
         // Fallback: estimate based on UTC dailyMinutesDown mapping to local dates
-        // This handles cases where we don't have issue data from GitHub API
+        // This only runs when we don't have issue data from GitHub API
         let estimatedDowntime = 0;
         
         for (const [utcDateStr, minutes] of Object.entries(dailyMinutesDown)) {
