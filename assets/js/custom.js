@@ -5,8 +5,6 @@
     let rangeSet = false;
     let historySet = false;
     let observer = null;
-    let issuesCache = null;
-    let issuesCacheTimestamp = 0;
 
     // Cache keys for localStorage
     const CACHE_KEY_HISTORICAL = 'uptimeHistory_historical';
