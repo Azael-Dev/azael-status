@@ -8,10 +8,11 @@ sites:
     icon: https://status.azael.dev/images/icons/server.png
     url: $UPTIME_WEB_SERVER_URL
     type: globalping
-    check: tcp-ping
-    port: 443
-    location: South-eastern Asia
+    location: Bangkok+TH
     maxResponseTime: 1500
+    expectedStatusCodes:
+      - 200
+      - 403
 
   - name: Portal
     icon: https://status.azael.dev/images/icons/portal.png
