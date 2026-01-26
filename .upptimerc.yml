@@ -10,10 +10,8 @@ sites:
     type: globalping
     check: tcp-ping
     port: 443
-    location: 
-      - Thailand
-      - Singapore
-    maxResponseTime: 3000
+    location: thailand, singapore
+    maxResponseTime: 1500
 
   - name: Portal
     icon: https://status.azael.dev/images/icons/portal.png
