@@ -548,21 +548,10 @@
                     const uptimePercent = ((1440 - downMinutes) / 1440 * 100).toFixed(2);
 
                     // Determine severity level
-                    let severityClass = '';
-                    let severityLabel = '';
-
-                    if (downMinutes === 0) {
-                        severityClass = 'up';
-                    } else if (downMinutes < 30) {
-                        severityClass = 'minor';
-                        severityLabel = 'Minor Outage';
-                    } else if (downMinutes < 60) {
-                        severityClass = 'partial';
-                        severityLabel = 'Partial Outage';
-                    } else {
-                        severityClass = 'major';
-                        severityLabel = 'Major Outage';
-                    }
+                    const severityClass = downMinutes === 0 ? 'up'
+                        : downMinutes < 30 ? 'minor'
+                        : downMinutes < 60 ? 'partial'
+                        : 'major';
 
                     dayBar.classList.add(severityClass);
 
@@ -577,11 +566,11 @@
                         const minutes = downMinutes % 60;
 
                         if (hours > 0 && minutes > 0) {
-                            durationText = `${severityLabel}: ${hours} hour${hours > 1 ? 's' : ''} ${minutes} minute${minutes > 1 ? 's' : ''}`;
+                            durationText = `Incident Duration: ${hours} hour${hours > 1 ? 's' : ''} ${minutes} minute${minutes > 1 ? 's' : ''}`;
                         } else if (hours > 0) {
-                            durationText = `${severityLabel}: ${hours} hour${hours > 1 ? 's' : ''}`;
+                            durationText = `Incident Duration: ${hours} hour${hours > 1 ? 's' : ''}`;
                         } else {
-                            durationText = `${severityLabel}: ${minutes} minute${minutes > 1 ? 's' : ''}`;
+                            durationText = `Incident Duration: ${minutes} minute${minutes > 1 ? 's' : ''}`;
                         }
                     }
 
