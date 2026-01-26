@@ -53,6 +53,28 @@
         return dailyMinutesDown[dateStr] || 0;
     };
 
+    // Format UTC date string (YYYY-MM-DD) to readable format
+    const formatUTCDate = (dateStr) => {
+        const [year, month, day] = dateStr.split('-');
+        const date = new Date(Date.UTC(year, month - 1, day));
+        return date.toLocaleDateString('en-US', {
+            day: 'numeric',
+            month: 'short',
+            year: 'numeric',
+            timeZone: 'UTC'
+        }) + ' at UTC';
+    };
+
+    // Reset flags and clear processed markers
+    const resetAndReapply = () => {
+        historySet = false;
+        rangeSet = false;
+        document.querySelectorAll('[data-status-replaced]').forEach(el => {
+            el.removeAttribute('data-status-replaced');
+        });
+        checkAndApply();
+    };
+
     const replaceStatusText = () => {
         const articles = document.querySelectorAll('main > section.live-status > article');
         if (!articles.length) return;
@@ -193,14 +215,7 @@
                     dayBar.classList.add(severityClass);
 
                     // Format UTC date for display
-                    const [year, month, day] = dateStr.split('-').map(Number);
-                    const dateObj = new Date(Date.UTC(year, month - 1, day));
-                    const formattedDate = dateObj.toLocaleDateString('en-US', { 
-                        day: 'numeric', 
-                        month: 'short', 
-                        year: 'numeric',
-                        timeZone: 'UTC'
-                    }) + ' at UTC';
+                    const formattedDate = formatUTCDate(dateStr);
 
                     // Format outage duration
                     let durationText = '';
@@ -274,19 +289,8 @@
             subtree: true
         });
 
-        // Handle back/forward navigation and route changes
-        window.addEventListener('popstate', () => {
-            // Reset all flags and clear processed markers
-            historySet = false;
-            rangeSet = false;
-            
-            // Clear status replacement markers
-            document.querySelectorAll('[data-status-replaced]').forEach(el => {
-                el.removeAttribute('data-status-replaced');
-            });
-            
-            checkAndApply();
-        });
+        // Handle back/forward navigation
+        window.addEventListener('popstate', resetAndReapply);
 
         // Monitor URL changes for SPA routing
         let lastUrl = location.href;
@@ -294,15 +298,7 @@
             const currentUrl = location.href;
             if (currentUrl !== lastUrl) {
                 lastUrl = currentUrl;
-                historySet = false;
-                rangeSet = false;
-                
-                // Clear status replacement markers
-                document.querySelectorAll('[data-status-replaced]').forEach(el => {
-                    el.removeAttribute('data-status-replaced');
-                });
-                
-                checkAndApply();
+                resetAndReapply();
             }
         }).observe(document, { subtree: true, childList: true });
     };
