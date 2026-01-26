@@ -8,8 +8,8 @@
     let observer = null;
 
     // Cache keys for localStorage
-    const CACHE_KEY_HISTORICAL = 'uptimeHistory_historical_v2';
-    const CACHE_KEY_TODAY = 'uptimeHistory_today_v2';
+    const CACHE_KEY_HISTORICAL = 'uptimeHistory_historical';
+    const CACHE_KEY_TODAY = 'uptimeHistory_today';
     const CACHE_KEY_TODAY_DATE = 'uptimeHistory_today_date';
     const CACHE_KEY_TODAY_TIMESTAMP = 'uptimeHistory_today_timestamp';
     const CACHE_DURATION_TODAY = 5 * 60 * 1000; // 5 minutes
@@ -252,8 +252,7 @@
         }
     };
 
-    // Process issues and group by service slug and local date
-    // Also track which local dates each issue spans (for cross-day issues)
+    // Process issues and group by service slug and local date (based on created_at only)
     const processIssuesByLocalDate = (issues) => {
         const result = {};
         
@@ -268,40 +267,25 @@
             if (!slugLabel) return;
             
             const slug = slugLabel.name;
-            const createdAt = new Date(issue.created_at);
-            const closedAt = issue.closed_at ? new Date(issue.closed_at) : new Date();
+            const localDateStr = isoToLocalDateStr(issue.created_at);
             
-            // Get all local dates this issue spans
-            const startLocalDate = getLocalDateStr(createdAt);
-            const endLocalDate = getLocalDateStr(closedAt);
+            if (!result[slug]) {
+                result[slug] = {};
+            }
             
-            // Add issue to each local date it spans
-            let currentDate = new Date(createdAt);
-            while (getLocalDateStr(currentDate) <= endLocalDate) {
-                const localDateStr = getLocalDateStr(currentDate);
-                
-                if (!result[slug]) {
-                    result[slug] = {};
-                }
-                
-                if (!result[slug][localDateStr]) {
-                    result[slug][localDateStr] = [];
-                }
-                
-                // Check if issue already added for this date
-                const existingIssue = result[slug][localDateStr].find(i => i.created_at === issue.created_at);
-                if (!existingIssue) {
-                    result[slug][localDateStr].push({
-                        created_at: issue.created_at,
-                        title: issue.title,
-                        state: issue.state,
-                        closed_at: issue.closed_at
-                    });
-                }
-                
-                // Move to next day
-                currentDate.setDate(currentDate.getDate() + 1);
-                currentDate.setHours(0, 0, 0, 0);
+            if (!result[slug][localDateStr]) {
+                result[slug][localDateStr] = [];
+            }
+            
+            // Check if issue already added for this date
+            const existingIssue = result[slug][localDateStr].find(i => i.created_at === issue.created_at);
+            if (!existingIssue) {
+                result[slug][localDateStr].push({
+                    created_at: issue.created_at,
+                    title: issue.title,
+                    state: issue.state,
+                    closed_at: issue.closed_at
+                });
             }
         });
         
@@ -309,13 +293,10 @@
     };
 
     // Calculate downtime for a specific local date based on issues
+    // Uses created_at date to determine which day the issue belongs to
+    // Calculates full downtime duration (created_at to closed_at) for that day
     const calculateLocalDowntime = (issuesByLocalDate, slug, localDateStr, dailyMinutesDown, hasIssuesData) => {
-        // Parse local date boundaries
-        const [year, month, day] = localDateStr.split('-').map(Number);
-        const dayStart = new Date(year, month - 1, day, 0, 0, 0);
-        const dayEnd = new Date(year, month - 1, day, 23, 59, 59, 999);
-        
-        // If we have issues data for this slug and date, calculate precisely
+        // If we have issues data for this slug and date, calculate based on issue duration
         if (hasIssuesData && issuesByLocalDate[slug] && issuesByLocalDate[slug][localDateStr]) {
             const issues = issuesByLocalDate[slug][localDateStr];
             let totalMinutes = 0;
@@ -331,12 +312,9 @@
                     endTime = new Date();
                 }
                 
-                // Clamp to the local date boundaries
-                const effectiveStart = createdAt < dayStart ? dayStart : createdAt;
-                const effectiveEnd = endTime > dayEnd ? dayEnd : endTime;
-                
-                if (effectiveEnd > effectiveStart) {
-                    const minutes = Math.ceil((effectiveEnd - effectiveStart) / (1000 * 60));
+                // Calculate full duration of the issue
+                if (endTime > createdAt) {
+                    const minutes = Math.ceil((endTime - createdAt) / (1000 * 60));
                     totalMinutes += minutes;
                 }
             });
