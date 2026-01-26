@@ -15,9 +15,7 @@
     "timeWeek": 626,
     "timeMonth": 626,
     "timeYear": 626,
-    "dailyMinutesDown": {
-      "2026-01-26": 16
-    }
+    "dailyMinutesDown": {}
   },
   {
     "name": "Portal",
@@ -71,9 +69,7 @@
     "timeWeek": 918,
     "timeMonth": 918,
     "timeYear": 918,
-    "dailyMinutesDown": {
-      "2026-01-26": 4
-    }
+    "dailyMinutesDown": {}
   },
   {
     "name": "Documentation",
@@ -127,10 +123,7 @@
     "timeWeek": 1075,
     "timeMonth": 1075,
     "timeYear": 1075,
-    "dailyMinutesDown": {
-      "2026-01-26": 2,
-      "2026-01-25": 30
-    }
+    "dailyMinutesDown": {}
   },
   {
     "name": "Mailer",
@@ -148,10 +141,7 @@
     "timeWeek": 2370,
     "timeMonth": 2370,
     "timeYear": 2370,
-    "dailyMinutesDown": {
-      "2026-01-26": 15,
-      "2026-01-25": 30
-    }
+    "dailyMinutesDown": {}
   },
   {
     "name": "Base API",
@@ -205,10 +195,7 @@
     "timeWeek": 295,
     "timeMonth": 295,
     "timeYear": 295,
-    "dailyMinutesDown": {
-      "2026-01-26": 15,
-      "2026-01-25": 30
-    }
+    "dailyMinutesDown": {}
   },
   {
     "name": "BanDB Lookup API",
@@ -226,9 +213,7 @@
     "timeWeek": 1207,
     "timeMonth": 1207,
     "timeYear": 1207,
-    "dailyMinutesDown": {
-      "2026-01-26": 2
-    }
+    "dailyMinutesDown": {}
   },
   {
     "name": "Bot Server",
