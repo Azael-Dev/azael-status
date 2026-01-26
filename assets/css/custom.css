@@ -25,6 +25,10 @@
     --submit-button-color: #ffffff;
     --graph-opacity: 1;
     --graph-filter: none;
+    --history-bar-up-color: #3fb950;
+    --history-bar-minor-color: #ffbf00;
+    --history-bar-partial-color: #e0a028;
+    --history-bar-major-color: #da3633;
 }
 
 /* Resize logo image */
@@ -147,7 +151,7 @@ main > section.live-status > article > .uptime-history {
 /* Individual day bar */
 main > section.live-status > article > .uptime-history > .day {
     flex: 1;
-    background-color: var(--up-border-left-color);
+    background-color: var(--history-bar-up-color);
     border-radius: 2px;
     opacity: 0.8;
     transition: opacity 0.2s, transform 0.2s;
@@ -163,17 +167,17 @@ main > section.live-status > article > .uptime-history > .day:hover {
 
 /* Minor Outage (< 30 minutes) */
 main > section.live-status > article > .uptime-history > .day.minor {
-    background-color: var(--tag-degraded-background-color);
+    background-color: var(--history-bar-minor-color);
 }
 
 /* Partial Outage (30-59 minutes) */
 main > section.live-status > article > .uptime-history > .day.partial {
-    background-color: var(--degraded-border-left-color);
+    background-color: var(--history-bar-partial-color);
 }
 
 /* Major Outage (≥ 60 minutes) */
 main > section.live-status > article > .uptime-history > .day.major {
-    background-color: var(--down-border-left-color);
+    background-color: var(--history-bar-major-color);
 }
 
 /* Tooltip */
