@@ -138,6 +138,22 @@
                 GITHUB_API.lastRequest = Date.now();
                 const response = await fetch(url);
 
+                if (response.status === 403) {
+                    // Rate limit exceeded - requeue and wait longer
+                    GITHUB_API.queue.unshift({ slug, dateRange, isCurrentDate, resolve, reject });
+                    GITHUB_API.processing = false;
+                    await new Promise(resolve => setTimeout(resolve, 60000)); // Wait 1 minute
+                    processGitHubQueue();
+                    return;
+                }
+
+                if (response.status === 422) {
+                    // Validation failed - likely invalid query, return empty
+                    console.warn(`Invalid query for ${slug} ${dateRange}`);
+                    resolve([]);
+                    continue;
+                }
+
                 if (!response.ok) {
                     throw new Error(`GitHub API error: ${response.status}`);
                 }
@@ -150,7 +166,8 @@
 
                 resolve(incidents);
             } catch (error) {
-                reject(error);
+                console.error(`GitHub API error for ${slug} ${dateRange}:`, error);
+                resolve([]); // Resolve with empty array instead of rejecting
             }
         }
 
@@ -342,7 +359,7 @@
                 // Batch fetch incidents
                 const fetchIncidents = async () => {
                     try {
-                        // Find date range for batch request
+                        // Find dates that need fetching
                         const datesWithDowntime = days.filter(day => 
                             utcDatesWithDowntime.has(day.utc) || day.isCurrentDate
                         );
@@ -352,27 +369,49 @@
                             return;
                         }
 
-                        // Group consecutive dates for efficient API calls
-                        const dateRanges = [];
-                        let currentRange = null;
+                        // Separate current date from past dates
+                        const currentDates = datesWithDowntime.filter(d => d.isCurrentDate);
+                        const pastDates = datesWithDowntime.filter(d => !d.isCurrentDate);
 
-                        datesWithDowntime.forEach(day => {
-                            if (day.isCurrentDate) {
-                                // Current date: single date query
-                                dateRanges.push({
-                                    range: day.utc,
-                                    isCurrentDate: true,
-                                    dates: [day]
-                                });
-                            } else if (!currentRange) {
-                                currentRange = { start: day.utc, end: day.utc, dates: [day] };
-                            } else {
-                                currentRange.end = day.utc;
-                                currentRange.dates.push(day);
-                            }
+                        // Group consecutive past dates for efficient API calls
+                        const dateRanges = [];
+
+                        // Add current date queries
+                        currentDates.forEach(day => {
+                            dateRanges.push({
+                                range: day.utc,
+                                isCurrentDate: true,
+                                dates: [day]
+                            });
                         });
 
-                        if (currentRange) {
+                        // Group consecutive past dates
+                        if (pastDates.length > 0) {
+                            let currentRange = { start: pastDates[0].utc, end: pastDates[0].utc, dates: [pastDates[0]] };
+
+                            for (let i = 1; i < pastDates.length; i++) {
+                                const prevDate = new Date(pastDates[i - 1].utc);
+                                const currDate = new Date(pastDates[i].utc);
+                                const dayDiff = Math.round((currDate - prevDate) / (1000 * 60 * 60 * 24));
+
+                                if (dayDiff === 1) {
+                                    // Consecutive date - extend current range
+                                    currentRange.end = pastDates[i].utc;
+                                    currentRange.dates.push(pastDates[i]);
+                                } else {
+                                    // Gap detected - save current range and start new one
+                                    dateRanges.push({
+                                        range: currentRange.start === currentRange.end 
+                                            ? currentRange.start 
+                                            : `${currentRange.start}..${currentRange.end}`,
+                                        isCurrentDate: false,
+                                        dates: currentRange.dates
+                                    });
+                                    currentRange = { start: pastDates[i].utc, end: pastDates[i].utc, dates: [pastDates[i]] };
+                                }
+                            }
+
+                            // Add the last range
                             dateRanges.push({
                                 range: currentRange.start === currentRange.end 
                                     ? currentRange.start 
@@ -385,20 +424,26 @@
                         // Fetch incidents for each range
                         const allIncidents = [];
                         for (const { range, isCurrentDate } of dateRanges) {
-                            try {
-                                const incidents = await fetchGitHubIssues(serviceData.slug, range, isCurrentDate);
-                                allIncidents.push(...incidents);
-                            } catch (error) {
-                                console.error(`Failed to fetch incidents for ${range}:`, error);
-                            }
+                            const incidents = await fetchGitHubIssues(serviceData.slug, range, isCurrentDate);
+                            allIncidents.push(...incidents);
+                        }
+
+                        // If no incidents found, use fallback
+                        if (allIncidents.length === 0 && utcDatesWithDowntime.size > 0) {
+                            // Fallback to UTC-based display
+                            const fallbackDowntime = {};
+                            days.forEach(day => {
+                                fallbackDowntime[day.local] = (serviceData.dailyMinutesDown || {})[day.utc] || 0;
+                            });
+                            renderHistory(days, fallbackDowntime);
+                            return;
                         }
 
                         // Calculate downtime per local date from incidents
                         const downtimeByLocalDate = {};
-                        const timezoneOffset = new Date().getTimezoneOffset();
 
                         days.forEach(day => {
-                            const downMinutes = calculateDowntimeForDate(allIncidents, day.local, timezoneOffset);
+                            const downMinutes = calculateDowntimeForDate(allIncidents, day.local, 0);
                             downtimeByLocalDate[day.local] = downMinutes;
                         });
 
