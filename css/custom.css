@@ -25,6 +25,10 @@
     --submit-button-color: #ffffff;
     --graph-opacity: 1;
     --graph-filter: none;
+
+    /* Add-on variables */
+    --maintenance-border-left-color: #0a84ff;
+    --maintenance-background-color: #05141f;
     --history-bar-up-color: #3fb950;
     --history-bar-minor-color: #ffbf00;
     --history-bar-partial-color: #f7931e;
@@ -230,4 +234,9 @@ main > section.live-status > article > .uptime-history-labels > .label-left {
 /* Right label (Today) */
 main > section.live-status > article > .uptime-history-labels > .label-right {
     text-align: right;
+}
+
+/* Border color for Past Scheduled Maintenance */
+main > section.live-status + section > article.link.degraded {
+    border-left-color: var(--maintenance-border-left-color) !important;
 }

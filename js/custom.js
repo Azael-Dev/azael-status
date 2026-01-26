@@ -252,7 +252,8 @@
         }
     };
 
-    // Process issues and group by service slug and local date (based on created_at only)
+    // Process issues and group by service slug and local date
+    // Issues are assigned to ALL local dates they span (created_at to closed_at)
     const processIssuesByLocalDate = (issues) => {
         const result = {};
         
@@ -267,25 +268,44 @@
             if (!slugLabel) return;
             
             const slug = slugLabel.name;
-            const localDateStr = isoToLocalDateStr(issue.created_at);
+            const createdAt = new Date(issue.created_at);
+            const closedAt = issue.closed_at ? new Date(issue.closed_at) : new Date();
             
-            if (!result[slug]) {
-                result[slug] = {};
-            }
+            // Get start and end local dates
+            const startLocalDate = getLocalDateStr(createdAt);
+            const endLocalDate = getLocalDateStr(closedAt);
             
-            if (!result[slug][localDateStr]) {
-                result[slug][localDateStr] = [];
-            }
+            // Add issue to each local date it spans
+            let currentDateStr = startLocalDate;
+            const maxIterations = 365; // Safety limit
+            let iterations = 0;
             
-            // Check if issue already added for this date
-            const existingIssue = result[slug][localDateStr].find(i => i.created_at === issue.created_at);
-            if (!existingIssue) {
-                result[slug][localDateStr].push({
-                    created_at: issue.created_at,
-                    title: issue.title,
-                    state: issue.state,
-                    closed_at: issue.closed_at
-                });
+            while (currentDateStr <= endLocalDate && iterations < maxIterations) {
+                if (!result[slug]) {
+                    result[slug] = {};
+                }
+                
+                if (!result[slug][currentDateStr]) {
+                    result[slug][currentDateStr] = [];
+                }
+                
+                // Check if issue already added for this date
+                const existingIssue = result[slug][currentDateStr].find(i => i.created_at === issue.created_at);
+                if (!existingIssue) {
+                    result[slug][currentDateStr].push({
+                        created_at: issue.created_at,
+                        title: issue.title,
+                        state: issue.state,
+                        closed_at: issue.closed_at
+                    });
+                }
+                
+                // Move to next day
+                const [year, month, day] = currentDateStr.split('-').map(Number);
+                const nextDate = new Date(year, month - 1, day);
+                nextDate.setDate(nextDate.getDate() + 1);
+                currentDateStr = getLocalDateStr(nextDate);
+                iterations++;
             }
         });
         
@@ -293,9 +313,13 @@
     };
 
     // Calculate downtime for a specific local date based on issues
-    // Uses created_at date to determine which day the issue belongs to
-    // Calculates full downtime duration (created_at to closed_at) for that day
+    // Calculates only the portion of downtime that falls within the local date
     const calculateLocalDowntime = (issuesByLocalDate, slug, localDateStr, dailyMinutesDown, hasIssuesData) => {
+        // Parse local date boundaries
+        const [year, month, day] = localDateStr.split('-').map(Number);
+        const dayStart = new Date(year, month - 1, day, 0, 0, 0, 0);
+        const dayEnd = new Date(year, month - 1, day, 23, 59, 59, 999);
+        
         // If we have issues data from GitHub API
         if (hasIssuesData) {
             // Check if there are issues for this slug and date
@@ -314,9 +338,13 @@
                         endTime = new Date();
                     }
                     
-                    // Calculate full duration of the issue
-                    if (endTime > createdAt) {
-                        const minutes = Math.ceil((endTime - createdAt) / (1000 * 60));
+                    // Clamp to local date boundaries
+                    const effectiveStart = createdAt < dayStart ? dayStart : createdAt;
+                    const effectiveEnd = endTime > dayEnd ? dayEnd : endTime;
+                    
+                    // Calculate duration within this day
+                    if (effectiveEnd > effectiveStart) {
+                        const minutes = Math.ceil((effectiveEnd - effectiveStart) / (1000 * 60));
                         totalMinutes += minutes;
                     }
                 });
@@ -350,24 +378,18 @@
                 estimatedDowntime += minutes;
             } else if (localDateStr === localStartOfUtcDay) {
                 // Start of UTC day is in this local day
-                // Calculate proportion based on timezone offset
                 const offsetHours = -getTimezoneOffsetMinutes() / 60;
                 if (offsetHours > 0) {
-                    // Ahead of UTC (e.g., Asia/Bangkok UTC+7)
-                    // UTC 00:00 = Local 07:00, so 17 hours (17/24) of UTC day falls on this local day
                     const hoursInThisDay = 24 - offsetHours;
                     const proportion = hoursInThisDay / 24;
                     estimatedDowntime += Math.ceil(minutes * proportion);
                 } else {
-                    // Behind UTC, full day attribution
                     estimatedDowntime += minutes;
                 }
             } else if (localDateStr === localEndOfUtcDay) {
                 // End of UTC day is in this local day
                 const offsetHours = -getTimezoneOffsetMinutes() / 60;
                 if (offsetHours > 0) {
-                    // Ahead of UTC (e.g., Asia/Bangkok UTC+7)
-                    // UTC 23:59 = Local next day 06:59, so 7 hours (7/24) of UTC day falls on next local day
                     const hoursInThisDay = offsetHours;
                     const proportion = hoursInThisDay / 24;
                     estimatedDowntime += Math.ceil(minutes * proportion);
