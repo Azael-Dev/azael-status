@@ -1,7 +1,7 @@
-url: https://uptime.betterstack.com/api/v2/monitors/$BETTERSTACK_MONITOR_WEB_SERVER_ID
+url: $BETTERSTACK_API_WEB_SERVER_URL
 status: up
 code: 200
-responseTime: 296
-lastUpdated: 2026-01-27T12:15:13.672Z
+responseTime: 240
+lastUpdated: 2026-01-27T13:02:50.182Z
 startTime: 2026-01-27T12:15:13.369Z
 generator: Upptime <https://github.com/upptime/upptime>
