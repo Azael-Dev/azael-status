@@ -130,19 +130,19 @@
     "url": "https://api.azael.dev/$UPPTIME_MAILER_HEALTH_ENDPOINT",
     "icon": "https://status.azael.dev/images/icons/email.png",
     "slug": "mailer",
-    "status": "degraded",
-    "uptime": "100.00%",
-    "uptimeDay": "99.99%",
-    "uptimeWeek": "100.00%",
-    "uptimeMonth": "100.00%",
-    "uptimeYear": "100.00%",
-    "time": 2300,
-    "timeDay": 2437,
-    "timeWeek": 1753,
-    "timeMonth": 2300,
-    "timeYear": 2300,
+    "status": "up",
+    "uptime": "99.96%",
+    "uptimeDay": "99.67%",
+    "uptimeWeek": "99.95%",
+    "uptimeMonth": "99.96%",
+    "uptimeYear": "99.96%",
+    "time": 2283,
+    "timeDay": 2187,
+    "timeWeek": 1738,
+    "timeMonth": 2283,
+    "timeYear": 2283,
     "dailyMinutesDown": {
-      "2026-01-28": 0
+      "2026-01-28": 5
     }
   },
   {
