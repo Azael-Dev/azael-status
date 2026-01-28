@@ -236,7 +236,8 @@ main > section.live-status > article > .uptime-history-labels > .label-right {
     text-align: right;
 }
 
-/* Border color for Past Scheduled Maintenance */
+/* Border color for Scheduled Maintenance and Past Scheduled Maintenance */
+main > section > article.degraded.degraded-active.link,
 main > section.live-status + section > article.link.degraded {
     border-left-color: var(--maintenance-border-left-color) !important;
 }
