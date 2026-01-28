@@ -12,7 +12,7 @@
     const CACHE_KEY_TODAY = 'uptimeHistory_today';
     const CACHE_KEY_TODAY_DATE = 'uptimeHistory_today_date';
     const CACHE_KEY_TODAY_TIMESTAMP = 'uptimeHistory_today_timestamp';
-    const CACHE_DURATION_TODAY = 5 * 60 * 1000; // 5 minutes
+    const CACHE_DURATION_TODAY = 2 * 60 * 1000; // 2 minutes
 
     const setFooterYear = () => {
         if (yearSet) return false;
@@ -139,7 +139,7 @@
         const cachedDate = localStorage.getItem(CACHE_KEY_TODAY_DATE);
         const cachedData = localStorage.getItem(CACHE_KEY_TODAY);
         
-        // Check if cached data is still valid (5 minutes) and same local date
+        // Check if cached data is still valid (2 minutes) and same local date
         if (cachedTimestamp && cachedData && cachedDate === todayLocal) {
             const cacheAge = Date.now() - parseInt(cachedTimestamp, 10);
             if (cacheAge < CACHE_DURATION_TODAY) {
@@ -200,8 +200,9 @@
         if (cachedData) {
             try {
                 const cached = JSON.parse(cachedData);
-                // Cache is valid if end date matches (means data is up to date)
-                if (cached.end === end && cached.localDate === todayLocal) {
+                const cacheAge = cached.timestamp ? (Date.now() - cached.timestamp) : Infinity;
+                // Cache is valid if end date matches and cache age is less than 2 minutes
+                if (cached.end === end && cached.localDate === todayLocal && cacheAge < CACHE_DURATION_TODAY) {
                     return cached.items || [];
                 }
             } catch {
@@ -228,11 +229,12 @@
             
             const data = await response.json();
             
-            // Cache the result with date range info
+            // Cache the result with date range info and timestamp
             localStorage.setItem(CACHE_KEY_HISTORICAL, JSON.stringify({
                 start,
                 end,
                 localDate: todayLocal,
+                timestamp: Date.now(),
                 items: data.items || []
             }));
             
