@@ -12,7 +12,7 @@
     "uptimeYear": "100.00%",
     "time": 578,
     "timeDay": 254,
-    "timeWeek": 440,
+    "timeWeek": 430,
     "timeMonth": 578,
     "timeYear": 578,
     "dailyMinutesDown": {}
@@ -30,7 +30,7 @@
     "uptimeYear": "100.00%",
     "time": 183,
     "timeDay": 155,
-    "timeWeek": 153,
+    "timeWeek": 155,
     "timeMonth": 183,
     "timeYear": 183,
     "dailyMinutesDown": {}
@@ -48,7 +48,7 @@
     "uptimeYear": "100.00%",
     "time": 1351,
     "timeDay": 1519,
-    "timeWeek": 1364,
+    "timeWeek": 1357,
     "timeMonth": 1351,
     "timeYear": 1351,
     "dailyMinutesDown": {}
@@ -66,7 +66,7 @@
     "uptimeYear": "100.00%",
     "time": 913,
     "timeDay": 987,
-    "timeWeek": 903,
+    "timeWeek": 898,
     "timeMonth": 913,
     "timeYear": 913,
     "dailyMinutesDown": {}
@@ -102,7 +102,7 @@
     "uptimeYear": "100.00%",
     "time": 167,
     "timeDay": 192,
-    "timeWeek": 166,
+    "timeWeek": 168,
     "timeMonth": 167,
     "timeYear": 167,
     "dailyMinutesDown": {}
@@ -112,36 +112,40 @@
     "url": "https://api.azael.dev/$UPPTIME_DATABASE_HEALTH_ENDPOINT",
     "icon": "https://status.azael.dev/images/icons/database.png",
     "slug": "database",
-    "status": "up",
+    "status": "down",
     "uptime": "100.00%",
-    "uptimeDay": "100.00%",
+    "uptimeDay": "99.98%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
-    "time": 1050,
-    "timeDay": 899,
-    "timeWeek": 877,
-    "timeMonth": 1050,
-    "timeYear": 1050,
-    "dailyMinutesDown": {}
+    "time": 1037,
+    "timeDay": 728,
+    "timeWeek": 855,
+    "timeMonth": 1037,
+    "timeYear": 1037,
+    "dailyMinutesDown": {
+      "2026-01-28": 0
+    }
   },
   {
     "name": "Mailer",
     "url": "https://api.azael.dev/$UPPTIME_MAILER_HEALTH_ENDPOINT",
     "icon": "https://status.azael.dev/images/icons/email.png",
     "slug": "mailer",
-    "status": "up",
+    "status": "down",
     "uptime": "100.00%",
-    "uptimeDay": "100.00%",
+    "uptimeDay": "99.98%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
-    "time": 2314,
-    "timeDay": 2669,
-    "timeWeek": 1829,
-    "timeMonth": 2314,
-    "timeYear": 2314,
-    "dailyMinutesDown": {}
+    "time": 2282,
+    "timeDay": 2339,
+    "timeWeek": 1800,
+    "timeMonth": 2282,
+    "timeYear": 2282,
+    "dailyMinutesDown": {
+      "2026-01-28": 0
+    }
   },
   {
     "name": "Base API",
@@ -174,7 +178,7 @@
     "uptimeYear": "100.00%",
     "time": 397,
     "timeDay": 284,
-    "timeWeek": 438,
+    "timeWeek": 442,
     "timeMonth": 397,
     "timeYear": 397,
     "dailyMinutesDown": {}
@@ -184,18 +188,20 @@
     "url": "https://api.azael.dev/$UPPTIME_BANDB_REPORT_API_ENDPOINT",
     "icon": "https://status.azael.dev/images/icons/ban-report.png",
     "slug": "ban-db-report-api",
-    "status": "up",
+    "status": "down",
     "uptime": "100.00%",
-    "uptimeDay": "100.00%",
+    "uptimeDay": "99.98%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
-    "time": 287,
-    "timeDay": 288,
-    "timeWeek": 276,
-    "timeMonth": 287,
-    "timeYear": 287,
-    "dailyMinutesDown": {}
+    "time": 282,
+    "timeDay": 222,
+    "timeWeek": 268,
+    "timeMonth": 282,
+    "timeYear": 282,
+    "dailyMinutesDown": {
+      "2026-01-28": 0
+    }
   },
   {
     "name": "BanDB Lookup API",
@@ -210,7 +216,7 @@
     "uptimeYear": "100.00%",
     "time": 1215,
     "timeDay": 1368,
-    "timeWeek": 1258,
+    "timeWeek": 1252,
     "timeMonth": 1215,
     "timeYear": 1215,
     "dailyMinutesDown": {}
@@ -228,7 +234,7 @@
     "uptimeYear": "100.00%",
     "time": 181,
     "timeDay": 112,
-    "timeWeek": 137,
+    "timeWeek": 136,
     "timeMonth": 181,
     "timeYear": 181,
     "dailyMinutesDown": {}
@@ -246,7 +252,7 @@
     "uptimeYear": "100.00%",
     "time": 177,
     "timeDay": 108,
-    "timeWeek": 140,
+    "timeWeek": 139,
     "timeMonth": 177,
     "timeYear": 177,
     "dailyMinutesDown": {}
