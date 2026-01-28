@@ -67,7 +67,7 @@ sites:
     method: POST
     headers:
       - "Authorization: Bearer $UPPTIME_API_TOKEN"
-    maxResponseTime: 3000
+    maxResponseTime: 5000
     expectedStatusCodes:
       - 200
     __dangerous__body_down: '"status":"unhealthy"'
