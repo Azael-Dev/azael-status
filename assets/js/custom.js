@@ -358,44 +358,29 @@
             return 0;
         }
         
-        // Fallback: estimate based on UTC dailyMinutesDown mapping to local dates
-        // This only runs when we don't have issue data from GitHub API
+        // Fallback: Map UTC dailyMinutesDown to local dates
+        // Since dailyMinutesDown is recorded in UTC, we need to find which local date
+        // the UTC date corresponds to based on the client's timezone
         let estimatedDowntime = 0;
         
         for (const [utcDateStr, minutes] of Object.entries(dailyMinutesDown)) {
             if (minutes === 0) continue;
             
-            // UTC day boundaries
+            // Parse UTC date
             const [utcYear, utcMonth, utcDay] = utcDateStr.split('-').map(Number);
-            const utcDayStart = new Date(Date.UTC(utcYear, utcMonth - 1, utcDay, 0, 0, 0));
-            const utcDayEnd = new Date(Date.UTC(utcYear, utcMonth - 1, utcDay, 23, 59, 59, 999));
             
-            // Convert UTC boundaries to local time
-            const localStartOfUtcDay = getLocalDateStr(utcDayStart);
-            const localEndOfUtcDay = getLocalDateStr(utcDayEnd);
+            // Create a date at noon UTC to avoid edge cases
+            // This represents "the middle of the UTC day"
+            const utcNoon = new Date(Date.UTC(utcYear, utcMonth - 1, utcDay, 12, 0, 0));
             
-            // Check overlap with target local date
-            if (localDateStr === localStartOfUtcDay && localDateStr === localEndOfUtcDay) {
-                // Entire UTC day falls within same local day
+            // Get what local date this UTC date corresponds to
+            // For most practical purposes, a UTC date maps to the same local date
+            // unless the incident happens very close to midnight UTC
+            const localDateOfUtc = getLocalDateStr(utcNoon);
+            
+            // If the UTC date maps to our target local date, assign all downtime to it
+            if (localDateStr === localDateOfUtc) {
                 estimatedDowntime += minutes;
-            } else if (localDateStr === localStartOfUtcDay) {
-                // Start of UTC day is in this local day
-                const offsetHours = -getTimezoneOffsetMinutes() / 60;
-                if (offsetHours > 0) {
-                    const hoursInThisDay = 24 - offsetHours;
-                    const proportion = hoursInThisDay / 24;
-                    estimatedDowntime += Math.ceil(minutes * proportion);
-                } else {
-                    estimatedDowntime += minutes;
-                }
-            } else if (localDateStr === localEndOfUtcDay) {
-                // End of UTC day is in this local day
-                const offsetHours = -getTimezoneOffsetMinutes() / 60;
-                if (offsetHours > 0) {
-                    const hoursInThisDay = offsetHours;
-                    const proportion = hoursInThisDay / 24;
-                    estimatedDowntime += Math.ceil(minutes * proportion);
-                }
             }
         }
         
