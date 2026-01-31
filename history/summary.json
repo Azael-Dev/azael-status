@@ -12,7 +12,7 @@
     "uptimeYear": "100.00%",
     "time": 563,
     "timeDay": 300,
-    "timeWeek": 188,
+    "timeWeek": 185,
     "timeMonth": 563,
     "timeYear": 563,
     "dailyMinutesDown": {}
@@ -30,7 +30,7 @@
     "uptimeYear": "100.00%",
     "time": 182,
     "timeDay": 142,
-    "timeWeek": 152,
+    "timeWeek": 154,
     "timeMonth": 182,
     "timeYear": 182,
     "dailyMinutesDown": {}
@@ -48,7 +48,7 @@
     "uptimeYear": "100.00%",
     "time": 1349,
     "timeDay": 1285,
-    "timeWeek": 1343,
+    "timeWeek": 1352,
     "timeMonth": 1349,
     "timeYear": 1349,
     "dailyMinutesDown": {}
@@ -59,19 +59,17 @@
     "icon": "https://status.azael.dev/images/icons/ban.png",
     "slug": "cfx-ban-db",
     "status": "up",
-    "uptime": "99.98%",
-    "uptimeDay": "99.74%",
-    "uptimeWeek": "99.96%",
-    "uptimeMonth": "99.98%",
-    "uptimeYear": "99.98%",
+    "uptime": "100.00%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
+    "uptimeMonth": "100.00%",
+    "uptimeYear": "100.00%",
     "time": 970,
     "timeDay": 1861,
-    "timeWeek": 1021,
+    "timeWeek": 1033,
     "timeMonth": 970,
     "timeYear": 970,
-    "dailyMinutesDown": {
-      "2026-01-31": 4
-    }
+    "dailyMinutesDown": {}
   },
   {
     "name": "Documentation",
@@ -86,7 +84,7 @@
     "uptimeYear": "100.00%",
     "time": 185,
     "timeDay": 131,
-    "timeWeek": 187,
+    "timeWeek": 188,
     "timeMonth": 185,
     "timeYear": 185,
     "dailyMinutesDown": {}
@@ -122,7 +120,7 @@
     "uptimeYear": "100.00%",
     "time": 1041,
     "timeDay": 555,
-    "timeWeek": 886,
+    "timeWeek": 887,
     "timeMonth": 1041,
     "timeYear": 1041,
     "dailyMinutesDown": {}
@@ -139,8 +137,8 @@
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
     "time": 2396,
-    "timeDay": 4167,
-    "timeWeek": 2067,
+    "timeDay": 3265,
+    "timeWeek": 2082,
     "timeMonth": 2396,
     "timeYear": 2396,
     "dailyMinutesDown": {}
@@ -158,7 +156,7 @@
     "uptimeYear": "100.00%",
     "time": 363,
     "timeDay": 312,
-    "timeWeek": 353,
+    "timeWeek": 360,
     "timeMonth": 363,
     "timeYear": 363,
     "dailyMinutesDown": {}
@@ -176,7 +174,7 @@
     "uptimeYear": "100.00%",
     "time": 388,
     "timeDay": 267,
-    "timeWeek": 270,
+    "timeWeek": 272,
     "timeMonth": 388,
     "timeYear": 388,
     "dailyMinutesDown": {}
@@ -194,7 +192,7 @@
     "uptimeYear": "100.00%",
     "time": 284,
     "timeDay": 322,
-    "timeWeek": 240,
+    "timeWeek": 239,
     "timeMonth": 284,
     "timeYear": 284,
     "dailyMinutesDown": {}
@@ -212,7 +210,7 @@
     "uptimeYear": "100.00%",
     "time": 1261,
     "timeDay": 1800,
-    "timeWeek": 1327,
+    "timeWeek": 1349,
     "timeMonth": 1261,
     "timeYear": 1261,
     "dailyMinutesDown": {}
@@ -222,36 +220,40 @@
     "url": "$UPPTIME_BOT_SERVER_IP",
     "icon": "https://status.azael.dev/images/icons/server.png",
     "slug": "bot-server",
-    "status": "up",
+    "status": "degraded",
     "uptime": "100.00%",
-    "uptimeDay": "100.00%",
+    "uptimeDay": "99.97%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
-    "time": 178,
-    "timeDay": 125,
-    "timeWeek": 118,
-    "timeMonth": 178,
-    "timeYear": 178,
-    "dailyMinutesDown": {}
+    "time": 186,
+    "timeDay": 321,
+    "timeWeek": 139,
+    "timeMonth": 186,
+    "timeYear": 186,
+    "dailyMinutesDown": {
+      "2026-01-31": 0
+    }
   },
   {
     "name": "Discord Bot",
     "url": "$UPPTIME_BOT_SERVER_IP",
     "icon": "https://status.azael.dev/images/icons/discord.png",
     "slug": "discord-bot",
-    "status": "up",
+    "status": "degraded",
     "uptime": "100.00%",
-    "uptimeDay": "100.00%",
+    "uptimeDay": "99.99%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
-    "time": 173,
-    "timeDay": 116,
-    "timeWeek": 121,
-    "timeMonth": 173,
-    "timeYear": 173,
-    "dailyMinutesDown": {}
+    "time": 193,
+    "timeDay": 525,
+    "timeWeek": 161,
+    "timeMonth": 193,
+    "timeYear": 193,
+    "dailyMinutesDown": {
+      "2026-01-31": 0
+    }
   },
   {
     "name": "Cloudflare Status",
@@ -266,7 +268,7 @@
     "uptimeYear": "100.00%",
     "time": 195,
     "timeDay": 166,
-    "timeWeek": 194,
+    "timeWeek": 196,
     "timeMonth": 195,
     "timeYear": 195,
     "dailyMinutesDown": {}
