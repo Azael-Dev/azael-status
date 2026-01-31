@@ -12,7 +12,7 @@
     "uptimeYear": "100.00%",
     "time": 563,
     "timeDay": 300,
-    "timeWeek": 220,
+    "timeWeek": 188,
     "timeMonth": 563,
     "timeYear": 563,
     "dailyMinutesDown": {}
@@ -58,18 +58,20 @@
     "url": "https://bandb.azael.dev",
     "icon": "https://status.azael.dev/images/icons/ban.png",
     "slug": "cfx-ban-db",
-    "status": "up",
+    "status": "degraded",
     "uptime": "100.00%",
-    "uptimeDay": "100.00%",
+    "uptimeDay": "99.99%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
-    "time": 915,
-    "timeDay": 938,
-    "timeWeek": 895,
-    "timeMonth": 915,
-    "timeYear": 915,
-    "dailyMinutesDown": {}
+    "time": 971,
+    "timeDay": 2168,
+    "timeWeek": 1023,
+    "timeMonth": 971,
+    "timeYear": 971,
+    "dailyMinutesDown": {
+      "2026-01-31": 0
+    }
   },
   {
     "name": "Documentation",
@@ -203,19 +205,17 @@
     "icon": "https://status.azael.dev/images/icons/ban-lookup.png",
     "slug": "ban-db-lookup-api",
     "status": "up",
-    "uptime": "99.97%",
-    "uptimeDay": "99.67%",
-    "uptimeWeek": "99.95%",
-    "uptimeMonth": "99.97%",
-    "uptimeYear": "99.97%",
+    "uptime": "100.00%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
+    "uptimeMonth": "100.00%",
+    "uptimeYear": "100.00%",
     "time": 1261,
     "timeDay": 1800,
     "timeWeek": 1327,
     "timeMonth": 1261,
     "timeYear": 1261,
-    "dailyMinutesDown": {
-      "2026-01-31": 5
-    }
+    "dailyMinutesDown": {}
   },
   {
     "name": "Bot Server",
