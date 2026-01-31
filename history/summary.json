@@ -202,18 +202,20 @@
     "url": "https://bandb.azael.dev/api/v1/identifier/$UPPTIME_BANDB_LOOKUP_IDENTIFIER",
     "icon": "https://status.azael.dev/images/icons/ban-lookup.png",
     "slug": "ban-db-lookup-api",
-    "status": "up",
+    "status": "degraded",
     "uptime": "100.00%",
-    "uptimeDay": "100.00%",
+    "uptimeDay": "99.99%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
-    "time": 1214,
-    "timeDay": 1068,
-    "timeWeek": 1241,
-    "timeMonth": 1214,
-    "timeYear": 1214,
-    "dailyMinutesDown": {}
+    "time": 1260,
+    "timeDay": 1964,
+    "timeWeek": 1327,
+    "timeMonth": 1260,
+    "timeYear": 1260,
+    "dailyMinutesDown": {
+      "2026-01-31": 0
+    }
   },
   {
     "name": "Bot Server",
