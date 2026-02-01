@@ -58,18 +58,20 @@
     "url": "https://bandb.azael.dev",
     "icon": "https://status.azael.dev/images/icons/ban.png",
     "slug": "cfx-ban-db",
-    "status": "up",
+    "status": "degraded",
     "uptime": "100.00%",
-    "uptimeDay": "100.00%",
+    "uptimeDay": "99.98%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
-    "time": 970,
-    "timeDay": 2168,
-    "timeWeek": 1030,
-    "timeMonth": 970,
-    "timeYear": 970,
-    "dailyMinutesDown": {}
+    "time": 1014,
+    "timeDay": 2638,
+    "timeWeek": 1134,
+    "timeMonth": 1014,
+    "timeYear": 1014,
+    "dailyMinutesDown": {
+      "2026-02-01": 0
+    }
   },
   {
     "name": "Documentation",
