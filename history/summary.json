@@ -12,7 +12,7 @@
     "uptimeYear": "100.00%",
     "time": 559,
     "timeDay": 249,
-    "timeWeek": 184,
+    "timeWeek": 185,
     "timeMonth": 559,
     "timeYear": 559,
     "dailyMinutesDown": {}
@@ -30,7 +30,7 @@
     "uptimeYear": "100.00%",
     "time": 182,
     "timeDay": 194,
-    "timeWeek": 156,
+    "timeWeek": 159,
     "timeMonth": 182,
     "timeYear": 182,
     "dailyMinutesDown": {}
@@ -40,18 +40,20 @@
     "url": "https://cfx.azael.dev",
     "icon": "https://status.azael.dev/images/icons/store.png",
     "slug": "cfx-store",
-    "status": "up",
+    "status": "degraded",
     "uptime": "100.00%",
-    "uptimeDay": "100.00%",
+    "uptimeDay": "99.98%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
-    "time": 1350,
-    "timeDay": 1442,
-    "timeWeek": 1357,
-    "timeMonth": 1350,
-    "timeYear": 1350,
-    "dailyMinutesDown": {}
+    "time": 1371,
+    "timeDay": 2091,
+    "timeWeek": 1430,
+    "timeMonth": 1371,
+    "timeYear": 1371,
+    "dailyMinutesDown": {
+      "2026-02-01": 0
+    }
   },
   {
     "name": "CFX BanDB",
@@ -59,19 +61,17 @@
     "icon": "https://status.azael.dev/images/icons/ban.png",
     "slug": "cfx-ban-db",
     "status": "up",
-    "uptime": "99.97%",
-    "uptimeDay": "99.67%",
-    "uptimeWeek": "99.95%",
-    "uptimeMonth": "99.97%",
-    "uptimeYear": "99.97%",
+    "uptime": "100.00%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
+    "uptimeMonth": "100.00%",
+    "uptimeYear": "100.00%",
     "time": 1014,
-    "timeDay": 2315,
-    "timeWeek": 1130,
+    "timeDay": 2002,
+    "timeWeek": 1161,
     "timeMonth": 1014,
     "timeYear": 1014,
-    "dailyMinutesDown": {
-      "2026-02-01": 5
-    }
+    "dailyMinutesDown": {}
   },
   {
     "name": "Documentation",
@@ -86,7 +86,7 @@
     "uptimeYear": "100.00%",
     "time": 184,
     "timeDay": 136,
-    "timeWeek": 187,
+    "timeWeek": 191,
     "timeMonth": 184,
     "timeYear": 184,
     "dailyMinutesDown": {}
@@ -104,7 +104,7 @@
     "uptimeYear": "100.00%",
     "time": 164,
     "timeDay": 57,
-    "timeWeek": 155,
+    "timeWeek": 154,
     "timeMonth": 164,
     "timeYear": 164,
     "dailyMinutesDown": {}
@@ -122,7 +122,7 @@
     "uptimeYear": "100.00%",
     "time": 1039,
     "timeDay": 922,
-    "timeWeek": 886,
+    "timeWeek": 890,
     "timeMonth": 1039,
     "timeYear": 1039,
     "dailyMinutesDown": {}
@@ -140,7 +140,7 @@
     "uptimeYear": "100.00%",
     "time": 2379,
     "timeDay": 1001,
-    "timeWeek": 2076,
+    "timeWeek": 2108,
     "timeMonth": 2379,
     "timeYear": 2379,
     "dailyMinutesDown": {}
@@ -158,7 +158,7 @@
     "uptimeYear": "100.00%",
     "time": 361,
     "timeDay": 284,
-    "timeWeek": 360,
+    "timeWeek": 372,
     "timeMonth": 361,
     "timeYear": 361,
     "dailyMinutesDown": {}
@@ -176,7 +176,7 @@
     "uptimeYear": "100.00%",
     "time": 387,
     "timeDay": 289,
-    "timeWeek": 271,
+    "timeWeek": 272,
     "timeMonth": 387,
     "timeYear": 387,
     "dailyMinutesDown": {}
@@ -194,7 +194,7 @@
     "uptimeYear": "100.00%",
     "time": 284,
     "timeDay": 287,
-    "timeWeek": 239,
+    "timeWeek": 236,
     "timeMonth": 284,
     "timeYear": 284,
     "dailyMinutesDown": {}
@@ -212,7 +212,7 @@
     "uptimeYear": "100.00%",
     "time": 1262,
     "timeDay": 1339,
-    "timeWeek": 1365,
+    "timeWeek": 1376,
     "timeMonth": 1262,
     "timeYear": 1262,
     "dailyMinutesDown": {}
@@ -230,7 +230,7 @@
     "uptimeYear": "100.00%",
     "time": 188,
     "timeDay": 319,
-    "timeWeek": 152,
+    "timeWeek": 156,
     "timeMonth": 188,
     "timeYear": 188,
     "dailyMinutesDown": {}
@@ -248,7 +248,7 @@
     "uptimeYear": "100.00%",
     "time": 190,
     "timeDay": 516,
-    "timeWeek": 160,
+    "timeWeek": 164,
     "timeMonth": 190,
     "timeYear": 190,
     "dailyMinutesDown": {}
@@ -266,7 +266,7 @@
     "uptimeYear": "100.00%",
     "time": 192,
     "timeDay": 114,
-    "timeWeek": 191,
+    "timeWeek": 195,
     "timeMonth": 192,
     "timeYear": 192,
     "dailyMinutesDown": {}
