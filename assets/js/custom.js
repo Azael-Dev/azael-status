@@ -262,12 +262,15 @@
         issues.forEach(issue => {
             if (!issue.created_at || !issue.labels) return;
             
-            // Find the slug label (not 'status')
+            // Find the slug label (not 'status' or 'maintenance')
             const slugLabel = issue.labels.find(label => 
-                label.name && label.name !== 'status'
+                label.name && label.name !== 'status' && label.name !== 'maintenance'
             );
             
             if (!slugLabel) return;
+            
+            // Check if this is a maintenance issue
+            const isMaintenance = issue.labels.some(label => label.name === 'maintenance');
             
             const slug = slugLabel.name;
             const createdAt = new Date(issue.created_at);
@@ -298,7 +301,8 @@
                         created_at: issue.created_at,
                         title: issue.title,
                         state: issue.state,
-                        closed_at: issue.closed_at
+                        closed_at: issue.closed_at,
+                        isMaintenance: isMaintenance
                     });
                 }
                 
@@ -316,75 +320,59 @@
 
     // Calculate downtime for a specific local date based on issues
     // Calculates only the portion of downtime that falls within the local date
-    const calculateLocalDowntime = (issuesByLocalDate, slug, localDateStr, dailyMinutesDown, hasIssuesData) => {
+    // Returns object with: { minutes, isMaintenance, hasIssue }
+    const calculateLocalDowntime = (issuesByLocalDate, slug, localDateStr) => {
         // Parse local date boundaries
         const [year, month, day] = localDateStr.split('-').map(Number);
         const dayStart = new Date(year, month - 1, day, 0, 0, 0, 0);
         const dayEnd = new Date(year, month - 1, day, 23, 59, 59, 999);
         
-        // If we have issues data from GitHub API
-        if (hasIssuesData) {
-            // Check if there are issues for this slug and date
-            if (issuesByLocalDate[slug] && issuesByLocalDate[slug][localDateStr]) {
-                const issues = issuesByLocalDate[slug][localDateStr];
-                let totalMinutes = 0;
-                
-                issues.forEach(issue => {
-                    const createdAt = new Date(issue.created_at);
-                    let endTime;
-                    
-                    if (issue.closed_at) {
-                        endTime = new Date(issue.closed_at);
-                    } else {
-                        // If not closed, use current time
-                        endTime = new Date();
-                    }
-                    
-                    // Clamp to local date boundaries
-                    const effectiveStart = createdAt < dayStart ? dayStart : createdAt;
-                    const effectiveEnd = endTime > dayEnd ? dayEnd : endTime;
-                    
-                    // Calculate duration within this day
-                    if (effectiveEnd > effectiveStart) {
-                        const minutes = Math.ceil((effectiveEnd - effectiveStart) / (1000 * 60));
-                        totalMinutes += minutes;
-                    }
-                });
-                
-                return Math.min(totalMinutes, 1440); // Cap at 24 hours
-            }
+        // Check if there are issues for this slug and date
+        if (issuesByLocalDate[slug] && issuesByLocalDate[slug][localDateStr]) {
+            const issues = issuesByLocalDate[slug][localDateStr];
+            let totalMinutes = 0;
+            let hasMaintenance = false;
             
-            // We have issues data but no issues for this date = no downtime
-            return 0;
+            issues.forEach(issue => {
+                const createdAt = new Date(issue.created_at);
+                let endTime;
+                
+                if (issue.closed_at) {
+                    endTime = new Date(issue.closed_at);
+                } else {
+                    // If not closed, use current time
+                    endTime = new Date();
+                }
+                
+                // Track if any issue is maintenance
+                if (issue.isMaintenance) {
+                    hasMaintenance = true;
+                }
+                
+                // Clamp to local date boundaries
+                const effectiveStart = createdAt < dayStart ? dayStart : createdAt;
+                const effectiveEnd = endTime > dayEnd ? dayEnd : endTime;
+                
+                // Calculate duration within this day
+                if (effectiveEnd > effectiveStart) {
+                    const minutes = Math.ceil((effectiveEnd - effectiveStart) / (1000 * 60));
+                    totalMinutes += minutes;
+                }
+            });
+            
+            return {
+                minutes: Math.min(totalMinutes, 1440), // Cap at 24 hours
+                isMaintenance: hasMaintenance,
+                hasIssue: true
+            };
         }
         
-        // Fallback: Map UTC dailyMinutesDown to local dates
-        // Since dailyMinutesDown is recorded in UTC, we need to find which local date
-        // the UTC date corresponds to based on the client's timezone
-        let estimatedDowntime = 0;
-        
-        for (const [utcDateStr, minutes] of Object.entries(dailyMinutesDown)) {
-            if (minutes === 0) continue;
-            
-            // Parse UTC date
-            const [utcYear, utcMonth, utcDay] = utcDateStr.split('-').map(Number);
-            
-            // Create a date at noon UTC to avoid edge cases
-            // This represents "the middle of the UTC day"
-            const utcNoon = new Date(Date.UTC(utcYear, utcMonth - 1, utcDay, 12, 0, 0));
-            
-            // Get what local date this UTC date corresponds to
-            // For most practical purposes, a UTC date maps to the same local date
-            // unless the incident happens very close to midnight UTC
-            const localDateOfUtc = getLocalDateStr(utcNoon);
-            
-            // If the UTC date maps to our target local date, assign all downtime to it
-            if (localDateStr === localDateOfUtc) {
-                estimatedDowntime += minutes;
-            }
-        }
-        
-        return Math.min(estimatedDowntime, 1440);
+        // No issues for this date
+        return {
+            minutes: 0,
+            isMaintenance: false,
+            hasIssue: false
+        };
     };
 
     // Reset flags and clear processed markers
@@ -470,16 +458,14 @@
             // Fetch GitHub issues (today and historical) - only once
             let todayIssues = [];
             let historicalIssues = [];
-            let hasIssuesData = false;
             
             try {
                 [todayIssues, historicalIssues] = await Promise.all([
                     fetchTodayIssues(),
                     fetchHistoricalIssues()
                 ]);
-                hasIssuesData = todayIssues.length > 0 || historicalIssues.length > 0;
             } catch (e) {
-                console.warn('Could not fetch GitHub issues, using fallback calculation:', e);
+                console.warn('Could not fetch GitHub issues:', e);
             }
 
             // Combine and process all issues
@@ -524,7 +510,6 @@
                 }
 
                 const slug = serviceData.slug || '';
-                const dailyMinutesDown = serviceData.dailyMinutesDown || {};
 
                 // Create history container
                 const historyContainer = document.createElement('div');
@@ -547,39 +532,48 @@
                     dayBar.className = 'day';
 
                     // Calculate downtime for local date
-                    const downMinutes = calculateLocalDowntime(
+                    const downtimeInfo = calculateLocalDowntime(
                         issuesByLocalDate, 
                         slug, 
-                        localDateStr, 
-                        dailyMinutesDown,
-                        hasIssuesData
+                        localDateStr
                     );
+                    const downMinutes = downtimeInfo.minutes;
                     const uptimePercent = ((1440 - downMinutes) / 1440 * 100).toFixed(2);
 
                     // Determine severity level
-                    const severityClass = downMinutes === 0 ? 'up'
-                        : downMinutes < 30 ? 'minor'
-                        : downMinutes < 60 ? 'partial'
-                        : 'major';
+                    // Only show colored bars when there's an actual issue
+                    let severityClass;
+                    if (!downtimeInfo.hasIssue) {
+                        severityClass = 'up';
+                    } else if (downtimeInfo.isMaintenance) {
+                        severityClass = 'maintenance';
+                    } else if (downMinutes < 30) {
+                        severityClass = 'minor';
+                    } else if (downMinutes < 60) {
+                        severityClass = 'partial';
+                    } else {
+                        severityClass = 'major';
+                    }
 
                     dayBar.classList.add(severityClass);
 
                     // Format local date for display
                     const formattedDate = formatLocalDate(localDateStr);
 
-                    // Format outage duration
+                    // Format outage/maintenance duration
                     let durationText = '';
+                    const durationLabel = downtimeInfo.isMaintenance ? 'Maintenance Duration' : 'Incident Duration';
 
-                    if (downMinutes !== 0) {
+                    if (downtimeInfo.hasIssue && downMinutes !== 0) {
                         const hours = Math.floor(downMinutes / 60);
                         const minutes = downMinutes % 60;
 
                         if (hours > 0 && minutes > 0) {
-                            durationText = `Incident Duration: ${hours} hour${hours > 1 ? 's' : ''} ${minutes} minute${minutes > 1 ? 's' : ''}`;
+                            durationText = `${durationLabel}: ${hours} hour${hours > 1 ? 's' : ''} ${minutes} minute${minutes > 1 ? 's' : ''}`;
                         } else if (hours > 0) {
-                            durationText = `Incident Duration: ${hours} hour${hours > 1 ? 's' : ''}`;
+                            durationText = `${durationLabel}: ${hours} hour${hours > 1 ? 's' : ''}`;
                         } else {
-                            durationText = `Incident Duration: ${minutes} minute${minutes > 1 ? 's' : ''}`;
+                            durationText = `${durationLabel}: ${minutes} minute${minutes > 1 ? 's' : ''}`;
                         }
                     }
 

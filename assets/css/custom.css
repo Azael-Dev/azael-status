@@ -33,6 +33,7 @@
     --history-bar-minor-color: #ffbf00;
     --history-bar-partial-color: #f7931e;
     --history-bar-major-color: #da3633;
+    --history-bar-maintenance-color: #0a84ff;
 }
 
 /* Resize logo image */
@@ -182,6 +183,11 @@ main > section.live-status > article > .uptime-history > .day.partial {
 /* Major Outage (≥ 60 minutes) */
 main > section.live-status > article > .uptime-history > .day.major {
     background-color: var(--history-bar-major-color);
+}
+
+/* Scheduled Maintenance */
+main > section.live-status > article > .uptime-history > .day.maintenance {
+    background-color: var(--history-bar-maintenance-color);
 }
 
 /* Tooltip */
