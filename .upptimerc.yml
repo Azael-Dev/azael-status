@@ -16,14 +16,14 @@ sites:
   - name: Portal
     icon: https://status.azael.dev/images/icons/portal.png
     url: https://portal.azael.dev
-    maxResponseTime: 500
+    maxResponseTime: 1000
     expectedStatusCodes:
       - 200
 
   - name: CFX Store
     icon: https://status.azael.dev/images/icons/store.png
     url: https://cfx.azael.dev
-    maxResponseTime: 2000
+    maxResponseTime: 3000
     expectedStatusCodes:
       - 200
       - 403
@@ -31,7 +31,7 @@ sites:
   - name: CFX BanDB
     icon: https://status.azael.dev/images/icons/ban.png
     url: https://bandb.azael.dev
-    maxResponseTime: 1500
+    maxResponseTime: 3000
     expectedStatusCodes:
       - 200
       - 403
@@ -39,14 +39,14 @@ sites:
   - name: Documentation
     icon: https://status.azael.dev/images/icons/doc.png
     url: https://docs.azael.dev
-    maxResponseTime: 500
+    maxResponseTime: 1000
     expectedStatusCodes:
       - 200
 
   - name: Documentation (Legacy)
     icon: https://status.azael.dev/images/icons/doc.png
     url: https://docs-old.azael.dev
-    maxResponseTime: 500
+    maxResponseTime: 1000
     expectedStatusCodes:
       - 200
 
@@ -56,7 +56,7 @@ sites:
     method: POST
     headers:
       - "Authorization: Bearer $UPPTIME_API_TOKEN"
-    maxResponseTime: 1500
+    maxResponseTime: 2000
     expectedStatusCodes:
       - 200
     __dangerous__body_down: '"status":"unhealthy"'
@@ -67,7 +67,7 @@ sites:
     method: POST
     headers:
       - "Authorization: Bearer $UPPTIME_API_TOKEN"
-    maxResponseTime: 5500
+    maxResponseTime: 6000
     expectedStatusCodes:
       - 200
     __dangerous__body_down: '"status":"unhealthy"'
@@ -120,14 +120,14 @@ sites:
     url: $UPPTIME_BOT_SERVER_IP
     check: tcp-ping
     port: 443
-    maxResponseTime: 500
+    maxResponseTime: 1000
 
   - name: Discord Bot
     icon: https://status.azael.dev/images/icons/discord.png
     url: $UPPTIME_BOT_SERVER_IP
     check: tcp-ping
     port: 8138
-    maxResponseTime: 500
+    maxResponseTime: 1000
 
   - name: Cloudflare Status
     icon: https://status.azael.dev/images/icons/cloudflare.png
