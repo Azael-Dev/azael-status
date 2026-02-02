@@ -153,7 +153,7 @@
 
         try {
             // Fetch today's UTC date issues
-            const url = `https://api.github.com/search/issues?q=repo:Azael-Dev/azael-status+author:Azael-Dev+label:status+created:${todayUTC}&per_page=100`;
+            const url = `https://api.github.com/search/issues?q=repo:Azael-Dev/azael-status+author:Azael-Dev+label:status,maintenance+created:${todayUTC}&per_page=100`;
             const response = await fetchWithRetry(url);
             
             if (!response) {
@@ -211,7 +211,7 @@
         }
 
         try {
-            const url = `https://api.github.com/search/issues?q=repo:Azael-Dev/azael-status+author:Azael-Dev+label:status+created:${start}..${end}&per_page=100`;
+            const url = `https://api.github.com/search/issues?q=repo:Azael-Dev/azael-status+author:Azael-Dev+label:status,maintenance+created:${start}..${end}&per_page=100`;
             const response = await fetchWithRetry(url);
             
             if (!response) {
