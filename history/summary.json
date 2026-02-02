@@ -113,20 +113,17 @@
     "icon": "https://status.azael.dev/images/icons/database.png",
     "slug": "database",
     "status": "up",
-    "uptime": "99.01%",
-    "uptimeDay": "86.97%",
-    "uptimeWeek": "98.14%",
-    "uptimeMonth": "99.01%",
-    "uptimeYear": "99.01%",
+    "uptime": "100.00%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
+    "uptimeMonth": "100.00%",
+    "uptimeYear": "100.00%",
     "time": 1037,
     "timeDay": 978,
     "timeWeek": 976,
     "timeMonth": 1037,
     "timeYear": 1037,
-    "dailyMinutesDown": {
-      "2026-02-02": 153,
-      "2026-02-01": 35
-    }
+    "dailyMinutesDown": {}
   },
   {
     "name": "Mailer",
