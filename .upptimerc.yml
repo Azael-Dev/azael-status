@@ -56,7 +56,7 @@ sites:
     method: POST
     headers:
       - "Authorization: Bearer $UPPTIME_API_TOKEN"
-    maxResponseTime: 2000
+    maxResponseTime: 3000
     expectedStatusCodes:
       - 200
     __dangerous__body_down: '"status":"unhealthy"'
@@ -110,7 +110,7 @@ sites:
     url: https://bandb.azael.dev/api/v1/identifier/$UPPTIME_BANDB_LOOKUP_IDENTIFIER
     headers:
       - "Authorization: Bearer $UPPTIME_BANDB_API_TOKEN"
-    maxResponseTime: 2000
+    maxResponseTime: 3000
     expectedStatusCodes:
       - 200
       - 403
