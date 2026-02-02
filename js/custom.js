@@ -254,65 +254,103 @@
         }
     };
 
+    // Parse start/end times from issue body (maintenance schedule)
+    // Format: start: YYYY-MM-DDTHH:MM:SS+HH:MM, end: YYYY-MM-DDTHH:MM:SS+HH:MM
+    const parseScheduleFromBody = (body) => {
+        if (!body) return null;
+        
+        const startMatch = body.match(/start:\s*(\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}[+-]\d{2}:\d{2})/i);
+        const endMatch = body.match(/end:\s*(\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}[+-]\d{2}:\d{2})/i);
+        
+        if (startMatch && endMatch) {
+            try {
+                const start = new Date(startMatch[1]);
+                const end = new Date(endMatch[1]);
+                if (!isNaN(start.getTime()) && !isNaN(end.getTime())) {
+                    return { start, end };
+                }
+            } catch {
+                return null;
+            }
+        }
+        
+        return null;
+    };
+
     // Process issues and group by service slug and local date
-    // Issues are assigned to ALL local dates they span (created_at to closed_at)
+    // Issues are assigned to ALL local dates they span (start to end time)
     const processIssuesByLocalDate = (issues) => {
         const result = {};
         
         issues.forEach(issue => {
             if (!issue.created_at || !issue.labels) return;
             
-            // Find the slug label (not 'status' or 'maintenance')
-            const slugLabel = issue.labels.find(label => 
+            // Find ALL slug labels (not 'status' or 'maintenance')
+            const slugLabels = issue.labels.filter(label => 
                 label.name && label.name !== 'status' && label.name !== 'maintenance'
             );
             
-            if (!slugLabel) return;
+            if (slugLabels.length === 0) return;
             
             // Check if this is a maintenance issue
             const isMaintenance = issue.labels.some(label => label.name === 'maintenance');
             
-            const slug = slugLabel.name;
-            const createdAt = new Date(issue.created_at);
-            const closedAt = issue.closed_at ? new Date(issue.closed_at) : new Date();
+            // Try to get scheduled time from body, fallback to created_at/closed_at
+            const schedule = parseScheduleFromBody(issue.body);
+            
+            let startTime, endTime;
+            if (schedule) {
+                startTime = schedule.start;
+                endTime = schedule.end;
+            } else {
+                startTime = new Date(issue.created_at);
+                endTime = issue.closed_at ? new Date(issue.closed_at) : new Date();
+            }
             
             // Get start and end local dates
-            const startLocalDate = getLocalDateStr(createdAt);
-            const endLocalDate = getLocalDateStr(closedAt);
+            const startLocalDate = getLocalDateStr(startTime);
+            const endLocalDate = getLocalDateStr(endTime);
             
-            // Add issue to each local date it spans
-            let currentDateStr = startLocalDate;
-            const maxIterations = 365; // Safety limit
-            let iterations = 0;
-            
-            while (currentDateStr <= endLocalDate && iterations < maxIterations) {
-                if (!result[slug]) {
-                    result[slug] = {};
-                }
+            // Process for each slug label
+            slugLabels.forEach(slugLabel => {
+                const slug = slugLabel.name;
                 
-                if (!result[slug][currentDateStr]) {
-                    result[slug][currentDateStr] = [];
-                }
+                // Add issue to each local date it spans
+                let currentDateStr = startLocalDate;
+                const maxIterations = 365; // Safety limit
+                let iterations = 0;
                 
-                // Check if issue already added for this date
-                const existingIssue = result[slug][currentDateStr].find(i => i.created_at === issue.created_at);
-                if (!existingIssue) {
-                    result[slug][currentDateStr].push({
-                        created_at: issue.created_at,
-                        title: issue.title,
-                        state: issue.state,
-                        closed_at: issue.closed_at,
-                        isMaintenance: isMaintenance
-                    });
+                while (currentDateStr <= endLocalDate && iterations < maxIterations) {
+                    if (!result[slug]) {
+                        result[slug] = {};
+                    }
+                    
+                    if (!result[slug][currentDateStr]) {
+                        result[slug][currentDateStr] = [];
+                    }
+                    
+                    // Check if issue already added for this date (use issue id)
+                    const issueId = issue.id || issue.created_at;
+                    const existingIssue = result[slug][currentDateStr].find(i => i.id === issueId);
+                    if (!existingIssue) {
+                        result[slug][currentDateStr].push({
+                            id: issueId,
+                            start_time: startTime.toISOString(),
+                            end_time: endTime.toISOString(),
+                            title: issue.title,
+                            state: issue.state,
+                            isMaintenance: isMaintenance
+                        });
+                    }
+                    
+                    // Move to next day
+                    const [year, month, day] = currentDateStr.split('-').map(Number);
+                    const nextDate = new Date(year, month - 1, day);
+                    nextDate.setDate(nextDate.getDate() + 1);
+                    currentDateStr = getLocalDateStr(nextDate);
+                    iterations++;
                 }
-                
-                // Move to next day
-                const [year, month, day] = currentDateStr.split('-').map(Number);
-                const nextDate = new Date(year, month - 1, day);
-                nextDate.setDate(nextDate.getDate() + 1);
-                currentDateStr = getLocalDateStr(nextDate);
-                iterations++;
-            }
+            });
         });
         
         return result;
@@ -334,15 +372,8 @@
             let hasMaintenance = false;
             
             issues.forEach(issue => {
-                const createdAt = new Date(issue.created_at);
-                let endTime;
-                
-                if (issue.closed_at) {
-                    endTime = new Date(issue.closed_at);
-                } else {
-                    // If not closed, use current time
-                    endTime = new Date();
-                }
+                const startTime = new Date(issue.start_time);
+                const endTime = new Date(issue.end_time);
                 
                 // Track if any issue is maintenance
                 if (issue.isMaintenance) {
@@ -350,7 +381,7 @@
                 }
                 
                 // Clamp to local date boundaries
-                const effectiveStart = createdAt < dayStart ? dayStart : createdAt;
+                const effectiveStart = startTime < dayStart ? dayStart : startTime;
                 const effectiveEnd = endTime > dayEnd ? dayEnd : endTime;
                 
                 // Calculate duration within this day
