@@ -12,7 +12,7 @@
     "uptimeYear": "100.00%",
     "time": 535,
     "timeDay": 246,
-    "timeWeek": 257,
+    "timeWeek": 259,
     "timeMonth": 535,
     "timeYear": 535,
     "dailyMinutesDown": {}
@@ -30,7 +30,7 @@
     "uptimeYear": "100.00%",
     "time": 183,
     "timeDay": 101,
-    "timeWeek": 166,
+    "timeWeek": 172,
     "timeMonth": 183,
     "timeYear": 183,
     "dailyMinutesDown": {}
@@ -48,7 +48,7 @@
     "uptimeYear": "100.00%",
     "time": 1626,
     "timeDay": 3008,
-    "timeWeek": 2396,
+    "timeWeek": 2449,
     "timeMonth": 1626,
     "timeYear": 1626,
     "dailyMinutesDown": {}
@@ -66,7 +66,7 @@
     "uptimeYear": "100.00%",
     "time": 1013,
     "timeDay": 919,
-    "timeWeek": 1319,
+    "timeWeek": 1351,
     "timeMonth": 1013,
     "timeYear": 1013,
     "dailyMinutesDown": {}
@@ -84,7 +84,7 @@
     "uptimeYear": "100.00%",
     "time": 182,
     "timeDay": 112,
-    "timeWeek": 135,
+    "timeWeek": 139,
     "timeMonth": 182,
     "timeYear": 182,
     "dailyMinutesDown": {}
@@ -102,7 +102,7 @@
     "uptimeYear": "100.00%",
     "time": 163,
     "timeDay": 148,
-    "timeWeek": 131,
+    "timeWeek": 138,
     "timeMonth": 163,
     "timeYear": 163,
     "dailyMinutesDown": {}
@@ -120,7 +120,7 @@
     "uptimeYear": "100.00%",
     "time": 1031,
     "timeDay": 1013,
-    "timeWeek": 921,
+    "timeWeek": 934,
     "timeMonth": 1031,
     "timeYear": 1031,
     "dailyMinutesDown": {}
@@ -138,7 +138,7 @@
     "uptimeYear": "100.00%",
     "time": 2296,
     "timeDay": 1193,
-    "timeWeek": 2308,
+    "timeWeek": 2349,
     "timeMonth": 2296,
     "timeYear": 2296,
     "dailyMinutesDown": {}
@@ -156,7 +156,7 @@
     "uptimeYear": "100.00%",
     "time": 355,
     "timeDay": 283,
-    "timeWeek": 390,
+    "timeWeek": 400,
     "timeMonth": 355,
     "timeYear": 355,
     "dailyMinutesDown": {}
@@ -166,19 +166,19 @@
     "url": "https://api.azael.dev/$UPPTIME_SCRIPT_LICENSE_API_ENDPOINT",
     "icon": "https://status.azael.dev/images/icons/license.png",
     "slug": "script-license-api",
-    "status": "degraded",
-    "uptime": "100.00%",
-    "uptimeDay": "99.98%",
-    "uptimeWeek": "100.00%",
-    "uptimeMonth": "100.00%",
-    "uptimeYear": "100.00%",
-    "time": 398,
-    "timeDay": 967,
+    "status": "up",
+    "uptime": "99.98%",
+    "uptimeDay": "99.67%",
+    "uptimeWeek": "99.95%",
+    "uptimeMonth": "99.98%",
+    "uptimeYear": "99.98%",
+    "time": 395,
+    "timeDay": 721,
     "timeWeek": 367,
-    "timeMonth": 398,
-    "timeYear": 398,
+    "timeMonth": 395,
+    "timeYear": 395,
     "dailyMinutesDown": {
-      "2026-02-03": 0
+      "2026-02-03": 5
     }
   },
   {
@@ -194,7 +194,7 @@
     "uptimeYear": "100.00%",
     "time": 285,
     "timeDay": 286,
-    "timeWeek": 276,
+    "timeWeek": 278,
     "timeMonth": 285,
     "timeYear": 285,
     "dailyMinutesDown": {}
@@ -212,7 +212,7 @@
     "uptimeYear": "100.00%",
     "time": 1271,
     "timeDay": 1332,
-    "timeWeek": 1447,
+    "timeWeek": 1463,
     "timeMonth": 1271,
     "timeYear": 1271,
     "dailyMinutesDown": {}
@@ -230,7 +230,7 @@
     "uptimeYear": "100.00%",
     "time": 201,
     "timeDay": 109,
-    "timeWeek": 240,
+    "timeWeek": 245,
     "timeMonth": 201,
     "timeYear": 201,
     "dailyMinutesDown": {}
@@ -248,7 +248,7 @@
     "uptimeYear": "100.00%",
     "time": 183,
     "timeDay": 104,
-    "timeWeek": 185,
+    "timeWeek": 187,
     "timeMonth": 183,
     "timeYear": 183,
     "dailyMinutesDown": {}
@@ -266,7 +266,7 @@
     "uptimeYear": "100.00%",
     "time": 193,
     "timeDay": 237,
-    "timeWeek": 181,
+    "timeWeek": 184,
     "timeMonth": 193,
     "timeYear": 193,
     "dailyMinutesDown": {}
