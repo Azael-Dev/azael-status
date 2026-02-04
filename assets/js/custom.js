@@ -358,7 +358,7 @@
 
     // Calculate downtime for a specific local date based on issues
     // Calculates only the portion of downtime that falls within the local date
-    // Returns object with: { minutes, isMaintenance, hasIssue }
+    // Returns object with: { minutes, isMaintenance, isDegraded, isDown, hasIssue }
     const calculateLocalDowntime = (issuesByLocalDate, slug, localDateStr) => {
         // Parse local date boundaries
         const [year, month, day] = localDateStr.split('-').map(Number);
@@ -370,14 +370,21 @@
             const issues = issuesByLocalDate[slug][localDateStr];
             let totalMinutes = 0;
             let hasMaintenance = false;
+            let hasDegraded = false;
+            let hasDown = false;
             
             issues.forEach(issue => {
                 const startTime = new Date(issue.start_time);
                 const endTime = new Date(issue.end_time);
+                const title = (issue.title || '').toLowerCase();
                 
-                // Track if any issue is maintenance
+                // Track issue type from title
                 if (issue.isMaintenance) {
                     hasMaintenance = true;
+                } else if (title.includes('is down')) {
+                    hasDown = true;
+                } else if (title.includes('has degraded performance')) {
+                    hasDegraded = true;
                 }
                 
                 // Clamp to local date boundaries
@@ -394,6 +401,8 @@
             return {
                 minutes: Math.min(totalMinutes, 1440), // Cap at 24 hours
                 isMaintenance: hasMaintenance,
+                isDegraded: hasDegraded,
+                isDown: hasDown,
                 hasIssue: true
             };
         }
@@ -402,6 +411,8 @@
         return {
             minutes: 0,
             isMaintenance: false,
+            isDegraded: false,
+            isDown: false,
             hasIssue: false
         };
     };
@@ -571,19 +582,20 @@
                     const downMinutes = downtimeInfo.minutes;
                     const uptimePercent = ((1440 - downMinutes) / 1440 * 100).toFixed(2);
 
-                    // Determine severity level
-                    // Only show colored bars when there's an actual issue
+                    // Determine severity level based on issue type
+                    // Priority: down > degraded > maintenance > up
                     let severityClass;
                     if (!downtimeInfo.hasIssue) {
                         severityClass = 'up';
+                    } else if (downtimeInfo.isDown) {
+                        severityClass = 'down';
+                    } else if (downtimeInfo.isDegraded) {
+                        severityClass = 'degraded';
                     } else if (downtimeInfo.isMaintenance) {
                         severityClass = 'maintenance';
-                    } else if (downMinutes < 30) {
-                        severityClass = 'minor';
-                    } else if (downMinutes < 60) {
-                        severityClass = 'partial';
                     } else {
-                        severityClass = 'major';
+                        // Fallback for issues without recognized title pattern
+                        severityClass = 'unknown';
                     }
 
                     dayBar.classList.add(severityClass);
@@ -593,7 +605,15 @@
 
                     // Format outage/maintenance duration
                     let durationText = '';
-                    const durationLabel = downtimeInfo.isMaintenance ? 'Maintenance Duration' : 'Incident Duration';
+                    let durationLabel = 'Duration';
+                    
+                    if (downtimeInfo.isMaintenance) {
+                        durationLabel = 'Maintenance';
+                    } else if (downtimeInfo.isDown) {
+                        durationLabel = 'Downtime';
+                    } else if (downtimeInfo.isDegraded) {
+                        durationLabel = 'Degraded';
+                    }
 
                     if (downtimeInfo.hasIssue && downMinutes !== 0) {
                         const hours = Math.floor(downMinutes / 60);
