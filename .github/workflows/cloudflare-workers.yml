@@ -12,7 +12,7 @@ on:
 
 jobs:
   manage-workers:
-    name: Evaluate Origin Health & Switch to Edge via Cloudflare Workers
+    name: Service health check & fallback
     runs-on: ubuntu-latest
 
     # Run only when Uptime CI succeeds or when manually triggered
