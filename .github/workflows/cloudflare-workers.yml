@@ -1,4 +1,4 @@
-name: Cloudflare Workers Management
+name: Cloudflare Workers — Automatic API Fallback
 
 on:
   # Run after the Uptime CI workflow completes
@@ -12,7 +12,7 @@ on:
 
 jobs:
   manage-workers:
-    name: Manage Cloudflare Workers
+    name: Evaluate Origin Health & Switch to Edge via Cloudflare Workers
     runs-on: ubuntu-latest
 
     # Run only when Uptime CI succeeds or when manually triggered
