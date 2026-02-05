@@ -1,0 +1,141 @@
+name: Cloudflare Workers Management
+
+on:
+  # Run after the Uptime CI workflow completes
+  workflow_run:
+    workflows: ["Uptime CI"]
+    types:
+      - completed
+
+  # Allow manual trigger
+  workflow_dispatch:
+
+jobs:
+  manage-workers:
+    name: Manage Cloudflare Workers
+    runs-on: ubuntu-latest
+
+    # Run only when Uptime CI succeeds or when manually triggered
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref || 'master' }}
+          token: ${{ secrets.GH_PAT || github.token }}
+
+      - name: Check service status and manage Cloudflare Workers
+        id: manage-workers
+        env:
+          CLOUDFLARE_ZONE_ID: ${{ secrets.CLOUDFLARE_ZONE_ID }}
+          CLOUDFLARE_WORKERS_ROUTE_ID: ${{ secrets.CLOUDFLARE_WORKERS_ROUTE_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_WORKERS_ROUTE_PATTERN: ${{ secrets.CLOUDFLARE_WORKERS_ROUTE_PATTERN }}
+          CLOUDFLARE_WORKERS_ROUTE_SCRIPT: ${{ secrets.CLOUDFLARE_WORKERS_ROUTE_SCRIPT }}
+        run: |
+          # Read service status data from summary.json
+          SUMMARY_FILE="history/summary.json"
+
+          if [ ! -f "$SUMMARY_FILE" ]; then
+            echo "::error::summary.json not found"
+            exit 1
+          fi
+
+          # Extract status of required services
+          CLOUDFLARE_STATUS=$(jq -r '.[] | select(.slug == "cloudflare-status") | .status' "$SUMMARY_FILE")
+          WEB_SERVER_STATUS=$(jq -r '.[] | select(.slug == "web-server") | .status' "$SUMMARY_FILE")
+          CFX_STORE_STATUS=$(jq -r '.[] | select(.slug == "cfx-store") | .status' "$SUMMARY_FILE")
+
+          echo "Cloudflare Status: $CLOUDFLARE_STATUS"
+          echo "Web Server Status: $WEB_SERVER_STATUS"
+          echo "CFX Store Status: $CFX_STORE_STATUS"
+
+          # Cloudflare status must be up before managing Workers
+          if [ "$CLOUDFLARE_STATUS" != "up" ]; then
+            echo "::notice::Cloudflare status is not up, skipping worker management"
+            echo "action=skipped" >> $GITHUB_OUTPUT
+            echo "reason=cloudflare_not_up" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+
+          # Determine whether Workers should be enabled or disabled
+          SHOULD_ENABLE="false"
+
+          # Enable Workers if web-server or cfx-store is down
+          if [ "$WEB_SERVER_STATUS" == "down" ] || [ "$CFX_STORE_STATUS" == "down" ]; then
+            SHOULD_ENABLE="true"
+          fi
+
+          echo "Should enable workers: $SHOULD_ENABLE"
+          echo "should_enable=$SHOULD_ENABLE" >> $GITHUB_OUTPUT
+
+          # Fetch current Workers route state from Cloudflare API
+          CURRENT_ROUTE=$(curl -s -X GET \
+            "https://api.cloudflare.com/client/v4/zones/${CLOUDFLARE_ZONE_ID}/workers/routes/${CLOUDFLARE_WORKERS_ROUTE_ID}" \
+            -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
+            -H "Content-Type: application/json")
+
+          CURRENT_SCRIPT=$(echo "$CURRENT_ROUTE" | jq -r '.result.script // empty')
+          CURRENT_ENABLED="false"
+
+          if [ -n "$CURRENT_SCRIPT" ] && [ "$CURRENT_SCRIPT" != "null" ]; then
+            CURRENT_ENABLED="true"
+          fi
+
+          echo "Current workers enabled: $CURRENT_ENABLED"
+          echo "current_enabled=$CURRENT_ENABLED" >> $GITHUB_OUTPUT
+
+          # Skip API request if there is no state change
+          if [ "$CURRENT_ENABLED" == "$SHOULD_ENABLE" ]; then
+            echo "::notice::No state change needed"
+            echo "action=no_change" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+
+          # Prepare request payload
+          if [ "$SHOULD_ENABLE" == "true" ]; then
+            REQUEST_BODY=$(jq -n \
+              --arg pattern "$CLOUDFLARE_WORKERS_ROUTE_PATTERN" \
+              --arg script "$CLOUDFLARE_WORKERS_ROUTE_SCRIPT" \
+              '{pattern: $pattern, script: $script}')
+            ACTION="enabled"
+          else
+            REQUEST_BODY=$(jq -n \
+              --arg pattern "$CLOUDFLARE_WORKERS_ROUTE_PATTERN" \
+              '{pattern: $pattern, script: null}')
+            ACTION="disabled"
+          fi
+
+          # Update Cloudflare Workers route
+          RESPONSE=$(curl -s -X PUT \
+            "https://api.cloudflare.com/client/v4/zones/${CLOUDFLARE_ZONE_ID}/workers/routes/${CLOUDFLARE_WORKERS_ROUTE_ID}" \
+            -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
+            -H "Content-Type: application/json" \
+            -d "$REQUEST_BODY")
+
+          SUCCESS=$(echo "$RESPONSE" | jq -r '.success')
+
+          if [ "$SUCCESS" == "true" ]; then
+            echo "::notice::Successfully $ACTION fallback route"
+            echo "action=$ACTION" >> $GITHUB_OUTPUT
+          else
+            ERROR_MSG=$(echo "$RESPONSE" | jq -r '.errors[0].message // "Unknown error"')
+            echo "::error::Failed to update route: $ERROR_MSG"
+            echo "action=failed" >> $GITHUB_OUTPUT
+            exit 1
+          fi
+
+      - name: Summary
+        if: always()
+        run: |
+          echo "### Cloudflare Workers Management" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| Property | Value |" >> $GITHUB_STEP_SUMMARY
+          echo "|----------|-------|" >> $GITHUB_STEP_SUMMARY
+          echo "| Action | ${{ steps.manage-workers.outputs.action || 'N/A' }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Should Enable | ${{ steps.manage-workers.outputs.should_enable || 'N/A' }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Previous State | ${{ steps.manage-workers.outputs.current_enabled || 'N/A' }} |" >> $GITHUB_STEP_SUMMARY
+          if [ "${{ steps.manage-workers.outputs.reason }}" != "" ]; then
+            echo "| Reason | ${{ steps.manage-workers.outputs.reason }} |" >> $GITHUB_STEP_SUMMARY
+          fi
