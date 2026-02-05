@@ -1,7 +1,7 @@
 url: $BETTERSTACK_API_WEB_SERVER_URL
-status: up
+status: down
 code: 200
-responseTime: 246
-lastUpdated: 2026-02-04T23:27:44.518Z
+responseTime: 354
+lastUpdated: 2026-02-05T10:50:15.030Z
 startTime: 2026-01-27T12:15:13.369Z
 generator: Upptime <https://github.com/upptime/upptime>
