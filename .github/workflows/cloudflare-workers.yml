@@ -1,4 +1,4 @@
-name: Cloudflare Workers — Automatic API Fallback
+name: API Fallback CI — Cloudflare Workers
 
 on:
   # Run after the Uptime CI workflow completes
@@ -12,7 +12,7 @@ on:
 
 jobs:
   manage-workers:
-    name: Service health check & fallback
+    name: API health check & fallback
     runs-on: ubuntu-latest
 
     # Run only when Uptime CI succeeds or when manually triggered
