@@ -1,7 +1,7 @@
 url: https://api.azael.dev/$UPPTIME_BANDB_REPORT_API_ENDPOINT
-status: up
-code: 200
-responseTime: 232
-lastUpdated: 2026-02-04T23:27:51.361Z
+status: down
+code: 523
+responseTime: 904
+lastUpdated: 2026-02-05T10:51:19.280Z
 startTime: 2026-01-20T03:30:51.848Z
 generator: Upptime <https://github.com/upptime/upptime>
