@@ -114,8 +114,8 @@
     "slug": "database",
     "status": "up",
     "uptime": "99.81%",
-    "uptimeDay": "98.09%",
-    "uptimeWeek": "99.52%",
+    "uptimeDay": "98.15%",
+    "uptimeWeek": "99.53%",
     "uptimeMonth": "99.81%",
     "uptimeYear": "99.81%",
     "time": 988,
@@ -124,7 +124,6 @@
     "timeMonth": 988,
     "timeYear": 988,
     "dailyMinutesDown": {
-      "2026-02-06": 1,
       "2026-02-05": 27,
       "2026-02-04": 21
     }
@@ -136,7 +135,7 @@
     "slug": "mailer",
     "status": "up",
     "uptime": "99.81%",
-    "uptimeDay": "98.08%",
+    "uptimeDay": "98.14%",
     "uptimeWeek": "99.53%",
     "uptimeMonth": "99.81%",
     "uptimeYear": "99.81%",
@@ -146,7 +145,6 @@
     "timeMonth": 2153,
     "timeYear": 2153,
     "dailyMinutesDown": {
-      "2026-02-06": 1,
       "2026-02-05": 27,
       "2026-02-04": 20
     }
@@ -194,8 +192,8 @@
     "slug": "ban-db-report-api",
     "status": "up",
     "uptime": "99.81%",
-    "uptimeDay": "98.08%",
-    "uptimeWeek": "99.53%",
+    "uptimeDay": "98.14%",
+    "uptimeWeek": "99.54%",
     "uptimeMonth": "99.81%",
     "uptimeYear": "99.81%",
     "time": 291,
@@ -204,7 +202,6 @@
     "timeMonth": 291,
     "timeYear": 291,
     "dailyMinutesDown": {
-      "2026-02-06": 1,
       "2026-02-05": 27,
       "2026-02-04": 20
     }
@@ -250,9 +247,9 @@
     "url": "$UPPTIME_BOT_SERVER_IP",
     "icon": "https://status.azael.dev/images/icons/discord.png",
     "slug": "discord-bot",
-    "status": "up",
+    "status": "down",
     "uptime": "100.00%",
-    "uptimeDay": "100.00%",
+    "uptimeDay": "99.99%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
@@ -261,7 +258,9 @@
     "timeWeek": 193,
     "timeMonth": 179,
     "timeYear": 179,
-    "dailyMinutesDown": {}
+    "dailyMinutesDown": {
+      "2026-02-06": 0
+    }
   },
   {
     "name": "Cloudflare Status",
