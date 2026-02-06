@@ -247,19 +247,19 @@
     "url": "$UPPTIME_BOT_SERVER_IP",
     "icon": "https://status.azael.dev/images/icons/discord.png",
     "slug": "discord-bot",
-    "status": "down",
-    "uptime": "100.00%",
-    "uptimeDay": "99.99%",
-    "uptimeWeek": "100.00%",
-    "uptimeMonth": "100.00%",
-    "uptimeYear": "100.00%",
-    "time": 179,
+    "status": "up",
+    "uptime": "99.99%",
+    "uptimeDay": "99.87%",
+    "uptimeWeek": "99.98%",
+    "uptimeMonth": "99.99%",
+    "uptimeYear": "99.99%",
+    "time": 178,
     "timeDay": 103,
-    "timeWeek": 193,
-    "timeMonth": 179,
-    "timeYear": 179,
+    "timeWeek": 188,
+    "timeMonth": 178,
+    "timeYear": 178,
     "dailyMinutesDown": {
-      "2026-02-06": 0
+      "2026-02-06": 2
     }
   },
   {
