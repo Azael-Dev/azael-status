@@ -4,18 +4,20 @@
     "url": "$BETTERSTACK_API_WEB_SERVER_URL",
     "icon": "https://status.azael.dev/images/icons/server.png",
     "slug": "web-server",
-    "status": "up",
-    "uptime": "100.00%",
-    "uptimeDay": "100.00%",
-    "uptimeWeek": "100.00%",
-    "uptimeMonth": "100.00%",
-    "uptimeYear": "100.00%",
+    "status": "down",
+    "uptime": "99.99%",
+    "uptimeDay": "99.92%",
+    "uptimeWeek": "99.99%",
+    "uptimeMonth": "99.99%",
+    "uptimeYear": "99.99%",
     "time": 510,
     "timeDay": 271,
     "timeWeek": 256,
     "timeMonth": 510,
     "timeYear": 510,
-    "dailyMinutesDown": {}
+    "dailyMinutesDown": {
+      "2026-02-06": 1
+    }
   },
   {
     "name": "Portal",
@@ -40,10 +42,10 @@
     "url": "https://cfx.azael.dev",
     "icon": "https://status.azael.dev/images/icons/store.png",
     "slug": "cfx-store",
-    "status": "up",
+    "status": "down",
     "uptime": "100.00%",
-    "uptimeDay": "100.00%",
-    "uptimeWeek": "100.00%",
+    "uptimeDay": "99.95%",
+    "uptimeWeek": "99.99%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
     "time": 1616,
@@ -51,16 +53,18 @@
     "timeWeek": 2312,
     "timeMonth": 1616,
     "timeYear": 1616,
-    "dailyMinutesDown": {}
+    "dailyMinutesDown": {
+      "2026-02-06": 1
+    }
   },
   {
     "name": "CFX BanDB",
     "url": "https://bandb.azael.dev",
     "icon": "https://status.azael.dev/images/icons/ban.png",
     "slug": "cfx-ban-db",
-    "status": "up",
+    "status": "down",
     "uptime": "100.00%",
-    "uptimeDay": "100.00%",
+    "uptimeDay": "99.98%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
@@ -69,7 +73,9 @@
     "timeWeek": 1378,
     "timeMonth": 1033,
     "timeYear": 1033,
-    "dailyMinutesDown": {}
+    "dailyMinutesDown": {
+      "2026-02-06": 0
+    }
   },
   {
     "name": "Documentation",
@@ -266,11 +272,11 @@
     "icon": "https://status.azael.dev/images/icons/cloudflare.png",
     "slug": "cloudflare-status",
     "status": "up",
-    "uptime": "99.70%",
+    "uptime": "99.71%",
     "uptimeDay": "100.00%",
     "uptimeWeek": "99.46%",
-    "uptimeMonth": "99.70%",
-    "uptimeYear": "99.70%",
+    "uptimeMonth": "99.71%",
+    "uptimeYear": "99.71%",
     "time": 199,
     "timeDay": 232,
     "timeWeek": 204,
