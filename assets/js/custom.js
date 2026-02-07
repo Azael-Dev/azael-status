@@ -425,11 +425,45 @@
         document.querySelectorAll('[data-status-replaced]').forEach(el => {
             el.removeAttribute('data-status-replaced');
         });
+        document.querySelectorAll('[data-target-processed]').forEach(el => {
+            el.removeAttribute('data-target-processed');
+        });
         // Remove existing history bars to rebuild with fresh data
         document.querySelectorAll('.uptime-history, .uptime-history-labels').forEach(el => {
             el.remove();
         });
         checkAndApply();
+    };
+
+    const addTargetBlankToExternalLinks = () => {
+        // Get all links on the page
+        const links = document.querySelectorAll('a[href]');
+        
+        links.forEach(link => {
+            const href = link.getAttribute('href');
+            
+            // Skip if already processed
+            if (link.hasAttribute('data-target-processed')) return;
+            
+            // Skip if it's a relative link or anchor link
+            if (!href || href.startsWith('#') || href.startsWith('/')) {
+                link.setAttribute('data-target-processed', 'true');
+                return;
+            }
+            
+            // Check if link is external (not status.azael.dev)
+            try {
+                const url = new URL(href, window.location.href);
+                if (!url.hostname.includes('status.azael.dev')) {
+                    link.setAttribute('target', '_blank');
+                    link.setAttribute('rel', 'noopener noreferrer');
+                }
+            } catch (e) {
+                // Invalid URL, skip
+            }
+            
+            link.setAttribute('data-target-processed', 'true');
+        });
     };
 
     const replaceStatusText = () => {
@@ -670,6 +704,7 @@
         setDefault30Days();
         replaceStatusText();
         createUptimeHistory();
+        addTargetBlankToExternalLinks();
     };
 
     const init = () => {
