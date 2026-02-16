@@ -40,18 +40,20 @@
     "url": "https://cfx.azael.dev",
     "icon": "https://status.azael.dev/images/icons/store.png",
     "slug": "cfx-store",
-    "status": "up",
+    "status": "degraded",
     "uptime": "100.00%",
-    "uptimeDay": "100.00%",
+    "uptimeDay": "99.97%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
-    "time": 1822,
-    "timeDay": 1488,
-    "timeWeek": 1356,
-    "timeMonth": 1822,
-    "timeYear": 1822,
-    "dailyMinutesDown": {}
+    "time": 1854,
+    "timeDay": 3257,
+    "timeWeek": 1814,
+    "timeMonth": 1854,
+    "timeYear": 1854,
+    "dailyMinutesDown": {
+      "2026-02-16": 0
+    }
   },
   {
     "name": "CFX BanDB",
