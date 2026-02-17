@@ -1,7 +1,7 @@
 url: https://api.azael.dev/$UPPTIME_MAILER_HEALTH_ENDPOINT
-status: down
-code: 503
-responseTime: 30
-lastUpdated: 2026-02-17T19:07:49.423Z
+status: up
+code: 200
+responseTime: 1856
+lastUpdated: 2026-02-17T19:08:38.984Z
 startTime: 2026-01-19T23:53:59.974Z
 generator: Upptime <https://github.com/upptime/upptime>
