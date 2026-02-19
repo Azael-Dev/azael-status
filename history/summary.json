@@ -13,7 +13,7 @@
     "time": 479,
     "timeDay": 279,
     "timeWeek": 299,
-    "timeMonth": 479,
+    "timeMonth": 473,
     "timeYear": 479,
     "dailyMinutesDown": {}
   },
@@ -31,7 +31,7 @@
     "time": 185,
     "timeDay": 194,
     "timeWeek": 194,
-    "timeMonth": 187,
+    "timeMonth": 183,
     "timeYear": 185,
     "dailyMinutesDown": {}
   },
@@ -40,18 +40,20 @@
     "url": "https://cfx.azael.dev",
     "icon": "https://status.azael.dev/images/icons/store.png",
     "slug": "cfx-store",
-    "status": "up",
+    "status": "down",
     "uptime": "100.00%",
-    "uptimeDay": "100.00%",
+    "uptimeDay": "99.99%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
     "time": 1816,
     "timeDay": 1771,
     "timeWeek": 1666,
-    "timeMonth": 1816,
+    "timeMonth": 1831,
     "timeYear": 1816,
-    "dailyMinutesDown": {}
+    "dailyMinutesDown": {
+      "2026-02-19": 0
+    }
   },
   {
     "name": "CFX Servers",
@@ -85,7 +87,7 @@
     "time": 1137,
     "timeDay": 922,
     "timeWeek": 1241,
-    "timeMonth": 1137,
+    "timeMonth": 1145,
     "timeYear": 1137,
     "dailyMinutesDown": {}
   },
