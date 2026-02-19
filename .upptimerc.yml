@@ -28,6 +28,13 @@ sites:
       - 200
       - 403
 
+  - name: CFX Servers
+    icon: https://status.azael.dev/images/icons/server-list.png
+    url: https://servers.azael.dev
+    maxResponseTime: 1000
+    expectedStatusCodes:
+      - 200
+
   - name: CFX BanDB
     icon: https://status.azael.dev/images/icons/ban.png
     url: https://bandb.azael.dev
