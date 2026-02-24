@@ -78,18 +78,16 @@
     "slug": "cfx-ban-db",
     "status": "up",
     "uptime": "100.00%",
-    "uptimeDay": "99.84%",
-    "uptimeWeek": "99.98%",
-    "uptimeMonth": "99.99%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
+    "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
     "time": 1289,
     "timeDay": 7479,
     "timeWeek": 2409,
     "timeMonth": 1479,
     "timeYear": 1289,
-    "dailyMinutesDown": {
-      "2026-02-24": 2
-    }
+    "dailyMinutesDown": {}
   },
   {
     "name": "Documentation",
@@ -132,9 +130,9 @@
     "url": "https://api.azael.dev/$UPPTIME_DATABASE_HEALTH_ENDPOINT",
     "icon": "https://status.azael.dev/images/icons/database.png",
     "slug": "database",
-    "status": "up",
+    "status": "down",
     "uptime": "99.96%",
-    "uptimeDay": "100.00%",
+    "uptimeDay": "99.99%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "99.95%",
     "uptimeYear": "99.96%",
@@ -144,6 +142,7 @@
     "timeMonth": 1364,
     "timeYear": 1321,
     "dailyMinutesDown": {
+      "2026-02-24": 0,
       "2026-02-04": 21
     }
   },
