@@ -13,7 +13,7 @@
     "time": 468,
     "timeDay": 327,
     "timeWeek": 288,
-    "timeMonth": 264,
+    "timeMonth": 236,
     "timeYear": 468,
     "dailyMinutesDown": {}
   },
@@ -31,7 +31,7 @@
     "time": 185,
     "timeDay": 199,
     "timeWeek": 200,
-    "timeMonth": 176,
+    "timeMonth": 178,
     "timeYear": 185,
     "dailyMinutesDown": {}
   },
@@ -40,19 +40,19 @@
     "url": "https://cfx.azael.dev",
     "icon": "https://status.azael.dev/images/icons/store.png",
     "slug": "cfx-store",
-    "status": "up",
+    "status": "down",
     "uptime": "100.00%",
-    "uptimeDay": "100.00%",
-    "uptimeWeek": "99.99%",
+    "uptimeDay": "99.99%",
+    "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
     "time": 1789,
     "timeDay": 1419,
     "timeWeek": 1478,
-    "timeMonth": 1991,
+    "timeMonth": 2010,
     "timeYear": 1789,
     "dailyMinutesDown": {
-      "2026-02-19": 1
+      "2026-02-24": 0
     }
   },
   {
@@ -87,7 +87,7 @@
     "time": 1122,
     "timeDay": 867,
     "timeWeek": 886,
-    "timeMonth": 1218,
+    "timeMonth": 1228,
     "timeYear": 1122,
     "dailyMinutesDown": {}
   },
@@ -105,7 +105,7 @@
     "time": 180,
     "timeDay": 214,
     "timeWeek": 145,
-    "timeMonth": 174,
+    "timeMonth": 175,
     "timeYear": 180,
     "dailyMinutesDown": {}
   },
@@ -141,7 +141,7 @@
     "time": 1332,
     "timeDay": 834,
     "timeWeek": 2441,
-    "timeMonth": 1370,
+    "timeMonth": 1381,
     "timeYear": 1332,
     "dailyMinutesDown": {
       "2026-02-04": 21
@@ -161,7 +161,7 @@
     "time": 1945,
     "timeDay": 1483,
     "timeWeek": 1080,
-    "timeMonth": 1616,
+    "timeMonth": 1613,
     "timeYear": 1945,
     "dailyMinutesDown": {
       "2026-02-04": 20
@@ -181,7 +181,7 @@
     "time": 446,
     "timeDay": 256,
     "timeWeek": 262,
-    "timeMonth": 479,
+    "timeMonth": 485,
     "timeYear": 446,
     "dailyMinutesDown": {}
   },
@@ -199,7 +199,7 @@
     "time": 421,
     "timeDay": 256,
     "timeWeek": 226,
-    "timeMonth": 388,
+    "timeMonth": 392,
     "timeYear": 421,
     "dailyMinutesDown": {}
   },
@@ -217,7 +217,7 @@
     "time": 310,
     "timeDay": 258,
     "timeWeek": 273,
-    "timeMonth": 299,
+    "timeMonth": 300,
     "timeYear": 310,
     "dailyMinutesDown": {
       "2026-02-04": 20
@@ -237,7 +237,7 @@
     "time": 1443,
     "timeDay": 1239,
     "timeWeek": 2394,
-    "timeMonth": 1537,
+    "timeMonth": 1552,
     "timeYear": 1443,
     "dailyMinutesDown": {}
   },
@@ -273,7 +273,7 @@
     "time": 180,
     "timeDay": 140,
     "timeWeek": 129,
-    "timeMonth": 161,
+    "timeMonth": 160,
     "timeYear": 180,
     "dailyMinutesDown": {}
   },
@@ -291,7 +291,7 @@
     "time": 212,
     "timeDay": 238,
     "timeWeek": 285,
-    "timeMonth": 213,
+    "timeMonth": 214,
     "timeYear": 212,
     "dailyMinutesDown": {
       "2026-02-04": 54
