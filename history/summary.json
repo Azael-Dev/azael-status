@@ -150,18 +150,19 @@
     "url": "https://api.azael.dev/$UPPTIME_MAILER_HEALTH_ENDPOINT",
     "icon": "https://status.azael.dev/images/icons/email.png",
     "slug": "mailer",
-    "status": "up",
+    "status": "degraded",
     "uptime": "99.96%",
-    "uptimeDay": "100.00%",
+    "uptimeDay": "99.98%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "99.95%",
     "uptimeYear": "99.96%",
-    "time": 1899,
-    "timeDay": 997,
-    "timeWeek": 1038,
-    "timeMonth": 1570,
-    "timeYear": 1899,
+    "time": 2015,
+    "timeDay": 3071,
+    "timeWeek": 1727,
+    "timeMonth": 1733,
+    "timeYear": 2015,
     "dailyMinutesDown": {
+      "2026-02-24": 0,
       "2026-02-04": 20
     }
   },
@@ -263,19 +264,17 @@
     "icon": "https://status.azael.dev/images/icons/discord.png",
     "slug": "discord-bot",
     "status": "up",
-    "uptime": "99.99%",
-    "uptimeDay": "99.68%",
-    "uptimeWeek": "99.95%",
-    "uptimeMonth": "99.99%",
-    "uptimeYear": "99.99%",
+    "uptime": "100.00%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
+    "uptimeMonth": "100.00%",
+    "uptimeYear": "100.00%",
     "time": 193,
     "timeDay": 761,
     "timeWeek": 254,
     "timeMonth": 180,
     "timeYear": 193,
-    "dailyMinutesDown": {
-      "2026-02-24": 5
-    }
+    "dailyMinutesDown": {}
   },
   {
     "name": "Cloudflare Status",
