@@ -40,10 +40,10 @@
     "url": "https://cfx.azael.dev",
     "icon": "https://status.azael.dev/images/icons/store.png",
     "slug": "cfx-store",
-    "status": "up",
+    "status": "down",
     "uptime": "100.00%",
-    "uptimeDay": "100.00%",
-    "uptimeWeek": "100.00%",
+    "uptimeDay": "99.86%",
+    "uptimeWeek": "99.98%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
     "time": 1784,
@@ -51,7 +51,9 @@
     "timeWeek": 1478,
     "timeMonth": 1997,
     "timeYear": 1784,
-    "dailyMinutesDown": {}
+    "dailyMinutesDown": {
+      "2026-02-24": 2
+    }
   },
   {
     "name": "CFX Servers",
@@ -132,17 +134,16 @@
     "slug": "database",
     "status": "up",
     "uptime": "99.96%",
-    "uptimeDay": "99.94%",
-    "uptimeWeek": "99.99%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
     "uptimeMonth": "99.95%",
     "uptimeYear": "99.96%",
     "time": 1306,
     "timeDay": 692,
-    "timeWeek": 2070,
+    "timeWeek": 862,
     "timeMonth": 1342,
     "timeYear": 1306,
     "dailyMinutesDown": {
-      "2026-02-24": 1,
       "2026-02-04": 21
     }
   },
@@ -153,8 +154,8 @@
     "slug": "mailer",
     "status": "up",
     "uptime": "99.96%",
-    "uptimeDay": "99.93%",
-    "uptimeWeek": "99.99%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
     "uptimeMonth": "99.95%",
     "uptimeYear": "99.96%",
     "time": 1918,
@@ -163,7 +164,6 @@
     "timeMonth": 1589,
     "timeYear": 1918,
     "dailyMinutesDown": {
-      "2026-02-24": 1,
       "2026-02-04": 20
     }
   },
@@ -210,9 +210,9 @@
     "slug": "ban-db-report-api",
     "status": "up",
     "uptime": "99.96%",
-    "uptimeDay": "99.93%",
-    "uptimeWeek": "99.99%",
-    "uptimeMonth": "99.95%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
+    "uptimeMonth": "99.96%",
     "uptimeYear": "99.96%",
     "time": 305,
     "timeDay": 168,
@@ -220,7 +220,6 @@
     "timeMonth": 293,
     "timeYear": 305,
     "dailyMinutesDown": {
-      "2026-02-24": 1,
       "2026-02-04": 20
     }
   },
