@@ -76,18 +76,20 @@
     "url": "https://bandb.azael.dev",
     "icon": "https://status.azael.dev/images/icons/ban.png",
     "slug": "cfx-ban-db",
-    "status": "up",
+    "status": "degraded",
     "uptime": "100.00%",
-    "uptimeDay": "100.00%",
+    "uptimeDay": "99.99%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
-    "time": 1122,
-    "timeDay": 867,
-    "timeWeek": 886,
-    "timeMonth": 1228,
-    "timeYear": 1122,
-    "dailyMinutesDown": {}
+    "time": 1293,
+    "timeDay": 10821,
+    "timeWeek": 2543,
+    "timeMonth": 1488,
+    "timeYear": 1293,
+    "dailyMinutesDown": {
+      "2026-02-24": 0
+    }
   },
   {
     "name": "Documentation",
@@ -132,8 +134,8 @@
     "slug": "database",
     "status": "up",
     "uptime": "99.96%",
-    "uptimeDay": "99.94%",
-    "uptimeWeek": "99.99%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
     "uptimeMonth": "99.95%",
     "uptimeYear": "99.96%",
     "time": 1321,
@@ -142,7 +144,6 @@
     "timeMonth": 1364,
     "timeYear": 1321,
     "dailyMinutesDown": {
-      "2026-02-24": 1,
       "2026-02-04": 21
     }
   },
@@ -153,8 +154,8 @@
     "slug": "mailer",
     "status": "up",
     "uptime": "99.96%",
-    "uptimeDay": "99.93%",
-    "uptimeWeek": "99.99%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
     "uptimeMonth": "99.95%",
     "uptimeYear": "99.96%",
     "time": 1925,
@@ -163,7 +164,6 @@
     "timeMonth": 1593,
     "timeYear": 1925,
     "dailyMinutesDown": {
-      "2026-02-24": 1,
       "2026-02-04": 20
     }
   },
@@ -210,9 +210,9 @@
     "slug": "ban-db-report-api",
     "status": "up",
     "uptime": "99.96%",
-    "uptimeDay": "99.93%",
-    "uptimeWeek": "99.99%",
-    "uptimeMonth": "99.95%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
+    "uptimeMonth": "99.96%",
     "uptimeYear": "99.96%",
     "time": 307,
     "timeDay": 171,
@@ -220,7 +220,6 @@
     "timeMonth": 296,
     "timeYear": 307,
     "dailyMinutesDown": {
-      "2026-02-24": 1,
       "2026-02-04": 20
     }
   },
