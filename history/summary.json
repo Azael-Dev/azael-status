@@ -132,8 +132,8 @@
     "slug": "database",
     "status": "up",
     "uptime": "99.96%",
-    "uptimeDay": "99.93%",
-    "uptimeWeek": "99.99%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
     "uptimeMonth": "99.95%",
     "uptimeYear": "99.96%",
     "time": 1296,
@@ -142,7 +142,6 @@
     "timeMonth": 1329,
     "timeYear": 1296,
     "dailyMinutesDown": {
-      "2026-02-24": 1,
       "2026-02-04": 21
     }
   },
@@ -153,8 +152,8 @@
     "slug": "mailer",
     "status": "up",
     "uptime": "99.96%",
-    "uptimeDay": "99.92%",
-    "uptimeWeek": "99.99%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
     "uptimeMonth": "99.95%",
     "uptimeYear": "99.96%",
     "time": 1899,
@@ -163,7 +162,6 @@
     "timeMonth": 1570,
     "timeYear": 1899,
     "dailyMinutesDown": {
-      "2026-02-24": 1,
       "2026-02-04": 20
     }
   },
@@ -210,9 +208,9 @@
     "slug": "ban-db-report-api",
     "status": "up",
     "uptime": "99.96%",
-    "uptimeDay": "99.92%",
-    "uptimeWeek": "99.99%",
-    "uptimeMonth": "99.95%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
+    "uptimeMonth": "99.96%",
     "uptimeYear": "99.96%",
     "time": 302,
     "timeDay": 157,
@@ -220,7 +218,6 @@
     "timeMonth": 289,
     "timeYear": 302,
     "dailyMinutesDown": {
-      "2026-02-24": 1,
       "2026-02-04": 20
     }
   },
@@ -265,18 +262,20 @@
     "url": "$UPPTIME_BOT_SERVER_IP",
     "icon": "https://status.azael.dev/images/icons/discord.png",
     "slug": "discord-bot",
-    "status": "up",
+    "status": "degraded",
     "uptime": "100.00%",
-    "uptimeDay": "100.00%",
+    "uptimeDay": "99.98%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
-    "time": 180,
-    "timeDay": 140,
-    "timeWeek": 129,
-    "timeMonth": 160,
-    "timeYear": 180,
-    "dailyMinutesDown": {}
+    "time": 193,
+    "timeDay": 761,
+    "timeWeek": 254,
+    "timeMonth": 180,
+    "timeYear": 193,
+    "dailyMinutesDown": {
+      "2026-02-24": 0
+    }
   },
   {
     "name": "Cloudflare Status",
