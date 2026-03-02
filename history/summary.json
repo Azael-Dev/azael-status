@@ -40,19 +40,19 @@
     "url": "https://cfx.azael.dev",
     "icon": "https://status.azael.dev/images/icons/store.png",
     "slug": "cfx-store",
-    "status": "degraded",
-    "uptime": "100.00%",
-    "uptimeDay": "99.97%",
-    "uptimeWeek": "100.00%",
-    "uptimeMonth": "100.00%",
-    "uptimeYear": "100.00%",
-    "time": 2475,
-    "timeDay": 5272,
-    "timeWeek": 5099,
-    "timeMonth": 3380,
-    "timeYear": 2475,
+    "status": "up",
+    "uptime": "99.99%",
+    "uptimeDay": "99.67%",
+    "uptimeWeek": "99.95%",
+    "uptimeMonth": "99.99%",
+    "uptimeYear": "99.99%",
+    "time": 2469,
+    "timeDay": 4507,
+    "timeWeek": 4985,
+    "timeMonth": 3355,
+    "timeYear": 2469,
     "dailyMinutesDown": {
-      "2026-03-02": 0
+      "2026-03-02": 5
     }
   },
   {
