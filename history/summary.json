@@ -40,9 +40,9 @@
     "url": "https://cfx.azael.dev",
     "icon": "https://status.azael.dev/images/icons/store.png",
     "slug": "cfx-store",
-    "status": "up",
+    "status": "down",
     "uptime": "100.00%",
-    "uptimeDay": "100.00%",
+    "uptimeDay": "99.99%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
@@ -51,7 +51,9 @@
     "timeWeek": 5534,
     "timeMonth": 3653,
     "timeYear": 2639,
-    "dailyMinutesDown": {}
+    "dailyMinutesDown": {
+      "2026-03-04": 0
+    }
   },
   {
     "name": "CFX Servers",
@@ -78,8 +80,8 @@
     "slug": "cfx-ban-db",
     "status": "up",
     "uptime": "100.00%",
-    "uptimeDay": "99.95%",
-    "uptimeWeek": "99.99%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
     "time": 1840,
@@ -87,9 +89,7 @@
     "timeWeek": 4938,
     "timeMonth": 2980,
     "timeYear": 1840,
-    "dailyMinutesDown": {
-      "2026-03-04": 1
-    }
+    "dailyMinutesDown": {}
   },
   {
     "name": "Documentation",
