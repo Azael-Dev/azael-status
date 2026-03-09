@@ -48,7 +48,7 @@
     "uptimeYear": "100.00%",
     "time": 2647,
     "timeDay": 1469,
-    "timeWeek": 4088,
+    "timeWeek": 3876,
     "timeMonth": 3565,
     "timeYear": 2647,
     "dailyMinutesDown": {}
@@ -84,7 +84,7 @@
     "uptimeYear": "100.00%",
     "time": 1814,
     "timeDay": 856,
-    "timeWeek": 4997,
+    "timeWeek": 4281,
     "timeMonth": 3103,
     "timeYear": 1814,
     "dailyMinutesDown": {}
@@ -138,7 +138,7 @@
     "uptimeYear": "99.97%",
     "time": 1321,
     "timeDay": 931,
-    "timeWeek": 1614,
+    "timeWeek": 1333,
     "timeMonth": 1827,
     "timeYear": 1321,
     "dailyMinutesDown": {
@@ -170,18 +170,20 @@
     "url": "https://api.azael.dev/$UPPTIME_API_PING_ENDPOINT",
     "icon": "https://status.azael.dev/images/icons/api.png",
     "slug": "base-api",
-    "status": "up",
+    "status": "degraded",
     "uptime": "100.00%",
-    "uptimeDay": "100.00%",
+    "uptimeDay": "99.97%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
-    "time": 425,
-    "timeDay": 274,
-    "timeWeek": 262,
-    "timeMonth": 595,
-    "timeYear": 425,
-    "dailyMinutesDown": {}
+    "time": 510,
+    "timeDay": 5222,
+    "timeWeek": 1500,
+    "timeMonth": 853,
+    "timeYear": 510,
+    "dailyMinutesDown": {
+      "2026-03-09": 0
+    }
   },
   {
     "name": "Script License API",
@@ -227,19 +229,17 @@
     "icon": "https://status.azael.dev/images/icons/ban-lookup.png",
     "slug": "ban-db-lookup-api",
     "status": "up",
-    "uptime": "99.99%",
-    "uptimeDay": "99.69%",
-    "uptimeWeek": "99.96%",
-    "uptimeMonth": "99.99%",
-    "uptimeYear": "99.99%",
+    "uptime": "100.00%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
+    "uptimeMonth": "100.00%",
+    "uptimeYear": "100.00%",
     "time": 1443,
     "timeDay": 2169,
     "timeWeek": 1562,
     "timeMonth": 1774,
     "timeYear": 1443,
-    "dailyMinutesDown": {
-      "2026-03-09": 4
-    }
+    "dailyMinutesDown": {}
   },
   {
     "name": "Bot Server",
