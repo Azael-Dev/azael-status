@@ -170,18 +170,20 @@
     "url": "https://api.azael.dev/$UPPTIME_API_PING_ENDPOINT",
     "icon": "https://status.azael.dev/images/icons/api.png",
     "slug": "base-api",
-    "status": "up",
+    "status": "degraded",
     "uptime": "100.00%",
-    "uptimeDay": "100.00%",
+    "uptimeDay": "99.98%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
-    "time": 504,
-    "timeDay": 278,
-    "timeWeek": 1376,
-    "timeMonth": 838,
-    "timeYear": 504,
-    "dailyMinutesDown": {}
+    "time": 509,
+    "timeDay": 688,
+    "timeWeek": 1348,
+    "timeMonth": 845,
+    "timeYear": 509,
+    "dailyMinutesDown": {
+      "2026-03-11": 0
+    }
   },
   {
     "name": "Script License API",
