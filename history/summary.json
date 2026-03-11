@@ -40,18 +40,20 @@
     "url": "https://cfx.azael.dev",
     "icon": "https://status.azael.dev/images/icons/store.png",
     "slug": "cfx-store",
-    "status": "up",
+    "status": "degraded",
     "uptime": "100.00%",
-    "uptimeDay": "100.00%",
+    "uptimeDay": "99.98%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
-    "time": 2634,
-    "timeDay": 1478,
-    "timeWeek": 2800,
-    "timeMonth": 3565,
-    "timeYear": 2634,
-    "dailyMinutesDown": {}
+    "time": 2666,
+    "timeDay": 4935,
+    "timeWeek": 2941,
+    "timeMonth": 3624,
+    "timeYear": 2666,
+    "dailyMinutesDown": {
+      "2026-03-11": 0
+    }
   },
   {
     "name": "CFX Servers",
@@ -84,7 +86,7 @@
     "uptimeYear": "100.00%",
     "time": 1802,
     "timeDay": 913,
-    "timeWeek": 4166,
+    "timeWeek": 1217,
     "timeMonth": 3001,
     "timeYear": 1802,
     "dailyMinutesDown": {}
@@ -138,7 +140,7 @@
     "uptimeYear": "99.97%",
     "time": 1318,
     "timeDay": 1407,
-    "timeWeek": 895,
+    "timeWeek": 1094,
     "timeMonth": 1834,
     "timeYear": 1318,
     "dailyMinutesDown": {
@@ -158,7 +160,7 @@
     "uptimeYear": "99.97%",
     "time": 1888,
     "timeDay": 938,
-    "timeWeek": 1097,
+    "timeWeek": 1310,
     "timeMonth": 1413,
     "timeYear": 1888,
     "dailyMinutesDown": {
@@ -171,19 +173,17 @@
     "icon": "https://status.azael.dev/images/icons/api.png",
     "slug": "base-api",
     "status": "up",
-    "uptime": "99.99%",
-    "uptimeDay": "99.67%",
-    "uptimeWeek": "99.95%",
-    "uptimeMonth": "99.99%",
-    "uptimeYear": "99.99%",
+    "uptime": "100.00%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
+    "uptimeMonth": "100.00%",
+    "uptimeYear": "100.00%",
     "time": 507,
     "timeDay": 561,
     "timeWeek": 1253,
     "timeMonth": 831,
     "timeYear": 507,
-    "dailyMinutesDown": {
-      "2026-03-11": 5
-    }
+    "dailyMinutesDown": {}
   },
   {
     "name": "Script License API",
@@ -216,7 +216,7 @@
     "uptimeYear": "99.97%",
     "time": 292,
     "timeDay": 280,
-    "timeWeek": 221,
+    "timeWeek": 275,
     "timeMonth": 293,
     "timeYear": 292,
     "dailyMinutesDown": {
