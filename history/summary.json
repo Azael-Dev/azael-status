@@ -76,18 +76,20 @@
     "url": "https://bandb.azael.dev",
     "icon": "https://status.azael.dev/images/icons/ban.png",
     "slug": "cfx-ban-db",
-    "status": "up",
+    "status": "degraded",
     "uptime": "100.00%",
-    "uptimeDay": "100.00%",
-    "uptimeWeek": "100.00%",
+    "uptimeDay": "99.94%",
+    "uptimeWeek": "99.99%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
-    "time": 1796,
-    "timeDay": 936,
-    "timeWeek": 1223,
-    "timeMonth": 3002,
-    "timeYear": 1796,
-    "dailyMinutesDown": {}
+    "time": 1854,
+    "timeDay": 5678,
+    "timeWeek": 2143,
+    "timeMonth": 3140,
+    "timeYear": 1854,
+    "dailyMinutesDown": {
+      "2026-03-12": 1
+    }
   },
   {
     "name": "Documentation",
@@ -170,18 +172,20 @@
     "url": "https://api.azael.dev/$UPPTIME_API_PING_ENDPOINT",
     "icon": "https://status.azael.dev/images/icons/api.png",
     "slug": "base-api",
-    "status": "up",
+    "status": "degraded",
     "uptime": "100.00%",
-    "uptimeDay": "100.00%",
+    "uptimeDay": "99.97%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
-    "time": 736,
-    "timeDay": 6198,
-    "timeWeek": 3315,
-    "timeMonth": 1490,
-    "timeYear": 736,
-    "dailyMinutesDown": {}
+    "time": 751,
+    "timeDay": 8065,
+    "timeWeek": 3269,
+    "timeMonth": 1517,
+    "timeYear": 751,
+    "dailyMinutesDown": {
+      "2026-03-12": 0
+    }
   },
   {
     "name": "Script License API",
