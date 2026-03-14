@@ -40,18 +40,20 @@
     "url": "https://cfx.azael.dev",
     "icon": "https://status.azael.dev/images/icons/store.png",
     "slug": "cfx-store",
-    "status": "up",
+    "status": "degraded",
     "uptime": "100.00%",
-    "uptimeDay": "100.00%",
+    "uptimeDay": "99.97%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
-    "time": 2711,
-    "timeDay": 964,
-    "timeWeek": 3667,
-    "timeMonth": 3740,
-    "timeYear": 2711,
-    "dailyMinutesDown": {}
+    "time": 2774,
+    "timeDay": 7591,
+    "timeWeek": 4326,
+    "timeMonth": 3863,
+    "timeYear": 2774,
+    "dailyMinutesDown": {
+      "2026-03-14": 0
+    }
   },
   {
     "name": "CFX Servers",
@@ -171,19 +173,17 @@
     "icon": "https://status.azael.dev/images/icons/api.png",
     "slug": "base-api",
     "status": "up",
-    "uptime": "99.99%",
-    "uptimeDay": "99.69%",
-    "uptimeWeek": "99.96%",
-    "uptimeMonth": "99.99%",
-    "uptimeYear": "99.99%",
+    "uptime": "100.00%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
+    "uptimeMonth": "100.00%",
+    "uptimeYear": "100.00%",
     "time": 738,
     "timeDay": 521,
     "timeWeek": 2786,
     "timeMonth": 1372,
     "timeYear": 738,
-    "dailyMinutesDown": {
-      "2026-03-14": 5
-    }
+    "dailyMinutesDown": {}
   },
   {
     "name": "Script License API",
