@@ -40,18 +40,20 @@
     "url": "https://cfx.azael.dev",
     "icon": "https://status.azael.dev/images/icons/store.png",
     "slug": "cfx-store",
-    "status": "up",
+    "status": "degraded",
     "uptime": "100.00%",
-    "uptimeDay": "100.00%",
+    "uptimeDay": "99.98%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
-    "time": 2820,
-    "timeDay": 1521,
-    "timeWeek": 4723,
-    "timeMonth": 3939,
-    "timeYear": 2820,
-    "dailyMinutesDown": {}
+    "time": 2909,
+    "timeDay": 10560,
+    "timeWeek": 5653,
+    "timeMonth": 4115,
+    "timeYear": 2909,
+    "dailyMinutesDown": {
+      "2026-03-15": 0
+    }
   },
   {
     "name": "CFX Servers",
@@ -263,19 +265,17 @@
     "icon": "https://status.azael.dev/images/icons/discord.png",
     "slug": "discord-bot",
     "status": "up",
-    "uptime": "99.99%",
-    "uptimeDay": "99.67%",
-    "uptimeWeek": "99.95%",
-    "uptimeMonth": "99.99%",
-    "uptimeYear": "99.99%",
+    "uptime": "100.00%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
+    "uptimeMonth": "100.00%",
+    "uptimeYear": "100.00%",
     "time": 190,
     "timeDay": 462,
     "timeWeek": 237,
     "timeMonth": 198,
     "timeYear": 190,
-    "dailyMinutesDown": {
-      "2026-03-15": 5
-    }
+    "dailyMinutesDown": {}
   },
   {
     "name": "Cloudflare Status",
@@ -283,11 +283,11 @@
     "icon": "https://status.azael.dev/images/icons/cloudflare.png",
     "slug": "cloudflare-status",
     "status": "up",
-    "uptime": "99.83%",
+    "uptime": "99.84%",
     "uptimeDay": "100.00%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "99.85%",
-    "uptimeYear": "99.83%",
+    "uptimeYear": "99.84%",
     "time": 213,
     "timeDay": 214,
     "timeWeek": 225,
