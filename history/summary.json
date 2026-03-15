@@ -41,19 +41,17 @@
     "icon": "https://status.azael.dev/images/icons/store.png",
     "slug": "cfx-store",
     "status": "up",
-    "uptime": "99.99%",
-    "uptimeDay": "99.72%",
-    "uptimeWeek": "99.96%",
-    "uptimeMonth": "99.99%",
-    "uptimeYear": "99.99%",
+    "uptime": "100.00%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
+    "uptimeMonth": "100.00%",
+    "uptimeYear": "100.00%",
     "time": 2908,
     "timeDay": 7948,
     "timeWeek": 5480,
     "timeMonth": 4099,
     "timeYear": 2908,
-    "dailyMinutesDown": {
-      "2026-03-15": 4
-    }
+    "dailyMinutesDown": {}
   },
   {
     "name": "CFX Servers",
@@ -78,18 +76,20 @@
     "url": "https://bandb.azael.dev",
     "icon": "https://status.azael.dev/images/icons/ban.png",
     "slug": "cfx-ban-db",
-    "status": "up",
+    "status": "degraded",
     "uptime": "100.00%",
-    "uptimeDay": "100.00%",
-    "uptimeWeek": "100.00%",
+    "uptimeDay": "99.92%",
+    "uptimeWeek": "99.99%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
-    "time": 1830,
-    "timeDay": 987,
-    "timeWeek": 1974,
-    "timeMonth": 3145,
-    "timeYear": 1830,
-    "dailyMinutesDown": {}
+    "time": 1946,
+    "timeDay": 10371,
+    "timeWeek": 3752,
+    "timeMonth": 3459,
+    "timeYear": 1946,
+    "dailyMinutesDown": {
+      "2026-03-15": 1
+    }
   },
   {
     "name": "Documentation",
@@ -228,18 +228,20 @@
     "url": "https://bandb.azael.dev/api/v1/identifier/$UPPTIME_BANDB_LOOKUP_IDENTIFIER",
     "icon": "https://status.azael.dev/images/icons/ban-lookup.png",
     "slug": "ban-db-lookup-api",
-    "status": "up",
+    "status": "degraded",
     "uptime": "100.00%",
-    "uptimeDay": "100.00%",
+    "uptimeDay": "99.98%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
-    "time": 1433,
-    "timeDay": 1407,
-    "timeWeek": 1555,
-    "timeMonth": 1778,
-    "timeYear": 1433,
-    "dailyMinutesDown": {}
+    "time": 1584,
+    "timeDay": 10413,
+    "timeWeek": 3342,
+    "timeMonth": 2230,
+    "timeYear": 1584,
+    "dailyMinutesDown": {
+      "2026-03-15": 0
+    }
   },
   {
     "name": "Bot Server",
