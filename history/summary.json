@@ -40,18 +40,20 @@
     "url": "https://cfx.azael.dev",
     "icon": "https://status.azael.dev/images/icons/store.png",
     "slug": "cfx-store",
-    "status": "up",
+    "status": "degraded",
     "uptime": "100.00%",
-    "uptimeDay": "100.00%",
-    "uptimeWeek": "100.00%",
+    "uptimeDay": "99.92%",
+    "uptimeWeek": "99.99%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
-    "time": 3200,
-    "timeDay": 9525,
-    "timeWeek": 7096,
-    "timeMonth": 4659,
-    "timeYear": 3200,
-    "dailyMinutesDown": {}
+    "time": 3282,
+    "timeDay": 10533,
+    "timeWeek": 7577,
+    "timeMonth": 4813,
+    "timeYear": 3282,
+    "dailyMinutesDown": {
+      "2026-03-17": 1
+    }
   },
   {
     "name": "CFX Servers",
@@ -76,18 +78,20 @@
     "url": "https://bandb.azael.dev",
     "icon": "https://status.azael.dev/images/icons/ban.png",
     "slug": "cfx-ban-db",
-    "status": "up",
+    "status": "degraded",
     "uptime": "100.00%",
-    "uptimeDay": "100.00%",
+    "uptimeDay": "99.98%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
-    "time": 1926,
-    "timeDay": 766,
-    "timeWeek": 3488,
-    "timeMonth": 3411,
-    "timeYear": 1926,
-    "dailyMinutesDown": {}
+    "time": 2037,
+    "timeDay": 10145,
+    "timeWeek": 4824,
+    "timeMonth": 3703,
+    "timeYear": 2037,
+    "dailyMinutesDown": {
+      "2026-03-17": 0
+    }
   },
   {
     "name": "Documentation",
