@@ -40,18 +40,20 @@
     "url": "https://cfx.azael.dev",
     "icon": "https://status.azael.dev/images/icons/store.png",
     "slug": "cfx-store",
-    "status": "up",
+    "status": "degraded",
     "uptime": "100.00%",
-    "uptimeDay": "100.00%",
+    "uptimeDay": "99.98%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
-    "time": 3476,
-    "timeDay": 9587,
-    "timeWeek": 7945,
-    "timeMonth": 5226,
-    "timeYear": 3476,
-    "dailyMinutesDown": {}
+    "time": 3553,
+    "timeDay": 10503,
+    "timeWeek": 8283,
+    "timeMonth": 5443,
+    "timeYear": 3553,
+    "dailyMinutesDown": {
+      "2026-03-18": 0
+    }
   },
   {
     "name": "CFX Servers",
@@ -83,7 +85,7 @@
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
     "time": 2227,
-    "timeDay": 8983,
+    "timeDay": 7314,
     "timeWeek": 5902,
     "timeMonth": 4101,
     "timeYear": 2227,
@@ -131,15 +133,15 @@
     "icon": "https://status.azael.dev/images/icons/database.png",
     "slug": "database",
     "status": "up",
-    "uptime": "99.97%",
+    "uptime": "99.98%",
     "uptimeDay": "100.00%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
-    "uptimeYear": "99.97%",
+    "uptimeYear": "99.98%",
     "time": 1307,
     "timeDay": 1250,
     "timeWeek": 1063,
-    "timeMonth": 1167,
+    "timeMonth": 1158,
     "timeYear": 1307,
     "dailyMinutesDown": {
       "2026-02-04": 21
@@ -157,9 +159,9 @@
     "uptimeMonth": "100.00%",
     "uptimeYear": "99.98%",
     "time": 1860,
-    "timeDay": 1225,
+    "timeDay": 1337,
     "timeWeek": 1375,
-    "timeMonth": 1445,
+    "timeMonth": 1466,
     "timeYear": 1860,
     "dailyMinutesDown": {
       "2026-02-04": 20
@@ -178,7 +180,7 @@
     "uptimeYear": "100.00%",
     "time": 721,
     "timeDay": 230,
-    "timeWeek": 2318,
+    "timeWeek": 2549,
     "timeMonth": 1307,
     "timeYear": 721,
     "dailyMinutesDown": {}
@@ -197,7 +199,7 @@
     "time": 424,
     "timeDay": 230,
     "timeWeek": 718,
-    "timeMonth": 377,
+    "timeMonth": 391,
     "timeYear": 424,
     "dailyMinutesDown": {}
   },
@@ -215,7 +217,7 @@
     "time": 301,
     "timeDay": 231,
     "timeWeek": 453,
-    "timeMonth": 267,
+    "timeMonth": 266,
     "timeYear": 301,
     "dailyMinutesDown": {
       "2026-02-04": 20
@@ -235,7 +237,7 @@
     "time": 1574,
     "timeDay": 1170,
     "timeWeek": 3257,
-    "timeMonth": 2268,
+    "timeMonth": 2333,
     "timeYear": 1574,
     "dailyMinutesDown": {}
   },
