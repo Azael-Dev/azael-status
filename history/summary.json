@@ -42,18 +42,16 @@
     "slug": "cfx-store",
     "status": "up",
     "uptime": "100.00%",
-    "uptimeDay": "99.72%",
-    "uptimeWeek": "99.96%",
-    "uptimeMonth": "99.99%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
+    "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
     "time": 3608,
-    "timeDay": 9202,
+    "timeDay": 8629,
     "timeWeek": 8217,
     "timeMonth": 5502,
     "timeYear": 3608,
-    "dailyMinutesDown": {
-      "2026-03-18": 4
-    }
+    "dailyMinutesDown": {}
   },
   {
     "name": "CFX Servers",
@@ -78,18 +76,20 @@
     "url": "https://bandb.azael.dev",
     "icon": "https://status.azael.dev/images/icons/ban.png",
     "slug": "cfx-ban-db",
-    "status": "up",
+    "status": "degraded",
     "uptime": "100.00%",
-    "uptimeDay": "100.00%",
-    "uptimeWeek": "100.00%",
+    "uptimeDay": "99.92%",
+    "uptimeWeek": "99.99%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
-    "time": 2227,
-    "timeDay": 7314,
-    "timeWeek": 5902,
-    "timeMonth": 4101,
-    "timeYear": 2227,
-    "dailyMinutesDown": {}
+    "time": 2338,
+    "timeDay": 10682,
+    "timeWeek": 6717,
+    "timeMonth": 4371,
+    "timeYear": 2338,
+    "dailyMinutesDown": {
+      "2026-03-18": 1
+    }
   },
   {
     "name": "Documentation",
@@ -228,18 +228,20 @@
     "url": "https://bandb.azael.dev/api/v1/identifier/$UPPTIME_BANDB_LOOKUP_IDENTIFIER",
     "icon": "https://status.azael.dev/images/icons/ban-lookup.png",
     "slug": "ban-db-lookup-api",
-    "status": "up",
+    "status": "degraded",
     "uptime": "100.00%",
-    "uptimeDay": "100.00%",
+    "uptimeDay": "99.98%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
-    "time": 1574,
-    "timeDay": 1170,
-    "timeWeek": 3257,
-    "timeMonth": 2333,
-    "timeYear": 1574,
-    "dailyMinutesDown": {}
+    "time": 1744,
+    "timeDay": 11936,
+    "timeWeek": 5201,
+    "timeMonth": 2884,
+    "timeYear": 1744,
+    "dailyMinutesDown": {
+      "2026-03-18": 0
+    }
   },
   {
     "name": "Bot Server",
