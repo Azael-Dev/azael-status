@@ -432,6 +432,14 @@
         document.querySelectorAll('.uptime-history, .uptime-history-labels').forEach(el => {
             el.remove();
         });
+        document.querySelectorAll('[data-past-filtered]').forEach(el => {
+            el.removeAttribute('data-past-filtered');
+            el.style.display = '';
+            // Restore hidden children
+            Array.from(el.children).forEach(child => {
+                child.style.display = '';
+            });
+        });
         checkAndApply();
     };
 
@@ -699,12 +707,92 @@
         }
     };
 
+    const filterPastSections = () => {
+        const liveStatus = document.querySelector('main > section.live-status');
+        if (!liveStatus) return;
+
+        // Get all sibling sections after live-status
+        let sibling = liveStatus.nextElementSibling;
+        while (sibling) {
+            if (sibling.tagName === 'SECTION') {
+                const h2 = sibling.querySelector('h2');
+                if (h2 && (h2.textContent.includes('Past Scheduled Maintenance') || h2.textContent.includes('Past Incidents'))) {
+                    filterSectionByDate(sibling);
+                }
+            }
+            sibling = sibling.nextElementSibling;
+        }
+    };
+
+    const filterSectionByDate = (section) => {
+        // Skip if already processed
+        if (section.hasAttribute('data-past-filtered')) return;
+
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+        const cutoff = new Date(today);
+        cutoff.setDate(cutoff.getDate() - 30);
+
+        const children = Array.from(section.children);
+        let hasVisibleGroup = false;
+
+        // Track date groups: each <h3> followed by <article> elements until next <h3>
+        let i = 0;
+        while (i < children.length) {
+            const child = children[i];
+
+            // Skip <h2> header
+            if (child.tagName === 'H2') {
+                i++;
+                continue;
+            }
+
+            if (child.tagName === 'H3') {
+                // Parse date from h3 text (format: m/d/yyyy or mm/dd/yyyy)
+                const dateText = child.textContent.trim();
+                const dateParts = dateText.split('/');
+                let groupDate = null;
+
+                if (dateParts.length === 3) {
+                    const month = parseInt(dateParts[0], 10) - 1;
+                    const day = parseInt(dateParts[1], 10);
+                    const year = parseInt(dateParts[2], 10);
+                    groupDate = new Date(year, month, day);
+                }
+
+                // Collect all articles belonging to this date group
+                const groupElements = [child];
+                let j = i + 1;
+                while (j < children.length && children[j].tagName !== 'H3' && children[j].tagName !== 'H2') {
+                    groupElements.push(children[j]);
+                    j++;
+                }
+
+                // Hide or show based on date
+                const isOld = !groupDate || groupDate < cutoff;
+                groupElements.forEach(el => {
+                    el.style.display = isOld ? 'none' : '';
+                });
+
+                if (!isOld) hasVisibleGroup = true;
+                i = j;
+            } else {
+                i++;
+            }
+        }
+
+        // If no visible groups, hide entire section
+        section.style.display = hasVisibleGroup ? '' : 'none';
+        section.setAttribute('data-past-filtered', 'true');
+    };
+
     const checkAndApply = () => {
         setFooterYear();
         setDefault30Days();
         replaceStatusText();
         createUptimeHistory();
         addTargetBlankToExternalLinks();
+        filterPastSections();
     };
 
     const init = () => {
