@@ -4,18 +4,20 @@
     "url": "$BETTERSTACK_API_WEB_SERVER_URL",
     "icon": "https://status.azael.dev/images/icons/server.png",
     "slug": "web-server",
-    "status": "up",
+    "status": "down",
     "uptime": "100.00%",
-    "uptimeDay": "100.00%",
+    "uptimeDay": "99.99%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
-    "time": 418,
-    "timeDay": 267,
-    "timeWeek": 279,
-    "timeMonth": 268,
-    "timeYear": 418,
-    "dailyMinutesDown": {}
+    "time": 416,
+    "timeDay": 254,
+    "timeWeek": 272,
+    "timeMonth": 265,
+    "timeYear": 416,
+    "dailyMinutesDown": {
+      "2026-03-27": 0
+    }
   },
   {
     "name": "Portal",
@@ -172,8 +174,8 @@
     "slug": "base-api",
     "status": "up",
     "uptime": "99.98%",
-    "uptimeDay": "98.78%",
-    "uptimeWeek": "99.83%",
+    "uptimeDay": "98.68%",
+    "uptimeWeek": "99.81%",
     "uptimeMonth": "99.96%",
     "uptimeYear": "99.98%",
     "time": 812,
@@ -182,7 +184,7 @@
     "timeMonth": 1651,
     "timeYear": 812,
     "dailyMinutesDown": {
-      "2026-03-27": 18
+      "2026-03-27": 19
     }
   },
   {
@@ -191,19 +193,17 @@
     "icon": "https://status.azael.dev/images/icons/license.png",
     "slug": "script-license-api",
     "status": "up",
-    "uptime": "99.98%",
-    "uptimeDay": "98.85%",
-    "uptimeWeek": "99.84%",
-    "uptimeMonth": "99.96%",
-    "uptimeYear": "99.98%",
+    "uptime": "100.00%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
+    "uptimeMonth": "100.00%",
+    "uptimeYear": "100.00%",
     "time": 685,
     "timeDay": 3379,
     "timeWeek": 2841,
     "timeMonth": 1392,
     "timeYear": 685,
-    "dailyMinutesDown": {
-      "2026-03-27": 17
-    }
+    "dailyMinutesDown": {}
   },
   {
     "name": "BanDB Report API",
@@ -211,18 +211,17 @@
     "icon": "https://status.azael.dev/images/icons/ban-report.png",
     "slug": "ban-db-report-api",
     "status": "up",
-    "uptime": "99.96%",
-    "uptimeDay": "98.92%",
-    "uptimeWeek": "99.85%",
-    "uptimeMonth": "99.96%",
-    "uptimeYear": "99.96%",
+    "uptime": "99.98%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
+    "uptimeMonth": "100.00%",
+    "uptimeYear": "99.98%",
     "time": 409,
     "timeDay": 2931,
     "timeWeek": 1422,
     "timeMonth": 703,
     "timeYear": 409,
     "dailyMinutesDown": {
-      "2026-03-27": 16,
       "2026-02-04": 20
     }
   },
