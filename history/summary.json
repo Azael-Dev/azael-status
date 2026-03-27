@@ -40,19 +40,19 @@
     "url": "https://cfx.azael.dev",
     "icon": "https://status.azael.dev/images/icons/store.png",
     "slug": "cfx-store",
-    "status": "degraded",
+    "status": "up",
     "uptime": "99.99%",
-    "uptimeDay": "99.60%",
-    "uptimeWeek": "99.94%",
-    "uptimeMonth": "99.99%",
+    "uptimeDay": "99.38%",
+    "uptimeWeek": "99.91%",
+    "uptimeMonth": "99.98%",
     "uptimeYear": "99.99%",
-    "time": 3852,
-    "timeDay": 8016,
-    "timeWeek": 6098,
-    "timeMonth": 6019,
-    "timeYear": 3852,
+    "time": 3842,
+    "timeDay": 7609,
+    "timeWeek": 5921,
+    "timeMonth": 5976,
+    "timeYear": 3842,
     "dailyMinutesDown": {
-      "2026-03-27": 6
+      "2026-03-27": 9
     }
   },
   {
@@ -78,19 +78,19 @@
     "url": "https://bandb.azael.dev",
     "icon": "https://status.azael.dev/images/icons/ban.png",
     "slug": "cfx-ban-db",
-    "status": "degraded",
-    "uptime": "100.00%",
-    "uptimeDay": "99.71%",
-    "uptimeWeek": "99.96%",
-    "uptimeMonth": "99.99%",
-    "uptimeYear": "100.00%",
-    "time": 2508,
-    "timeDay": 4414,
-    "timeWeek": 4326,
-    "timeMonth": 4766,
-    "timeYear": 2508,
+    "status": "up",
+    "uptime": "99.99%",
+    "uptimeDay": "99.48%",
+    "uptimeWeek": "99.93%",
+    "uptimeMonth": "99.98%",
+    "uptimeYear": "99.99%",
+    "time": 2499,
+    "timeDay": 3979,
+    "timeWeek": 4148,
+    "timeMonth": 4708,
+    "timeYear": 2499,
     "dailyMinutesDown": {
-      "2026-03-27": 4
+      "2026-03-27": 7
     }
   },
   {
@@ -135,18 +135,18 @@
     "icon": "https://status.azael.dev/images/icons/database.png",
     "slug": "database",
     "status": "up",
-    "uptime": "99.98%",
-    "uptimeDay": "99.77%",
-    "uptimeWeek": "99.97%",
-    "uptimeMonth": "99.99%",
-    "uptimeYear": "99.98%",
+    "uptime": "99.97%",
+    "uptimeDay": "99.53%",
+    "uptimeWeek": "99.93%",
+    "uptimeMonth": "99.98%",
+    "uptimeYear": "99.97%",
     "time": 1475,
     "timeDay": 2874,
     "timeWeek": 2771,
     "timeMonth": 1941,
     "timeYear": 1475,
     "dailyMinutesDown": {
-      "2026-03-27": 3,
+      "2026-03-27": 7,
       "2026-02-04": 21
     }
   },
@@ -156,18 +156,18 @@
     "icon": "https://status.azael.dev/images/icons/email.png",
     "slug": "mailer",
     "status": "down",
-    "uptime": "99.98%",
-    "uptimeDay": "99.85%",
-    "uptimeWeek": "99.98%",
-    "uptimeMonth": "100.00%",
-    "uptimeYear": "99.98%",
+    "uptime": "99.97%",
+    "uptimeDay": "99.61%",
+    "uptimeWeek": "99.94%",
+    "uptimeMonth": "99.99%",
+    "uptimeYear": "99.97%",
     "time": 1896,
     "timeDay": 2983,
     "timeWeek": 2231,
     "timeMonth": 1649,
     "timeYear": 1896,
     "dailyMinutesDown": {
-      "2026-03-27": 2,
+      "2026-03-27": 6,
       "2026-02-04": 20
     }
   },
@@ -178,8 +178,8 @@
     "slug": "base-api",
     "status": "up",
     "uptime": "99.98%",
-    "uptimeDay": "98.59%",
-    "uptimeWeek": "99.80%",
+    "uptimeDay": "98.35%",
+    "uptimeWeek": "99.76%",
     "uptimeMonth": "99.95%",
     "uptimeYear": "99.98%",
     "time": 812,
@@ -188,7 +188,7 @@
     "timeMonth": 1651,
     "timeYear": 812,
     "dailyMinutesDown": {
-      "2026-03-27": 20
+      "2026-03-27": 24
     }
   },
   {
@@ -198,9 +198,9 @@
     "slug": "script-license-api",
     "status": "up",
     "uptime": "100.00%",
-    "uptimeDay": "99.97%",
-    "uptimeWeek": "100.00%",
-    "uptimeMonth": "100.00%",
+    "uptimeDay": "99.73%",
+    "uptimeWeek": "99.96%",
+    "uptimeMonth": "99.99%",
     "uptimeYear": "100.00%",
     "time": 685,
     "timeDay": 3379,
@@ -208,7 +208,7 @@
     "timeMonth": 1392,
     "timeYear": 685,
     "dailyMinutesDown": {
-      "2026-03-27": 0
+      "2026-03-27": 4
     }
   },
   {
