@@ -42,18 +42,16 @@
     "slug": "cfx-store",
     "status": "up",
     "uptime": "100.00%",
-    "uptimeDay": "99.68%",
-    "uptimeWeek": "99.95%",
-    "uptimeMonth": "99.99%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
+    "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
     "time": 3717,
     "timeDay": 8321,
     "timeWeek": 5321,
     "timeMonth": 5876,
     "timeYear": 3717,
-    "dailyMinutesDown": {
-      "2026-03-27": 5
-    }
+    "dailyMinutesDown": {}
   },
   {
     "name": "CFX Servers",
@@ -152,9 +150,9 @@
     "url": "https://api.azael.dev/$UPPTIME_MAILER_HEALTH_ENDPOINT",
     "icon": "https://status.azael.dev/images/icons/email.png",
     "slug": "mailer",
-    "status": "up",
+    "status": "down",
     "uptime": "99.98%",
-    "uptimeDay": "100.00%",
+    "uptimeDay": "99.98%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "99.98%",
@@ -164,6 +162,7 @@
     "timeMonth": 1233,
     "timeYear": 1816,
     "dailyMinutesDown": {
+      "2026-03-27": 0,
       "2026-02-04": 20
     }
   },
