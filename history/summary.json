@@ -4,19 +4,19 @@
     "url": "$BETTERSTACK_API_WEB_SERVER_URL",
     "icon": "https://status.azael.dev/images/icons/server.png",
     "slug": "web-server",
-    "status": "down",
+    "status": "up",
     "uptime": "100.00%",
-    "uptimeDay": "99.93%",
-    "uptimeWeek": "99.99%",
-    "uptimeMonth": "100.00%",
+    "uptimeDay": "99.83%",
+    "uptimeWeek": "99.98%",
+    "uptimeMonth": "99.99%",
     "uptimeYear": "100.00%",
     "time": 416,
-    "timeDay": 254,
-    "timeWeek": 272,
-    "timeMonth": 265,
+    "timeDay": 261,
+    "timeWeek": 275,
+    "timeMonth": 267,
     "timeYear": 416,
     "dailyMinutesDown": {
-      "2026-03-27": 1
+      "2026-03-27": 2
     }
   },
   {
@@ -134,8 +134,8 @@
     "slug": "database",
     "status": "down",
     "uptime": "99.98%",
-    "uptimeDay": "99.98%",
-    "uptimeWeek": "100.00%",
+    "uptimeDay": "99.87%",
+    "uptimeWeek": "99.98%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "99.98%",
     "time": 1477,
@@ -144,7 +144,7 @@
     "timeMonth": 1956,
     "timeYear": 1477,
     "dailyMinutesDown": {
-      "2026-03-27": 0,
+      "2026-03-27": 2,
       "2026-02-04": 21
     }
   },
@@ -155,8 +155,8 @@
     "slug": "mailer",
     "status": "down",
     "uptime": "99.98%",
-    "uptimeDay": "99.98%",
-    "uptimeWeek": "100.00%",
+    "uptimeDay": "99.87%",
+    "uptimeWeek": "99.98%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "99.98%",
     "time": 1900,
@@ -165,7 +165,7 @@
     "timeMonth": 1655,
     "timeYear": 1900,
     "dailyMinutesDown": {
-      "2026-03-27": 0,
+      "2026-03-27": 2,
       "2026-02-04": 20
     }
   },
@@ -214,8 +214,8 @@
     "slug": "ban-db-report-api",
     "status": "down",
     "uptime": "99.98%",
-    "uptimeDay": "99.98%",
-    "uptimeWeek": "100.00%",
+    "uptimeDay": "99.87%",
+    "uptimeWeek": "99.98%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "99.98%",
     "time": 407,
@@ -224,7 +224,7 @@
     "timeMonth": 688,
     "timeYear": 407,
     "dailyMinutesDown": {
-      "2026-03-27": 0,
+      "2026-03-27": 2,
       "2026-02-04": 20
     }
   },
