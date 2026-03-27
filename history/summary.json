@@ -40,18 +40,20 @@
     "url": "https://cfx.azael.dev",
     "icon": "https://status.azael.dev/images/icons/store.png",
     "slug": "cfx-store",
-    "status": "up",
-    "uptime": "100.00%",
-    "uptimeDay": "100.00%",
-    "uptimeWeek": "100.00%",
-    "uptimeMonth": "100.00%",
-    "uptimeYear": "100.00%",
-    "time": 3785,
-    "timeDay": 7179,
-    "timeWeek": 5530,
-    "timeMonth": 5887,
-    "timeYear": 3785,
-    "dailyMinutesDown": {}
+    "status": "degraded",
+    "uptime": "99.99%",
+    "uptimeDay": "99.60%",
+    "uptimeWeek": "99.94%",
+    "uptimeMonth": "99.99%",
+    "uptimeYear": "99.99%",
+    "time": 3852,
+    "timeDay": 8016,
+    "timeWeek": 6098,
+    "timeMonth": 6019,
+    "timeYear": 3852,
+    "dailyMinutesDown": {
+      "2026-03-27": 6
+    }
   },
   {
     "name": "CFX Servers",
@@ -76,18 +78,20 @@
     "url": "https://bandb.azael.dev",
     "icon": "https://status.azael.dev/images/icons/ban.png",
     "slug": "cfx-ban-db",
-    "status": "up",
+    "status": "degraded",
     "uptime": "100.00%",
-    "uptimeDay": "100.00%",
-    "uptimeWeek": "100.00%",
-    "uptimeMonth": "100.00%",
+    "uptimeDay": "99.71%",
+    "uptimeWeek": "99.96%",
+    "uptimeMonth": "99.99%",
     "uptimeYear": "100.00%",
-    "time": 2486,
-    "timeDay": 4071,
-    "timeWeek": 4200,
-    "timeMonth": 4740,
-    "timeYear": 2486,
-    "dailyMinutesDown": {}
+    "time": 2508,
+    "timeDay": 4414,
+    "timeWeek": 4326,
+    "timeMonth": 4766,
+    "timeYear": 2508,
+    "dailyMinutesDown": {
+      "2026-03-27": 4
+    }
   },
   {
     "name": "Documentation",
@@ -132,8 +136,8 @@
     "slug": "database",
     "status": "up",
     "uptime": "99.98%",
-    "uptimeDay": "99.83%",
-    "uptimeWeek": "99.98%",
+    "uptimeDay": "99.77%",
+    "uptimeWeek": "99.97%",
     "uptimeMonth": "99.99%",
     "uptimeYear": "99.98%",
     "time": 1475,
@@ -142,7 +146,7 @@
     "timeMonth": 1941,
     "timeYear": 1475,
     "dailyMinutesDown": {
-      "2026-03-27": 2,
+      "2026-03-27": 3,
       "2026-02-04": 21
     }
   },
@@ -151,19 +155,19 @@
     "url": "https://api.azael.dev/$UPPTIME_MAILER_HEALTH_ENDPOINT",
     "icon": "https://status.azael.dev/images/icons/email.png",
     "slug": "mailer",
-    "status": "up",
+    "status": "down",
     "uptime": "99.98%",
-    "uptimeDay": "99.82%",
-    "uptimeWeek": "99.97%",
-    "uptimeMonth": "99.99%",
+    "uptimeDay": "99.85%",
+    "uptimeWeek": "99.98%",
+    "uptimeMonth": "100.00%",
     "uptimeYear": "99.98%",
-    "time": 1904,
-    "timeDay": 3206,
-    "timeWeek": 2318,
-    "timeMonth": 1675,
-    "timeYear": 1904,
+    "time": 1896,
+    "timeDay": 2983,
+    "timeWeek": 2231,
+    "timeMonth": 1649,
+    "timeYear": 1896,
     "dailyMinutesDown": {
-      "2026-03-27": 3,
+      "2026-03-27": 2,
       "2026-02-04": 20
     }
   },
@@ -174,9 +178,9 @@
     "slug": "base-api",
     "status": "up",
     "uptime": "99.98%",
-    "uptimeDay": "98.68%",
-    "uptimeWeek": "99.81%",
-    "uptimeMonth": "99.96%",
+    "uptimeDay": "98.59%",
+    "uptimeWeek": "99.80%",
+    "uptimeMonth": "99.95%",
     "uptimeYear": "99.98%",
     "time": 812,
     "timeDay": 499,
@@ -184,7 +188,7 @@
     "timeMonth": 1651,
     "timeYear": 812,
     "dailyMinutesDown": {
-      "2026-03-27": 19
+      "2026-03-27": 20
     }
   },
   {
@@ -194,7 +198,7 @@
     "slug": "script-license-api",
     "status": "up",
     "uptime": "100.00%",
-    "uptimeDay": "100.00%",
+    "uptimeDay": "99.97%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
@@ -203,7 +207,9 @@
     "timeWeek": 2841,
     "timeMonth": 1392,
     "timeYear": 685,
-    "dailyMinutesDown": {}
+    "dailyMinutesDown": {
+      "2026-03-27": 0
+    }
   },
   {
     "name": "BanDB Report API",
@@ -212,9 +218,9 @@
     "slug": "ban-db-report-api",
     "status": "up",
     "uptime": "99.98%",
-    "uptimeDay": "99.82%",
-    "uptimeWeek": "99.97%",
-    "uptimeMonth": "99.99%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
+    "uptimeMonth": "100.00%",
     "uptimeYear": "99.98%",
     "time": 406,
     "timeDay": 2307,
@@ -222,7 +228,6 @@
     "timeMonth": 678,
     "timeYear": 406,
     "dailyMinutesDown": {
-      "2026-03-27": 3,
       "2026-02-04": 20
     }
   },
