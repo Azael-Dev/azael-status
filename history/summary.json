@@ -40,19 +40,19 @@
     "url": "https://cfx.azael.dev",
     "icon": "https://status.azael.dev/images/icons/store.png",
     "slug": "cfx-store",
-    "status": "degraded",
-    "uptime": "100.00%",
-    "uptimeDay": "99.96%",
-    "uptimeWeek": "99.99%",
-    "uptimeMonth": "100.00%",
-    "uptimeYear": "100.00%",
-    "time": 3908,
-    "timeDay": 8325,
-    "timeWeek": 6434,
-    "timeMonth": 6105,
-    "timeYear": 3908,
+    "status": "up",
+    "uptime": "99.99%",
+    "uptimeDay": "99.02%",
+    "uptimeWeek": "99.86%",
+    "uptimeMonth": "99.97%",
+    "uptimeYear": "99.99%",
+    "time": 3893,
+    "timeDay": 7881,
+    "timeWeek": 6217,
+    "timeMonth": 6052,
+    "timeYear": 3893,
     "dailyMinutesDown": {
-      "2026-03-27": 1
+      "2026-03-27": 14
     }
   },
   {
@@ -87,7 +87,7 @@
     "time": 2499,
     "timeDay": 3979,
     "timeWeek": 4148,
-    "timeMonth": 4708,
+    "timeMonth": 4713,
     "timeYear": 2499,
     "dailyMinutesDown": {}
   },
@@ -133,18 +133,18 @@
     "icon": "https://status.azael.dev/images/icons/database.png",
     "slug": "database",
     "status": "up",
-    "uptime": "99.95%",
-    "uptimeDay": "98.06%",
-    "uptimeWeek": "99.72%",
-    "uptimeMonth": "99.94%",
-    "uptimeYear": "99.95%",
+    "uptime": "99.93%",
+    "uptimeDay": "97.08%",
+    "uptimeWeek": "99.58%",
+    "uptimeMonth": "99.90%",
+    "uptimeYear": "99.93%",
     "time": 1475,
     "timeDay": 2874,
     "timeWeek": 2771,
     "timeMonth": 1941,
     "timeYear": 1475,
     "dailyMinutesDown": {
-      "2026-03-27": 28,
+      "2026-03-27": 42,
       "2026-02-04": 21
     }
   },
@@ -175,18 +175,18 @@
     "icon": "https://status.azael.dev/images/icons/api.png",
     "slug": "base-api",
     "status": "up",
-    "uptime": "99.95%",
-    "uptimeDay": "96.87%",
-    "uptimeWeek": "99.55%",
-    "uptimeMonth": "99.90%",
-    "uptimeYear": "99.95%",
+    "uptime": "99.94%",
+    "uptimeDay": "95.89%",
+    "uptimeWeek": "99.41%",
+    "uptimeMonth": "99.86%",
+    "uptimeYear": "99.94%",
     "time": 812,
     "timeDay": 499,
     "timeWeek": 1756,
     "timeMonth": 1651,
     "timeYear": 812,
     "dailyMinutesDown": {
-      "2026-03-27": 45
+      "2026-03-27": 59
     }
   },
   {
@@ -216,9 +216,9 @@
     "slug": "ban-db-report-api",
     "status": "up",
     "uptime": "99.98%",
-    "uptimeDay": "99.74%",
-    "uptimeWeek": "99.96%",
-    "uptimeMonth": "99.99%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
+    "uptimeMonth": "100.00%",
     "uptimeYear": "99.98%",
     "time": 423,
     "timeDay": 2227,
@@ -226,7 +226,6 @@
     "timeMonth": 726,
     "timeYear": 423,
     "dailyMinutesDown": {
-      "2026-03-27": 4,
       "2026-02-04": 20
     }
   },
@@ -237,18 +236,16 @@
     "slug": "ban-db-lookup-api",
     "status": "up",
     "uptime": "100.00%",
-    "uptimeDay": "99.83%",
-    "uptimeWeek": "99.98%",
-    "uptimeMonth": "99.99%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
+    "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
     "time": 1707,
     "timeDay": 1743,
     "timeWeek": 1493,
     "timeMonth": 2366,
     "timeYear": 1707,
-    "dailyMinutesDown": {
-      "2026-03-27": 3
-    }
+    "dailyMinutesDown": {}
   },
   {
     "name": "Bot Server",
