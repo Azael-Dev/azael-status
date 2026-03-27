@@ -41,19 +41,17 @@
     "icon": "https://status.azael.dev/images/icons/store.png",
     "slug": "cfx-store",
     "status": "up",
-    "uptime": "99.99%",
-    "uptimeDay": "99.29%",
-    "uptimeWeek": "99.90%",
-    "uptimeMonth": "99.98%",
-    "uptimeYear": "99.99%",
+    "uptime": "100.00%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
+    "uptimeMonth": "100.00%",
+    "uptimeYear": "100.00%",
     "time": 3883,
     "timeDay": 7542,
     "timeWeek": 6052,
-    "timeMonth": 6009,
+    "timeMonth": 5935,
     "timeYear": 3883,
-    "dailyMinutesDown": {
-      "2026-03-27": 10
-    }
+    "dailyMinutesDown": {}
   },
   {
     "name": "CFX Servers",
@@ -79,19 +77,17 @@
     "icon": "https://status.azael.dev/images/icons/ban.png",
     "slug": "cfx-ban-db",
     "status": "up",
-    "uptime": "99.99%",
-    "uptimeDay": "99.37%",
-    "uptimeWeek": "99.91%",
-    "uptimeMonth": "99.98%",
-    "uptimeYear": "99.99%",
+    "uptime": "100.00%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
+    "uptimeMonth": "100.00%",
+    "uptimeYear": "100.00%",
     "time": 2491,
     "timeDay": 3635,
     "timeWeek": 3985,
     "timeMonth": 4711,
     "timeYear": 2491,
-    "dailyMinutesDown": {
-      "2026-03-27": 9
-    }
+    "dailyMinutesDown": {}
   },
   {
     "name": "Documentation",
@@ -135,18 +131,17 @@
     "icon": "https://status.azael.dev/images/icons/database.png",
     "slug": "database",
     "status": "up",
-    "uptime": "99.97%",
-    "uptimeDay": "99.44%",
-    "uptimeWeek": "99.92%",
-    "uptimeMonth": "99.98%",
-    "uptimeYear": "99.97%",
+    "uptime": "99.98%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
+    "uptimeMonth": "100.00%",
+    "uptimeYear": "99.98%",
     "time": 1472,
     "timeDay": 2695,
     "timeWeek": 2686,
     "timeMonth": 1922,
     "timeYear": 1472,
     "dailyMinutesDown": {
-      "2026-03-27": 8,
       "2026-02-04": 21
     }
   },
@@ -156,18 +151,18 @@
     "icon": "https://status.azael.dev/images/icons/email.png",
     "slug": "mailer",
     "status": "up",
-    "uptime": "99.95%",
-    "uptimeDay": "98.13%",
-    "uptimeWeek": "99.73%",
-    "uptimeMonth": "99.94%",
-    "uptimeYear": "99.95%",
+    "uptime": "99.96%",
+    "uptimeDay": "98.59%",
+    "uptimeWeek": "99.80%",
+    "uptimeMonth": "99.95%",
+    "uptimeYear": "99.96%",
     "time": 1889,
     "timeDay": 2751,
     "timeWeek": 2152,
     "timeMonth": 1634,
     "timeYear": 1889,
     "dailyMinutesDown": {
-      "2026-03-27": 27,
+      "2026-03-27": 20,
       "2026-02-04": 20
     }
   },
@@ -177,18 +172,18 @@
     "icon": "https://status.azael.dev/images/icons/api.png",
     "slug": "base-api",
     "status": "up",
-    "uptime": "99.97%",
-    "uptimeDay": "98.30%",
-    "uptimeWeek": "99.76%",
-    "uptimeMonth": "99.94%",
-    "uptimeYear": "99.97%",
+    "uptime": "99.98%",
+    "uptimeDay": "98.68%",
+    "uptimeWeek": "99.81%",
+    "uptimeMonth": "99.96%",
+    "uptimeYear": "99.98%",
     "time": 808,
     "timeDay": 461,
     "timeWeek": 1658,
     "timeMonth": 1622,
     "timeYear": 808,
     "dailyMinutesDown": {
-      "2026-03-27": 25
+      "2026-03-27": 19
     }
   },
   {
@@ -198,9 +193,9 @@
     "slug": "script-license-api",
     "status": "up",
     "uptime": "99.97%",
-    "uptimeDay": "97.97%",
-    "uptimeWeek": "99.71%",
-    "uptimeMonth": "99.93%",
+    "uptimeDay": "98.29%",
+    "uptimeWeek": "99.76%",
+    "uptimeMonth": "99.94%",
     "uptimeYear": "99.97%",
     "time": 679,
     "timeDay": 2607,
@@ -208,7 +203,7 @@
     "timeMonth": 1337,
     "timeYear": 679,
     "dailyMinutesDown": {
-      "2026-03-27": 30
+      "2026-03-27": 25
     }
   },
   {
@@ -218,9 +213,9 @@
     "slug": "ban-db-report-api",
     "status": "up",
     "uptime": "99.98%",
-    "uptimeDay": "99.74%",
-    "uptimeWeek": "99.96%",
-    "uptimeMonth": "99.99%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
+    "uptimeMonth": "100.00%",
     "uptimeYear": "99.98%",
     "time": 422,
     "timeDay": 2064,
@@ -228,7 +223,6 @@
     "timeMonth": 717,
     "timeYear": 422,
     "dailyMinutesDown": {
-      "2026-03-27": 4,
       "2026-02-04": 20
     }
   },
@@ -291,18 +285,19 @@
     "url": "https://www.cloudflarestatus.com/api/v2/status.json",
     "icon": "https://status.azael.dev/images/icons/cloudflare.png",
     "slug": "cloudflare-status",
-    "status": "up",
+    "status": "down",
     "uptime": "99.94%",
-    "uptimeDay": "100.00%",
+    "uptimeDay": "99.98%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "99.94%",
     "time": 208,
-    "timeDay": 192,
-    "timeWeek": 199,
-    "timeMonth": 201,
+    "timeDay": 206,
+    "timeWeek": 201,
+    "timeMonth": 202,
     "timeYear": 208,
     "dailyMinutesDown": {
+      "2026-03-27": 0,
       "2026-02-04": 54
     }
   }
