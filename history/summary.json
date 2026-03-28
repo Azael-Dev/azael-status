@@ -43,18 +43,18 @@
     "icon": "https://status.azael.dev/images/icons/store.png",
     "slug": "cfx-store",
     "status": "degraded",
-    "uptime": "99.97%",
-    "uptimeDay": "97.73%",
-    "uptimeWeek": "99.68%",
-    "uptimeMonth": "99.93%",
-    "uptimeYear": "99.97%",
+    "uptime": "99.96%",
+    "uptimeDay": "97.46%",
+    "uptimeWeek": "99.64%",
+    "uptimeMonth": "99.92%",
+    "uptimeYear": "99.96%",
     "time": 4041,
     "timeDay": 8202,
     "timeWeek": 6955,
     "timeMonth": 6215,
     "timeYear": 4041,
     "dailyMinutesDown": {
-      "2026-03-28": 33
+      "2026-03-28": 37
     }
   },
   {
@@ -80,19 +80,19 @@
     "url": "https://bandb.azael.dev",
     "icon": "https://status.azael.dev/images/icons/ban.png",
     "slug": "cfx-ban-db",
-    "status": "degraded",
-    "uptime": "99.97%",
-    "uptimeDay": "97.82%",
-    "uptimeWeek": "99.69%",
-    "uptimeMonth": "99.93%",
-    "uptimeYear": "99.97%",
+    "status": "down",
+    "uptime": "99.96%",
+    "uptimeDay": "97.56%",
+    "uptimeWeek": "99.65%",
+    "uptimeMonth": "99.92%",
+    "uptimeYear": "99.96%",
     "time": 2564,
     "timeDay": 4850,
     "timeWeek": 4551,
     "timeMonth": 4876,
     "timeYear": 2564,
     "dailyMinutesDown": {
-      "2026-03-28": 31
+      "2026-03-28": 35
     }
   },
   {
@@ -137,18 +137,18 @@
     "icon": "https://status.azael.dev/images/icons/database.png",
     "slug": "database",
     "status": "down",
-    "uptime": "99.95%",
-    "uptimeDay": "97.88%",
-    "uptimeWeek": "99.70%",
-    "uptimeMonth": "99.93%",
-    "uptimeYear": "99.95%",
+    "uptime": "99.94%",
+    "uptimeDay": "97.62%",
+    "uptimeWeek": "99.66%",
+    "uptimeMonth": "99.92%",
+    "uptimeYear": "99.94%",
     "time": 1521,
     "timeDay": 3483,
     "timeWeek": 2926,
     "timeMonth": 2062,
     "timeYear": 1521,
     "dailyMinutesDown": {
-      "2026-03-28": 31,
+      "2026-03-28": 34,
       "2026-02-04": 21
     }
   },
@@ -158,18 +158,18 @@
     "icon": "https://status.azael.dev/images/icons/email.png",
     "slug": "mailer",
     "status": "down",
-    "uptime": "99.90%",
-    "uptimeDay": "94.52%",
-    "uptimeWeek": "99.22%",
-    "uptimeMonth": "99.82%",
-    "uptimeYear": "99.90%",
+    "uptime": "99.89%",
+    "uptimeDay": "94.00%",
+    "uptimeWeek": "99.14%",
+    "uptimeMonth": "99.80%",
+    "uptimeYear": "99.89%",
     "time": 2014,
     "timeDay": 4539,
     "timeWeek": 3004,
     "timeMonth": 2086,
     "timeYear": 2014,
     "dailyMinutesDown": {
-      "2026-03-28": 58,
+      "2026-03-28": 66,
       "2026-03-27": 20,
       "2026-02-04": 20
     }
@@ -181,9 +181,9 @@
     "slug": "base-api",
     "status": "up",
     "uptime": "99.92%",
-    "uptimeDay": "94.89%",
-    "uptimeWeek": "99.27%",
-    "uptimeMonth": "99.83%",
+    "uptimeDay": "94.63%",
+    "uptimeWeek": "99.23%",
+    "uptimeMonth": "99.82%",
     "uptimeYear": "99.92%",
     "time": 921,
     "timeDay": 3090,
@@ -191,7 +191,7 @@
     "timeMonth": 1953,
     "timeYear": 921,
     "dailyMinutesDown": {
-      "2026-03-28": 55,
+      "2026-03-28": 59,
       "2026-03-27": 19
     }
   },
@@ -223,8 +223,8 @@
     "slug": "ban-db-report-api",
     "status": "down",
     "uptime": "99.96%",
-    "uptimeDay": "98.60%",
-    "uptimeWeek": "99.80%",
+    "uptimeDay": "98.34%",
+    "uptimeWeek": "99.76%",
     "uptimeMonth": "99.95%",
     "uptimeYear": "99.96%",
     "time": 524,
@@ -233,7 +233,7 @@
     "timeMonth": 1031,
     "timeYear": 524,
     "dailyMinutesDown": {
-      "2026-03-28": 20,
+      "2026-03-28": 24,
       "2026-02-04": 20
     }
   },
@@ -242,19 +242,19 @@
     "url": "https://bandb.azael.dev/api/v1/identifier/$UPPTIME_BANDB_LOOKUP_IDENTIFIER",
     "icon": "https://status.azael.dev/images/icons/ban-lookup.png",
     "slug": "ban-db-lookup-api",
-    "status": "down",
+    "status": "degraded",
     "uptime": "99.98%",
-    "uptimeDay": "98.67%",
-    "uptimeWeek": "99.81%",
-    "uptimeMonth": "99.96%",
+    "uptimeDay": "98.41%",
+    "uptimeWeek": "99.77%",
+    "uptimeMonth": "99.95%",
     "uptimeYear": "99.98%",
-    "time": 1824,
-    "timeDay": 3678,
-    "timeWeek": 2597,
-    "timeMonth": 2737,
-    "timeYear": 1824,
+    "time": 1947,
+    "timeDay": 5266,
+    "timeWeek": 3595,
+    "timeMonth": 3119,
+    "timeYear": 1947,
     "dailyMinutesDown": {
-      "2026-03-28": 19
+      "2026-03-28": 23
     }
   },
   {
