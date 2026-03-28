@@ -21,6 +21,9 @@ on:
   repository_dispatch:
     types: [uptime]
   workflow_dispatch:
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: true
 jobs:
   release:
     name: Check status
