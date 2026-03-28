@@ -42,19 +42,19 @@
     "url": "https://cfx.azael.dev",
     "icon": "https://status.azael.dev/images/icons/store.png",
     "slug": "cfx-store",
-    "status": "up",
-    "uptime": "99.91%",
-    "uptimeDay": "93.89%",
-    "uptimeWeek": "99.13%",
-    "uptimeMonth": "99.80%",
-    "uptimeYear": "99.91%",
-    "time": 4071,
-    "timeDay": 8449,
-    "timeWeek": 6710,
-    "timeMonth": 6206,
-    "timeYear": 4071,
+    "status": "degraded",
+    "uptime": "99.90%",
+    "uptimeDay": "93.22%",
+    "uptimeWeek": "99.03%",
+    "uptimeMonth": "99.78%",
+    "uptimeYear": "99.90%",
+    "time": 4133,
+    "timeDay": 9398,
+    "timeWeek": 7030,
+    "timeMonth": 6323,
+    "timeYear": 4133,
     "dailyMinutesDown": {
-      "2026-03-28": 88
+      "2026-03-28": 98
     }
   },
   {
@@ -82,9 +82,9 @@
     "slug": "cfx-ban-db",
     "status": "up",
     "uptime": "99.93%",
-    "uptimeDay": "95.55%",
-    "uptimeWeek": "99.36%",
-    "uptimeMonth": "99.85%",
+    "uptimeDay": "95.05%",
+    "uptimeWeek": "99.29%",
+    "uptimeMonth": "99.84%",
     "uptimeYear": "99.93%",
     "time": 2765,
     "timeDay": 10381,
@@ -92,7 +92,7 @@
     "timeMonth": 5262,
     "timeYear": 2765,
     "dailyMinutesDown": {
-      "2026-03-28": 64
+      "2026-03-28": 71
     }
   },
   {
@@ -136,19 +136,19 @@
     "url": "https://api.azael.dev/$UPPTIME_DATABASE_HEALTH_ENDPOINT",
     "icon": "https://status.azael.dev/images/icons/database.png",
     "slug": "database",
-    "status": "up",
-    "uptime": "99.89%",
-    "uptimeDay": "94.00%",
-    "uptimeWeek": "99.14%",
-    "uptimeMonth": "99.80%",
-    "uptimeYear": "99.89%",
+    "status": "down",
+    "uptime": "99.88%",
+    "uptimeDay": "93.56%",
+    "uptimeWeek": "99.08%",
+    "uptimeMonth": "99.79%",
+    "uptimeYear": "99.88%",
     "time": 1515,
     "timeDay": 2557,
     "timeWeek": 2647,
     "timeMonth": 1996,
     "timeYear": 1515,
     "dailyMinutesDown": {
-      "2026-03-28": 86,
+      "2026-03-28": 92,
       "2026-02-04": 21
     }
   },
@@ -159,8 +159,8 @@
     "slug": "mailer",
     "status": "up",
     "uptime": "99.87%",
-    "uptimeDay": "93.91%",
-    "uptimeWeek": "98.93%",
+    "uptimeDay": "93.81%",
+    "uptimeWeek": "98.92%",
     "uptimeMonth": "99.75%",
     "uptimeYear": "99.87%",
     "time": 1988,
@@ -169,7 +169,7 @@
     "timeMonth": 1995,
     "timeYear": 1988,
     "dailyMinutesDown": {
-      "2026-03-28": 88,
+      "2026-03-28": 89,
       "2026-03-27": 20,
       "2026-02-04": 20
     }
