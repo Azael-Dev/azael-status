@@ -62,8 +62,8 @@ jobs:
           # Determine whether Workers should be enabled or disabled
           SHOULD_ENABLE="false"
 
-          # Enable Workers if web-server or cfx-store is down
-          if [ "$WEB_SERVER_STATUS" == "down" ] || [ "$CFX_STORE_STATUS" == "down" ]; then
+          # Enable Workers if web-server or cfx-store is not up
+          if [ "$WEB_SERVER_STATUS" != "up" ] || [ "$CFX_STORE_STATUS" != "up" ]; then
             SHOULD_ENABLE="true"
           fi
 
