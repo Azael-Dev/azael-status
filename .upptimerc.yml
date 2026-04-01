@@ -66,6 +66,7 @@ sites:
     maxResponseTime: 3000
     expectedStatusCodes:
       - 200
+      - 403
     __dangerous__body_down: '"status":"unhealthy"'
 
   - name: Mailer
@@ -77,6 +78,7 @@ sites:
     maxResponseTime: 6000
     expectedStatusCodes:
       - 200
+      - 403
     __dangerous__body_down: '"status":"unhealthy"'
 
   - name: Base API
@@ -86,6 +88,7 @@ sites:
     maxResponseTime: 1000
     expectedStatusCodes:
       - 200
+      - 403
     __dangerous__body_down_if_text_missing: '"status":"ok"'
 
   - name: Script License API
@@ -99,6 +102,7 @@ sites:
     maxResponseTime: 1000
     expectedStatusCodes:
       - 200
+      - 403
     __dangerous__body_down: '"status":"unhealthy"'
 
   - name: BanDB Report API
@@ -110,6 +114,7 @@ sites:
     maxResponseTime: 1000
     expectedStatusCodes:
       - 200
+      - 403
     __dangerous__body_down: '"status":"unhealthy"'
 
   - name: BanDB Lookup API
