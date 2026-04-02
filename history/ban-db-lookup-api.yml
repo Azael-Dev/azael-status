@@ -1,7 +1,7 @@
 url: https://bandb.azael.dev/api/v1/identifier/$UPPTIME_BANDB_LOOKUP_IDENTIFIER
-status: up
-code: 200
-responseTime: 917
-lastUpdated: 2026-04-01T23:14:49.021Z
+status: degraded
+code: 522
+responseTime: 19507
+lastUpdated: 2026-04-02T14:13:27.219Z
 startTime: 2026-01-20T03:30:54.316Z
 generator: Upptime <https://github.com/upptime/upptime>
