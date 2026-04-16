@@ -1,7 +1,7 @@
 url: https://api.azael.dev/$UPPTIME_SCRIPT_LICENSE_API_ENDPOINT
-status: degraded
+status: up
 code: 200
-responseTime: 2010
-lastUpdated: 2026-04-16T09:55:48.715Z
+responseTime: 264
+lastUpdated: 2026-04-16T10:00:30.343Z
 startTime: 2026-01-20T02:31:19.621Z
 generator: Upptime <https://github.com/upptime/upptime>
