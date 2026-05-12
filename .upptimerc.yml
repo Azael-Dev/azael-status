@@ -85,7 +85,7 @@ sites:
     icon: https://status.azael.dev/images/icons/api.png
     url: https://api.azael.dev/$UPPTIME_API_PING_ENDPOINT
     method: POST
-    maxResponseTime: 1000
+    maxResponseTime: 1500
     expectedStatusCodes:
       - 200
       - 403
@@ -99,7 +99,7 @@ sites:
       - "Authorization: Bearer $UPPTIME_API_TOKEN"
       - "Content-Type: application/json"
     body: '{"licenseKey":"$UPPTIME_SCRIPT_LICENSE_BY_EMAIL"}'
-    maxResponseTime: 1000
+    maxResponseTime: 1500
     expectedStatusCodes:
       - 200
       - 403
@@ -111,7 +111,7 @@ sites:
     method: POST
     headers:
       - "Authorization: Bearer $UPPTIME_API_TOKEN"
-    maxResponseTime: 1000
+    maxResponseTime: 1500
     expectedStatusCodes:
       - 200
       - 403
