@@ -47,8 +47,8 @@
     "slug": "cfx-store",
     "status": "up",
     "uptime": "97.42%",
-    "uptimeDay": "99.88%",
-    "uptimeWeek": "99.98%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
     "uptimeMonth": "97.46%",
     "uptimeYear": "97.42%",
     "time": 4104,
@@ -68,8 +68,7 @@
       "2026-04-30": 42,
       "2026-05-04": 294,
       "2026-05-22": 809,
-      "2026-05-21": 9,
-      "2026-06-02": 2
+      "2026-05-21": 9
     }
   },
   {
@@ -95,17 +94,17 @@
     "url": "https://bandb.azael.dev",
     "icon": "https://status.azael.dev/images/icons/ban.png",
     "slug": "cfx-ban-db",
-    "status": "degraded",
+    "status": "up",
     "uptime": "99.33%",
-    "uptimeDay": "99.92%",
-    "uptimeWeek": "99.99%",
+    "uptimeDay": "99.88%",
+    "uptimeWeek": "99.98%",
     "uptimeMonth": "99.34%",
     "uptimeYear": "99.33%",
-    "time": 2884,
-    "timeDay": 3257,
-    "timeWeek": 2093,
-    "timeMonth": 1737,
-    "timeYear": 2884,
+    "time": 2877,
+    "timeDay": 2895,
+    "timeWeek": 1987,
+    "timeMonth": 1714,
+    "timeYear": 2877,
     "dailyMinutesDown": {
       "2026-03-28": 64,
       "2026-03-30": 29,
@@ -114,7 +113,7 @@
       "2026-04-03": 17,
       "2026-04-08": 743,
       "2026-05-04": 289,
-      "2026-06-02": 1
+      "2026-06-02": 2
     }
   },
   {
@@ -160,8 +159,8 @@
     "slug": "database",
     "status": "down",
     "uptime": "99.65%",
-    "uptimeDay": "99.93%",
-    "uptimeWeek": "99.99%",
+    "uptimeDay": "99.84%",
+    "uptimeWeek": "99.98%",
     "uptimeMonth": "99.32%",
     "uptimeYear": "99.65%",
     "time": 1839,
@@ -181,7 +180,7 @@
       "2026-04-30": 16,
       "2026-05-04": 294,
       "2026-05-19": 2,
-      "2026-06-02": 1
+      "2026-06-02": 2
     }
   },
   {
@@ -190,11 +189,11 @@
     "icon": "https://status.azael.dev/images/icons/email.png",
     "slug": "mailer",
     "status": "down",
-    "uptime": "99.66%",
-    "uptimeDay": "99.95%",
-    "uptimeWeek": "99.99%",
+    "uptime": "99.65%",
+    "uptimeDay": "99.85%",
+    "uptimeWeek": "99.98%",
     "uptimeMonth": "99.33%",
-    "uptimeYear": "99.66%",
+    "uptimeYear": "99.65%",
     "time": 2041,
     "timeDay": 3614,
     "timeWeek": 2875,
@@ -209,7 +208,7 @@
       "2026-04-02": 17,
       "2026-04-04": 27,
       "2026-05-04": 293,
-      "2026-06-02": 1
+      "2026-06-02": 2
     }
   },
   {
@@ -219,9 +218,9 @@
     "slug": "base-api",
     "status": "up",
     "uptime": "98.87%",
-    "uptimeDay": "99.83%",
-    "uptimeWeek": "99.98%",
-    "uptimeMonth": "99.99%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
+    "uptimeMonth": "100.00%",
     "uptimeYear": "98.87%",
     "time": 1089,
     "timeDay": 1262,
@@ -233,8 +232,7 @@
       "2026-03-28": 27,
       "2026-03-31": 5,
       "2026-04-09": 965,
-      "2026-04-08": 1145,
-      "2026-06-02": 2
+      "2026-04-08": 1145
     }
   },
   {
@@ -266,8 +264,8 @@
     "slug": "ban-db-report-api",
     "status": "down",
     "uptime": "99.70%",
-    "uptimeDay": "99.96%",
-    "uptimeWeek": "99.99%",
+    "uptimeDay": "99.86%",
+    "uptimeWeek": "99.98%",
     "uptimeMonth": "99.33%",
     "uptimeYear": "99.70%",
     "time": 777,
@@ -284,7 +282,7 @@
       "2026-04-04": 24,
       "2026-05-04": 290,
       "2026-05-08": 1,
-      "2026-06-02": 1
+      "2026-06-02": 2
     }
   },
   {
@@ -353,22 +351,22 @@
     "url": "https://www.cloudflarestatus.com/api/v2/status.json",
     "icon": "https://status.azael.dev/images/icons/cloudflare.png",
     "slug": "cloudflare-status",
-    "status": "down",
-    "uptime": "99.49%",
-    "uptimeDay": "99.97%",
-    "uptimeWeek": "100.00%",
+    "status": "up",
+    "uptime": "99.48%",
+    "uptimeDay": "99.91%",
+    "uptimeWeek": "99.99%",
     "uptimeMonth": "100.00%",
-    "uptimeYear": "99.49%",
-    "time": 340,
-    "timeDay": 121,
-    "timeWeek": 142,
+    "uptimeYear": "99.48%",
+    "time": 339,
+    "timeDay": 128,
+    "timeWeek": 145,
     "timeMonth": 176,
-    "timeYear": 340,
+    "timeYear": 339,
     "dailyMinutesDown": {
       "2026-02-04": 54,
       "2026-04-29": 575,
       "2026-04-28": 325,
-      "2026-06-02": 0
+      "2026-06-02": 1
     }
   }
 ]
