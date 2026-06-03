@@ -146,6 +146,7 @@ sites:
     url: https://www.cloudflarestatus.com/api/v2/status.json
     expectedStatusCodes:
       - 200
+      - 405
     __dangerous__body_down: '"indicator":"critical"'
     __dangerous__body_degraded: '"indicator":"major"'
 
