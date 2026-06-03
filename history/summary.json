@@ -347,22 +347,22 @@
     "url": "https://www.cloudflarestatus.com/api/v2/status.json",
     "icon": "https://status.azael.dev/images/icons/cloudflare.png",
     "slug": "cloudflare-status",
-    "status": "down",
+    "status": "up",
     "uptime": "99.49%",
-    "uptimeDay": "99.97%",
-    "uptimeWeek": "100.00%",
-    "uptimeMonth": "100.00%",
+    "uptimeDay": "99.66%",
+    "uptimeWeek": "99.95%",
+    "uptimeMonth": "99.99%",
     "uptimeYear": "99.49%",
-    "time": 330,
-    "timeDay": 174,
-    "timeWeek": 160,
-    "timeMonth": 176,
-    "timeYear": 330,
+    "time": 329,
+    "timeDay": 176,
+    "timeWeek": 161,
+    "timeMonth": 177,
+    "timeYear": 329,
     "dailyMinutesDown": {
       "2026-02-04": 54,
       "2026-04-29": 575,
       "2026-04-28": 325,
-      "2026-06-03": 0
+      "2026-06-03": 5
     }
   }
 ]
