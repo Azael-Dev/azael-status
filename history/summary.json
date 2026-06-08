@@ -347,7 +347,7 @@
     "url": "https://www.cloudflarestatus.com/api/v2/status.json",
     "icon": "https://status.azael.dev/images/icons/cloudflare.png",
     "slug": "cloudflare-status",
-    "status": "degraded",
+    "status": "up",
     "uptime": "99.51%",
     "uptimeDay": "99.96%",
     "uptimeWeek": "99.99%",
