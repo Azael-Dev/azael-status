@@ -1,5 +1,5 @@
 url: https://www.cloudflarestatus.com/api/v2/status.json
-status: degraded
+status: up
 code: 200
 responseTime: 86
 lastUpdated: 2026-06-08T17:40:36.898Z
