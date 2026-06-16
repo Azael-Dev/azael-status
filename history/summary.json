@@ -46,15 +46,15 @@
     "icon": "https://status.azael.dev/images/icons/store.png",
     "slug": "cfx-store",
     "status": "up",
-    "uptime": "97.66%",
+    "uptime": "97.67%",
     "uptimeDay": "100.00%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "98.13%",
-    "uptimeYear": "97.66%",
+    "uptimeYear": "97.67%",
     "time": 4237,
     "timeDay": 1005,
     "timeWeek": 951,
-    "timeMonth": 5248,
+    "timeMonth": 5230,
     "timeYear": 4237,
     "dailyMinutesDown": {
       "2026-03-28": 88,
@@ -165,7 +165,7 @@
     "time": 1851,
     "timeDay": 1045,
     "timeWeek": 919,
-    "timeMonth": 1971,
+    "timeMonth": 2013,
     "timeYear": 1851,
     "dailyMinutesDown": {
       "2026-02-04": 21,
@@ -195,7 +195,7 @@
     "time": 2084,
     "timeDay": 1646,
     "timeWeek": 1514,
-    "timeMonth": 2498,
+    "timeMonth": 2546,
     "timeYear": 2084,
     "dailyMinutesDown": {
       "2026-02-04": 20,
@@ -213,23 +213,24 @@
     "url": "https://api.azael.dev/$UPPTIME_API_PING_ENDPOINT",
     "icon": "https://status.azael.dev/images/icons/api.png",
     "slug": "base-api",
-    "status": "up",
+    "status": "degraded",
     "uptime": "98.98%",
-    "uptimeDay": "100.00%",
+    "uptimeDay": "99.98%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "98.98%",
-    "time": 1307,
-    "timeDay": 942,
-    "timeWeek": 612,
-    "timeMonth": 2866,
-    "timeYear": 1307,
+    "time": 1312,
+    "timeDay": 1921,
+    "timeWeek": 1070,
+    "timeMonth": 2867,
+    "timeYear": 1312,
     "dailyMinutesDown": {
       "2026-03-27": 19,
       "2026-03-28": 27,
       "2026-03-31": 5,
       "2026-04-09": 965,
-      "2026-04-08": 1145
+      "2026-04-08": 1145,
+      "2026-06-16": 0
     }
   },
   {
@@ -268,7 +269,7 @@
     "time": 763,
     "timeDay": 934,
     "timeWeek": 756,
-    "timeMonth": 563,
+    "timeMonth": 567,
     "timeYear": 763,
     "dailyMinutesDown": {
       "2026-02-04": 20,
@@ -311,18 +312,16 @@
     "slug": "bot-server",
     "status": "up",
     "uptime": "100.00%",
-    "uptimeDay": "99.33%",
-    "uptimeWeek": "99.90%",
-    "uptimeMonth": "99.98%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
+    "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
     "time": 151,
     "timeDay": 118,
     "timeWeek": 118,
     "timeMonth": 108,
     "timeYear": 151,
-    "dailyMinutesDown": {
-      "2026-06-16": 10
-    }
+    "dailyMinutesDown": {}
   },
   {
     "name": "Discord Bot",
