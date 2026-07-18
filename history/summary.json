@@ -27,19 +27,19 @@
     "url": "https://portal.azael.dev",
     "icon": "https://status.azael.dev/images/icons/portal.png",
     "slug": "portal",
-    "status": "degraded",
+    "status": "up",
     "uptime": "100.00%",
-    "uptimeDay": "99.98%",
-    "uptimeWeek": "100.00%",
+    "uptimeDay": "99.93%",
+    "uptimeWeek": "99.99%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
-    "time": 224,
-    "timeDay": 7723,
-    "timeWeek": 2302,
-    "timeMonth": 646,
-    "timeYear": 224,
+    "time": 223,
+    "timeDay": 5153,
+    "timeWeek": 2016,
+    "timeMonth": 626,
+    "timeYear": 223,
     "dailyMinutesDown": {
-      "2026-07-18": 0
+      "2026-07-18": 1
     }
   },
   {
@@ -81,18 +81,16 @@
     "slug": "cfx-servers",
     "status": "up",
     "uptime": "100.00%",
-    "uptimeDay": "99.75%",
-    "uptimeWeek": "99.96%",
-    "uptimeMonth": "99.99%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
+    "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
     "time": 249,
     "timeDay": 4968,
     "timeWeek": 1961,
     "timeMonth": 595,
     "timeYear": 249,
-    "dailyMinutesDown": {
-      "2026-07-18": 4
-    }
+    "dailyMinutesDown": {}
   },
   {
     "name": "CFX BanDB",
@@ -146,8 +144,8 @@
     "slug": "documentation-legacy",
     "status": "up",
     "uptime": "100.00%",
-    "uptimeDay": "99.87%",
-    "uptimeWeek": "99.98%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
     "time": 203,
@@ -155,9 +153,7 @@
     "timeWeek": 1872,
     "timeMonth": 571,
     "timeYear": 203,
-    "dailyMinutesDown": {
-      "2026-07-18": 2
-    }
+    "dailyMinutesDown": {}
   },
   {
     "name": "Database",
