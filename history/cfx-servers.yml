@@ -1,7 +1,7 @@
 url: https://servers.azael.dev
-status: up
+status: degraded
 code: 200
-responseTime: 135
-lastUpdated: 2026-07-17T23:18:12.206Z
+responseTime: 14001
+lastUpdated: 2026-07-18T19:46:29.605Z
 startTime: 2026-02-19T18:45:48.384Z
 generator: Upptime <https://github.com/upptime/upptime>
