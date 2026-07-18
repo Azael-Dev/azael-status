@@ -27,18 +27,20 @@
     "url": "https://portal.azael.dev",
     "icon": "https://status.azael.dev/images/icons/portal.png",
     "slug": "portal",
-    "status": "up",
+    "status": "degraded",
     "uptime": "100.00%",
-    "uptimeDay": "100.00%",
+    "uptimeDay": "99.98%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
-    "time": 174,
-    "timeDay": 152,
-    "timeWeek": 137,
-    "timeMonth": 141,
-    "timeYear": 174,
-    "dailyMinutesDown": {}
+    "time": 224,
+    "timeDay": 7723,
+    "timeWeek": 2302,
+    "timeMonth": 646,
+    "timeYear": 224,
+    "dailyMinutesDown": {
+      "2026-07-18": 0
+    }
   },
   {
     "name": "CFX Store",
@@ -77,19 +79,19 @@
     "url": "https://servers.azael.dev",
     "icon": "https://status.azael.dev/images/icons/server-list.png",
     "slug": "cfx-servers",
-    "status": "degraded",
+    "status": "up",
     "uptime": "100.00%",
-    "uptimeDay": "99.86%",
-    "uptimeWeek": "99.98%",
-    "uptimeMonth": "100.00%",
+    "uptimeDay": "99.75%",
+    "uptimeWeek": "99.96%",
+    "uptimeMonth": "99.99%",
     "uptimeYear": "100.00%",
-    "time": 246,
-    "timeDay": 7068,
-    "timeWeek": 2132,
-    "timeMonth": 590,
-    "timeYear": 246,
+    "time": 249,
+    "timeDay": 4968,
+    "timeWeek": 1961,
+    "timeMonth": 595,
+    "timeYear": 249,
     "dailyMinutesDown": {
-      "2026-07-18": 2
+      "2026-07-18": 4
     }
   },
   {
@@ -142,19 +144,19 @@
     "url": "https://docs-old.azael.dev",
     "icon": "https://status.azael.dev/images/icons/doc.png",
     "slug": "documentation-legacy",
-    "status": "degraded",
+    "status": "up",
     "uptime": "100.00%",
-    "uptimeDay": "99.98%",
-    "uptimeWeek": "100.00%",
+    "uptimeDay": "99.87%",
+    "uptimeWeek": "99.98%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
     "time": 203,
-    "timeDay": 6871,
-    "timeWeek": 2116,
-    "timeMonth": 585,
+    "timeDay": 4635,
+    "timeWeek": 1872,
+    "timeMonth": 571,
     "timeYear": 203,
     "dailyMinutesDown": {
-      "2026-07-18": 0
+      "2026-07-18": 2
     }
   },
   {
