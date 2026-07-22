@@ -158,17 +158,17 @@
     "url": "https://api.azael.dev/$UPPTIME_DATABASE_HEALTH_ENDPOINT",
     "icon": "https://status.azael.dev/images/icons/database.png",
     "slug": "database",
-    "status": "degraded",
-    "uptime": "99.75%",
-    "uptimeDay": "99.98%",
-    "uptimeWeek": "100.00%",
-    "uptimeMonth": "100.00%",
-    "uptimeYear": "99.75%",
-    "time": 1761,
-    "timeDay": 2500,
-    "timeWeek": 1285,
-    "timeMonth": 883,
-    "timeYear": 1761,
+    "status": "up",
+    "uptime": "99.74%",
+    "uptimeDay": "99.67%",
+    "uptimeWeek": "99.95%",
+    "uptimeMonth": "99.99%",
+    "uptimeYear": "99.74%",
+    "time": 1759,
+    "timeDay": 1923,
+    "timeWeek": 1220,
+    "timeMonth": 880,
+    "timeYear": 1759,
     "dailyMinutesDown": {
       "2026-02-04": 21,
       "2026-03-28": 113,
@@ -181,7 +181,7 @@
       "2026-04-30": 16,
       "2026-05-04": 294,
       "2026-05-19": 2,
-      "2026-07-22": 0
+      "2026-07-22": 5
     }
   },
   {
