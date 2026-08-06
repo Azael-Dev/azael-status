@@ -95,17 +95,17 @@
     "url": "https://bandb.azael.dev",
     "icon": "https://status.azael.dev/images/icons/ban.png",
     "slug": "cfx-ban-db",
-    "status": "degraded",
-    "uptime": "99.51%",
-    "uptimeDay": "99.98%",
-    "uptimeWeek": "100.00%",
-    "uptimeMonth": "100.00%",
-    "uptimeYear": "99.51%",
-    "time": 2910,
-    "timeDay": 4821,
-    "timeWeek": 3797,
-    "timeMonth": 2157,
-    "timeYear": 2910,
+    "status": "up",
+    "uptime": "99.50%",
+    "uptimeDay": "99.40%",
+    "uptimeWeek": "99.91%",
+    "uptimeMonth": "99.98%",
+    "uptimeYear": "99.50%",
+    "time": 2905,
+    "timeDay": 4015,
+    "timeWeek": 3596,
+    "timeMonth": 2125,
+    "timeYear": 2905,
     "dailyMinutesDown": {
       "2026-03-28": 64,
       "2026-03-30": 29,
@@ -115,7 +115,7 @@
       "2026-04-08": 743,
       "2026-05-04": 289,
       "2026-06-18": 133,
-      "2026-08-06": 0
+      "2026-08-06": 9
     }
   },
   {
