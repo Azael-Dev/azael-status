@@ -240,23 +240,23 @@
     "url": "https://api.azael.dev/$UPPTIME_SCRIPT_LICENSE_API_ENDPOINT",
     "icon": "https://status.azael.dev/images/icons/license.png",
     "slug": "script-license-api",
-    "status": "degraded",
+    "status": "up",
     "uptime": "99.94%",
-    "uptimeDay": "99.98%",
-    "uptimeWeek": "100.00%",
-    "uptimeMonth": "100.00%",
+    "uptimeDay": "99.82%",
+    "uptimeWeek": "99.97%",
+    "uptimeMonth": "99.99%",
     "uptimeYear": "99.94%",
-    "time": 1311,
-    "timeDay": 5219,
-    "timeWeek": 5342,
-    "timeMonth": 2743,
-    "timeYear": 1311,
+    "time": 1308,
+    "timeDay": 4841,
+    "timeWeek": 5103,
+    "timeMonth": 2690,
+    "timeYear": 1308,
     "dailyMinutesDown": {
       "2026-03-27": 25,
       "2026-03-28": 26,
       "2026-03-31": 5,
       "2026-06-18": 131,
-      "2026-08-10": 0
+      "2026-08-10": 3
     }
   },
   {
