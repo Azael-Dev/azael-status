@@ -215,24 +215,25 @@
     "url": "https://api.azael.dev/$UPPTIME_API_PING_ENDPOINT",
     "icon": "https://status.azael.dev/images/icons/api.png",
     "slug": "base-api",
-    "status": "up",
+    "status": "degraded",
     "uptime": "99.21%",
-    "uptimeDay": "100.00%",
-    "uptimeWeek": "100.00%",
+    "uptimeDay": "99.92%",
+    "uptimeWeek": "99.99%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "99.21%",
-    "time": 1282,
-    "timeDay": 3755,
-    "timeWeek": 2280,
-    "timeMonth": 1305,
-    "timeYear": 1282,
+    "time": 1313,
+    "timeDay": 4821,
+    "timeWeek": 2931,
+    "timeMonth": 1592,
+    "timeYear": 1313,
     "dailyMinutesDown": {
       "2026-03-27": 19,
       "2026-03-28": 27,
       "2026-03-31": 5,
       "2026-04-09": 965,
       "2026-04-08": 1145,
-      "2026-06-18": 132
+      "2026-06-18": 132,
+      "2026-08-10": 1
     }
   },
   {
@@ -241,11 +242,11 @@
     "icon": "https://status.azael.dev/images/icons/license.png",
     "slug": "script-license-api",
     "status": "up",
-    "uptime": "99.93%",
-    "uptimeDay": "99.71%",
-    "uptimeWeek": "99.96%",
-    "uptimeMonth": "99.99%",
-    "uptimeYear": "99.93%",
+    "uptime": "99.94%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
+    "uptimeMonth": "100.00%",
+    "uptimeYear": "99.94%",
     "time": 1281,
     "timeDay": 5282,
     "timeWeek": 5397,
@@ -255,8 +256,7 @@
       "2026-03-27": 25,
       "2026-03-28": 26,
       "2026-03-31": 5,
-      "2026-06-18": 131,
-      "2026-08-10": 4
+      "2026-06-18": 131
     }
   },
   {
@@ -292,22 +292,23 @@
     "url": "https://bandb.azael.dev/api/v1/identifier/$UPPTIME_BANDB_LOOKUP_IDENTIFIER",
     "icon": "https://status.azael.dev/images/icons/ban-lookup.png",
     "slug": "ban-db-lookup-api",
-    "status": "up",
+    "status": "degraded",
     "uptime": "99.84%",
-    "uptimeDay": "100.00%",
+    "uptimeDay": "99.98%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "99.84%",
-    "time": 1767,
-    "timeDay": 1542,
-    "timeWeek": 1099,
-    "timeMonth": 867,
-    "timeYear": 1767,
+    "time": 1786,
+    "timeDay": 3210,
+    "timeWeek": 1811,
+    "timeMonth": 1077,
+    "timeYear": 1786,
     "dailyMinutesDown": {
       "2026-03-28": 51,
       "2026-03-30": 45,
       "2026-03-31": 75,
-      "2026-05-04": 283
+      "2026-05-04": 283,
+      "2026-08-10": 0
     }
   },
   {
