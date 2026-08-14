@@ -1,7 +1,7 @@
 url: https://cfx.azael.dev
-status: degraded
-code: 520
-responseTime: 23979
-lastUpdated: 2026-08-14T07:39:07.868Z
+status: up
+code: 200
+responseTime: 946
+lastUpdated: 2026-08-14T07:40:31.109Z
 startTime: 2026-01-19T20:56:55.273Z
 generator: Upptime <https://github.com/upptime/upptime>
