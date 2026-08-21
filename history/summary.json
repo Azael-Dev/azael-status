@@ -47,8 +47,8 @@
     "slug": "cfx-store",
     "status": "up",
     "uptime": "98.34%",
-    "uptimeDay": "99.92%",
-    "uptimeWeek": "99.99%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "98.34%",
     "time": 4036,
@@ -69,8 +69,7 @@
       "2026-05-04": 294,
       "2026-05-22": 809,
       "2026-05-21": 9,
-      "2026-06-18": 138,
-      "2026-08-21": 1
+      "2026-06-18": 138
     }
   },
   {
@@ -264,15 +263,15 @@
     "url": "https://api.azael.dev/$UPPTIME_BANDB_REPORT_API_ENDPOINT",
     "icon": "https://status.azael.dev/images/icons/ban-report.png",
     "slug": "ban-db-report-api",
-    "status": "down",
+    "status": "up",
     "uptime": "99.77%",
-    "uptimeDay": "99.97%",
-    "uptimeWeek": "100.00%",
+    "uptimeDay": "99.93%",
+    "uptimeWeek": "99.99%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "99.77%",
     "time": 782,
-    "timeDay": 342,
-    "timeWeek": 664,
+    "timeDay": 539,
+    "timeWeek": 682,
     "timeMonth": 926,
     "timeYear": 782,
     "dailyMinutesDown": {
@@ -285,7 +284,7 @@
       "2026-05-04": 290,
       "2026-05-08": 1,
       "2026-06-18": 130,
-      "2026-08-21": 0
+      "2026-08-21": 1
     }
   },
   {
