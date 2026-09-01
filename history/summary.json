@@ -53,7 +53,7 @@
     "uptimeYear": "98.42%",
     "time": 3967,
     "timeDay": 1062,
-    "timeWeek": 1218,
+    "timeWeek": 946,
     "timeMonth": 4402,
     "timeYear": 3967,
     "dailyMinutesDown": {
@@ -103,7 +103,7 @@
     "uptimeYear": "99.56%",
     "time": 2974,
     "timeDay": 913,
-    "timeWeek": 1428,
+    "timeWeek": 881,
     "timeMonth": 3675,
     "timeYear": 2974,
     "dailyMinutesDown": {
@@ -166,7 +166,7 @@
     "uptimeYear": "99.79%",
     "time": 1696,
     "timeDay": 1017,
-    "timeWeek": 810,
+    "timeWeek": 900,
     "timeMonth": 1276,
     "timeYear": 1696,
     "dailyMinutesDown": {
@@ -196,7 +196,7 @@
     "uptimeYear": "99.80%",
     "time": 2260,
     "timeDay": 1519,
-    "timeWeek": 8126,
+    "timeWeek": 1557,
     "timeMonth": 3766,
     "timeYear": 2260,
     "dailyMinutesDown": {
@@ -247,7 +247,7 @@
     "uptimeMonth": "100.00%",
     "uptimeYear": "99.94%",
     "time": 1338,
-    "timeDay": 1274,
+    "timeDay": 895,
     "timeWeek": 733,
     "timeMonth": 2967,
     "timeYear": 1338,
@@ -271,7 +271,7 @@
     "uptimeYear": "99.78%",
     "time": 777,
     "timeDay": 319,
-    "timeWeek": 518,
+    "timeWeek": 525,
     "timeMonth": 914,
     "timeYear": 777,
     "dailyMinutesDown": {
@@ -355,22 +355,23 @@
     "url": "https://www.cloudflarestatus.com/api/v2/status.json",
     "icon": "https://status.azael.dev/images/icons/cloudflare.png",
     "slug": "cloudflare-status",
-    "status": "up",
+    "status": "down",
     "uptime": "99.65%",
-    "uptimeDay": "100.00%",
-    "uptimeWeek": "100.00%",
+    "uptimeDay": "99.95%",
+    "uptimeWeek": "99.99%",
     "uptimeMonth": "99.68%",
     "uptimeYear": "99.65%",
-    "time": 278,
-    "timeDay": 105,
-    "timeWeek": 245,
-    "timeMonth": 180,
-    "timeYear": 278,
+    "time": 277,
+    "timeDay": 114,
+    "timeWeek": 230,
+    "timeMonth": 178,
+    "timeYear": 277,
     "dailyMinutesDown": {
       "2026-02-04": 54,
       "2026-04-29": 575,
       "2026-04-28": 325,
-      "2026-08-12": 140
+      "2026-08-12": 140,
+      "2026-09-01": 1
     }
   }
 ]
