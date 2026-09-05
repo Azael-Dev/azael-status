@@ -1,7 +1,7 @@
 url: https://api.azael.dev/$UPPTIME_DATABASE_HEALTH_ENDPOINT
 status: up
 code: 200
-responseTime: 920
-lastUpdated: 2026-09-04T23:09:37.059Z
+responseTime: 768
+lastUpdated: 2026-09-05T23:08:41.184Z
 startTime: 2026-01-19T23:53:58.131Z
 generator: Upptime <https://github.com/upptime/upptime>
