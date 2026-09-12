@@ -314,20 +314,20 @@
     "url": "$UPPTIME_BOT_SERVER_IP",
     "icon": "https://status.azael.dev/images/icons/server.png",
     "slug": "bot-server",
-    "status": "down",
+    "status": "up",
     "uptime": "99.99%",
-    "uptimeDay": "99.96%",
-    "uptimeWeek": "99.99%",
+    "uptimeDay": "99.87%",
+    "uptimeWeek": "99.98%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "99.99%",
     "time": 142,
-    "timeDay": 155,
-    "timeWeek": 127,
-    "timeMonth": 124,
+    "timeDay": 118,
+    "timeWeek": 121,
+    "timeMonth": 123,
     "timeYear": 142,
     "dailyMinutesDown": {
       "2026-06-23": 31,
-      "2026-09-12": 1
+      "2026-09-12": 2
     }
   },
   {
