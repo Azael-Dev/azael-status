@@ -189,11 +189,11 @@
     "icon": "https://status.azael.dev/images/icons/email.png",
     "slug": "mailer",
     "status": "up",
-    "uptime": "99.80%",
-    "uptimeDay": "99.91%",
-    "uptimeWeek": "99.99%",
+    "uptime": "99.81%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
-    "uptimeYear": "99.80%",
+    "uptimeYear": "99.81%",
     "time": 2287,
     "timeDay": 10945,
     "timeWeek": 4631,
@@ -207,8 +207,7 @@
       "2026-03-31": 127,
       "2026-04-02": 17,
       "2026-04-04": 27,
-      "2026-05-04": 293,
-      "2026-09-12": 1
+      "2026-05-04": 293
     }
   },
   {
@@ -315,10 +314,10 @@
     "url": "$UPPTIME_BOT_SERVER_IP",
     "icon": "https://status.azael.dev/images/icons/server.png",
     "slug": "bot-server",
-    "status": "up",
+    "status": "down",
     "uptime": "99.99%",
-    "uptimeDay": "100.00%",
-    "uptimeWeek": "100.00%",
+    "uptimeDay": "99.96%",
+    "uptimeWeek": "99.99%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "99.99%",
     "time": 142,
@@ -327,7 +326,8 @@
     "timeMonth": 124,
     "timeYear": 142,
     "dailyMinutesDown": {
-      "2026-06-23": 31
+      "2026-06-23": 31,
+      "2026-09-12": 1
     }
   },
   {
@@ -360,7 +360,7 @@
     "uptime": "99.67%",
     "uptimeDay": "100.00%",
     "uptimeWeek": "100.00%",
-    "uptimeMonth": "99.73%",
+    "uptimeMonth": "99.98%",
     "uptimeYear": "99.67%",
     "time": 275,
     "timeDay": 300,
