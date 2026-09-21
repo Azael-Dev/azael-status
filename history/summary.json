@@ -47,9 +47,9 @@
     "slug": "cfx-store",
     "status": "up",
     "uptime": "98.55%",
-    "uptimeDay": "99.67%",
-    "uptimeWeek": "99.95%",
-    "uptimeMonth": "99.99%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
+    "uptimeMonth": "100.00%",
     "uptimeYear": "98.55%",
     "time": 3874,
     "timeDay": 7019,
@@ -69,8 +69,7 @@
       "2026-05-04": 294,
       "2026-05-22": 809,
       "2026-05-21": 9,
-      "2026-06-18": 138,
-      "2026-09-21": 5
+      "2026-06-18": 138
     }
   },
   {
@@ -96,17 +95,17 @@
     "url": "https://bandb.azael.dev",
     "icon": "https://status.azael.dev/images/icons/ban.png",
     "slug": "cfx-ban-db",
-    "status": "degraded",
+    "status": "up",
     "uptime": "99.60%",
-    "uptimeDay": "99.91%",
-    "uptimeWeek": "99.99%",
+    "uptimeDay": "99.87%",
+    "uptimeWeek": "99.98%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "99.60%",
-    "time": 2935,
-    "timeDay": 10283,
-    "timeWeek": 3709,
-    "timeMonth": 1986,
-    "timeYear": 2935,
+    "time": 2930,
+    "timeDay": 7049,
+    "timeWeek": 3424,
+    "timeMonth": 1951,
+    "timeYear": 2930,
     "dailyMinutesDown": {
       "2026-03-28": 64,
       "2026-03-30": 29,
@@ -116,7 +115,7 @@
       "2026-04-08": 743,
       "2026-05-04": 289,
       "2026-06-18": 133,
-      "2026-09-21": 1
+      "2026-09-21": 2
     }
   },
   {
@@ -160,17 +159,17 @@
     "url": "https://api.azael.dev/$UPPTIME_DATABASE_HEALTH_ENDPOINT",
     "icon": "https://status.azael.dev/images/icons/database.png",
     "slug": "database",
-    "status": "down",
+    "status": "up",
     "uptime": "99.81%",
-    "uptimeDay": "99.92%",
-    "uptimeWeek": "99.99%",
-    "uptimeMonth": "100.00%",
+    "uptimeDay": "99.82%",
+    "uptimeWeek": "99.97%",
+    "uptimeMonth": "99.99%",
     "uptimeYear": "99.81%",
-    "time": 1649,
-    "timeDay": 470,
-    "timeWeek": 924,
-    "timeMonth": 863,
-    "timeYear": 1649,
+    "time": 1650,
+    "timeDay": 1135,
+    "timeWeek": 1005,
+    "timeMonth": 895,
+    "timeYear": 1650,
     "dailyMinutesDown": {
       "2026-02-04": 21,
       "2026-03-28": 113,
@@ -183,7 +182,7 @@
       "2026-04-30": 16,
       "2026-05-04": 294,
       "2026-05-19": 2,
-      "2026-09-21": 1
+      "2026-09-21": 3
     }
   },
   {
@@ -191,17 +190,17 @@
     "url": "https://api.azael.dev/$UPPTIME_MAILER_HEALTH_ENDPOINT",
     "icon": "https://status.azael.dev/images/icons/email.png",
     "slug": "mailer",
-    "status": "down",
+    "status": "up",
     "uptime": "99.81%",
-    "uptimeDay": "99.62%",
-    "uptimeWeek": "99.95%",
-    "uptimeMonth": "99.99%",
+    "uptimeDay": "99.52%",
+    "uptimeWeek": "99.93%",
+    "uptimeMonth": "99.98%",
     "uptimeYear": "99.81%",
-    "time": 2312,
-    "timeDay": 6930,
-    "timeWeek": 3208,
-    "timeMonth": 4678,
-    "timeYear": 2312,
+    "time": 2310,
+    "timeDay": 5517,
+    "timeWeek": 3106,
+    "timeMonth": 4624,
+    "timeYear": 2310,
     "dailyMinutesDown": {
       "2026-02-04": 20,
       "2026-03-27": 20,
@@ -211,7 +210,7 @@
       "2026-04-02": 17,
       "2026-04-04": 27,
       "2026-05-04": 293,
-      "2026-09-21": 5
+      "2026-09-21": 7
     }
   },
   {
@@ -267,17 +266,17 @@
     "url": "https://api.azael.dev/$UPPTIME_BANDB_REPORT_API_ENDPOINT",
     "icon": "https://status.azael.dev/images/icons/ban-report.png",
     "slug": "ban-db-report-api",
-    "status": "down",
+    "status": "up",
     "uptime": "99.80%",
-    "uptimeDay": "99.95%",
-    "uptimeWeek": "99.99%",
-    "uptimeMonth": "100.00%",
+    "uptimeDay": "99.84%",
+    "uptimeWeek": "99.98%",
+    "uptimeMonth": "99.99%",
     "uptimeYear": "99.80%",
-    "time": 769,
-    "timeDay": 418,
-    "timeWeek": 593,
-    "timeMonth": 624,
-    "timeYear": 769,
+    "time": 768,
+    "timeDay": 396,
+    "timeWeek": 581,
+    "timeMonth": 619,
+    "timeYear": 768,
     "dailyMinutesDown": {
       "2026-02-04": 20,
       "2026-03-28": 73,
@@ -288,7 +287,7 @@
       "2026-05-04": 290,
       "2026-05-08": 1,
       "2026-06-18": 130,
-      "2026-09-21": 1
+      "2026-09-21": 2
     }
   },
   {
