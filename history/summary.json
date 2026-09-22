@@ -95,17 +95,17 @@
     "url": "https://bandb.azael.dev",
     "icon": "https://status.azael.dev/images/icons/ban.png",
     "slug": "cfx-ban-db",
-    "status": "up",
+    "status": "degraded",
     "uptime": "99.60%",
-    "uptimeDay": "100.00%",
-    "uptimeWeek": "100.00%",
+    "uptimeDay": "99.95%",
+    "uptimeWeek": "99.99%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "99.60%",
-    "time": 2928,
-    "timeDay": 5635,
-    "timeWeek": 3439,
-    "timeMonth": 2025,
-    "timeYear": 2928,
+    "time": 2942,
+    "timeDay": 6309,
+    "timeWeek": 3885,
+    "timeMonth": 2199,
+    "timeYear": 2942,
     "dailyMinutesDown": {
       "2026-03-28": 64,
       "2026-03-30": 29,
@@ -114,7 +114,8 @@
       "2026-04-03": 17,
       "2026-04-08": 743,
       "2026-05-04": 289,
-      "2026-06-18": 133
+      "2026-06-18": 133,
+      "2026-09-22": 1
     }
   },
   {
@@ -188,16 +189,16 @@
     "url": "https://api.azael.dev/$UPPTIME_MAILER_HEALTH_ENDPOINT",
     "icon": "https://status.azael.dev/images/icons/email.png",
     "slug": "mailer",
-    "status": "degraded",
+    "status": "up",
     "uptime": "99.81%",
-    "uptimeDay": "99.96%",
-    "uptimeWeek": "99.99%",
+    "uptimeDay": "99.85%",
+    "uptimeWeek": "99.98%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "99.81%",
     "time": 2318,
-    "timeDay": 4943,
-    "timeWeek": 3245,
-    "timeMonth": 4603,
+    "timeDay": 4601,
+    "timeWeek": 3200,
+    "timeMonth": 4567,
     "timeYear": 2318,
     "dailyMinutesDown": {
       "2026-02-04": 20,
@@ -208,7 +209,7 @@
       "2026-04-02": 17,
       "2026-04-04": 27,
       "2026-05-04": 293,
-      "2026-09-22": 1
+      "2026-09-22": 2
     }
   },
   {
