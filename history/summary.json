@@ -47,9 +47,9 @@
     "slug": "cfx-store",
     "status": "degraded",
     "uptime": "98.57%",
-    "uptimeDay": "99.87%",
-    "uptimeWeek": "99.98%",
-    "uptimeMonth": "100.00%",
+    "uptimeDay": "99.74%",
+    "uptimeWeek": "99.96%",
+    "uptimeMonth": "99.99%",
     "uptimeYear": "98.57%",
     "time": 3916,
     "timeDay": 3618,
@@ -70,7 +70,7 @@
       "2026-05-22": 809,
       "2026-05-21": 9,
       "2026-06-18": 138,
-      "2026-09-24": 2
+      "2026-09-24": 4
     }
   },
   {
@@ -96,17 +96,17 @@
     "url": "https://bandb.azael.dev",
     "icon": "https://status.azael.dev/images/icons/ban.png",
     "slug": "cfx-ban-db",
-    "status": "degraded",
+    "status": "up",
     "uptime": "99.60%",
-    "uptimeDay": "99.91%",
-    "uptimeWeek": "99.99%",
-    "uptimeMonth": "100.00%",
+    "uptimeDay": "99.84%",
+    "uptimeWeek": "99.98%",
+    "uptimeMonth": "99.99%",
     "uptimeYear": "99.60%",
-    "time": 2965,
-    "timeDay": 3944,
-    "timeWeek": 3923,
-    "timeMonth": 2665,
-    "timeYear": 2965,
+    "time": 2963,
+    "timeDay": 3818,
+    "timeWeek": 3863,
+    "timeMonth": 2655,
+    "timeYear": 2963,
     "dailyMinutesDown": {
       "2026-03-28": 64,
       "2026-03-30": 29,
@@ -116,7 +116,7 @@
       "2026-04-08": 743,
       "2026-05-04": 289,
       "2026-06-18": 133,
-      "2026-09-24": 1
+      "2026-09-24": 2
     }
   },
   {
@@ -160,17 +160,17 @@
     "url": "https://api.azael.dev/$UPPTIME_DATABASE_HEALTH_ENDPOINT",
     "icon": "https://status.azael.dev/images/icons/database.png",
     "slug": "database",
-    "status": "degraded",
+    "status": "down",
     "uptime": "99.81%",
-    "uptimeDay": "99.94%",
-    "uptimeWeek": "99.99%",
-    "uptimeMonth": "100.00%",
+    "uptimeDay": "99.80%",
+    "uptimeWeek": "99.97%",
+    "uptimeMonth": "99.99%",
     "uptimeYear": "99.81%",
-    "time": 1642,
-    "timeDay": 1211,
-    "timeWeek": 1445,
-    "timeMonth": 1226,
-    "timeYear": 1642,
+    "time": 1639,
+    "timeDay": 1178,
+    "timeWeek": 1423,
+    "timeMonth": 1214,
+    "timeYear": 1639,
     "dailyMinutesDown": {
       "2026-02-04": 21,
       "2026-03-28": 113,
@@ -183,7 +183,7 @@
       "2026-04-30": 16,
       "2026-05-04": 294,
       "2026-05-19": 2,
-      "2026-09-24": 1
+      "2026-09-24": 3
     }
   },
   {
@@ -191,17 +191,17 @@
     "url": "https://api.azael.dev/$UPPTIME_MAILER_HEALTH_ENDPOINT",
     "icon": "https://status.azael.dev/images/icons/email.png",
     "slug": "mailer",
-    "status": "up",
+    "status": "down",
     "uptime": "99.81%",
-    "uptimeDay": "100.00%",
-    "uptimeWeek": "100.00%",
+    "uptimeDay": "99.96%",
+    "uptimeWeek": "99.99%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "99.81%",
-    "time": 2327,
-    "timeDay": 2887,
-    "timeWeek": 2843,
-    "timeMonth": 3823,
-    "timeYear": 2327,
+    "time": 2323,
+    "timeDay": 2796,
+    "timeWeek": 2796,
+    "timeMonth": 3787,
+    "timeYear": 2323,
     "dailyMinutesDown": {
       "2026-02-04": 20,
       "2026-03-27": 20,
@@ -210,7 +210,8 @@
       "2026-03-31": 127,
       "2026-04-02": 17,
       "2026-04-04": 27,
-      "2026-05-04": 293
+      "2026-05-04": 293,
+      "2026-09-24": 1
     }
   },
   {
@@ -266,17 +267,17 @@
     "url": "https://api.azael.dev/$UPPTIME_BANDB_REPORT_API_ENDPOINT",
     "icon": "https://status.azael.dev/images/icons/ban-report.png",
     "slug": "ban-db-report-api",
-    "status": "up",
+    "status": "down",
     "uptime": "99.80%",
-    "uptimeDay": "100.00%",
+    "uptimeDay": "99.97%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "99.80%",
-    "time": 742,
-    "timeDay": 396,
-    "timeWeek": 443,
-    "timeMonth": 495,
-    "timeYear": 742,
+    "time": 741,
+    "timeDay": 384,
+    "timeWeek": 436,
+    "timeMonth": 490,
+    "timeYear": 741,
     "dailyMinutesDown": {
       "2026-02-04": 20,
       "2026-03-28": 73,
@@ -286,7 +287,8 @@
       "2026-04-04": 24,
       "2026-05-04": 290,
       "2026-05-08": 1,
-      "2026-06-18": 130
+      "2026-06-18": 130,
+      "2026-09-24": 0
     }
   },
   {
