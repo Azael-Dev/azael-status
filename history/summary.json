@@ -188,17 +188,17 @@
     "url": "https://api.azael.dev/$UPPTIME_MAILER_HEALTH_ENDPOINT",
     "icon": "https://status.azael.dev/images/icons/email.png",
     "slug": "mailer",
-    "status": "degraded",
+    "status": "up",
     "uptime": "99.81%",
-    "uptimeDay": "99.91%",
-    "uptimeWeek": "99.99%",
-    "uptimeMonth": "100.00%",
+    "uptimeDay": "99.85%",
+    "uptimeWeek": "99.98%",
+    "uptimeMonth": "99.99%",
     "uptimeYear": "99.81%",
-    "time": 2348,
-    "timeDay": 9737,
-    "timeWeek": 3663,
-    "timeMonth": 4486,
-    "timeYear": 2348,
+    "time": 2352,
+    "timeDay": 8773,
+    "timeWeek": 3701,
+    "timeMonth": 4492,
+    "timeYear": 2352,
     "dailyMinutesDown": {
       "2026-02-04": 20,
       "2026-03-27": 20,
@@ -208,7 +208,7 @@
       "2026-04-02": 17,
       "2026-04-04": 27,
       "2026-05-04": 293,
-      "2026-09-24": 1
+      "2026-09-24": 2
     }
   },
   {
@@ -243,9 +243,9 @@
     "slug": "script-license-api",
     "status": "up",
     "uptime": "99.95%",
-    "uptimeDay": "99.78%",
-    "uptimeWeek": "99.97%",
-    "uptimeMonth": "99.99%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
+    "uptimeMonth": "100.00%",
     "uptimeYear": "99.95%",
     "time": 1317,
     "timeDay": 1720,
@@ -256,8 +256,7 @@
       "2026-03-27": 25,
       "2026-03-28": 26,
       "2026-03-31": 5,
-      "2026-06-18": 131,
-      "2026-09-24": 3
+      "2026-06-18": 131
     }
   },
   {
