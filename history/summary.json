@@ -291,23 +291,23 @@
     "url": "https://bandb.azael.dev/api/v1/identifier/$UPPTIME_BANDB_LOOKUP_IDENTIFIER",
     "icon": "https://status.azael.dev/images/icons/ban-lookup.png",
     "slug": "ban-db-lookup-api",
-    "status": "degraded",
+    "status": "up",
     "uptime": "99.87%",
-    "uptimeDay": "99.97%",
-    "uptimeWeek": "100.00%",
-    "uptimeMonth": "100.00%",
+    "uptimeDay": "99.73%",
+    "uptimeWeek": "99.96%",
+    "uptimeMonth": "99.99%",
     "uptimeYear": "99.87%",
-    "time": 1968,
-    "timeDay": 3861,
-    "timeWeek": 6477,
-    "timeMonth": 2874,
-    "timeYear": 1968,
+    "time": 1965,
+    "timeDay": 2897,
+    "timeWeek": 6110,
+    "timeMonth": 2826,
+    "timeYear": 1965,
     "dailyMinutesDown": {
       "2026-03-28": 51,
       "2026-03-30": 45,
       "2026-03-31": 75,
       "2026-05-04": 283,
-      "2026-09-24": 0
+      "2026-09-24": 4
     }
   },
   {
