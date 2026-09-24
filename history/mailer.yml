@@ -1,7 +1,7 @@
 url: https://api.azael.dev/$UPPTIME_MAILER_HEALTH_ENDPOINT
-status: degraded
+status: up
 code: 200
-responseTime: 10032
-lastUpdated: 2026-09-24T13:46:46.157Z
+responseTime: 2935
+lastUpdated: 2026-09-24T13:50:26.479Z
 startTime: 2026-01-19T23:53:59.974Z
 generator: Upptime <https://github.com/upptime/upptime>
