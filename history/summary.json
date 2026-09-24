@@ -95,17 +95,17 @@
     "url": "https://bandb.azael.dev",
     "icon": "https://status.azael.dev/images/icons/ban.png",
     "slug": "cfx-ban-db",
-    "status": "degraded",
+    "status": "up",
     "uptime": "99.60%",
-    "uptimeDay": "99.94%",
-    "uptimeWeek": "99.99%",
+    "uptimeDay": "99.89%",
+    "uptimeWeek": "99.98%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "99.60%",
-    "time": 2960,
-    "timeDay": 4062,
-    "timeWeek": 3965,
-    "timeMonth": 2594,
-    "timeYear": 2960,
+    "time": 2956,
+    "timeDay": 3765,
+    "timeWeek": 3848,
+    "timeMonth": 2563,
+    "timeYear": 2956,
     "dailyMinutesDown": {
       "2026-03-28": 64,
       "2026-03-30": 29,
@@ -115,7 +115,7 @@
       "2026-04-08": 743,
       "2026-05-04": 289,
       "2026-06-18": 133,
-      "2026-09-24": 1
+      "2026-09-24": 2
     }
   },
   {
@@ -161,8 +161,8 @@
     "slug": "database",
     "status": "up",
     "uptime": "99.81%",
-    "uptimeDay": "99.85%",
-    "uptimeWeek": "99.98%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "99.81%",
     "time": 1647,
@@ -181,8 +181,7 @@
       "2026-04-10": 4,
       "2026-04-30": 16,
       "2026-05-04": 294,
-      "2026-05-19": 2,
-      "2026-09-24": 2
+      "2026-05-19": 2
     }
   },
   {
@@ -192,8 +191,8 @@
     "slug": "mailer",
     "status": "up",
     "uptime": "99.81%",
-    "uptimeDay": "99.86%",
-    "uptimeWeek": "99.98%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "99.81%",
     "time": 2324,
@@ -209,8 +208,7 @@
       "2026-03-31": 127,
       "2026-04-02": 17,
       "2026-04-04": 27,
-      "2026-05-04": 293,
-      "2026-09-24": 2
+      "2026-05-04": 293
     }
   },
   {
@@ -268,8 +266,8 @@
     "slug": "ban-db-report-api",
     "status": "up",
     "uptime": "99.80%",
-    "uptimeDay": "99.85%",
-    "uptimeWeek": "99.98%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "99.80%",
     "time": 747,
@@ -286,8 +284,7 @@
       "2026-04-04": 24,
       "2026-05-04": 290,
       "2026-05-08": 1,
-      "2026-06-18": 130,
-      "2026-09-24": 2
+      "2026-06-18": 130
     }
   },
   {
