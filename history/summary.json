@@ -160,9 +160,9 @@
     "slug": "database",
     "status": "up",
     "uptime": "99.81%",
-    "uptimeDay": "99.50%",
-    "uptimeWeek": "99.93%",
-    "uptimeMonth": "99.98%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
+    "uptimeMonth": "100.00%",
     "uptimeYear": "99.81%",
     "time": 1632,
     "timeDay": 1361,
@@ -180,8 +180,7 @@
       "2026-04-10": 4,
       "2026-04-30": 16,
       "2026-05-04": 294,
-      "2026-05-19": 2,
-      "2026-09-25": 7
+      "2026-05-19": 2
     }
   },
   {
@@ -190,11 +189,11 @@
     "icon": "https://status.azael.dev/images/icons/email.png",
     "slug": "mailer",
     "status": "up",
-    "uptime": "99.81%",
-    "uptimeDay": "99.75%",
-    "uptimeWeek": "99.96%",
-    "uptimeMonth": "99.99%",
-    "uptimeYear": "99.81%",
+    "uptime": "99.82%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
+    "uptimeMonth": "100.00%",
+    "uptimeYear": "99.82%",
     "time": 2332,
     "timeDay": 3480,
     "timeWeek": 2835,
@@ -208,8 +207,7 @@
       "2026-03-31": 127,
       "2026-04-02": 17,
       "2026-04-04": 27,
-      "2026-05-04": 293,
-      "2026-09-25": 4
+      "2026-05-04": 293
     }
   },
   {
@@ -265,17 +263,17 @@
     "url": "https://api.azael.dev/$UPPTIME_BANDB_REPORT_API_ENDPOINT",
     "icon": "https://status.azael.dev/images/icons/ban-report.png",
     "slug": "ban-db-report-api",
-    "status": "up",
+    "status": "degraded",
     "uptime": "99.80%",
-    "uptimeDay": "99.77%",
-    "uptimeWeek": "99.97%",
-    "uptimeMonth": "99.99%",
+    "uptimeDay": "99.92%",
+    "uptimeWeek": "99.99%",
+    "uptimeMonth": "100.00%",
     "uptimeYear": "99.80%",
-    "time": 738,
-    "timeDay": 638,
-    "timeWeek": 456,
-    "timeMonth": 499,
-    "timeYear": 738,
+    "time": 742,
+    "timeDay": 998,
+    "timeWeek": 503,
+    "timeMonth": 531,
+    "timeYear": 742,
     "dailyMinutesDown": {
       "2026-02-04": 20,
       "2026-03-28": 73,
@@ -286,7 +284,7 @@
       "2026-05-04": 290,
       "2026-05-08": 1,
       "2026-06-18": 130,
-      "2026-09-25": 3
+      "2026-09-25": 1
     }
   },
   {
