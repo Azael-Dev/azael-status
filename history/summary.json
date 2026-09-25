@@ -47,9 +47,9 @@
     "slug": "cfx-store",
     "status": "degraded",
     "uptime": "98.58%",
-    "uptimeDay": "99.92%",
-    "uptimeWeek": "99.99%",
-    "uptimeMonth": "100.00%",
+    "uptimeDay": "99.65%",
+    "uptimeWeek": "99.95%",
+    "uptimeMonth": "99.99%",
     "uptimeYear": "98.58%",
     "time": 3940,
     "timeDay": 8745,
@@ -70,7 +70,7 @@
       "2026-05-22": 809,
       "2026-05-21": 9,
       "2026-06-18": 138,
-      "2026-09-25": 1
+      "2026-09-25": 5
     }
   },
   {
@@ -96,17 +96,17 @@
     "url": "https://bandb.azael.dev",
     "icon": "https://status.azael.dev/images/icons/ban.png",
     "slug": "cfx-ban-db",
-    "status": "up",
+    "status": "degraded",
     "uptime": "99.61%",
-    "uptimeDay": "100.00%",
-    "uptimeWeek": "100.00%",
+    "uptimeDay": "99.92%",
+    "uptimeWeek": "99.99%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "99.61%",
-    "time": 2971,
-    "timeDay": 3982,
-    "timeWeek": 3929,
-    "timeMonth": 2697,
-    "timeYear": 2971,
+    "time": 2973,
+    "timeDay": 4114,
+    "timeWeek": 3945,
+    "timeMonth": 2727,
+    "timeYear": 2973,
     "dailyMinutesDown": {
       "2026-03-28": 64,
       "2026-03-30": 29,
@@ -115,7 +115,8 @@
       "2026-04-03": 17,
       "2026-04-08": 743,
       "2026-05-04": 289,
-      "2026-06-18": 133
+      "2026-06-18": 133,
+      "2026-09-25": 1
     }
   },
   {
@@ -159,17 +160,17 @@
     "url": "https://api.azael.dev/$UPPTIME_DATABASE_HEALTH_ENDPOINT",
     "icon": "https://status.azael.dev/images/icons/database.png",
     "slug": "database",
-    "status": "degraded",
+    "status": "down",
     "uptime": "99.81%",
-    "uptimeDay": "99.95%",
-    "uptimeWeek": "99.99%",
-    "uptimeMonth": "100.00%",
+    "uptimeDay": "99.68%",
+    "uptimeWeek": "99.95%",
+    "uptimeMonth": "99.99%",
     "uptimeYear": "99.81%",
-    "time": 1635,
-    "timeDay": 2222,
-    "timeWeek": 1355,
-    "timeMonth": 1230,
-    "timeYear": 1635,
+    "time": 1633,
+    "timeDay": 1503,
+    "timeWeek": 1336,
+    "timeMonth": 1233,
+    "timeYear": 1633,
     "dailyMinutesDown": {
       "2026-02-04": 21,
       "2026-03-28": 113,
@@ -182,7 +183,7 @@
       "2026-04-30": 16,
       "2026-05-04": 294,
       "2026-05-19": 2,
-      "2026-09-25": 1
+      "2026-09-25": 5
     }
   },
   {
@@ -190,17 +191,17 @@
     "url": "https://api.azael.dev/$UPPTIME_MAILER_HEALTH_ENDPOINT",
     "icon": "https://status.azael.dev/images/icons/email.png",
     "slug": "mailer",
-    "status": "up",
+    "status": "down",
     "uptime": "99.82%",
-    "uptimeDay": "100.00%",
-    "uptimeWeek": "100.00%",
+    "uptimeDay": "99.94%",
+    "uptimeWeek": "99.99%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "99.82%",
-    "time": 2334,
-    "timeDay": 4807,
-    "timeWeek": 2877,
-    "timeMonth": 2686,
-    "timeYear": 2334,
+    "time": 2331,
+    "timeDay": 3627,
+    "timeWeek": 2834,
+    "timeMonth": 2695,
+    "timeYear": 2331,
     "dailyMinutesDown": {
       "2026-02-04": 20,
       "2026-03-27": 20,
@@ -209,7 +210,8 @@
       "2026-03-31": 127,
       "2026-04-02": 17,
       "2026-04-04": 27,
-      "2026-05-04": 293
+      "2026-05-04": 293,
+      "2026-09-25": 1
     }
   },
   {
@@ -265,17 +267,17 @@
     "url": "https://api.azael.dev/$UPPTIME_BANDB_REPORT_API_ENDPOINT",
     "icon": "https://status.azael.dev/images/icons/ban-report.png",
     "slug": "ban-db-report-api",
-    "status": "up",
+    "status": "down",
     "uptime": "99.80%",
-    "uptimeDay": "100.00%",
-    "uptimeWeek": "100.00%",
+    "uptimeDay": "99.95%",
+    "uptimeWeek": "99.99%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "99.80%",
-    "time": 738,
-    "timeDay": 695,
-    "timeWeek": 454,
-    "timeMonth": 499,
-    "timeYear": 738,
+    "time": 737,
+    "timeDay": 591,
+    "timeWeek": 448,
+    "timeMonth": 494,
+    "timeYear": 737,
     "dailyMinutesDown": {
       "2026-02-04": 20,
       "2026-03-28": 73,
@@ -285,7 +287,8 @@
       "2026-04-04": 24,
       "2026-05-04": 290,
       "2026-05-08": 1,
-      "2026-06-18": 130
+      "2026-06-18": 130,
+      "2026-09-25": 1
     }
   },
   {
