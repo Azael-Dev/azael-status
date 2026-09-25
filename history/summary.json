@@ -197,7 +197,7 @@
     "time": 2334,
     "timeDay": 4807,
     "timeWeek": 2877,
-    "timeMonth": 3361,
+    "timeMonth": 3031,
     "timeYear": 2334,
     "dailyMinutesDown": {
       "2026-02-04": 20,
@@ -217,9 +217,9 @@
     "slug": "base-api",
     "status": "up",
     "uptime": "99.36%",
-    "uptimeDay": "99.69%",
-    "uptimeWeek": "99.96%",
-    "uptimeMonth": "99.99%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
+    "uptimeMonth": "100.00%",
     "uptimeYear": "99.36%",
     "time": 1308,
     "timeDay": 1476,
@@ -232,8 +232,7 @@
       "2026-03-31": 5,
       "2026-04-09": 965,
       "2026-04-08": 1145,
-      "2026-06-18": 132,
-      "2026-09-25": 5
+      "2026-06-18": 132
     }
   },
   {
@@ -292,22 +291,23 @@
     "url": "https://bandb.azael.dev/api/v1/identifier/$UPPTIME_BANDB_LOOKUP_IDENTIFIER",
     "icon": "https://status.azael.dev/images/icons/ban-lookup.png",
     "slug": "ban-db-lookup-api",
-    "status": "up",
+    "status": "degraded",
     "uptime": "99.87%",
-    "uptimeDay": "100.00%",
+    "uptimeDay": "99.97%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "99.87%",
-    "time": 1999,
-    "timeDay": 2982,
-    "timeWeek": 4805,
-    "timeMonth": 2918,
-    "timeYear": 1999,
+    "time": 2002,
+    "timeDay": 3053,
+    "timeWeek": 4750,
+    "timeMonth": 2925,
+    "timeYear": 2002,
     "dailyMinutesDown": {
       "2026-03-28": 51,
       "2026-03-30": 45,
       "2026-03-31": 75,
-      "2026-05-04": 283
+      "2026-05-04": 283,
+      "2026-09-25": 0
     }
   },
   {
