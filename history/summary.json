@@ -215,16 +215,16 @@
     "url": "https://api.azael.dev/$UPPTIME_API_PING_ENDPOINT",
     "icon": "https://status.azael.dev/images/icons/api.png",
     "slug": "base-api",
-    "status": "degraded",
+    "status": "up",
     "uptime": "99.36%",
-    "uptimeDay": "99.97%",
-    "uptimeWeek": "100.00%",
-    "uptimeMonth": "100.00%",
+    "uptimeDay": "99.72%",
+    "uptimeWeek": "99.96%",
+    "uptimeMonth": "99.99%",
     "uptimeYear": "99.36%",
     "time": 1356,
-    "timeDay": 3210,
-    "timeWeek": 2188,
-    "timeMonth": 1591,
+    "timeDay": 3055,
+    "timeWeek": 2159,
+    "timeMonth": 1585,
     "timeYear": 1356,
     "dailyMinutesDown": {
       "2026-03-27": 19,
@@ -233,7 +233,7 @@
       "2026-04-09": 965,
       "2026-04-08": 1145,
       "2026-06-18": 132,
-      "2026-09-26": 0
+      "2026-09-26": 4
     }
   },
   {
@@ -292,22 +292,23 @@
     "url": "https://bandb.azael.dev/api/v1/identifier/$UPPTIME_BANDB_LOOKUP_IDENTIFIER",
     "icon": "https://status.azael.dev/images/icons/ban-lookup.png",
     "slug": "ban-db-lookup-api",
-    "status": "up",
+    "status": "degraded",
     "uptime": "99.87%",
-    "uptimeDay": "100.00%",
+    "uptimeDay": "99.97%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "99.87%",
-    "time": 2117,
-    "timeDay": 6030,
-    "timeWeek": 5381,
-    "timeMonth": 3580,
-    "timeYear": 2117,
+    "time": 2124,
+    "timeDay": 5974,
+    "timeWeek": 5377,
+    "timeMonth": 3607,
+    "timeYear": 2124,
     "dailyMinutesDown": {
       "2026-03-28": 51,
       "2026-03-30": 45,
       "2026-03-31": 75,
-      "2026-05-04": 283
+      "2026-05-04": 283,
+      "2026-09-26": 0
     }
   },
   {
