@@ -215,16 +215,16 @@
     "url": "https://api.azael.dev/$UPPTIME_API_PING_ENDPOINT",
     "icon": "https://status.azael.dev/images/icons/api.png",
     "slug": "base-api",
-    "status": "degraded",
+    "status": "up",
     "uptime": "99.37%",
-    "uptimeDay": "99.93%",
-    "uptimeWeek": "99.99%",
-    "uptimeMonth": "100.00%",
+    "uptimeDay": "99.70%",
+    "uptimeWeek": "99.96%",
+    "uptimeMonth": "99.99%",
     "uptimeYear": "99.37%",
     "time": 1352,
-    "timeDay": 1179,
-    "timeWeek": 2145,
-    "timeMonth": 1593,
+    "timeDay": 1093,
+    "timeWeek": 2110,
+    "timeMonth": 1582,
     "timeYear": 1352,
     "dailyMinutesDown": {
       "2026-03-27": 19,
@@ -233,7 +233,7 @@
       "2026-04-09": 965,
       "2026-04-08": 1145,
       "2026-06-18": 132,
-      "2026-09-30": 1
+      "2026-09-30": 4
     }
   },
   {
