@@ -355,23 +355,23 @@
     "url": "https://www.cloudflarestatus.com/api/v2/status.json",
     "icon": "https://status.azael.dev/images/icons/cloudflare.png",
     "slug": "cloudflare-status",
-    "status": "degraded",
+    "status": "up",
     "uptime": "99.70%",
-    "uptimeDay": "99.95%",
-    "uptimeWeek": "99.99%",
-    "uptimeMonth": "100.00%",
+    "uptimeDay": "99.31%",
+    "uptimeWeek": "99.90%",
+    "uptimeMonth": "99.98%",
     "uptimeYear": "99.70%",
     "time": 269,
-    "timeDay": 240,
+    "timeDay": 244,
     "timeWeek": 252,
-    "timeMonth": 191,
+    "timeMonth": 193,
     "timeYear": 269,
     "dailyMinutesDown": {
       "2026-02-04": 54,
       "2026-04-29": 575,
       "2026-04-28": 325,
       "2026-08-12": 140,
-      "2026-10-02": 1
+      "2026-10-02": 10
     }
   }
 ]
