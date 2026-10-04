@@ -1,7 +1,7 @@
 url: $UPPTIME_BOT_SERVER_IP
-status: degraded
+status: up
 code: 200
-responseTime: 2426
-lastUpdated: 2026-10-04T04:31:24.963Z
+responseTime: 266
+lastUpdated: 2026-10-04T04:35:58.651Z
 startTime: 2026-01-20T00:25:13.222Z
 generator: Upptime <https://github.com/upptime/upptime>
