@@ -336,9 +336,9 @@
     "slug": "discord-bot",
     "status": "up",
     "uptime": "99.99%",
-    "uptimeDay": "99.68%",
-    "uptimeWeek": "99.95%",
-    "uptimeMonth": "99.99%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
+    "uptimeMonth": "100.00%",
     "uptimeYear": "99.99%",
     "time": 149,
     "timeDay": 939,
@@ -347,8 +347,7 @@
     "timeYear": 149,
     "dailyMinutesDown": {
       "2026-05-05": 20,
-      "2026-06-23": 27,
-      "2026-10-04": 5
+      "2026-06-23": 27
     }
   },
   {
