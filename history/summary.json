@@ -47,9 +47,9 @@
     "slug": "cfx-store",
     "status": "up",
     "uptime": "98.69%",
-    "uptimeDay": "99.66%",
-    "uptimeWeek": "99.95%",
-    "uptimeMonth": "99.99%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
+    "uptimeMonth": "100.00%",
     "uptimeYear": "98.69%",
     "time": 4013,
     "timeDay": 9315,
@@ -69,8 +69,7 @@
       "2026-05-04": 294,
       "2026-05-22": 809,
       "2026-05-21": 9,
-      "2026-06-18": 138,
-      "2026-10-16": 5
+      "2026-06-18": 138
     }
   },
   {
@@ -98,9 +97,9 @@
     "slug": "cfx-ban-db",
     "status": "up",
     "uptime": "99.64%",
-    "uptimeDay": "99.78%",
-    "uptimeWeek": "99.97%",
-    "uptimeMonth": "99.99%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
+    "uptimeMonth": "100.00%",
     "uptimeYear": "99.64%",
     "time": 2983,
     "timeDay": 4279,
@@ -115,8 +114,7 @@
       "2026-04-03": 17,
       "2026-04-08": 743,
       "2026-05-04": 289,
-      "2026-06-18": 133,
-      "2026-10-16": 3
+      "2026-06-18": 133
     }
   },
   {
@@ -217,17 +215,17 @@
     "url": "https://api.azael.dev/$UPPTIME_API_PING_ENDPOINT",
     "icon": "https://status.azael.dev/images/icons/api.png",
     "slug": "base-api",
-    "status": "degraded",
+    "status": "up",
     "uptime": "99.41%",
-    "uptimeDay": "99.91%",
-    "uptimeWeek": "99.99%",
-    "uptimeMonth": "100.00%",
+    "uptimeDay": "99.72%",
+    "uptimeWeek": "99.96%",
+    "uptimeMonth": "99.99%",
     "uptimeYear": "99.41%",
-    "time": 1355,
-    "timeDay": 3703,
-    "timeWeek": 1980,
-    "timeMonth": 1731,
-    "timeYear": 1355,
+    "time": 1353,
+    "timeDay": 3018,
+    "timeWeek": 1850,
+    "timeMonth": 1711,
+    "timeYear": 1353,
     "dailyMinutesDown": {
       "2026-03-27": 19,
       "2026-03-28": 27,
@@ -235,7 +233,7 @@
       "2026-04-09": 965,
       "2026-04-08": 1145,
       "2026-06-18": 132,
-      "2026-10-16": 1
+      "2026-10-16": 4
     }
   },
   {
@@ -243,23 +241,23 @@
     "url": "https://api.azael.dev/$UPPTIME_SCRIPT_LICENSE_API_ENDPOINT",
     "icon": "https://status.azael.dev/images/icons/license.png",
     "slug": "script-license-api",
-    "status": "degraded",
+    "status": "up",
     "uptime": "99.95%",
-    "uptimeDay": "99.93%",
-    "uptimeWeek": "99.99%",
-    "uptimeMonth": "100.00%",
+    "uptimeDay": "99.74%",
+    "uptimeWeek": "99.96%",
+    "uptimeMonth": "99.99%",
     "uptimeYear": "99.95%",
-    "time": 1338,
-    "timeDay": 962,
-    "timeWeek": 1935,
-    "timeMonth": 1500,
-    "timeYear": 1338,
+    "time": 1336,
+    "timeDay": 733,
+    "timeWeek": 1807,
+    "timeMonth": 1480,
+    "timeYear": 1336,
     "dailyMinutesDown": {
       "2026-03-27": 25,
       "2026-03-28": 26,
       "2026-03-31": 5,
       "2026-06-18": 131,
-      "2026-10-16": 1
+      "2026-10-16": 4
     }
   },
   {
@@ -363,7 +361,7 @@
     "uptime": "95.60%",
     "uptimeDay": "0.00%",
     "uptimeWeek": "0.00%",
-    "uptimeMonth": "64.13%",
+    "uptimeMonth": "64.12%",
     "uptimeYear": "95.60%",
     "time": 263,
     "timeDay": 292,
@@ -375,7 +373,7 @@
       "2026-04-29": 575,
       "2026-04-28": 325,
       "2026-08-12": 140,
-      "2026-10-16": 868,
+      "2026-10-16": 871,
       "2026-10-15": 1440,
       "2026-10-14": 1440,
       "2026-10-13": 1440,
