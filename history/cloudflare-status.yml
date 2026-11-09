@@ -1,7 +1,7 @@
 url: https://www.cloudflarestatus.com/api/v2/status.json
 status: degraded
 code: 200
-responseTime: 95
-lastUpdated: 2026-11-08T02:03:28.882Z
+responseTime: 81
+lastUpdated: 2026-11-09T02:23:59.861Z
 startTime: 2026-01-24T12:11:09.632Z
 generator: Upptime <https://github.com/upptime/upptime>
