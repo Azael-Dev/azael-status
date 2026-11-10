@@ -1,7 +1,7 @@
 url: https://bandb.azael.dev
-status: up
+status: degraded
 code: 200
-responseTime: 1029
-lastUpdated: 2026-11-10T04:36:22.476Z
+responseTime: 3968
+lastUpdated: 2026-11-10T11:00:55.832Z
 startTime: 2026-01-19T20:56:56.983Z
 generator: Upptime <https://github.com/upptime/upptime>
