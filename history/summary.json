@@ -95,17 +95,17 @@
     "url": "https://bandb.azael.dev",
     "icon": "https://status.azael.dev/images/icons/ban.png",
     "slug": "cfx-ban-db",
-    "status": "up",
+    "status": "degraded",
     "uptime": "99.67%",
-    "uptimeDay": "100.00%",
-    "uptimeWeek": "100.00%",
+    "uptimeDay": "99.93%",
+    "uptimeWeek": "99.99%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "99.67%",
-    "time": 2999,
-    "timeDay": 1185,
-    "timeWeek": 2283,
-    "timeMonth": 3188,
-    "timeYear": 2999,
+    "time": 3000,
+    "timeDay": 2321,
+    "timeWeek": 2332,
+    "timeMonth": 3192,
+    "timeYear": 3000,
     "dailyMinutesDown": {
       "2026-03-28": 64,
       "2026-03-30": 29,
@@ -114,7 +114,8 @@
       "2026-04-03": 17,
       "2026-04-08": 743,
       "2026-05-04": 289,
-      "2026-06-18": 133
+      "2026-06-18": 133,
+      "2026-11-11": 1
     }
   },
   {
@@ -160,8 +161,8 @@
     "slug": "database",
     "status": "up",
     "uptime": "99.84%",
-    "uptimeDay": "99.85%",
-    "uptimeWeek": "99.98%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "99.84%",
     "time": 1776,
@@ -180,8 +181,7 @@
       "2026-04-10": 4,
       "2026-04-30": 16,
       "2026-05-04": 294,
-      "2026-05-19": 2,
-      "2026-11-11": 2
+      "2026-05-19": 2
     }
   },
   {
@@ -191,8 +191,8 @@
     "slug": "mailer",
     "status": "up",
     "uptime": "99.84%",
-    "uptimeDay": "99.86%",
-    "uptimeWeek": "99.98%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "99.84%",
     "time": 2251,
@@ -208,8 +208,7 @@
       "2026-03-31": 127,
       "2026-04-02": 17,
       "2026-04-04": 27,
-      "2026-05-04": 293,
-      "2026-11-11": 2
+      "2026-05-04": 293
     }
   },
   {
@@ -267,8 +266,8 @@
     "slug": "ban-db-report-api",
     "status": "up",
     "uptime": "99.83%",
-    "uptimeDay": "99.87%",
-    "uptimeWeek": "99.98%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "99.83%",
     "time": 798,
@@ -285,8 +284,7 @@
       "2026-04-04": 24,
       "2026-05-04": 290,
       "2026-05-08": 1,
-      "2026-06-18": 130,
-      "2026-11-11": 2
+      "2026-06-18": 130
     }
   },
   {
@@ -360,9 +358,9 @@
     "slug": "cloudflare-status",
     "status": "up",
     "uptime": "87.33%",
-    "uptimeDay": "78.19%",
-    "uptimeWeek": "11.17%",
-    "uptimeMonth": "0.66%",
+    "uptimeDay": "79.66%",
+    "uptimeWeek": "11.38%",
+    "uptimeMonth": "0.71%",
     "uptimeYear": "87.33%",
     "time": 252,
     "timeDay": 148,
