@@ -45,17 +45,17 @@
     "url": "https://cfx.azael.dev",
     "icon": "https://status.azael.dev/images/icons/store.png",
     "slug": "cfx-store",
-    "status": "degraded",
+    "status": "up",
     "uptime": "98.80%",
-    "uptimeDay": "99.95%",
-    "uptimeWeek": "99.99%",
-    "uptimeMonth": "100.00%",
+    "uptimeDay": "99.72%",
+    "uptimeWeek": "99.96%",
+    "uptimeMonth": "99.99%",
     "uptimeYear": "98.80%",
-    "time": 3933,
-    "timeDay": 2553,
-    "timeWeek": 2762,
-    "timeMonth": 4059,
-    "timeYear": 3933,
+    "time": 3929,
+    "timeDay": 2062,
+    "timeWeek": 2711,
+    "timeMonth": 4025,
+    "timeYear": 3929,
     "dailyMinutesDown": {
       "2026-03-28": 88,
       "2026-03-30": 24,
@@ -70,7 +70,7 @@
       "2026-05-22": 809,
       "2026-05-21": 9,
       "2026-06-18": 138,
-      "2026-11-11": 1
+      "2026-11-11": 4
     }
   },
   {
@@ -356,16 +356,16 @@
     "url": "https://www.cloudflarestatus.com/api/v2/status.json",
     "icon": "https://status.azael.dev/images/icons/cloudflare.png",
     "slug": "cloudflare-status",
-    "status": "degraded",
+    "status": "up",
     "uptime": "87.32%",
-    "uptimeDay": "60.42%",
-    "uptimeWeek": "8.63%",
+    "uptimeDay": "60.47%",
+    "uptimeWeek": "8.64%",
     "uptimeMonth": "0.08%",
     "uptimeYear": "87.32%",
     "time": 252,
-    "timeDay": 172,
-    "timeWeek": 107,
-    "timeMonth": 113,
+    "timeDay": 148,
+    "timeWeek": 104,
+    "timeMonth": 112,
     "timeYear": 252,
     "dailyMinutesDown": {
       "2026-02-04": 54,
@@ -409,7 +409,7 @@
       "2026-10-07": 1440,
       "2026-10-06": 1440,
       "2026-10-05": 444,
-      "2026-11-11": 137
+      "2026-11-11": 140
     }
   }
 ]
