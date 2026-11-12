@@ -160,9 +160,9 @@
     "slug": "database",
     "status": "up",
     "uptime": "99.84%",
-    "uptimeDay": "98.62%",
-    "uptimeWeek": "99.80%",
-    "uptimeMonth": "99.95%",
+    "uptimeDay": "98.86%",
+    "uptimeWeek": "99.84%",
+    "uptimeMonth": "99.96%",
     "uptimeYear": "99.84%",
     "time": 1763,
     "timeDay": 1359,
@@ -181,7 +181,7 @@
       "2026-04-30": 16,
       "2026-05-04": 294,
       "2026-05-19": 2,
-      "2026-11-12": 19
+      "2026-11-12": 16
     }
   },
   {
@@ -191,8 +191,8 @@
     "slug": "mailer",
     "status": "up",
     "uptime": "99.84%",
-    "uptimeDay": "98.76%",
-    "uptimeWeek": "99.82%",
+    "uptimeDay": "98.87%",
+    "uptimeWeek": "99.84%",
     "uptimeMonth": "99.96%",
     "uptimeYear": "99.84%",
     "time": 2233,
@@ -209,7 +209,7 @@
       "2026-04-02": 17,
       "2026-04-04": 27,
       "2026-05-04": 293,
-      "2026-11-12": 18
+      "2026-11-12": 16
     }
   },
   {
@@ -267,8 +267,8 @@
     "slug": "ban-db-report-api",
     "status": "up",
     "uptime": "99.83%",
-    "uptimeDay": "98.82%",
-    "uptimeWeek": "99.83%",
+    "uptimeDay": "98.92%",
+    "uptimeWeek": "99.85%",
     "uptimeMonth": "99.96%",
     "uptimeYear": "99.83%",
     "time": 801,
@@ -286,7 +286,7 @@
       "2026-05-04": 290,
       "2026-05-08": 1,
       "2026-06-18": 130,
-      "2026-11-12": 17
+      "2026-11-12": 16
     }
   },
   {
@@ -361,8 +361,8 @@
     "status": "up",
     "uptime": "87.36%",
     "uptimeDay": "90.29%",
-    "uptimeWeek": "20.53%",
-    "uptimeMonth": "2.82%",
+    "uptimeWeek": "20.76%",
+    "uptimeMonth": "2.87%",
     "uptimeYear": "87.36%",
     "time": 251,
     "timeDay": 82,
