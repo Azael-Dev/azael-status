@@ -218,11 +218,11 @@
     "icon": "https://status.azael.dev/images/icons/api.png",
     "slug": "base-api",
     "status": "up",
-    "uptime": "99.46%",
-    "uptimeDay": "99.69%",
-    "uptimeWeek": "99.96%",
-    "uptimeMonth": "99.99%",
-    "uptimeYear": "99.46%",
+    "uptime": "99.47%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
+    "uptimeMonth": "100.00%",
+    "uptimeYear": "99.47%",
     "time": 1467,
     "timeDay": 1744,
     "timeWeek": 1937,
@@ -234,8 +234,7 @@
       "2026-03-31": 5,
       "2026-04-09": 965,
       "2026-04-08": 1145,
-      "2026-06-18": 132,
-      "2026-11-13": 4
+      "2026-06-18": 132
     }
   },
   {
@@ -245,9 +244,9 @@
     "slug": "script-license-api",
     "status": "up",
     "uptime": "99.96%",
-    "uptimeDay": "99.71%",
-    "uptimeWeek": "99.96%",
-    "uptimeMonth": "99.99%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
+    "uptimeMonth": "100.00%",
     "uptimeYear": "99.96%",
     "time": 1376,
     "timeDay": 2437,
@@ -258,8 +257,7 @@
       "2026-03-27": 25,
       "2026-03-28": 26,
       "2026-03-31": 5,
-      "2026-06-18": 131,
-      "2026-11-13": 4
+      "2026-06-18": 131
     }
   },
   {
@@ -267,17 +265,17 @@
     "url": "https://api.azael.dev/$UPPTIME_BANDB_REPORT_API_ENDPOINT",
     "icon": "https://status.azael.dev/images/icons/ban-report.png",
     "slug": "ban-db-report-api",
-    "status": "up",
+    "status": "degraded",
     "uptime": "99.83%",
-    "uptimeDay": "100.00%",
-    "uptimeWeek": "99.85%",
+    "uptimeDay": "99.95%",
+    "uptimeWeek": "99.84%",
     "uptimeMonth": "99.96%",
     "uptimeYear": "99.83%",
-    "time": 865,
-    "timeDay": 1630,
-    "timeWeek": 1443,
-    "timeMonth": 1472,
-    "timeYear": 865,
+    "time": 867,
+    "timeDay": 1646,
+    "timeWeek": 1454,
+    "timeMonth": 1479,
+    "timeYear": 867,
     "dailyMinutesDown": {
       "2026-02-04": 20,
       "2026-03-28": 73,
@@ -288,7 +286,8 @@
       "2026-05-04": 290,
       "2026-05-08": 1,
       "2026-06-18": 130,
-      "2026-11-12": 16
+      "2026-11-12": 16,
+      "2026-11-13": 1
     }
   },
   {
@@ -363,8 +362,8 @@
     "status": "up",
     "uptime": "87.42%",
     "uptimeDay": "100.00%",
-    "uptimeWeek": "40.83%",
-    "uptimeMonth": "7.49%",
+    "uptimeWeek": "41.13%",
+    "uptimeMonth": "7.56%",
     "uptimeYear": "87.42%",
     "time": 251,
     "timeDay": 193,
