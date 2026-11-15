@@ -45,16 +45,16 @@
     "url": "https://cfx.azael.dev",
     "icon": "https://status.azael.dev/images/icons/store.png",
     "slug": "cfx-store",
-    "status": "up",
+    "status": "degraded",
     "uptime": "98.82%",
-    "uptimeDay": "100.00%",
-    "uptimeWeek": "100.00%",
+    "uptimeDay": "99.96%",
+    "uptimeWeek": "99.99%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "98.82%",
     "time": 3904,
-    "timeDay": 7601,
-    "timeWeek": 3264,
-    "timeMonth": 3856,
+    "timeDay": 6631,
+    "timeWeek": 3271,
+    "timeMonth": 3855,
     "timeYear": 3904,
     "dailyMinutesDown": {
       "2026-03-28": 88,
@@ -69,7 +69,8 @@
       "2026-05-04": 294,
       "2026-05-22": 809,
       "2026-05-21": 9,
-      "2026-06-18": 138
+      "2026-06-18": 138,
+      "2026-11-15": 1
     }
   },
   {
@@ -219,9 +220,9 @@
     "slug": "base-api",
     "status": "up",
     "uptime": "99.47%",
-    "uptimeDay": "99.69%",
-    "uptimeWeek": "99.96%",
-    "uptimeMonth": "99.99%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
+    "uptimeMonth": "100.00%",
     "uptimeYear": "99.47%",
     "time": 1475,
     "timeDay": 1569,
@@ -234,8 +235,7 @@
       "2026-03-31": 5,
       "2026-04-09": 965,
       "2026-04-08": 1145,
-      "2026-06-18": 132,
-      "2026-11-15": 5
+      "2026-06-18": 132
     }
   },
   {
@@ -245,12 +245,12 @@
     "slug": "script-license-api",
     "status": "up",
     "uptime": "99.96%",
-    "uptimeDay": "99.70%",
-    "uptimeWeek": "99.96%",
-    "uptimeMonth": "99.99%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
+    "uptimeMonth": "100.00%",
     "uptimeYear": "99.96%",
     "time": 1423,
-    "timeDay": 2191,
+    "timeDay": 2270,
     "timeWeek": 1927,
     "timeMonth": 1696,
     "timeYear": 1423,
@@ -258,8 +258,7 @@
       "2026-03-27": 25,
       "2026-03-28": 26,
       "2026-03-31": 5,
-      "2026-06-18": 131,
-      "2026-11-15": 4
+      "2026-06-18": 131
     }
   },
   {
@@ -269,8 +268,8 @@
     "slug": "ban-db-report-api",
     "status": "up",
     "uptime": "99.83%",
-    "uptimeDay": "99.72%",
-    "uptimeWeek": "99.81%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "99.85%",
     "uptimeMonth": "99.96%",
     "uptimeYear": "99.83%",
     "time": 907,
@@ -288,8 +287,7 @@
       "2026-05-04": 290,
       "2026-05-08": 1,
       "2026-06-18": 130,
-      "2026-11-12": 16,
-      "2026-11-15": 4
+      "2026-11-12": 16
     }
   },
   {
@@ -364,8 +362,8 @@
     "status": "up",
     "uptime": "87.49%",
     "uptimeDay": "100.00%",
-    "uptimeWeek": "64.54%",
-    "uptimeMonth": "12.94%",
+    "uptimeWeek": "64.80%",
+    "uptimeMonth": "13.00%",
     "uptimeYear": "87.49%",
     "time": 251,
     "timeDay": 36,
