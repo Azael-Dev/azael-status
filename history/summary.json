@@ -47,8 +47,8 @@
     "slug": "cfx-store",
     "status": "up",
     "uptime": "98.83%",
-    "uptimeDay": "99.85%",
-    "uptimeWeek": "99.98%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "98.83%",
     "time": 3880,
@@ -69,8 +69,7 @@
       "2026-05-04": 294,
       "2026-05-22": 809,
       "2026-05-21": 9,
-      "2026-06-18": 138,
-      "2026-11-17": 2
+      "2026-06-18": 138
     }
   },
   {
@@ -159,16 +158,16 @@
     "url": "https://api.azael.dev/$UPPTIME_DATABASE_HEALTH_ENDPOINT",
     "icon": "https://status.azael.dev/images/icons/database.png",
     "slug": "database",
-    "status": "down",
+    "status": "up",
     "uptime": "99.84%",
-    "uptimeDay": "99.92%",
-    "uptimeWeek": "99.83%",
+    "uptimeDay": "99.81%",
+    "uptimeWeek": "99.81%",
     "uptimeMonth": "99.96%",
     "uptimeYear": "99.84%",
     "time": 1738,
-    "timeDay": 844,
-    "timeWeek": 1371,
-    "timeMonth": 2031,
+    "timeDay": 943,
+    "timeWeek": 1382,
+    "timeMonth": 2032,
     "timeYear": 1738,
     "dailyMinutesDown": {
       "2026-02-04": 21,
@@ -183,7 +182,7 @@
       "2026-05-04": 294,
       "2026-05-19": 2,
       "2026-11-12": 16,
-      "2026-11-17": 1
+      "2026-11-17": 3
     }
   },
   {
@@ -191,16 +190,16 @@
     "url": "https://api.azael.dev/$UPPTIME_MAILER_HEALTH_ENDPOINT",
     "icon": "https://status.azael.dev/images/icons/email.png",
     "slug": "mailer",
-    "status": "down",
+    "status": "up",
     "uptime": "99.84%",
-    "uptimeDay": "99.93%",
-    "uptimeWeek": "99.83%",
+    "uptimeDay": "99.82%",
+    "uptimeWeek": "99.81%",
     "uptimeMonth": "99.96%",
     "uptimeYear": "99.84%",
     "time": 2151,
-    "timeDay": 864,
-    "timeWeek": 973,
-    "timeMonth": 1180,
+    "timeDay": 979,
+    "timeWeek": 995,
+    "timeMonth": 1193,
     "timeYear": 2151,
     "dailyMinutesDown": {
       "2026-02-04": 20,
@@ -212,7 +211,7 @@
       "2026-04-04": 27,
       "2026-05-04": 293,
       "2026-11-12": 16,
-      "2026-11-17": 1
+      "2026-11-17": 3
     }
   },
   {
@@ -246,23 +245,23 @@
     "url": "https://api.azael.dev/$UPPTIME_SCRIPT_LICENSE_API_ENDPOINT",
     "icon": "https://status.azael.dev/images/icons/license.png",
     "slug": "script-license-api",
-    "status": "up",
+    "status": "degraded",
     "uptime": "99.96%",
-    "uptimeDay": "99.70%",
-    "uptimeWeek": "99.96%",
+    "uptimeDay": "99.61%",
+    "uptimeWeek": "99.94%",
     "uptimeMonth": "99.99%",
     "uptimeYear": "99.96%",
-    "time": 1446,
-    "timeDay": 1989,
-    "timeWeek": 1896,
-    "timeMonth": 1721,
-    "timeYear": 1446,
+    "time": 1447,
+    "timeDay": 2000,
+    "timeWeek": 1897,
+    "timeMonth": 1723,
+    "timeYear": 1447,
     "dailyMinutesDown": {
       "2026-03-27": 25,
       "2026-03-28": 26,
       "2026-03-31": 5,
       "2026-06-18": 131,
-      "2026-11-17": 4
+      "2026-11-17": 5
     }
   },
   {
@@ -270,17 +269,17 @@
     "url": "https://api.azael.dev/$UPPTIME_BANDB_REPORT_API_ENDPOINT",
     "icon": "https://status.azael.dev/images/icons/ban-report.png",
     "slug": "ban-db-report-api",
-    "status": "down",
+    "status": "degraded",
     "uptime": "99.83%",
-    "uptimeDay": "99.66%",
-    "uptimeWeek": "99.80%",
+    "uptimeDay": "99.42%",
+    "uptimeWeek": "99.76%",
     "uptimeMonth": "99.95%",
     "uptimeYear": "99.83%",
-    "time": 936,
-    "timeDay": 943,
-    "timeWeek": 1450,
-    "timeMonth": 1453,
-    "timeYear": 936,
+    "time": 939,
+    "timeDay": 1101,
+    "timeWeek": 1463,
+    "timeMonth": 1464,
+    "timeYear": 939,
     "dailyMinutesDown": {
       "2026-02-04": 20,
       "2026-03-28": 73,
@@ -292,7 +291,7 @@
       "2026-05-08": 1,
       "2026-06-18": 130,
       "2026-11-12": 16,
-      "2026-11-17": 5
+      "2026-11-17": 8
     }
   },
   {
@@ -367,8 +366,8 @@
     "status": "up",
     "uptime": "87.58%",
     "uptimeDay": "100.00%",
-    "uptimeWeek": "97.19%",
-    "uptimeMonth": "20.46%",
+    "uptimeWeek": "97.22%",
+    "uptimeMonth": "20.47%",
     "uptimeYear": "87.58%",
     "time": 251,
     "timeDay": 197,
