@@ -47,9 +47,9 @@
     "slug": "cfx-store",
     "status": "up",
     "uptime": "98.83%",
-    "uptimeDay": "99.79%",
-    "uptimeWeek": "99.97%",
-    "uptimeMonth": "99.99%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
+    "uptimeMonth": "100.00%",
     "uptimeYear": "98.83%",
     "time": 3889,
     "timeDay": 2484,
@@ -69,8 +69,7 @@
       "2026-05-04": 294,
       "2026-05-22": 809,
       "2026-05-21": 9,
-      "2026-06-18": 138,
-      "2026-11-17": 3
+      "2026-06-18": 138
     }
   },
   {
@@ -104,7 +103,7 @@
     "uptimeYear": "99.68%",
     "time": 2968,
     "timeDay": 978,
-    "timeWeek": 1667,
+    "timeWeek": 1553,
     "timeMonth": 2638,
     "timeYear": 2968,
     "dailyMinutesDown": {
@@ -161,8 +160,8 @@
     "slug": "database",
     "status": "down",
     "uptime": "99.84%",
-    "uptimeDay": "99.93%",
-    "uptimeWeek": "99.83%",
+    "uptimeDay": "99.82%",
+    "uptimeWeek": "99.81%",
     "uptimeMonth": "99.96%",
     "uptimeYear": "99.84%",
     "time": 1749,
@@ -183,7 +182,7 @@
       "2026-05-04": 294,
       "2026-05-19": 2,
       "2026-11-12": 16,
-      "2026-11-17": 1
+      "2026-11-17": 3
     }
   },
   {
@@ -191,17 +190,17 @@
     "url": "https://api.azael.dev/$UPPTIME_MAILER_HEALTH_ENDPOINT",
     "icon": "https://status.azael.dev/images/icons/email.png",
     "slug": "mailer",
-    "status": "down",
+    "status": "up",
     "uptime": "99.84%",
-    "uptimeDay": "99.95%",
-    "uptimeWeek": "99.83%",
+    "uptimeDay": "99.88%",
+    "uptimeWeek": "99.82%",
     "uptimeMonth": "99.96%",
     "uptimeYear": "99.84%",
-    "time": 2168,
-    "timeDay": 824,
-    "timeWeek": 991,
-    "timeMonth": 1219,
-    "timeYear": 2168,
+    "time": 2167,
+    "timeDay": 1045,
+    "timeWeek": 1008,
+    "timeMonth": 1228,
+    "timeYear": 2167,
     "dailyMinutesDown": {
       "2026-02-04": 20,
       "2026-03-27": 20,
@@ -212,7 +211,7 @@
       "2026-04-04": 27,
       "2026-05-04": 293,
       "2026-11-12": 16,
-      "2026-11-17": 1
+      "2026-11-17": 2
     }
   },
   {
@@ -222,9 +221,9 @@
     "slug": "base-api",
     "status": "up",
     "uptime": "99.47%",
-    "uptimeDay": "99.48%",
-    "uptimeWeek": "99.93%",
-    "uptimeMonth": "99.98%",
+    "uptimeDay": "99.68%",
+    "uptimeWeek": "99.95%",
+    "uptimeMonth": "99.99%",
     "uptimeYear": "99.47%",
     "time": 1488,
     "timeDay": 1770,
@@ -238,7 +237,7 @@
       "2026-04-09": 965,
       "2026-04-08": 1145,
       "2026-06-18": 132,
-      "2026-11-17": 8
+      "2026-11-17": 5
     }
   },
   {
@@ -248,9 +247,9 @@
     "slug": "script-license-api",
     "status": "up",
     "uptime": "99.96%",
-    "uptimeDay": "99.53%",
-    "uptimeWeek": "99.93%",
-    "uptimeMonth": "99.98%",
+    "uptimeDay": "99.70%",
+    "uptimeWeek": "99.96%",
+    "uptimeMonth": "99.99%",
     "uptimeYear": "99.96%",
     "time": 1446,
     "timeDay": 1854,
@@ -262,7 +261,7 @@
       "2026-03-28": 26,
       "2026-03-31": 5,
       "2026-06-18": 131,
-      "2026-11-17": 7
+      "2026-11-17": 4
     }
   },
   {
@@ -270,16 +269,16 @@
     "url": "https://api.azael.dev/$UPPTIME_BANDB_REPORT_API_ENDPOINT",
     "icon": "https://status.azael.dev/images/icons/ban-report.png",
     "slug": "ban-db-report-api",
-    "status": "down",
+    "status": "up",
     "uptime": "99.83%",
-    "uptimeDay": "99.52%",
-    "uptimeWeek": "99.78%",
+    "uptimeDay": "99.45%",
+    "uptimeWeek": "99.77%",
     "uptimeMonth": "99.95%",
     "uptimeYear": "99.83%",
     "time": 939,
-    "timeDay": 1357,
-    "timeWeek": 1505,
-    "timeMonth": 1493,
+    "timeDay": 1316,
+    "timeWeek": 1492,
+    "timeMonth": 1489,
     "timeYear": 939,
     "dailyMinutesDown": {
       "2026-02-04": 20,
@@ -292,7 +291,7 @@
       "2026-05-08": 1,
       "2026-06-18": 130,
       "2026-11-12": 16,
-      "2026-11-17": 7
+      "2026-11-17": 8
     }
   },
   {
@@ -367,7 +366,7 @@
     "status": "up",
     "uptime": "87.58%",
     "uptimeDay": "100.00%",
-    "uptimeWeek": "96.23%",
+    "uptimeWeek": "96.25%",
     "uptimeMonth": "20.24%",
     "uptimeYear": "87.58%",
     "time": 251,
