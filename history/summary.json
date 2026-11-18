@@ -52,7 +52,7 @@
     "uptimeMonth": "100.00%",
     "uptimeYear": "98.83%",
     "time": 3877,
-    "timeDay": 3086,
+    "timeDay": 3282,
     "timeWeek": 3286,
     "timeMonth": 3200,
     "timeYear": 3877,
@@ -166,7 +166,7 @@
     "uptimeYear": "99.84%",
     "time": 1737,
     "timeDay": 931,
-    "timeWeek": 1303,
+    "timeWeek": 1307,
     "timeMonth": 2032,
     "timeYear": 1737,
     "dailyMinutesDown": {
@@ -197,7 +197,7 @@
     "uptimeYear": "99.84%",
     "time": 2151,
     "timeDay": 1002,
-    "timeWeek": 1005,
+    "timeWeek": 1006,
     "timeMonth": 1194,
     "timeYear": 2151,
     "dailyMinutesDown": {
@@ -217,17 +217,17 @@
     "url": "https://api.azael.dev/$UPPTIME_API_PING_ENDPOINT",
     "icon": "https://status.azael.dev/images/icons/api.png",
     "slug": "base-api",
-    "status": "degraded",
+    "status": "up",
     "uptime": "99.47%",
-    "uptimeDay": "99.64%",
-    "uptimeWeek": "99.90%",
-    "uptimeMonth": "99.98%",
+    "uptimeDay": "99.50%",
+    "uptimeWeek": "99.88%",
+    "uptimeMonth": "99.97%",
     "uptimeYear": "99.47%",
-    "time": 1494,
-    "timeDay": 1892,
-    "timeWeek": 1684,
-    "timeMonth": 1791,
-    "timeYear": 1494,
+    "time": 1493,
+    "timeDay": 1803,
+    "timeWeek": 1679,
+    "timeMonth": 1787,
+    "timeYear": 1493,
     "dailyMinutesDown": {
       "2026-03-27": 19,
       "2026-03-28": 27,
@@ -236,7 +236,7 @@
       "2026-04-08": 1145,
       "2026-06-18": 132,
       "2026-11-17": 10,
-      "2026-11-18": 1
+      "2026-11-18": 3
     }
   },
   {
@@ -276,7 +276,7 @@
     "uptimeYear": "99.83%",
     "time": 939,
     "timeDay": 807,
-    "timeWeek": 1464,
+    "timeWeek": 1470,
     "timeMonth": 1459,
     "timeYear": 939,
     "dailyMinutesDown": {
