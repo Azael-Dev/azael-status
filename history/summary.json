@@ -225,7 +225,7 @@
     "uptimeYear": "99.47%",
     "time": 1491,
     "timeDay": 874,
-    "timeWeek": 1614,
+    "timeWeek": 1619,
     "timeMonth": 1787,
     "timeYear": 1491,
     "dailyMinutesDown": {
@@ -243,23 +243,24 @@
     "url": "https://api.azael.dev/$UPPTIME_SCRIPT_LICENSE_API_ENDPOINT",
     "icon": "https://status.azael.dev/images/icons/license.png",
     "slug": "script-license-api",
-    "status": "up",
+    "status": "degraded",
     "uptime": "99.96%",
-    "uptimeDay": "100.00%",
-    "uptimeWeek": "99.96%",
+    "uptimeDay": "99.96%",
+    "uptimeWeek": "99.95%",
     "uptimeMonth": "99.99%",
     "uptimeYear": "99.96%",
-    "time": 1444,
-    "timeDay": 871,
-    "timeWeek": 1789,
-    "timeMonth": 1719,
-    "timeYear": 1444,
+    "time": 1445,
+    "timeDay": 1244,
+    "timeWeek": 1794,
+    "timeMonth": 1718,
+    "timeYear": 1445,
     "dailyMinutesDown": {
       "2026-03-27": 25,
       "2026-03-28": 26,
       "2026-03-31": 5,
       "2026-06-18": 131,
-      "2026-11-17": 4
+      "2026-11-17": 4,
+      "2026-11-20": 1
     }
   },
   {
@@ -269,13 +270,13 @@
     "slug": "ban-db-report-api",
     "status": "up",
     "uptime": "99.83%",
-    "uptimeDay": "99.69%",
-    "uptimeWeek": "99.92%",
-    "uptimeMonth": "99.95%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "99.96%",
+    "uptimeMonth": "99.96%",
     "uptimeYear": "99.83%",
     "time": 938,
     "timeDay": 913,
-    "timeWeek": 1441,
+    "timeWeek": 1433,
     "timeMonth": 1458,
     "timeYear": 938,
     "dailyMinutesDown": {
@@ -289,8 +290,7 @@
       "2026-05-08": 1,
       "2026-06-18": 130,
       "2026-11-12": 16,
-      "2026-11-17": 4,
-      "2026-11-20": 4
+      "2026-11-17": 4
     }
   },
   {
@@ -366,7 +366,7 @@
     "uptime": "87.70%",
     "uptimeDay": "100.00%",
     "uptimeWeek": "100.00%",
-    "uptimeMonth": "29.88%",
+    "uptimeMonth": "29.96%",
     "uptimeYear": "87.70%",
     "time": 250,
     "timeDay": 91,
