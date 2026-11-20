@@ -267,17 +267,17 @@
     "url": "https://api.azael.dev/$UPPTIME_BANDB_REPORT_API_ENDPOINT",
     "icon": "https://status.azael.dev/images/icons/ban-report.png",
     "slug": "ban-db-report-api",
-    "status": "degraded",
+    "status": "up",
     "uptime": "99.83%",
-    "uptimeDay": "99.95%",
-    "uptimeWeek": "99.95%",
+    "uptimeDay": "99.69%",
+    "uptimeWeek": "99.92%",
     "uptimeMonth": "99.95%",
     "uptimeYear": "99.83%",
-    "time": 939,
-    "timeDay": 1218,
-    "timeWeek": 1449,
-    "timeMonth": 1463,
-    "timeYear": 939,
+    "time": 938,
+    "timeDay": 913,
+    "timeWeek": 1441,
+    "timeMonth": 1458,
+    "timeYear": 938,
     "dailyMinutesDown": {
       "2026-02-04": 20,
       "2026-03-28": 73,
@@ -290,7 +290,7 @@
       "2026-06-18": 130,
       "2026-11-12": 16,
       "2026-11-17": 4,
-      "2026-11-20": 1
+      "2026-11-20": 4
     }
   },
   {
@@ -366,7 +366,7 @@
     "uptime": "87.70%",
     "uptimeDay": "100.00%",
     "uptimeWeek": "100.00%",
-    "uptimeMonth": "29.87%",
+    "uptimeMonth": "29.88%",
     "uptimeYear": "87.70%",
     "time": 250,
     "timeDay": 91,
