@@ -1,7 +1,7 @@
 url: https://api.azael.dev/$UPPTIME_API_PING_ENDPOINT
-status: up
+status: degraded
 code: 200
-responseTime: 834
-lastUpdated: 2026-11-23T07:25:20.533Z
+responseTime: 1663
+lastUpdated: 2026-11-23T09:55:43.709Z
 startTime: 2026-01-19T23:54:02.354Z
 generator: Upptime <https://github.com/upptime/upptime>
