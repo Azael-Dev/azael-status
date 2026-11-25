@@ -362,11 +362,11 @@
     "icon": "https://status.azael.dev/images/icons/cloudflare.png",
     "slug": "cloudflare-status",
     "status": "degraded",
-    "uptime": "87.90%",
-    "uptimeDay": "99.94%",
-    "uptimeWeek": "99.99%",
+    "uptime": "87.89%",
+    "uptimeDay": "98.55%",
+    "uptimeWeek": "99.79%",
     "uptimeMonth": "45.73%",
-    "uptimeYear": "87.90%",
+    "uptimeYear": "87.89%",
     "time": 249,
     "timeDay": 105,
     "timeWeek": 173,
@@ -415,7 +415,7 @@
       "2026-10-06": 1440,
       "2026-10-05": 444,
       "2026-11-11": 140,
-      "2026-11-25": 1
+      "2026-11-25": 21
     }
   }
 ]
