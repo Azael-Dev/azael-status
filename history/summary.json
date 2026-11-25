@@ -47,9 +47,9 @@
     "slug": "cfx-store",
     "status": "up",
     "uptime": "98.86%",
-    "uptimeDay": "99.69%",
-    "uptimeWeek": "99.96%",
-    "uptimeMonth": "99.99%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
+    "uptimeMonth": "100.00%",
     "uptimeYear": "98.86%",
     "time": 3858,
     "timeDay": 5514,
@@ -69,8 +69,7 @@
       "2026-05-04": 294,
       "2026-05-22": 809,
       "2026-05-21": 9,
-      "2026-06-18": 138,
-      "2026-11-25": 4
+      "2026-06-18": 138
     }
   },
   {
@@ -362,17 +361,17 @@
     "url": "https://www.cloudflarestatus.com/api/v2/status.json",
     "icon": "https://status.azael.dev/images/icons/cloudflare.png",
     "slug": "cloudflare-status",
-    "status": "degraded",
+    "status": "up",
     "uptime": "87.88%",
-    "uptimeDay": "94.04%",
-    "uptimeWeek": "99.15%",
+    "uptimeDay": "92.38%",
+    "uptimeWeek": "98.91%",
     "uptimeMonth": "45.73%",
     "uptimeYear": "87.88%",
-    "time": 249,
-    "timeDay": 105,
-    "timeWeek": 173,
-    "timeMonth": 131,
-    "timeYear": 249,
+    "time": 248,
+    "timeDay": 82,
+    "timeWeek": 157,
+    "timeMonth": 129,
+    "timeYear": 248,
     "dailyMinutesDown": {
       "2026-02-04": 54,
       "2026-04-29": 575,
@@ -416,7 +415,7 @@
       "2026-10-06": 1440,
       "2026-10-05": 444,
       "2026-11-11": 140,
-      "2026-11-25": 86
+      "2026-11-25": 110
     }
   }
 ]
