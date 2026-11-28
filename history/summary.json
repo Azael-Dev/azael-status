@@ -225,7 +225,7 @@
     "uptimeYear": "99.49%",
     "time": 1500,
     "timeDay": 1224,
-    "timeWeek": 1651,
+    "timeWeek": 1668,
     "timeMonth": 1771,
     "timeYear": 1500,
     "dailyMinutesDown": {
@@ -245,13 +245,13 @@
     "slug": "script-license-api",
     "status": "up",
     "uptime": "99.96%",
-    "uptimeDay": "99.69%",
-    "uptimeWeek": "99.96%",
-    "uptimeMonth": "99.98%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
+    "uptimeMonth": "99.99%",
     "uptimeYear": "99.96%",
     "time": 1442,
-    "timeDay": 1593,
-    "timeWeek": 1443,
+    "timeDay": 1557,
+    "timeWeek": 1401,
     "timeMonth": 1670,
     "timeYear": 1442,
     "dailyMinutesDown": {
@@ -259,8 +259,7 @@
       "2026-03-28": 26,
       "2026-03-31": 5,
       "2026-06-18": 131,
-      "2026-11-17": 4,
-      "2026-11-28": 4
+      "2026-11-17": 4
     }
   },
   {
@@ -268,17 +267,17 @@
     "url": "https://api.azael.dev/$UPPTIME_BANDB_REPORT_API_ENDPOINT",
     "icon": "https://status.azael.dev/images/icons/ban-report.png",
     "slug": "ban-db-report-api",
-    "status": "up",
+    "status": "degraded",
     "uptime": "99.84%",
-    "uptimeDay": "100.00%",
-    "uptimeWeek": "100.00%",
-    "uptimeMonth": "99.96%",
+    "uptimeDay": "99.96%",
+    "uptimeWeek": "99.99%",
+    "uptimeMonth": "99.95%",
     "uptimeYear": "99.84%",
-    "time": 976,
-    "timeDay": 1364,
-    "timeWeek": 1371,
-    "timeMonth": 1395,
-    "timeYear": 976,
+    "time": 980,
+    "timeDay": 1654,
+    "timeWeek": 1393,
+    "timeMonth": 1405,
+    "timeYear": 980,
     "dailyMinutesDown": {
       "2026-02-04": 20,
       "2026-03-28": 73,
@@ -290,7 +289,8 @@
       "2026-05-08": 1,
       "2026-06-18": 130,
       "2026-11-12": 16,
-      "2026-11-17": 4
+      "2026-11-17": 4,
+      "2026-11-28": 1
     }
   },
   {
@@ -366,7 +366,7 @@
     "uptime": "87.97%",
     "uptimeDay": "91.68%",
     "uptimeWeek": "97.72%",
-    "uptimeMonth": "55.85%",
+    "uptimeMonth": "55.96%",
     "uptimeYear": "87.97%",
     "time": 248,
     "timeDay": 182,
