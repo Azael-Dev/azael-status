@@ -167,7 +167,7 @@
     "time": 1714,
     "timeDay": 733,
     "timeWeek": 1153,
-    "timeMonth": 1858,
+    "timeMonth": 1827,
     "timeYear": 1714,
     "dailyMinutesDown": {
       "2026-02-04": 21,
@@ -251,8 +251,8 @@
     "uptimeYear": "99.96%",
     "time": 1441,
     "timeDay": 1297,
-    "timeWeek": 1409,
-    "timeMonth": 1672,
+    "timeWeek": 1417,
+    "timeMonth": 1667,
     "timeYear": 1441,
     "dailyMinutesDown": {
       "2026-03-27": 25,
@@ -361,16 +361,16 @@
     "url": "https://www.cloudflarestatus.com/api/v2/status.json",
     "icon": "https://status.azael.dev/images/icons/cloudflare.png",
     "slug": "cloudflare-status",
-    "status": "up",
+    "status": "degraded",
     "uptime": "87.99%",
-    "uptimeDay": "100.00%",
-    "uptimeWeek": "98.91%",
-    "uptimeMonth": "55.29%",
+    "uptimeDay": "99.96%",
+    "uptimeWeek": "98.90%",
+    "uptimeMonth": "55.34%",
     "uptimeYear": "87.99%",
     "time": 248,
-    "timeDay": 241,
-    "timeWeek": 187,
-    "timeMonth": 137,
+    "timeDay": 132,
+    "timeWeek": 171,
+    "timeMonth": 134,
     "timeYear": 248,
     "dailyMinutesDown": {
       "2026-02-04": 54,
@@ -415,7 +415,8 @@
       "2026-10-06": 1440,
       "2026-10-05": 444,
       "2026-11-11": 140,
-      "2026-11-25": 110
+      "2026-11-25": 110,
+      "2026-11-28": 1
     }
   }
 ]
